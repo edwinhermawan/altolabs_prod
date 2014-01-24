@@ -57,6 +57,12 @@ Developer @AltoLabs Los Angeles
 /*******************************************/
 $body_background: rgb( 39, 39, 41 );
 
+// Turn iphone media queries into simply @media #{iphone}{content_here}
+$iphone: "only screen 
+        and (min-device-width : 320px) 
+        and (max-device-width : 568px) 
+        and (orientation : portrait)";
+
 body {
      background-color: $body_background;
      color: #000;
@@ -80,36 +86,61 @@ body {
 /* ADDITIONAL STYLES                   
 /*******************************************/
 
+// Wrapper around logo image and "Alto Labs" h1
 .logo_container{
-     margin-top: 14rem;
+    margin-top: 4rem;
+
+    @media #{$iphone} {
+        margin-top: 8rem;
+    }
 }
 
-img .logo{
+// Alto Labs logo image
+img.logo{
 
+    @media #{$iphone} {
+        height:14rem;
+        width: auto;
+    }
 }
 
+// "Alto Labs" h1
 h1 {
-     color: rgb( 201, 182, 175 );
-     font-family: 'Fjalla One', sans-serif;
-     font-size: 4.5rem;
+    color: rgb( 201, 182, 175 );
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2.5rem;
+    
+    @media #{$iphone} {
+        font-size: 10rem;
+    }
 }
 
-.info {
-     margin-top: 3rem;
+// Wrapper around "Comming Soon!" and "hi@altolabs.co"
+.info{
+    margin-top: 1rem;
 }
 
 .coming_soon{
-     color: rgb( 196, 171, 173 );
-     font-family: 'ninjaNaruto';
-     font-size: 3rem;
-     letter-spacing: .2rem;
+    color: rgb( 196, 171, 173 );
+    font-family: 'ninjaNaruto';
+    font-size: 2rem;
+    letter-spacing: .2rem;
+
+    @media #{$iphone} {
+        font-size: 6rem;
+    }
 }
 
+// "hi@altolabs.co"
 a {
-     color: rgb( 137, 137, 149 );
-     font-family: 'Fjalla One', sans-serif;
-     font-size: 1.6rem;
-     letter-spacing: .1rem;
+    color: rgb( 137, 137, 149 );
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: .1rem;
+
+    @media #{$iphone} {
+        font-size: 4.25rem;
+    }
 
 }
 
@@ -123,14 +154,18 @@ a {
 
 /*Dribbble Button*/
 
+$button_width: 12%;
+$space_between_buttons: 2%;
+
 @mixin triple_border_button($border_color){
 	height: 3rem;
-    width: 10%;
+    width: $button_width;
     position: relative;
     border: 1px solid $border_color;
     margin: 1rem auto;
     outline: 1px solid $border_color;
     outline-offset: .1rem;
+    float: left;
     &:before{
 	    content: " ";
 	    position: absolute;
@@ -143,48 +178,61 @@ a {
 	}
 }
 
-$pink: rgb( 152, 116, 120 );
+@mixin button_text($text_color){
+	text-transform: uppercase;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 700;
+    position: relative;
+    top: 25%;
+    font-size: 125%;
+    color: $text_color; 
+    &:hover {
+        color: $body_background;
+    }
+}
+
+$dribbble_border: rgb( 152, 116, 120 );
+$dribbble_text_color: rgb( 196, 171, 173 );
+$behance_border: rgb( 179, 179, 191 );
+$behance_text_color: rgb( 157, 157, 173 );
 
 .button{
-    @include triple_border_button($pink);
 	
 	&.dribbble{
-    	float: left;
-    	margin-left: 39%;
+		@include triple_border_button($dribbble_border);
+        // We use margin-left because one of there is an element with position absolute as one of the borders
+    	margin-left: (100% - (2*$button_width + $space_between_buttons))/2;
+
+    	.button-text{
+			@include button_text($dribbble_text_color); 
+        }
+        &:hover {
+              background-color: $dribbble_border;
+        }   
+
+        @media #{$iphone} {
+            float: none;
+            // We use margin-left because one of there is an element with position absolute as one of the borders
+            margin-left: (100%-$button_width)/2;
+        }
 	}
+    
+
 	&.behance{
-	    float: left;
-	    margin-left: 2%;
+		@include triple_border_button($behance_border);
+	    margin-left: $space_between_buttons;
+
+	    .button-text{
+			@include button_text($behance_text_color);
+		}
+
+        &:hover {
+          background-color: $behance_border;
+        }
+
+        @media #{$iphone} {
+            float: none;
+            margin-left: (100%-$button_width)/2;
+        }
 	}
 }
-
-
-
-
-
-/*left button text*/
-
-.button-text {
-     text-transform: uppercase;
-     font-family: 'Cabin', sans-serif;
-     font-weight: 700;
-     position: relative;
-     top: 25%;
-     margin: auto;
-     font-size: 94%;
-     color: rgb( 196, 171, 173 );     
-}
-
-/*right button text*/
-
-.right-button-text {
-     text-transform: uppercase;
-     font-family: 'Cabin', sans-serif;
-     font-weight: 700;
-     position: relative;
-     top: 28%;
-     font-size: 215%;
-     color: rgb( 157, 157, 173 );     
-}
-
-

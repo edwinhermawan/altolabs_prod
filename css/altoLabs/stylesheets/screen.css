@@ -125,7 +125,7 @@ Developer @AltoLabs Los Angeles
 /******************************************
 /* BASE STYLES                   
 /*******************************************/
-/* line 60, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 body {
   background-color: #272729;
   color: #000;
@@ -138,7 +138,7 @@ body {
 /* LAYOUT                   
 /*******************************************/
 /* Center the container */
-/* line 74, ../sass/screen.scss */
+/* line 80, ../sass/screen.scss */
 #container {
   margin: auto;
   text-align: center;
@@ -147,41 +147,73 @@ body {
 /******************************************
 /* ADDITIONAL STYLES                   
 /*******************************************/
-/* line 83, ../sass/screen.scss */
+/* line 90, ../sass/screen.scss */
 .logo_container {
-  margin-top: 14rem;
+  margin-top: 4rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 90, ../sass/screen.scss */
+  .logo_container {
+    margin-top: 8rem;
+  }
 }
 
-/* line 91, ../sass/screen.scss */
-h1 {
-  color: #c9b6af;
-  font-family: 'Fjalla One', sans-serif;
-  font-size: 4.5rem;
-}
-
-/* line 97, ../sass/screen.scss */
-.info {
-  margin-top: 3rem;
-}
-
-/* line 101, ../sass/screen.scss */
-.coming_soon {
-  color: #c4abad;
-  font-family: 'ninjaNaruto';
-  font-size: 3rem;
-  letter-spacing: .2rem;
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 99, ../sass/screen.scss */
+  img.logo {
+    height: 14rem;
+    width: auto;
+  }
 }
 
 /* line 108, ../sass/screen.scss */
+h1 {
+  color: #c9b6af;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 2.5rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 108, ../sass/screen.scss */
+  h1 {
+    font-size: 10rem;
+  }
+}
+
+/* line 119, ../sass/screen.scss */
+.info {
+  margin-top: 1rem;
+}
+
+/* line 123, ../sass/screen.scss */
+.coming_soon {
+  color: #c4abad;
+  font-family: 'ninjaNaruto';
+  font-size: 2rem;
+  letter-spacing: .2rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 123, ../sass/screen.scss */
+  .coming_soon {
+    font-size: 6rem;
+  }
+}
+
+/* line 135, ../sass/screen.scss */
 a {
   color: #898995;
   font-family: 'Fjalla One', sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.25rem;
   letter-spacing: .1rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 135, ../sass/screen.scss */
+  a {
+    font-size: 4.25rem;
+  }
 }
 
 /* Buttons Container */
-/* line 118, ../sass/screen.scss */
+/* line 149, ../sass/screen.scss */
 .buttons {
   text-align: center;
   width: 100%;
@@ -189,18 +221,20 @@ a {
 }
 
 /*Dribbble Button*/
-/* line 148, ../sass/screen.scss */
-.button {
+/* line 201, ../sass/screen.scss */
+.button.dribbble {
   height: 3rem;
-  width: 10%;
+  width: 12%;
   position: relative;
   border: 1px solid #987478;
   margin: 1rem auto;
   outline: 1px solid #987478;
   outline-offset: .1rem;
+  float: left;
+  margin-left: 37%;
 }
-/* line 134, ../sass/screen.scss */
-.button:before {
+/* line 169, ../sass/screen.scss */
+.button.dribbble:before {
   content: " ";
   position: absolute;
   z-index: -1;
@@ -210,38 +244,76 @@ a {
   bottom: .1rem;
   border: 1px solid #987478;
 }
-/* line 151, ../sass/screen.scss */
-.button.dribbble {
-  float: left;
-  margin-left: 39%;
-}
-/* line 155, ../sass/screen.scss */
-.button.behance {
-  float: left;
-  margin-left: 2%;
-}
-
-/*left button text*/
-/* line 167, ../sass/screen.scss */
-.button-text {
+/* line 206, ../sass/screen.scss */
+.button.dribbble .button-text {
   text-transform: uppercase;
   font-family: 'Cabin', sans-serif;
   font-weight: 700;
   position: relative;
   top: 25%;
-  margin: auto;
-  font-size: 94%;
+  font-size: 125%;
   color: #c4abad;
 }
-
-/*right button text*/
-/* line 180, ../sass/screen.scss */
-.right-button-text {
+/* line 189, ../sass/screen.scss */
+.button.dribbble .button-text:hover {
+  color: #272729;
+}
+/* line 209, ../sass/screen.scss */
+.button.dribbble:hover {
+  background-color: #987478;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 201, ../sass/screen.scss */
+  .button.dribbble {
+    float: none;
+    margin-left: 44%;
+  }
+}
+/* line 221, ../sass/screen.scss */
+.button.behance {
+  height: 3rem;
+  width: 12%;
+  position: relative;
+  border: 1px solid #b3b3bf;
+  margin: 1rem auto;
+  outline: 1px solid #b3b3bf;
+  outline-offset: .1rem;
+  float: left;
+  margin-left: 2%;
+}
+/* line 169, ../sass/screen.scss */
+.button.behance:before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: .1rem;
+  left: .1rem;
+  right: .1rem;
+  bottom: .1rem;
+  border: 1px solid #b3b3bf;
+}
+/* line 225, ../sass/screen.scss */
+.button.behance .button-text {
   text-transform: uppercase;
   font-family: 'Cabin', sans-serif;
   font-weight: 700;
   position: relative;
-  top: 28%;
-  font-size: 215%;
+  top: 25%;
+  font-size: 125%;
   color: #9d9dad;
+}
+/* line 189, ../sass/screen.scss */
+.button.behance .button-text:hover {
+  color: #272729;
+}
+/* line 229, ../sass/screen.scss */
+.button.behance:hover {
+  background-color: #b3b3bf;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 221, ../sass/screen.scss */
+  .button.behance {
+    float: none;
+    margin-left: 44%;
+  }
 }
