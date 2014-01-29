@@ -9,7 +9,7 @@ Author: Leonarda Pische
 Developer @AltoLabs Los Angeles
 */
 
-@import "compass/reset";
+
 
 /* Box Model Hack */
 * {
@@ -52,6 +52,13 @@ Developer @AltoLabs Los Angeles
     overflow: hidden;
 }
 
+// Menu
+.mobile-menu{
+    position: absolute;
+    width: 10%;
+    height: 4rem;
+    margin-left: 95%;
+}
 #menu-toggle {
   cursor: pointer;
   width: 30px;
@@ -116,7 +123,7 @@ img {
     font-family: 'Fjalla One', sans-serif;
     color: white;
     font-size: 4rem;
-	margin-top:20rem;
+    margin-top:20rem;
     margin-left: 52%;  
 }
 
@@ -129,3 +136,58 @@ img {
     margin-left: 37%;
 }
 
+// What we do section
+
+#page-wrap { 
+
+  width: 50%; 
+  margin-top: 5rem; 
+  margin-left: 5%; 
+  position: relative;
+}
+
+.brandingHeader{
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 4rem;
+}
+$imageWidth: 20%;
+
+#logo { 
+  position: absolute; 
+  margin-top: 0; 
+  left: 50%; 
+  margin-left: -$imageWidth/2;
+  width: $imageWidth;
+
+}
+
+#l, #r { 
+  width: 49%; 
+
+  p{
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.75rem;
+    line-height: 3rem;
+  }
+}
+
+#l { 
+  float: left; 
+}
+
+#r { 
+  float: right; 
+}
+
+#l:before, #r:before { 
+  content: ""; 
+  width: $imageWidth; 
+  height: 12rem; 
+}
+
+#l:before { 
+  float: right; 
+}
+#r:before { 
+  float: left; 
+}

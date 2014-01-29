@@ -2,72 +2,161 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
-}
+/* 
+Project Name: Alto Labs Production
+Author: Leonarda Pische
+Developer @AltoLabs Los Angeles
+*/
+/* Box Model Hack */
+* {
+  -moz-box-sizing: border-box;
+  /* Firexfox */
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome/iOS/Android */
+  box-sizing: border-box;
+  /* IE */ }
 
-/* line 22, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html {
-  line-height: 1;
-}
-
-/* line 24, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-ol, ul {
-  list-style: none;
-}
-
-/* line 26, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* line 28, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-
-/* line 30, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q, blockquote {
-  quotes: none;
-}
-/* line 103, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
-}
-
-/* line 32, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-a img {
-  border: none;
-}
-
-/* line 116, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
   display: block;
-}
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
 
-/* line 8, ../sass/screen.scss */
-h1 {
-  color: lime;
-}
+.clear {
+  clear: both; }
+
+.alignright {
+  float: right;
+  padding: 0 0 10px 10px;
+  /* note the padding around a right floated image */ }
+
+.alignleft {
+  float: left;
+  padding: 0 10px 10px 0;
+  /* note the padding around a left floated image */ }
+
+/******************************************
+/* BASE STYLES                   
+/*******************************************/
+#topFold {
+  width: 100%;
+  height: 50rem;
+  overflow: hidden; }
+
+.mobile-menu {
+  position: absolute;
+  width: 10%;
+  height: 4rem;
+  margin-left: 95%; }
+
+#menu-toggle {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  margin-left: 95%;
+  margin-top: 2rem; }
+
+#menu-toggle i:before {
+  content: '';
+  width: 100%;
+  height: 20%;
+  background: #ec008c;
+  position: absolute; }
+
+#menu-toggle i:after {
+  content: '';
+  width: 100%;
+  height: 20%;
+  background: #ec008c;
+  position: absolute;
+  top: 30%;
+  box-shadow: 0 9px 0 0 #ec008c; }
+
+#menu-toggle.active i:before {
+  -webkit-transform: rotate(45deg) translate(6px, 6px);
+  -moz-transform: rotate3d(1, 2, 3, 45deg);
+  -ms-transform: rotate3d(1, 2, 3, 45deg);
+  -o-transform: rotate3d(1, 2, 3, 45deg);
+  transform: rotate3d(1, 2, 3, 45deg); }
+
+#menu-toggle.active i:after {
+  box-shadow: 0 0;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg); }
+
+img {
+  width: 100%;
+  height: auto;
+  margin-top: -8rem; }
+
+.altoLabs {
+  position: absolute;
+  font-family: 'Fjalla One', sans-serif;
+  color: white;
+  font-size: 6rem;
+  margin-top: 12rem;
+  margin-left: 28%; }
+
+.imgText {
+  position: absolute;
+  font-family: 'Fjalla One', sans-serif;
+  color: white;
+  font-size: 4rem;
+  margin-top: 20rem;
+  margin-left: 52%; }
+
+.diagonal {
+  position: absolute;
+  width: 33rem;
+  border-bottom: .3rem solid #ec008c;
+  -webkit-transform: rotate(140deg);
+  margin-top: 21rem;
+  margin-left: 37%; }
+
+#page-wrap {
+  width: 50%;
+  margin-top: 5rem;
+  margin-left: 5%;
+  position: relative; }
+
+.brandingHeader {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 4rem; }
+
+#logo {
+  position: absolute;
+  margin-top: 0;
+  left: 50%;
+  margin-left: -10%;
+  width: 20%; }
+
+#l, #r {
+  width: 49%; }
+  #l p, #r p {
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.75rem;
+    line-height: 3rem; }
+
+#l {
+  float: left; }
+
+#r {
+  float: right; }
+
+#l:before, #r:before {
+  content: "";
+  width: 20%;
+  height: 12rem; }
+
+#l:before {
+  float: right; }
+
+#r:before {
+  float: left; }

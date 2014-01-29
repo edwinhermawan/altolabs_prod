@@ -9,7 +9,7 @@
     <link href='http://fonts.googleapis.com/css?family=Cabin:400,700|Fjalla+One' rel='stylesheet' type='text/css'>
     
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/sass/screen.scss">
+    <link rel="stylesheet" href="css/stylesheets/screen.css">
     
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
@@ -19,18 +19,35 @@
     <div id="topFold">
       <!-- Menu -->
       <div id='menu-toggle'></div>
-      
-      <!-- End Menu -->
+      <!-- Above the Fold Text -->
       <p class="altoLabs">ALTO LABS</p>
       <p class="imgText">YEAH, WE CAN DO THAT.</p>
+      <!-- Diagonal -->
       <div class="diagonal"></div>
+      <!-- Image in the background (NOT background image) -->
       <img src="img/fox.jpg" alt="">
     </div>
+    
+    <div id="page-wrap">
+      <p class="brandingHeader">BRANDING</p>
+      <img src="img/eye.png" id="logo">
+      
+      <div id="l">
+        <p>Blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah </p>
+      </div>
+      
+      <div id="r">
+        <p>Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah </p>
+      </div>
+    
+    </div>
+
     <script>
+    // Turns the three-bar-menu into an 'x'
     $('#menu-toggle').prepend('<i></i>').on('click', function(event){
-  event.preventDefault();
-  $(this).toggleClass('active');
-});
+      event.preventDefault();
+      $(this).toggleClass('active');
+    });
     </script>
   </body>
 </html>
