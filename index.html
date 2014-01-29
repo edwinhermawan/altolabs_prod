@@ -18,6 +18,7 @@
   <body>
     <div id="topFold">
       <!-- Menu -->
+      <div id='menu-toggle'></div>
       
       <!-- End Menu -->
       <p class="altoLabs">ALTO LABS</p>
@@ -25,5 +26,11 @@
       <div class="diagonal"></div>
       <img src="img/fox.jpg" alt="">
     </div>
+    <script>
+    $('#menu-toggle').prepend('<i></i>').on('click', function(event){
+  event.preventDefault();
+  $(this).toggleClass('active');
+});
+    </script>
   </body>
 </html>
