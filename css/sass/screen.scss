@@ -46,6 +46,8 @@ Developer @AltoLabs Los Angeles
 /* BASE STYLES                   
 /*******************************************/
 
+$altoPink: #ec008c;
+
 #topFold{
     width: 100%;
     height: 50rem;
@@ -68,40 +70,41 @@ Developer @AltoLabs Los Angeles
   margin-top: 2rem;
 
 }
-#menu-toggle i:before {
-  content: '';
-  width: 100%;
-  height: 20%;
-  background: #ec008c;
-  position: absolute;
-}
-#menu-toggle:not(:active) i:before {
-    
-}
-#menu-toggle i:after {
-  content: '';
-  width: 100%;
-  height: 20%;
-  background: #ec008c;
-  position: absolute;
-  top: 30%;
-  box-shadow: 0 9px 0 0 #ec008c;
-}
-#menu-toggle.active i:before {
-  -webkit-transform:rotate(45deg) translate(6px,6px);
-   -moz-transform:rotate3d(1,2,3,45deg);
-    -ms-transform:rotate3d(1,2,3,45deg);
-     -o-transform:rotate3d(1,2,3,45deg);
-        transform:rotate3d(1,2,3,45deg);;
-}
-#menu-toggle.active i:after {
-  box-shadow: 0 0;
-  -webkit-transform:rotate(-45deg);
-   -moz-transform:rotate(-45deg);
-    -ms-transform:rotate(-45deg);
-     -o-transform:rotate(-45deg);
-        transform:rotate(-45deg);
-}
+  #menu-toggle i:before {
+    content: '';
+    width: 100%;
+    height: 20%;
+    background: $altoPink;
+    position: absolute;
+  }
+  
+  #menu-toggle:not(:active) i:before {
+      
+  }
+  #menu-toggle i:after {
+    content: '';
+    width: 100%;
+    height: 20%;
+    background: $altoPink;
+    position: absolute;
+    top: 30%;
+    box-shadow: 0 9px 0 0 $altoPink;
+  }
+  #menu-toggle.active i:before {
+    -webkit-transform:rotate(45deg) translate(6px,6px);
+     -moz-transform:rotate3d(1,2,3,45deg);
+      -ms-transform:rotate3d(1,2,3,45deg);
+       -o-transform:rotate3d(1,2,3,45deg);
+          transform:rotate3d(1,2,3,45deg);;
+  }
+  #menu-toggle.active i:after {
+    box-shadow: 0 0;
+    -webkit-transform:rotate(-45deg);
+     -moz-transform:rotate(-45deg);
+      -ms-transform:rotate(-45deg);
+       -o-transform:rotate(-45deg);
+          transform:rotate(-45deg);
+  }
 img {
     width: 100%;
     height: auto;
@@ -130,7 +133,7 @@ img {
 .diagonal {
     position: absolute;
     width: 33rem; 
-    border-bottom: .3rem solid #ec008c; 
+    border-bottom: .3rem solid $altoPink; 
     -webkit-transform: rotate(140deg); 
     margin-top: 21rem;
     margin-left: 37%;
@@ -138,13 +141,25 @@ img {
 
 // What we do section
 
+
 #page-wrap { 
 
   width: 50%; 
   margin-top: 5rem; 
-  margin-left: 5%; 
   position: relative;
+  display:inline-block;
 }
+
+#page-wrap-1 {
+  @extend #page-wrap;
+  margin-left: 20%; 
+}
+
+#page-wrap-2 {
+  @extend #page-wrap;
+  margin-left: 30%; 
+}
+  
 
 .brandingHeader{
   font-family: 'Fjalla One', sans-serif;
@@ -190,4 +205,14 @@ $imageWidth: 20%;
 }
 #r:before { 
   float: left; 
+}
+
+.ourWorkLines{
+  margin-top: 5rem;
+  font-family: 'Fjalla One', sans-serif;
+  text-align: center;
+  font-size: 4rem;
+  background-image: 
+  linear-gradient($altoPink, transparent .05em);
+  background-size: 100% .4em;
 }
