@@ -55,12 +55,6 @@ $altoPink: #ec008c;
 }
 
 // Menu
-.mobile-menu{
-    position: absolute;
-    width: 10%;
-    height: 4rem;
-    margin-left: 95%;
-}
 #menu-toggle {
   cursor: pointer;
   width: 30px;
@@ -70,65 +64,69 @@ $altoPink: #ec008c;
   margin-top: 2rem;
 
 }
-  #menu-toggle i:before {
-    content: '';
-    width: 100%;
-    height: 20%;
-    background: $altoPink;
-    position: absolute;
-  }
-  
-  #menu-toggle:not(:active) i:before {
-      
-  }
-  #menu-toggle i:after {
-    content: '';
-    width: 100%;
-    height: 20%;
-    background: $altoPink;
-    position: absolute;
-    top: 30%;
-    box-shadow: 0 9px 0 0 $altoPink;
-  }
-  #menu-toggle.active i:before {
-    -webkit-transform:rotate(45deg) translate(6px,6px);
-     -moz-transform:rotate3d(1,2,3,45deg);
-      -ms-transform:rotate3d(1,2,3,45deg);
-       -o-transform:rotate3d(1,2,3,45deg);
-          transform:rotate3d(1,2,3,45deg);;
-  }
-  #menu-toggle.active i:after {
-    box-shadow: 0 0;
-    -webkit-transform:rotate(-45deg);
-     -moz-transform:rotate(-45deg);
-      -ms-transform:rotate(-45deg);
-       -o-transform:rotate(-45deg);
-          transform:rotate(-45deg);
-  }
+#menu-toggle i:before {
+  content: '';
+  width: 100%;
+  height: 20%;
+  background: $altoPink;
+  position: absolute;
+}
+
+#menu-toggle:not(:active) i:before {
+    
+}
+#menu-toggle i:after {
+  content: '';
+  width: 100%;
+  height: 20%;
+  background: $altoPink;
+  position: absolute;
+  top: 30%;
+  box-shadow: 0 9px 0 0 $altoPink;
+}
+#menu-toggle.active i:before {
+  -webkit-transform:rotate(45deg) translate(6px,6px);
+   -moz-transform:rotate3d(1,2,3,45deg);
+    -ms-transform:rotate3d(1,2,3,45deg);
+     -o-transform:rotate3d(1,2,3,45deg);
+        transform:rotate3d(1,2,3,45deg);;
+}
+#menu-toggle.active i:after {
+  box-shadow: 0 0;
+  -webkit-transform:rotate(-45deg);
+   -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+     -o-transform:rotate(-45deg);
+        transform:rotate(-45deg);
+}
+
 img {
     width: 100%;
     height: auto;
     margin-top: -8rem;
 }
 
+// For text in the upper fold "ALTO LABS" and "YEAH, WE CAN DO THAT."
+
+@mixin headerText($fontSize, $marginTop, $marginLeft){
+  position: absolute;
+  font-family: 'Fjalla One', sans-serif;
+  color: white;
+  font-size: $fontSize;
+  margin-top: $marginTop;
+  margin-left: $marginLeft;
+}
+
 .altoLabs{
-    position: absolute;
-    font-family: 'Fjalla One', sans-serif;
-    color: white;
-    font-size: 6rem;
-    margin-top: 12rem;
-    margin-left: 28%
+  @include headerText(6rem, 12rem, 28%);
 }
 
 
 .imgText { 
-    position: absolute;
-    font-family: 'Fjalla One', sans-serif;
-    color: white;
-    font-size: 4rem;
-    margin-top:20rem;
-    margin-left: 52%;  
+  @include headerText(4rem, 20rem, 52%) 
 }
+
+
 
 .diagonal {
     position: absolute;
@@ -141,9 +139,7 @@ img {
 
 // What we do section
 
-
 #page-wrap { 
-
   width: 50%; 
   margin-top: 5rem; 
   position: relative;
@@ -159,12 +155,12 @@ img {
   @extend #page-wrap;
   margin-left: 30%; 
 }
-  
 
-.brandingHeader{
+.whatWeDoText{
   font-family: 'Fjalla One', sans-serif;
   font-size: 4rem;
 }
+
 $imageWidth: 20%;
 
 #logo { 
@@ -174,6 +170,25 @@ $imageWidth: 20%;
   margin-left: -$imageWidth/2;
   width: $imageWidth;
 
+}
+
+@mixin floats($regFloat, $beforeFloat){
+  float: $regFloat;
+
+  &:before { 
+    float: $beforeFloat;
+    content: ""; 
+    width: $imageWidth; 
+    height: 12rem;  
+  } 
+}
+
+#l { 
+  @include floats(left, right);
+}
+
+#r { 
+  @include floats(right, left);
 }
 
 #l, #r { 
@@ -186,27 +201,6 @@ $imageWidth: 20%;
   }
 }
 
-#l { 
-  float: left; 
-}
-
-#r { 
-  float: right; 
-}
-
-#l:before, #r:before { 
-  content: ""; 
-  width: $imageWidth; 
-  height: 12rem; 
-}
-
-#l:before { 
-  float: right; 
-}
-#r:before { 
-  float: left; 
-}
-
 .ourWorkLines{
   margin-top: 5rem;
   font-family: 'Fjalla One', sans-serif;
@@ -216,3 +210,85 @@ $imageWidth: 20%;
   linear-gradient($altoPink, transparent .05em);
   background-size: 100% .4em;
 }
+
+.project1{
+  width:100%;
+  display: inline-block;
+}
+
+.shortDescription {
+  background: #f8f8f8;
+  margin-top: 5rem;
+  margin-left: 20%;
+  width: 15%;
+  height: auto;
+  float: left;
+  padding-left: 1.5rem;
+  position: relative;
+  
+  h1{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 4rem;
+  }
+
+  p{
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.75rem;
+  }
+}
+
+.screenshotContainer{
+  float:left;
+  margin-left: 1%;
+  position: relative;
+  width:44%;
+  // width:(100%-40%-1%-15%);
+  margin-top: 5rem;
+  overflow:hidden;
+}
+
+.shortDescription2 {
+  background: #f8f8f8;
+  margin-top: 5rem;
+  margin-left: 1%;
+  width: 15%;
+  height: auto;
+  float: left;
+  padding-left: 1.5rem;
+  position: relative;
+  
+  h1{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 4rem;
+  }
+
+  p{
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.75rem;
+  }
+}
+
+.screenshotContainer2{
+  float:left;
+  margin-left: 20%;
+  position: relative;
+  width:44%;
+  // width:(100%-40%-1%-15%);
+  margin-top: 5rem;
+  overflow:hidden;
+}
+.seeMore{
+    position: absolute;
+    right: 2rem;
+    margin-top: -4rem;
+    height: 3rem;
+    width: 20%;
+    background: lime;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 3rem;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.75rem;
+  }
+
