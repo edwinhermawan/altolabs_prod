@@ -152,23 +152,23 @@ img {
   display: inline-block;
 }
 
-/* line 149, ../sass/screen.scss */
+/* line 153, ../sass/screen.scss */
 #page-wrap-1 {
   margin-left: 20%;
 }
 
-/* line 154, ../sass/screen.scss */
+/* line 158, ../sass/screen.scss */
 #page-wrap-2 {
   margin-left: 30%;
 }
 
-/* line 159, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 .whatWeDoText {
   font-family: 'Fjalla One', sans-serif;
   font-size: 4rem;
 }
 
-/* line 166, ../sass/screen.scss */
+/* line 173, ../sass/screen.scss */
 #logo {
   position: absolute;
   margin-top: 0;
@@ -177,11 +177,11 @@ img {
   width: 20%;
 }
 
-/* line 186, ../sass/screen.scss */
+/* line 193, ../sass/screen.scss */
 #l {
   float: left;
 }
-/* line 178, ../sass/screen.scss */
+/* line 185, ../sass/screen.scss */
 #l:before {
   float: right;
   content: "";
@@ -189,11 +189,11 @@ img {
   height: 12rem;
 }
 
-/* line 190, ../sass/screen.scss */
+/* line 197, ../sass/screen.scss */
 #r {
   float: right;
 }
-/* line 178, ../sass/screen.scss */
+/* line 185, ../sass/screen.scss */
 #r:before {
   float: left;
   content: "";
@@ -201,19 +201,19 @@ img {
   height: 12rem;
 }
 
-/* line 194, ../sass/screen.scss */
+/* line 201, ../sass/screen.scss */
 #l, #r {
   width: 49%;
 }
-/* line 197, ../sass/screen.scss */
+/* line 204, ../sass/screen.scss */
 #l p, #r p {
   font-family: 'Cabin', sans-serif;
   font-size: 1.75rem;
   line-height: 3rem;
 }
 
-/* line 204, ../sass/screen.scss */
-.ourWorkLines {
+/* line 211, ../sass/screen.scss */
+.separationLines {
   margin-top: 5rem;
   font-family: 'Fjalla One', sans-serif;
   text-align: center;
@@ -222,43 +222,32 @@ img {
   background-size: 100% .4em;
 }
 
-/* line 216, ../sass/screen.scss */
+/* line 224, ../sass/screen.scss */
 .ac-wrapper {
   margin-top: 5rem;
   width: 100%;
   position: relative;
-  -webkit-perspective-origin: 50% 25%;
-  -moz-perspective-origin: 50% 25%;
-  perspective-origin: 50% 25%;
 }
-
-/* line 225, ../sass/screen.scss */
+/* line 230, ../sass/screen.scss */
 .ac-wrapper h2 {
   top: 20%;
   width: 50%;
   position: absolute;
   font-weight: 300;
   font-size: 4em;
+  font-family: 'Fjalla One', sans-serif;
   text-align: right;
-  padding: 0 180px 0 50px;
+  padding-right: 12%;
   pointer-events: none;
 }
-
-/* line 236, ../sass/screen.scss */
+/* line 242, ../sass/screen.scss */
 .ac-wrapper h2 span {
   display: block;
   font-size: 60%;
   color: #c0c0c0;
 }
 
-/* line 242, ../sass/screen.scss */
-.shitButton {
-  width: 5rem;
-  height: 3rem;
-  color: lime;
-}
-
-/* line 248, ../sass/screen.scss */
+/* line 250, ../sass/screen.scss */
 .ac-device {
   background: url(../../images/iPhone.png) no-repeat;
   width: 288px;
@@ -272,34 +261,37 @@ img {
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-
-/* line 262, ../sass/screen.scss */
+/* line 265, ../sass/screen.scss */
 .ac-device a {
   height: 440px;
   width: 249px;
   display: inline-block;
   margin: 85px 0 0 20px;
 }
-
-/* line 269, ../sass/screen.scss */
+/* line 271, ../sass/screen.scss */
 .ac-device a img {
   display: block;
   margin-top: 0rem;
 }
-
-/* line 274, ../sass/screen.scss */
+/* line 277, ../sass/screen.scss */
 .ac-device h3 {
   position: absolute;
   font-size: 2.5em;
   left: 100%;
   width: 100%;
   top: 60%;
-  margin-left: 30px;
+  margin-left: 10%;
   font-weight: 300;
   color: #888;
 }
+/* line 288, ../sass/screen.scss */
+.ac-device h3 .shitButton {
+  width: 5rem;
+  height: 3rem;
+  color: lime;
+}
 
-/* line 285, ../sass/screen.scss */
+/* line 297, ../sass/screen.scss */
 .ac-grid {
   position: absolute;
   width: 100%;
@@ -309,158 +301,90 @@ img {
   left: 0;
   text-align: center;
   pointer-events: none;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
 }
-
-/* line 299, ../sass/screen.scss */
+/* line 307, ../sass/screen.scss */
 .ac-grid a {
   width: 220px;
   display: inline-block;
   position: relative;
   margin: 10px 5px;
-  cursor: pointer;
+  cursor: default;
   opacity: 0;
   pointer-events: none;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  -webkit-transform: translateZ(-350px);
-  -moz-transform: translateZ(-350px);
-  transform: translateZ(-350px);
   -webkit-transition-delay: 0s;
   -moz-transition-delay: 0s;
   transition-delay: 0s;
 }
-
-/* line 318, ../sass/screen.scss */
+/* line 322, ../sass/screen.scss */
+.ac-grid a img {
+  display: block;
+  width: 100%;
+}
+/* line 327, ../sass/screen.scss */
 .ac-grid a:first-child {
   -webkit-transform-origin: right center;
   -moz-transform-origin: right center;
   transform-origin: right center;
 }
-
-/* line 324, ../sass/screen.scss */
+/* line 333, ../sass/screen.scss */
 .ac-grid a:last-child {
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   transform-origin: left center;
 }
 
-/* line 330, ../sass/screen.scss */
-.ac-grid a img {
-  display: block;
-  width: 100%;
-}
-
-/* line 335, ../sass/screen.scss */
-.ac-grid a span {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  text-transform: uppercase;
-  padding: 4em 1em 0;
-  z-index: 100;
-  color: #ddd;
-  background: rgba(0, 0, 0, 0.4);
-  font-weight: 700;
-  opacity: 0;
-  -webkit-transform: translateY(-5px);
-  -moz-transform: translateY(-5px);
-  transform: translateY(-5px);
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-
-/* line 356, ../sass/screen.scss */
-.ac-grid a:hover span {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  transform: translateY(0);
-}
-
-/* line 363, ../sass/screen.scss */
-.ac-wrapper.ac-gridview .ac-device {
-  -webkit-transform: translateZ(-350px);
-  -moz-transform: translateZ(-350px);
-  transform: translateZ(-350px);
-  opacity: .6;
-}
-
-/* line 370, ../sass/screen.scss */
+/* line 341, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid {
   pointer-events: auto;
 }
-
-/* line 374, ../sass/screen.scss */
+/* line 343, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a {
   opacity: 1;
   pointer-events: auto;
 }
-
-/* line 379, ../sass/screen.scss */
-.ac-wrapper.ac-gridview .ac-grid a:first-child {
-  -webkit-transform: rotateY(-20deg) translateZ(0px);
-  -moz-transform: rotateY(-20deg) translateZ(0px);
-  transform: rotateY(-20deg) translateZ(0px);
-}
-
-/* line 385, ../sass/screen.scss */
+/* line 347, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a:nth-child(2) {
   -webkit-transition-delay: 50ms;
   -moz-transition-delay: 50ms;
   transition-delay: 50ms;
-  -webkit-transform: translateZ(0px);
-  -moz-transform: translateZ(0px);
-  transform: translateZ(0px);
 }
-
-/* line 394, ../sass/screen.scss */
+/* line 353, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a:nth-child(3) {
   -webkit-transition-delay: 100ms;
   -moz-transition-delay: 100ms;
   transition-delay: 100ms;
-  -webkit-transform: translateZ(0px);
-  -moz-transform: translateZ(0px);
-  transform: translateZ(0px);
 }
-
-/* line 403, ../sass/screen.scss */
+/* line 359, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a:last-child {
   -webkit-transition-delay: 150ms;
   -moz-transition-delay: 150ms;
   transition-delay: 150ms;
-  -webkit-transform: rotateY(20deg) translateZ(0px);
-  -moz-transform: rotateY(20deg) translateZ(0px);
-  transform: rotateY(20deg) translateZ(0px);
 }
 
 @media screen and (max-width: 63.875em) {
-  /* line 413, ../sass/screen.scss */
+  /* line 368, ../sass/screen.scss */
   .ac-wrapper {
     font-size: 60%;
     width: 100%;
     padding: 0 20px;
   }
 
-  /* line 419, ../sass/screen.scss */
+  /* line 374, ../sass/screen.scss */
   .ac-device {
     margin: 0;
     width: 100%;
   }
 
-  /* line 424, ../sass/screen.scss */
+  /* line 379, ../sass/screen.scss */
   .ac-device h3 {
     width: 50%;
     left: 290px;
   }
 
-  /* line 429, ../sass/screen.scss */
+  /* line 384, ../sass/screen.scss */
   .ac-wrapper h2 {
     left: 308px;
     padding: 0;
@@ -469,7 +393,7 @@ img {
   }
 }
 @media screen and (max-width: 58em) {
-  /* line 438, ../sass/screen.scss */
+  /* line 393, ../sass/screen.scss */
   .ac-grid {
     width: 90%;
     left: 5%;
@@ -477,18 +401,18 @@ img {
     padding-top: 8em;
   }
 
-  /* line 445, ../sass/screen.scss */
+  /* line 400, ../sass/screen.scss */
   .ac-grid a {
     width: 22%;
   }
 }
 @media screen and (max-width: 35.6875em) {
-  /* line 452, ../sass/screen.scss */
+  /* line 407, ../sass/screen.scss */
   .ac-wrapper {
     padding: 0 20px 100px;
   }
 
-  /* line 456, ../sass/screen.scss */
+  /* line 411, ../sass/screen.scss */
   .ac-wrapper h2 {
     width: 100%;
     text-align: center;
@@ -498,13 +422,13 @@ img {
     position: relative;
   }
 
-  /* line 465, ../sass/screen.scss */
+  /* line 420, ../sass/screen.scss */
   .ac-device {
     margin: 0 auto;
     width: 288px;
   }
 
-  /* line 470, ../sass/screen.scss */
+  /* line 425, ../sass/screen.scss */
   .ac-device h3 {
     position: relative;
     margin: 0;
@@ -515,15 +439,327 @@ img {
     text-align: center;
   }
 
-  /* line 480, ../sass/screen.scss */
+  /* line 435, ../sass/screen.scss */
   .ac-grid a {
     width: 40%;
   }
 
-  /* line 484, ../sass/screen.scss */
+  /* line 439, ../sass/screen.scss */
   .ac-wrapper.ac-gridview .ac-grid a {
     -webkit-transform: translateZ(0px) !important;
     -moz-transform: translateZ(0px) !important;
     transform: translateZ(0px) !important;
+  }
+}
+/* general style for the form */
+/* line 449, ../sass/screen.scss */
+.nl-form {
+  margin-top: 5rem;
+  width: 100%;
+  padding: 0 20% 0;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 4em;
+  line-height: 1.5;
+}
+
+/* line 458, ../sass/screen.scss */
+.nl-form ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* normalize the input elements, make them look like everything else */
+/* line 467, ../sass/screen.scss */
+.nl-form input,
+.nl-form select,
+.nl-form button {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* line 482, ../sass/screen.scss */
+.nl-form input:focus {
+  outline: none;
+}
+
+/* custom field (drop-down, text element) styling  */
+/* line 487, ../sass/screen.scss */
+.nl-field {
+  display: inline-block;
+  position: relative;
+}
+
+/* line 492, ../sass/screen.scss */
+.nl-field.nl-field-open {
+  z-index: 10000;
+}
+
+/* the toggle is the visible part in the form */
+/* line 499, ../sass/screen.scss */
+.nl-field-toggle,
+.nl-form input,
+.nl-form select {
+  line-height: inherit;
+  display: inline-block;
+  color: #b14943;
+  cursor: pointer;
+  border-bottom: 1px dashed #b14943;
+}
+
+/* drop-down list / text element */
+/* line 508, ../sass/screen.scss */
+.nl-field ul {
+  position: absolute;
+  visibility: hidden;
+  background: #76C3BD;
+  left: -0.5em;
+  top: 50%;
+  font-size: 80%;
+  opacity: 0;
+  -webkit-transform: translateY(-40%) scale(0.9);
+  -moz-transform: translateY(-40%) scale(0.9);
+  transform: translateY(-40%) scale(0.9);
+  -webkit-transition: visibility 0s 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  -moz-transition: visibility 0s 0.3s, opacity 0.3s, -moz-transform 0.3s;
+  transition: visibility 0s 0.3s, opacity 0.3s, transform 0.3s;
+}
+
+/* line 524, ../sass/screen.scss */
+.nl-field.nl-field-open ul {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translateY(-50%) scale(1);
+  -moz-transform: translateY(-50%) scale(1);
+  transform: translateY(-50%) scale(1);
+  -webkit-transition: visibility 0s 0s, opacity 0.3s, -webkit-transform 0.3s;
+  -moz-transition: visibility 0s 0s, opacity 0.3s, -moz-transform 0.3s;
+  transition: visibility 0s 0s, opacity 0.3s, transform 0.3s;
+}
+
+/* line 535, ../sass/screen.scss */
+.nl-field ul li {
+  color: #fff;
+  position: relative;
+}
+
+/* line 540, ../sass/screen.scss */
+.nl-dd ul li {
+  padding: 0 1.5em 0 0.5em;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* line 546, ../sass/screen.scss */
+.nl-dd ul li.nl-dd-checked {
+  color: #478982;
+}
+
+/* line 550, ../sass/screen.scss */
+.no-touch .nl-dd ul li:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* line 554, ../sass/screen.scss */
+.no-touch .nl-dd ul li:hover:active {
+  color: #478982;
+}
+
+/* icons for some elements */
+/* line 561, ../sass/screen.scss */
+.nl-dd ul li.nl-dd-checked:before,
+.nl-submit:before,
+.nl-field-go:before {
+  font-family: 'nlicons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 571, ../sass/screen.scss */
+.nl-dd ul li.nl-dd-checked:before {
+  content: "\e000";
+  position: absolute;
+  right: 1em;
+  font-size: 50%;
+  line-height: 3;
+}
+
+/* line 579, ../sass/screen.scss */
+.nl-ti-text ul {
+  min-width: 8em;
+}
+
+/* line 583, ../sass/screen.scss */
+.nl-ti-text ul li.nl-ti-input input {
+  width: 100%;
+  padding: 0.2em 2em 0.2em 0.5em;
+  border-bottom: none;
+  color: #fff;
+}
+
+/* line 590, ../sass/screen.scss */
+.nl-form .nl-field-go {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.1);
+  width: 1.8em;
+  text-align: center;
+  color: transparent;
+}
+
+/* line 602, ../sass/screen.scss */
+.nl-field-go:before {
+  content: "\e001";
+  font-size: 75%;
+  color: #fff;
+  width: 100%;
+  line-height: 2.5;
+  display: block;
+}
+
+/* custom placeholder color */
+/* line 612, ../sass/screen.scss */
+input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* line 617, ../sass/screen.scss */
+input:active::-webkit-input-placeholder,
+input:focus::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* line 621, ../sass/screen.scss */
+input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* line 626, ../sass/screen.scss */
+input:active::-moz-placeholder,
+input:focus::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* line 630, ../sass/screen.scss */
+input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* line 635, ../sass/screen.scss */
+input:active::-ms-input-placeholder,
+input:focus::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* example field below text input */
+/* line 640, ../sass/screen.scss */
+.nl-ti-text ul li.nl-ti-example {
+  font-size: 40%;
+  font-style: italic;
+  font-weight: 400;
+  padding: 0.4em 1em;
+  color: rgba(0, 0, 0, 0.2);
+  border-top: 1px dashed rgba(255, 255, 255, 0.7);
+}
+
+/* line 649, ../sass/screen.scss */
+.nl-ti-text ul li.nl-ti-example em {
+  color: white;
+}
+
+/* submit button */
+/* line 654, ../sass/screen.scss */
+.nl-submit-wrap {
+  margin-top: 0.4em;
+}
+
+/* line 658, ../sass/screen.scss */
+.nl-form .nl-submit {
+  line-height: 3;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  background: #76C3BD;
+  color: #fff;
+  padding: 0 1em 0 0;
+  font-size: 40%;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+/* line 671, ../sass/screen.scss */
+.nl-submit:before {
+  content: "\e001";
+  color: #fff;
+  float: left;
+  padding: 0 0.7em;
+  margin: 0 0.8em 0 0;
+  background: #69B1A9;
+}
+
+/* line 681, ../sass/screen.scss */
+.no-touch .nl-form .nl-submit:hover,
+.no-touch .nl-form .nl-submit:active {
+  background: #69B1A9;
+}
+
+/* line 685, ../sass/screen.scss */
+.no-touch .nl-form .nl-submit:hover:before {
+  background: #58a199;
+}
+
+/* overlay becomes visible when a field is opened */
+/* line 690, ../sass/screen.scss */
+.nl-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  z-index: 9999;
+  visibility: hidden;
+  -webkit-transition: visibility 0s 0.3s, opacity 0.3s;
+  -moz-transition: visibility 0s 0.3s, opacity 0.3s;
+  transition: visibility 0s 0.3s, opacity 0.3s;
+}
+
+/* line 705, ../sass/screen.scss */
+.nl-field.nl-field-open ~ .nl-overlay {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+@media screen and (max-width: 45em) {
+  /* line 714, ../sass/screen.scss */
+  .nl-form {
+    font-size: 3em;
+  }
+}
+@media screen and (max-width: 25em) {
+  /* line 720, ../sass/screen.scss */
+  .nl-form {
+    font-size: 2em;
   }
 }

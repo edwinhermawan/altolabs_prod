@@ -32,13 +32,9 @@ var AppShowcase = (function() {
 		return false;
 	}
 
+	// If you click outside of the screens the four internals disappear
 	function showScreen( $screen ) {
 		$el.removeClass( 'ac-gridview' );
-		if( $screen ) {
-			// update image and title on the device
-			$screenImg.attr( 'src', $screen.find( 'img' ).attr( 'src' ) );
-			$screenTitle.text( $screen.find( 'span' ).text() );
-		}
 	}
 
 	return { init : init };
