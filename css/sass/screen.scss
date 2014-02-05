@@ -52,6 +52,16 @@ $altoPink: #ec008c;
     width: 100%;
     height: 50rem;
     overflow: hidden;
+    &:before{
+      content: " ";
+      position: absolute;
+      z-index: 1000;
+      top: .1rem;
+      left: .1rem;
+      right: .1rem;
+      bottom: .1rem;
+      border: 1px solid white;
+    }
 }
 
 // Menu
@@ -126,8 +136,6 @@ img {
   @include headerText(4rem, 20rem, 52%) 
 }
 
-
-
 .diagonal {
     position: absolute;
     width: 33rem; 
@@ -166,8 +174,6 @@ img {
   font-size: 4rem;
 }
 
-
-
 $imageWidth: 20%;
 
 #logo { 
@@ -176,7 +182,6 @@ $imageWidth: 20%;
   left: 50%; 
   margin-left: -$imageWidth/2;
   width: $imageWidth;
-
 }
 
 @mixin floats($regFloat, $beforeFloat){
@@ -234,9 +239,10 @@ $imageWidth: 20%;
     font-weight: 300;
     font-size: 4em;
     font-family: 'Fjalla One', sans-serif;
-    text-align: right;
-    padding-right: 12%;
+    text-align: left;
+    // padding-right: 12%;
     pointer-events: none;
+    margin-left: 20%;
     
     // Subtitle of work
     span {
@@ -292,7 +298,6 @@ $imageWidth: 20%;
     }
   }
 }
-
 
 .ac-grid {
   position: absolute;
@@ -453,12 +458,16 @@ $imageWidth: 20%;
   font-family: 'Fjalla One', sans-serif;
   font-size: 4em;
   line-height: 1.5;
-}
 
-.nl-form ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  input:focus {
+    outline: none;
+  }
 }
 
 /* normalize the input elements, make them look like everything else */
@@ -477,10 +486,6 @@ $imageWidth: 20%;
   margin: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
-}
-
-.nl-form input:focus {
-  outline: none;
 }
 
 /* custom field (drop-down, text element) styling  */
