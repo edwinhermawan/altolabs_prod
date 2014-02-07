@@ -25,7 +25,7 @@
       <!-- Diagonal -->
       <div class="diagonal"></div>
       <!-- Image in the background (NOT background image) -->
-      <img src="img/fox.jpg" alt="">
+      <img src="fox.jpg" alt="">
     </div>
 
     <!-- What We Do -->
@@ -77,39 +77,16 @@
     
     <!-- Our work  -->
     <div id="ac-wrapper" class="ac-wrapper">
-      <!-- Title of work -->
-      <h2>Weatherous 
-        <!-- SubTitle of work -->
-        <span>Concept &amp; UI Design</span>
-      </h2>
-
+      <h2>Weatherous <span>Concept &amp; UI Design</span></h2>
       <div class="ac-device">
-        <!-- Screenshot -->
         <a href="#"><img src="images/screen2.jpg"/></a>
+        <h3 class="ac-title">Gentrify small batch umami retro vegan</h3>
       </div>
-      
-      <!-- Description of Work -->
-      <h3 class="ac-title">Gentrify small batch umami retro vegan
-      <div class="shitButton">SEE MORE</div>
-      </h3>
-
-      
-      
-      <!-- Internal Screenshots -->
       <div class="ac-grid">
-
-        <a href="#"><img src="images/screen2.jpg"/>
-        </a>
-
-        <a href="#"><img src="images/screen1.jpg"/>
-        </a>
-
-        <a href="#"><img src="images/screen3.jpg"/>
-        </a>
-
-        <a href="#"><img src="images/screen4.jpg"/>
-          <!-- <span>Photo booth single-origin coffee</span> -->
-        </a>
+        <a href="#"><img src="images/screen2.jpg"/><span>Gentrify small batch umami retro vegan</span></a>
+        <a href="#"><img src="images/screen1.jpg"/><span>Chambray squid semiotics</span></a>
+        <a href="#"><img src="images/screen3.jpg"/><span>Fashion axe blue bottle</span></a>
+        <a href="#"><img src="images/screen4.jpg"/><span>Photo booth single-origin coffee</span></a>
       </div>
     </div>  
 
@@ -118,41 +95,17 @@
 
     <!-- Contact Us -->
     
-    <form id="nl-form" class="nl-form">
-    Hi, my name is <input type="text" value="" placeholder="your name" data-subline="For example: <em>Hunter Hearst Helmsley</em> or <em>Cindy Crawford</em>"/> ( <input type="text" value="" placeholder="email address" data-subline="For example: <em>yo@mtvraps.com</em>"/> ).<br />Just wanted to
-      <select>
+    <form id="nl-form" class="nl-form" method="post" name="contact_form" action="contact-form-handler.php">
+    Hi, my name is <input type="text" name="name" value="" placeholder="your name" data-subline="For example: <em>Hunter Hearst Helmsley</em> or <em>Cindy Crawford</em>"/> ( <input type="text" name="email" value="" placeholder="email address" data-subline="For example: <em>yo@mtvraps.com</em>"/> ).<br />Just wanted to
+      <select name="subject">
           <option value="1" selected>talk about</option>
           <option value="2">Branding</option>
           <option value="3">Design</option>
           <option value="4">App/Web Development</option>
           <option value="2">Say Hello</option>
       </select>.<br /> I was thinking
-      <textarea placeholder="Details here..."></textarea>
-<!-- 
-    I feel like eating 
-      <select>
-          <option value="1" selected>any food</option>
-          <option value="2">Indian</option>
-          <option value="3">French</option>
-          <option value="4">Japanese</option>
-          <option value="2">Italian</option>
-      </select>
-      <br />in a
-      <select>
-          <option value="1" selected>standard</option>
-          <option value="2">fancy</option>
-          <option value="3">hip</option>
-          <option value="4">traditional</option>
-          <option value="2">fine</option>
-      </select>
-      restaurant
-      <select>
-          <option value="1" selected>anytime</option>
-          <option value="1">at 7 p.m.</option>
-          <option value="2">at 8 p.m.</option>
-          <option value="3">at 9 p.m.</option>
-      </select>
-      in <input type="text" value="" placeholder="any city" data-subline="For example: <em>Los Angeles</em> or <em>New York</em>"/> -->
+      <textarea name="message" placeholder="Details here..."></textarea>
+
       <div class="nl-submit-wrap">
           <button class="nl-submit" type="submit">Find a restaurant</button>
       </div>

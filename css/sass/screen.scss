@@ -47,21 +47,21 @@ Developer @AltoLabs Los Angeles
 /*******************************************/
 
 $altoPink: #ec008c;
+$headerFont: 'Fjalla One', sans-serif;
+$subHeaderFont: 'Cabin', sans-serif;
+
+// Turn iphone media queries into simply @media #{iphone}{content_here}
+$iphone: "only screen 
+        and (min-device-width : 320px) 
+        and (max-device-width : 568px) 
+        and (orientation : portrait)";
+
 
 #topFold{
-    width: 100%;
-    height: 50rem;
-    overflow: hidden;
-    &:before{
-      content: " ";
-      position: absolute;
-      z-index: 1000;
-      top: .1rem;
-      left: .1rem;
-      right: .1rem;
-      bottom: .1rem;
-      border: 1px solid white;
-    }
+  width: 100%;
+  height: 50rem;
+  overflow: hidden;
+
 }
 
 // Menu
@@ -120,7 +120,7 @@ img {
 
 @mixin headerText($fontSize, $marginTop, $marginLeft){
   position: absolute;
-  font-family: 'Fjalla One', sans-serif;
+  font-family: $headerFont;
   color: white;
   font-size: $fontSize;
   margin-top: $marginTop;
@@ -161,16 +161,24 @@ img {
 #page-wrap-1 {
   @extend #page-wrap;
   @include stdLeftMargin;
+  @media #{$iphone} {
+      margin: 5rem 5% 5rem 5%;
+      width: 90%
+  }
 }
 
 #page-wrap-2 {
   @extend #page-wrap;
   margin-left: 30%; 
+  @media #{$iphone} {
+      margin: 5rem 5% 5rem 5%;
+      width: 90%;
+  }
 }
 
 // Branding, Design, Coding Header Text
 .whatWeDoText{
-  font-family: 'Fjalla One', sans-serif;
+  font-family: $headerFont;
   font-size: 4rem;
 }
 
@@ -207,7 +215,7 @@ $imageWidth: 20%;
   width: 49%; 
 
   p{
-    font-family: 'Cabin', sans-serif;
+    font-family: $subHeaderFont;
     font-size: 1.75rem;
     line-height: 3rem;
   }
@@ -215,7 +223,7 @@ $imageWidth: 20%;
 
 .separationLines{
   margin-top: 5rem;
-  font-family: 'Fjalla One', sans-serif;
+  font-family: $headerFont;
   text-align: center;
   font-size: 4rem;
   background-image: 
@@ -225,36 +233,38 @@ $imageWidth: 20%;
 
 // Our Work
 
-// Wrapper for work example
 .ac-wrapper {
   margin-top: 5rem;
   width: 100%;
   position: relative;
-  
-  // Title of Work
-  h2 {
-    top: 20%;
-    width: 50%;
-    position: absolute;
-    font-weight: 300;
-    font-size: 4em;
-    font-family: 'Fjalla One', sans-serif;
-    text-align: left;
-    // padding-right: 12%;
-    pointer-events: none;
-    margin-left: 20%;
-    
-    // Subtitle of work
-    span {
-      display: block;
-      font-size: 60%;
-      color: #c0c0c0;
-    }
-  }
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-perspective-origin: 50% 25%;
+  -moz-perspective-origin: 50% 25%;
+  perspective-origin: 50% 25%;
+}
+
+.ac-wrapper h2 {
+  top: 20%;
+  width: 50%;
+  position: absolute;
+  font-weight: 300;
+  font-size: 4em;
+  text-align: right;
+  padding: 0 180px 0 50px;
+  pointer-events: none;
+  font-family: $headerFont
+}
+
+.ac-wrapper h2 span {
+  display: block;
+  font-size: 60%;
+  color: #c0c0c0;
+  font-family: $headerFont
 }
 
 .ac-device {
-  // iPhone mockup
   background: url(../../images/iPhone.png) no-repeat;
   width: 288px;
   height: 611px;
@@ -266,107 +276,157 @@ $imageWidth: 20%;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
+}
 
-  // Screenshot
-  a {
-    height: 440px;
-    width: 249px;
-    display: inline-block;
-    margin: 85px 0 0 20px;
+.ac-device a {
+  height: 440px;
+  width: 249px;
+  display: inline-block;
+  margin: 85px 0 0 20px;
+}
 
-    img {
-      display: block;
-      margin-top: 0rem;
-    }
-  }
-  // Description of Work
-  h3 {
-    position: absolute;
-    font-size: 2.5em;
-    left: 100%;
-    width: 100%;
-    top: 60%;
-    margin-left: 10%;
-    font-weight: 300;
-    color: #888;
+.ac-device a img {
+  display: block;
+  margin-top: 0;
+}
 
-    // See More
-    .shitButton{
-      width: 5rem;
-      height: 3rem;
-      color: lime;
-    }
-  }
+.ac-device h3 {
+  position: absolute;
+  font-size: 1.75rem;
+  left: 100%;
+  width: 100%;
+  top: 60%;
+  margin-left: 30px;
+  font-weight: 300;
+  color: #888;
+  font-family: $subHeaderFont
 }
 
 .ac-grid {
   position: absolute;
   width: 100%;
-  padding-top: 3.6em;
+  padding-top: 11em;
   z-index: 1000;
-  top: 13rem;
+  top: 0;
   left: 0;
   text-align: center;
   pointer-events: none;
+  // -webkit-transform-style: preserve-3d;
+  // -moz-transform-style: preserve-3d;
+  // transform-style: preserve-3d;
+}
 
-  a {
-    width: 220px;
-    display: inline-block;
-    position: relative;
-    margin: 10px 5px;
-    cursor: default;
-    opacity: 0;
-    pointer-events: none;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    -webkit-transition-delay: 0s;
-    -moz-transition-delay: 0s;
-    transition-delay: 0s;
+.ac-grid a {
+  width: 220px;
+  display: inline-block;
+  position: relative;
+  margin: 10px 5px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform: translateZ(-350px);
+  -moz-transform: translateZ(-350px);
+  transform: translateZ(-350px);
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  transition-delay: 0s;
+}
 
-    img {
-      display: block;
-      width: 100%;
-    }
+.ac-grid a:first-child {
+  -webkit-transform-origin: right center;
+  -moz-transform-origin: right center;
+  transform-origin: right center;
+}
 
-    &:first-child {
-      -webkit-transform-origin: right center;
-      -moz-transform-origin: right center;
-      transform-origin: right center;
-    }
+.ac-grid a:last-child {
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  transform-origin: left center;
+}
 
-    &:last-child {
-      -webkit-transform-origin: left center;
-      -moz-transform-origin: left center;
-      transform-origin: left center;
-    }
-  }
+.ac-grid a img {
+  display: block;
+  width: 100%;
+}
+
+.ac-grid a span {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  text-transform: uppercase;
+  padding: 4em 1em 0;
+  z-index: 100;
+  color: #ddd;
+  background: rgba(0,0,0,0.4);
+  font-weight: 700;
+  opacity: 0;
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  transform: translateY(-5px);
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.ac-grid a:hover span {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.ac-wrapper.ac-gridview .ac-device {
+  -webkit-transform: translateZ(-350px);
+  -moz-transform: translateZ(-350px);
+  transform: translateZ(-350px);
+  opacity: .6;
 }
 
 .ac-wrapper.ac-gridview .ac-grid {
   pointer-events: auto;
-  a {
-    opacity: 1;
-    pointer-events: auto;
+}
 
-    &:nth-child(2) {
-      -webkit-transition-delay: 50ms;
-      -moz-transition-delay: 50ms;
-      transition-delay: 50ms;
-    }
+.ac-wrapper.ac-gridview .ac-grid a {
+  opacity: 1;
+  pointer-events: auto;
+}
 
-    &:nth-child(3) {
-      -webkit-transition-delay: 100ms;
-      -moz-transition-delay: 100ms;
-      transition-delay: 100ms;
-    }
+// .ac-wrapper.ac-gridview .ac-grid a:first-child {
+//   -webkit-transform: rotateY(-20deg) translateZ(0px);
+//   -moz-transform: rotateY(-20deg) translateZ(0px);
+//   transform: rotateY(-20deg) translateZ(0px);
+// }
 
-    &:last-child {
-      -webkit-transition-delay: 150ms;
-      -moz-transition-delay: 150ms;
-      transition-delay: 150ms;
-    }
-  }
+.ac-wrapper.ac-gridview .ac-grid a:nth-child(2) {
+  -webkit-transition-delay: 50ms;
+  -moz-transition-delay: 50ms;
+  transition-delay: 50ms;
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  transform: translateZ(0px);
+}
+
+.ac-wrapper.ac-gridview .ac-grid a:nth-child(3) {
+  -webkit-transition-delay: 100ms;
+  -moz-transition-delay: 100ms;
+  transition-delay: 100ms;
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  transform: translateZ(0px);
+}
+
+.ac-wrapper.ac-gridview .ac-grid a:last-child {
+  -webkit-transition-delay: 150ms;
+  -moz-transition-delay: 150ms;
+  transition-delay: 150ms;
+  // -webkit-transform: rotateY(20deg) translateZ(0px);
+  // -moz-transform: rotateY(20deg) translateZ(0px);
+  // transform: rotateY(20deg) translateZ(0px);
 }
 
 @media screen and (max-width: 63.875em) {
@@ -447,7 +507,6 @@ $imageWidth: 20%;
     transform: translateZ(0px) !important;
   }
 }
-
 // Contact Us
 
 /* general style for the form */
@@ -455,7 +514,7 @@ $imageWidth: 20%;
   margin-top: 5rem;
   width: 100%;
   padding: 0 20% 0;
-  font-family: 'Fjalla One', sans-serif;
+  font-family: $headerFont;
   font-size: 4em;
   line-height: 1.5;
 
