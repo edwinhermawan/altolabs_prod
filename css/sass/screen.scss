@@ -281,6 +281,10 @@ $iphoneImageWidth: 30%;
   background-image: 
   linear-gradient($altoPink, transparent .05em);
   background-size: 100% .4em;
+  @media #{$iphone} {
+    font-size: 7.5rem;
+    background-size: 100% .2em;
+  }
 }
 
 // Our Work
