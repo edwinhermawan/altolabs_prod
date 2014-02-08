@@ -197,8 +197,8 @@ and (orientation : portrait) {
   @extend #page-wrap;
   @include stdLeftMargin;
   @media #{$iphone} {
-      margin: 5rem 0 5rem 0;
-      width: 100%
+      margin: 5rem 5% 5rem 5%;
+      width: 90%
   }
 }
 
@@ -206,8 +206,8 @@ and (orientation : portrait) {
   @extend #page-wrap;
   margin-left: 30%; 
   @media #{$iphone} {
-      margin: 5rem 0 5rem 0;
-      width: 100%;
+      margin: 5rem 5% 5rem 5%;
+      width: 90%
   }
 }
 
@@ -216,12 +216,13 @@ and (orientation : portrait) {
   font-family: $headerFont;
   font-size: 4rem;
   @media #{$iphone} {
-    margin-left: 5%;
+    text-align: center;
     font-size: 6.5rem;
   }
 }
 
 $imageWidth: 20%;
+$iphoneImageWidth: 30%;
 
 #logo { 
   position: absolute; 
@@ -229,6 +230,10 @@ $imageWidth: 20%;
   left: 50%; 
   margin-left: -$imageWidth/2;
   width: $imageWidth;
+  @media #{$iphone} {
+    width: $iphoneImageWidth;
+    margin-left: -$iphoneImageWidth/2;
+  }
 }
 
 @mixin floats($regFloat, $beforeFloat){
@@ -238,20 +243,16 @@ $imageWidth: 20%;
     float: $beforeFloat;
     content: ""; 
     width: $imageWidth; 
-    height: 12rem;  
+    height: 12rem;
+    @media #{$iphone} {
+      width: $iphoneImageWidth;
+      height: 25rem;
+    }  
   } 
 }
 
 #l { 
   @include floats(left, right);
-  // @media #{$iphone} {
-  //   &:before { 
-  //   float: none;
-  //   // content: ""; 
-  //   width: none; 
-  //   height: 12rem;  
-  //   } 
-  // }
 }
 
 #r { 
@@ -265,6 +266,10 @@ $imageWidth: 20%;
     font-family: $subHeaderFont;
     font-size: 1.75rem;
     line-height: 3rem;
+    @media #{$iphone} {
+      font-size: 4rem;
+      line-height: 5.25rem;
+    }
   }
 }
 

@@ -208,8 +208,8 @@ img {
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
   /* line 196, ../sass/screen.scss */
   #page-wrap-1 {
-    margin: 5rem 0 5rem 0;
-    width: 100%;
+    margin: 5rem 5% 5rem 5%;
+    width: 90%;
   }
 }
 
@@ -220,8 +220,8 @@ img {
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
   /* line 205, ../sass/screen.scss */
   #page-wrap-2 {
-    margin: 5rem 0 5rem 0;
-    width: 100%;
+    margin: 5rem 5% 5rem 5%;
+    width: 90%;
   }
 }
 
@@ -233,12 +233,12 @@ img {
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
   /* line 215, ../sass/screen.scss */
   .whatWeDoText {
-    margin-left: 5%;
+    text-align: center;
     font-size: 6.5rem;
   }
 }
 
-/* line 226, ../sass/screen.scss */
+/* line 227, ../sass/screen.scss */
 #logo {
   position: absolute;
   margin-top: 0;
@@ -246,43 +246,71 @@ img {
   margin-left: -10%;
   width: 20%;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 227, ../sass/screen.scss */
+  #logo {
+    width: 30%;
+    margin-left: -15%;
+  }
+}
 
-/* line 245, ../sass/screen.scss */
+/* line 254, ../sass/screen.scss */
 #l {
   float: left;
 }
-/* line 237, ../sass/screen.scss */
+/* line 242, ../sass/screen.scss */
 #l:before {
   float: right;
   content: "";
   width: 20%;
   height: 12rem;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 242, ../sass/screen.scss */
+  #l:before {
+    width: 30%;
+    height: 25rem;
+  }
+}
 
-/* line 257, ../sass/screen.scss */
+/* line 258, ../sass/screen.scss */
 #r {
   float: right;
 }
-/* line 237, ../sass/screen.scss */
+/* line 242, ../sass/screen.scss */
 #r:before {
   float: left;
   content: "";
   width: 20%;
   height: 12rem;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 242, ../sass/screen.scss */
+  #r:before {
+    width: 30%;
+    height: 25rem;
+  }
+}
 
-/* line 261, ../sass/screen.scss */
+/* line 262, ../sass/screen.scss */
 #l, #r {
   width: 49%;
 }
-/* line 264, ../sass/screen.scss */
+/* line 265, ../sass/screen.scss */
 #l p, #r p {
   font-family: "Cabin", sans-serif;
   font-size: 1.75rem;
   line-height: 3rem;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 265, ../sass/screen.scss */
+  #l p, #r p {
+    font-size: 4rem;
+    line-height: 5.25rem;
+  }
+}
 
-/* line 271, ../sass/screen.scss */
+/* line 276, ../sass/screen.scss */
 .separationLines {
   margin-top: 5rem;
   font-family: "Fjalla One", sans-serif;
@@ -292,7 +320,7 @@ img {
   background-size: 100% .4em;
 }
 
-/* line 283, ../sass/screen.scss */
+/* line 288, ../sass/screen.scss */
 .ac-wrapper {
   margin-top: 5rem;
   width: 100%;
@@ -305,7 +333,7 @@ img {
   perspective-origin: 50% 25%;
 }
 
-/* line 295, ../sass/screen.scss */
+/* line 300, ../sass/screen.scss */
 .ac-wrapper h2 {
   top: 20%;
   width: 50%;
@@ -318,7 +346,7 @@ img {
   font-family: "Fjalla One", sans-serif;
 }
 
-/* line 307, ../sass/screen.scss */
+/* line 312, ../sass/screen.scss */
 .ac-wrapper h2 span {
   display: block;
   font-size: 60%;
@@ -326,7 +354,7 @@ img {
   font-family: "Fjalla One", sans-serif;
 }
 
-/* line 314, ../sass/screen.scss */
+/* line 319, ../sass/screen.scss */
 .ac-device {
   background: url(../../images/iPhone.png) no-repeat;
   width: 288px;
@@ -341,7 +369,7 @@ img {
   transform-style: preserve-3d;
 }
 
-/* line 328, ../sass/screen.scss */
+/* line 333, ../sass/screen.scss */
 .ac-device a {
   height: 440px;
   width: 249px;
@@ -349,13 +377,13 @@ img {
   margin: 85px 0 0 20px;
 }
 
-/* line 335, ../sass/screen.scss */
+/* line 340, ../sass/screen.scss */
 .ac-device a img {
   display: block;
   margin-top: 0;
 }
 
-/* line 340, ../sass/screen.scss */
+/* line 345, ../sass/screen.scss */
 .ac-device h3 {
   position: absolute;
   font-size: 1.75rem;
@@ -368,7 +396,7 @@ img {
   font-family: "Cabin", sans-serif;
 }
 
-/* line 352, ../sass/screen.scss */
+/* line 357, ../sass/screen.scss */
 .ac-grid {
   position: absolute;
   width: 100%;
@@ -380,7 +408,7 @@ img {
   pointer-events: none;
 }
 
-/* line 366, ../sass/screen.scss */
+/* line 371, ../sass/screen.scss */
 .ac-grid a {
   width: 220px;
   display: inline-block;
@@ -400,27 +428,27 @@ img {
   transition-delay: 0s;
 }
 
-/* line 385, ../sass/screen.scss */
+/* line 390, ../sass/screen.scss */
 .ac-grid a:first-child {
   -webkit-transform-origin: right center;
   -moz-transform-origin: right center;
   transform-origin: right center;
 }
 
-/* line 391, ../sass/screen.scss */
+/* line 396, ../sass/screen.scss */
 .ac-grid a:last-child {
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   transform-origin: left center;
 }
 
-/* line 397, ../sass/screen.scss */
+/* line 402, ../sass/screen.scss */
 .ac-grid a img {
   display: block;
   width: 100%;
 }
 
-/* line 402, ../sass/screen.scss */
+/* line 407, ../sass/screen.scss */
 .ac-grid a span {
   position: absolute;
   height: 100%;
@@ -442,7 +470,7 @@ img {
   transition: all 0.2s ease;
 }
 
-/* line 423, ../sass/screen.scss */
+/* line 428, ../sass/screen.scss */
 .ac-grid a:hover span {
   opacity: 1;
   -webkit-transform: translateY(0);
@@ -450,7 +478,7 @@ img {
   transform: translateY(0);
 }
 
-/* line 430, ../sass/screen.scss */
+/* line 435, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-device {
   -webkit-transform: translateZ(-350px);
   -moz-transform: translateZ(-350px);
@@ -458,18 +486,18 @@ img {
   opacity: .6;
 }
 
-/* line 437, ../sass/screen.scss */
+/* line 442, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid {
   pointer-events: auto;
 }
 
-/* line 441, ../sass/screen.scss */
+/* line 446, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* line 452, ../sass/screen.scss */
+/* line 457, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a:nth-child(2) {
   -webkit-transition-delay: 50ms;
   -moz-transition-delay: 50ms;
@@ -479,7 +507,7 @@ img {
   transform: translateZ(0px);
 }
 
-/* line 461, ../sass/screen.scss */
+/* line 466, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a:nth-child(3) {
   -webkit-transition-delay: 100ms;
   -moz-transition-delay: 100ms;
@@ -489,7 +517,7 @@ img {
   transform: translateZ(0px);
 }
 
-/* line 470, ../sass/screen.scss */
+/* line 475, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a:last-child {
   -webkit-transition-delay: 150ms;
   -moz-transition-delay: 150ms;
@@ -497,26 +525,26 @@ img {
 }
 
 @media screen and (max-width: 63.875em) {
-  /* line 480, ../sass/screen.scss */
+  /* line 485, ../sass/screen.scss */
   .ac-wrapper {
     font-size: 60%;
     width: 100%;
     padding: 0 20px;
   }
 
-  /* line 486, ../sass/screen.scss */
+  /* line 491, ../sass/screen.scss */
   .ac-device {
     margin: 0;
     width: 100%;
   }
 
-  /* line 491, ../sass/screen.scss */
+  /* line 496, ../sass/screen.scss */
   .ac-device h3 {
     width: 50%;
     left: 290px;
   }
 
-  /* line 496, ../sass/screen.scss */
+  /* line 501, ../sass/screen.scss */
   .ac-wrapper h2 {
     left: 308px;
     padding: 0;
@@ -525,7 +553,7 @@ img {
   }
 }
 @media screen and (max-width: 58em) {
-  /* line 505, ../sass/screen.scss */
+  /* line 510, ../sass/screen.scss */
   .ac-grid {
     width: 90%;
     left: 5%;
@@ -533,18 +561,18 @@ img {
     padding-top: 8em;
   }
 
-  /* line 512, ../sass/screen.scss */
+  /* line 517, ../sass/screen.scss */
   .ac-grid a {
     width: 22%;
   }
 }
 @media screen and (max-width: 35.6875em) {
-  /* line 519, ../sass/screen.scss */
+  /* line 524, ../sass/screen.scss */
   .ac-wrapper {
     padding: 0 20px 100px;
   }
 
-  /* line 523, ../sass/screen.scss */
+  /* line 528, ../sass/screen.scss */
   .ac-wrapper h2 {
     width: 100%;
     text-align: center;
@@ -554,13 +582,13 @@ img {
     position: relative;
   }
 
-  /* line 532, ../sass/screen.scss */
+  /* line 537, ../sass/screen.scss */
   .ac-device {
     margin: 0 auto;
     width: 288px;
   }
 
-  /* line 537, ../sass/screen.scss */
+  /* line 542, ../sass/screen.scss */
   .ac-device h3 {
     position: relative;
     margin: 0;
@@ -571,12 +599,12 @@ img {
     text-align: center;
   }
 
-  /* line 547, ../sass/screen.scss */
+  /* line 552, ../sass/screen.scss */
   .ac-grid a {
     width: 40%;
   }
 
-  /* line 551, ../sass/screen.scss */
+  /* line 556, ../sass/screen.scss */
   .ac-wrapper.ac-gridview .ac-grid a {
     -webkit-transform: translateZ(0px) !important;
     -moz-transform: translateZ(0px) !important;
@@ -584,7 +612,7 @@ img {
   }
 }
 /* general style for the form */
-/* line 560, ../sass/screen.scss */
+/* line 565, ../sass/screen.scss */
 .nl-form {
   margin-top: 5rem;
   width: 100%;
@@ -593,19 +621,19 @@ img {
   font-size: 4em;
   line-height: 1.5;
 }
-/* line 568, ../sass/screen.scss */
+/* line 573, ../sass/screen.scss */
 .nl-form ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 574, ../sass/screen.scss */
+/* line 579, ../sass/screen.scss */
 .nl-form input:focus {
   outline: none;
 }
 
 /* normalize the input elements, make them look like everything else */
-/* line 582, ../sass/screen.scss */
+/* line 587, ../sass/screen.scss */
 .nl-form input,
 .nl-form select,
 .nl-form button {
@@ -624,19 +652,19 @@ img {
 }
 
 /* custom field (drop-down, text element) styling  */
-/* line 598, ../sass/screen.scss */
+/* line 603, ../sass/screen.scss */
 .nl-field {
   display: inline-block;
   position: relative;
 }
 
-/* line 603, ../sass/screen.scss */
+/* line 608, ../sass/screen.scss */
 .nl-field.nl-field-open {
   z-index: 10000;
 }
 
 /* the toggle is the visible part in the form */
-/* line 610, ../sass/screen.scss */
+/* line 615, ../sass/screen.scss */
 .nl-field-toggle,
 .nl-form input,
 .nl-form select {
@@ -648,7 +676,7 @@ img {
 }
 
 /* drop-down list / text element */
-/* line 619, ../sass/screen.scss */
+/* line 624, ../sass/screen.scss */
 .nl-field ul {
   position: absolute;
   visibility: hidden;
@@ -665,7 +693,7 @@ img {
   transition: visibility 0s 0.3s, opacity 0.3s, transform 0.3s;
 }
 
-/* line 635, ../sass/screen.scss */
+/* line 640, ../sass/screen.scss */
 .nl-field.nl-field-open ul {
   visibility: visible;
   opacity: 1;
@@ -677,36 +705,36 @@ img {
   transition: visibility 0s 0s, opacity 0.3s, transform 0.3s;
 }
 
-/* line 646, ../sass/screen.scss */
+/* line 651, ../sass/screen.scss */
 .nl-field ul li {
   color: #fff;
   position: relative;
 }
 
-/* line 651, ../sass/screen.scss */
+/* line 656, ../sass/screen.scss */
 .nl-dd ul li {
   padding: 0 1.5em 0 0.5em;
   cursor: pointer;
   white-space: nowrap;
 }
 
-/* line 657, ../sass/screen.scss */
+/* line 662, ../sass/screen.scss */
 .nl-dd ul li.nl-dd-checked {
   color: #478982;
 }
 
-/* line 661, ../sass/screen.scss */
+/* line 666, ../sass/screen.scss */
 .no-touch .nl-dd ul li:hover {
   background: rgba(0, 0, 0, 0.05);
 }
 
-/* line 665, ../sass/screen.scss */
+/* line 670, ../sass/screen.scss */
 .no-touch .nl-dd ul li:hover:active {
   color: #478982;
 }
 
 /* icons for some elements */
-/* line 672, ../sass/screen.scss */
+/* line 677, ../sass/screen.scss */
 .nl-dd ul li.nl-dd-checked:before,
 .nl-submit:before,
 .nl-field-go:before {
@@ -719,7 +747,7 @@ img {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 682, ../sass/screen.scss */
+/* line 687, ../sass/screen.scss */
 .nl-dd ul li.nl-dd-checked:before {
   content: "\e000";
   position: absolute;
@@ -728,12 +756,12 @@ img {
   line-height: 3;
 }
 
-/* line 690, ../sass/screen.scss */
+/* line 695, ../sass/screen.scss */
 .nl-ti-text ul {
   min-width: 8em;
 }
 
-/* line 694, ../sass/screen.scss */
+/* line 699, ../sass/screen.scss */
 .nl-ti-text ul li.nl-ti-input input {
   width: 100%;
   padding: 0.2em 2em 0.2em 0.5em;
@@ -741,7 +769,7 @@ img {
   color: #fff;
 }
 
-/* line 701, ../sass/screen.scss */
+/* line 706, ../sass/screen.scss */
 .nl-form .nl-field-go {
   position: absolute;
   right: 0;
@@ -754,7 +782,7 @@ img {
   color: transparent;
 }
 
-/* line 713, ../sass/screen.scss */
+/* line 718, ../sass/screen.scss */
 .nl-field-go:before {
   content: "\e001";
   font-size: 75%;
@@ -765,41 +793,41 @@ img {
 }
 
 /* custom placeholder color */
-/* line 723, ../sass/screen.scss */
+/* line 728, ../sass/screen.scss */
 input::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 728, ../sass/screen.scss */
+/* line 733, ../sass/screen.scss */
 input:active::-webkit-input-placeholder,
 input:focus::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.2);
 }
 
-/* line 732, ../sass/screen.scss */
+/* line 737, ../sass/screen.scss */
 input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 737, ../sass/screen.scss */
+/* line 742, ../sass/screen.scss */
 input:active::-moz-placeholder,
 input:focus::-moz-placeholder {
   color: rgba(255, 255, 255, 0.2);
 }
 
-/* line 741, ../sass/screen.scss */
+/* line 746, ../sass/screen.scss */
 input:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 746, ../sass/screen.scss */
+/* line 751, ../sass/screen.scss */
 input:active::-ms-input-placeholder,
 input:focus::-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.2);
 }
 
 /* example field below text input */
-/* line 751, ../sass/screen.scss */
+/* line 756, ../sass/screen.scss */
 .nl-ti-text ul li.nl-ti-example {
   font-size: 40%;
   font-style: italic;
@@ -809,18 +837,18 @@ input:focus::-ms-input-placeholder {
   border-top: 1px dashed rgba(255, 255, 255, 0.7);
 }
 
-/* line 760, ../sass/screen.scss */
+/* line 765, ../sass/screen.scss */
 .nl-ti-text ul li.nl-ti-example em {
   color: white;
 }
 
 /* submit button */
-/* line 765, ../sass/screen.scss */
+/* line 770, ../sass/screen.scss */
 .nl-submit-wrap {
   margin-top: 0.4em;
 }
 
-/* line 769, ../sass/screen.scss */
+/* line 774, ../sass/screen.scss */
 .nl-form .nl-submit {
   line-height: 3;
   text-transform: uppercase;
@@ -834,7 +862,7 @@ input:focus::-ms-input-placeholder {
   letter-spacing: 3px;
 }
 
-/* line 782, ../sass/screen.scss */
+/* line 787, ../sass/screen.scss */
 .nl-submit:before {
   content: "\e001";
   color: #fff;
@@ -844,19 +872,19 @@ input:focus::-ms-input-placeholder {
   background: #69B1A9;
 }
 
-/* line 792, ../sass/screen.scss */
+/* line 797, ../sass/screen.scss */
 .no-touch .nl-form .nl-submit:hover,
 .no-touch .nl-form .nl-submit:active {
   background: #69B1A9;
 }
 
-/* line 796, ../sass/screen.scss */
+/* line 801, ../sass/screen.scss */
 .no-touch .nl-form .nl-submit:hover:before {
   background: #58a199;
 }
 
 /* overlay becomes visible when a field is opened */
-/* line 801, ../sass/screen.scss */
+/* line 806, ../sass/screen.scss */
 .nl-overlay {
   position: fixed;
   top: 0;
@@ -872,7 +900,7 @@ input:focus::-ms-input-placeholder {
   transition: visibility 0s 0.3s, opacity 0.3s;
 }
 
-/* line 816, ../sass/screen.scss */
+/* line 821, ../sass/screen.scss */
 .nl-field.nl-field-open ~ .nl-overlay {
   opacity: 1;
   visibility: visible;
@@ -882,13 +910,13 @@ input:focus::-ms-input-placeholder {
 }
 
 @media screen and (max-width: 45em) {
-  /* line 825, ../sass/screen.scss */
+  /* line 830, ../sass/screen.scss */
   .nl-form {
     font-size: 3em;
   }
 }
 @media screen and (max-width: 25em) {
-  /* line 831, ../sass/screen.scss */
+  /* line 836, ../sass/screen.scss */
   .nl-form {
     font-size: 2em;
   }
