@@ -25,7 +25,7 @@
       <!-- Diagonal -->
       <div class="diagonal"></div>
       <!-- Image in the background (NOT background image) -->
-      <img src="fox.jpg" alt="">
+      <img class="imageclass" src="fox.jpg" alt="">
     </div>
 
     <!-- What We Do -->
@@ -133,6 +133,28 @@
     <script>
       var nlform = new NLForm( document.getElementById( 'nl-form' ) );
     </script>
+
+    <!-- Jquery to change image for mobile -->
+    <script>
+
+    $(document).ready(function() {
+
+     function imageresize() {
+       if ($(window).width() <= '980') {
+         $('.imageclass').attr('src','fox_mobile.jpg');
+         console.log("i'm mobile");
+       } else {
+         $('.imageclass').attr('src','fox.jpg');
+       }
+      }
+
+      imageresize();//Activates when document first loads    
+
+       
+
+    });
+    </script>
+
     
   </body>
 </html>

@@ -51,6 +51,8 @@ $headerFont: 'Fjalla One', sans-serif;
 $subHeaderFont: 'Cabin', sans-serif;
 
 // Turn iphone media queries into simply @media #{iphone}{content_here}
+
+
 $iphone: "only screen 
         and (min-device-width : 320px) 
         and (max-device-width : 568px) 
@@ -61,7 +63,13 @@ $iphone: "only screen
   width: 100%;
   height: 50rem;
   overflow: hidden;
-
+  @media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+and (orientation : portrait) {
+    height: 65rem;
+    color: lime;
+  }
 }
 
 // Menu
@@ -129,11 +137,17 @@ img {
 
 .altoLabs{
   @include headerText(6rem, 12rem, 28%);
+  @media #{$iphone}{
+    @include headerText(10rem, 10rem, 10%);
+  }
 }
 
 
 .imgText { 
-  @include headerText(4rem, 20rem, 52%) 
+  @include headerText(4rem, 20rem, 52%);
+  @media #{$iphone} {
+    @include headerText(4.5rem, 18rem, 53%);
+  } 
 }
 
 .diagonal {
@@ -143,6 +157,27 @@ img {
     -webkit-transform: rotate(140deg); 
     margin-top: 21rem;
     margin-left: 37%;
+
+    @media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+and (orientation : portrait) {
+      width: 25rem;
+      border-bottom: 0.5rem solid $altoPink;
+      -webkit-transform: rotate(125deg);
+      transform: rotate(125deg); 
+      margin-top: 21rem;
+      margin-left: 37%;
+
+    }
+}
+
+.imageclass {
+  @media #{$iphone}{
+    width: 100%;
+    height: auto;
+    margin-top: -12rem;
+  }
 }
 
 // What we do section
@@ -162,8 +197,8 @@ img {
   @extend #page-wrap;
   @include stdLeftMargin;
   @media #{$iphone} {
-      margin: 5rem 5% 5rem 5%;
-      width: 90%
+      margin: 5rem 0 5rem 0;
+      width: 100%
   }
 }
 
@@ -171,8 +206,8 @@ img {
   @extend #page-wrap;
   margin-left: 30%; 
   @media #{$iphone} {
-      margin: 5rem 5% 5rem 5%;
-      width: 90%;
+      margin: 5rem 0 5rem 0;
+      width: 100%;
   }
 }
 
@@ -180,6 +215,10 @@ img {
 .whatWeDoText{
   font-family: $headerFont;
   font-size: 4rem;
+  @media #{$iphone} {
+    margin-left: 5%;
+    font-size: 6.5rem;
+  }
 }
 
 $imageWidth: 20%;
@@ -205,6 +244,14 @@ $imageWidth: 20%;
 
 #l { 
   @include floats(left, right);
+  // @media #{$iphone} {
+  //   &:before { 
+  //   float: none;
+  //   // content: ""; 
+  //   width: none; 
+  //   height: 12rem;  
+  //   } 
+  // }
 }
 
 #r { 

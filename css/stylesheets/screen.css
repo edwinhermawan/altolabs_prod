@@ -51,14 +51,21 @@ Developer @AltoLabs Los Angeles
 /******************************************
 /* BASE STYLES                   
 /*******************************************/
-/* line 60, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 #topFold {
   width: 100%;
   height: 50rem;
   overflow: hidden;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 62, ../sass/screen.scss */
+  #topFold {
+    height: 65rem;
+    color: lime;
+  }
+}
 
-/* line 68, ../sass/screen.scss */
+/* line 76, ../sass/screen.scss */
 #menu-toggle {
   cursor: pointer;
   width: 30px;
@@ -68,7 +75,7 @@ Developer @AltoLabs Los Angeles
   margin-top: 2rem;
 }
 
-/* line 77, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #menu-toggle i:before {
   content: '';
   width: 100%;
@@ -77,7 +84,7 @@ Developer @AltoLabs Los Angeles
   position: absolute;
 }
 
-/* line 88, ../sass/screen.scss */
+/* line 96, ../sass/screen.scss */
 #menu-toggle i:after {
   content: '';
   width: 100%;
@@ -88,7 +95,7 @@ Developer @AltoLabs Los Angeles
   box-shadow: 0 9px 0 0 #ec008c;
 }
 
-/* line 97, ../sass/screen.scss */
+/* line 105, ../sass/screen.scss */
 #menu-toggle.active i:before {
   -webkit-transform: rotate(45deg) translate(6px, 6px);
   -moz-transform: rotate3d(1, 2, 3, 45deg);
@@ -97,7 +104,7 @@ Developer @AltoLabs Los Angeles
   transform: rotate3d(1, 2, 3, 45deg);
 }
 
-/* line 104, ../sass/screen.scss */
+/* line 112, ../sass/screen.scss */
 #menu-toggle.active i:after {
   box-shadow: 0 0;
   -webkit-transform: rotate(-45deg);
@@ -107,14 +114,14 @@ Developer @AltoLabs Los Angeles
   transform: rotate(-45deg);
 }
 
-/* line 113, ../sass/screen.scss */
+/* line 121, ../sass/screen.scss */
 img {
   width: 100%;
   height: auto;
   margin-top: -8rem;
 }
 
-/* line 130, ../sass/screen.scss */
+/* line 138, ../sass/screen.scss */
 .altoLabs {
   position: absolute;
   font-family: "Fjalla One", sans-serif;
@@ -123,8 +130,19 @@ img {
   margin-top: 12rem;
   margin-left: 28%;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 138, ../sass/screen.scss */
+  .altoLabs {
+    position: absolute;
+    font-family: "Fjalla One", sans-serif;
+    color: white;
+    font-size: 10rem;
+    margin-top: 10rem;
+    margin-left: 10%;
+  }
+}
 
-/* line 135, ../sass/screen.scss */
+/* line 146, ../sass/screen.scss */
 .imgText {
   position: absolute;
   font-family: "Fjalla One", sans-serif;
@@ -133,8 +151,19 @@ img {
   margin-top: 20rem;
   margin-left: 52%;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 146, ../sass/screen.scss */
+  .imgText {
+    position: absolute;
+    font-family: "Fjalla One", sans-serif;
+    color: white;
+    font-size: 4.5rem;
+    margin-top: 18rem;
+    margin-left: 53%;
+  }
+}
 
-/* line 139, ../sass/screen.scss */
+/* line 153, ../sass/screen.scss */
 .diagonal {
   position: absolute;
   width: 33rem;
@@ -143,8 +172,28 @@ img {
   margin-top: 21rem;
   margin-left: 37%;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 153, ../sass/screen.scss */
+  .diagonal {
+    width: 25rem;
+    border-bottom: 0.5rem solid #ec008c;
+    -webkit-transform: rotate(125deg);
+    transform: rotate(125deg);
+    margin-top: 21rem;
+    margin-left: 37%;
+  }
+}
 
-/* line 150, ../sass/screen.scss */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 175, ../sass/screen.scss */
+  .imageclass {
+    width: 100%;
+    height: auto;
+    margin-top: -12rem;
+  }
+}
+
+/* line 185, ../sass/screen.scss */
 #page-wrap, #page-wrap-1, #page-wrap-2 {
   width: 50%;
   margin-top: 5rem;
@@ -152,37 +201,44 @@ img {
   display: inline-block;
 }
 
-/* line 161, ../sass/screen.scss */
+/* line 196, ../sass/screen.scss */
 #page-wrap-1 {
   margin-left: 20%;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 161, ../sass/screen.scss */
+  /* line 196, ../sass/screen.scss */
   #page-wrap-1 {
-    margin: 5rem 5% 5rem 5%;
-    width: 90%;
+    margin: 5rem 0 5rem 0;
+    width: 100%;
   }
 }
 
-/* line 170, ../sass/screen.scss */
+/* line 205, ../sass/screen.scss */
 #page-wrap-2 {
   margin-left: 30%;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 170, ../sass/screen.scss */
+  /* line 205, ../sass/screen.scss */
   #page-wrap-2 {
-    margin: 5rem 5% 5rem 5%;
-    width: 90%;
+    margin: 5rem 0 5rem 0;
+    width: 100%;
   }
 }
 
-/* line 180, ../sass/screen.scss */
+/* line 215, ../sass/screen.scss */
 .whatWeDoText {
   font-family: "Fjalla One", sans-serif;
   font-size: 4rem;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 215, ../sass/screen.scss */
+  .whatWeDoText {
+    margin-left: 5%;
+    font-size: 6.5rem;
+  }
+}
 
-/* line 187, ../sass/screen.scss */
+/* line 226, ../sass/screen.scss */
 #logo {
   position: absolute;
   margin-top: 0;
@@ -191,11 +247,11 @@ img {
   width: 20%;
 }
 
-/* line 206, ../sass/screen.scss */
+/* line 245, ../sass/screen.scss */
 #l {
   float: left;
 }
-/* line 198, ../sass/screen.scss */
+/* line 237, ../sass/screen.scss */
 #l:before {
   float: right;
   content: "";
@@ -203,11 +259,11 @@ img {
   height: 12rem;
 }
 
-/* line 210, ../sass/screen.scss */
+/* line 257, ../sass/screen.scss */
 #r {
   float: right;
 }
-/* line 198, ../sass/screen.scss */
+/* line 237, ../sass/screen.scss */
 #r:before {
   float: left;
   content: "";
@@ -215,18 +271,18 @@ img {
   height: 12rem;
 }
 
-/* line 214, ../sass/screen.scss */
+/* line 261, ../sass/screen.scss */
 #l, #r {
   width: 49%;
 }
-/* line 217, ../sass/screen.scss */
+/* line 264, ../sass/screen.scss */
 #l p, #r p {
   font-family: "Cabin", sans-serif;
   font-size: 1.75rem;
   line-height: 3rem;
 }
 
-/* line 224, ../sass/screen.scss */
+/* line 271, ../sass/screen.scss */
 .separationLines {
   margin-top: 5rem;
   font-family: "Fjalla One", sans-serif;
@@ -236,7 +292,7 @@ img {
   background-size: 100% .4em;
 }
 
-/* line 236, ../sass/screen.scss */
+/* line 283, ../sass/screen.scss */
 .ac-wrapper {
   margin-top: 5rem;
   width: 100%;
@@ -249,7 +305,7 @@ img {
   perspective-origin: 50% 25%;
 }
 
-/* line 248, ../sass/screen.scss */
+/* line 295, ../sass/screen.scss */
 .ac-wrapper h2 {
   top: 20%;
   width: 50%;
@@ -262,7 +318,7 @@ img {
   font-family: "Fjalla One", sans-serif;
 }
 
-/* line 260, ../sass/screen.scss */
+/* line 307, ../sass/screen.scss */
 .ac-wrapper h2 span {
   display: block;
   font-size: 60%;
@@ -270,7 +326,7 @@ img {
   font-family: "Fjalla One", sans-serif;
 }
 
-/* line 267, ../sass/screen.scss */
+/* line 314, ../sass/screen.scss */
 .ac-device {
   background: url(../../images/iPhone.png) no-repeat;
   width: 288px;
@@ -285,7 +341,7 @@ img {
   transform-style: preserve-3d;
 }
 
-/* line 281, ../sass/screen.scss */
+/* line 328, ../sass/screen.scss */
 .ac-device a {
   height: 440px;
   width: 249px;
@@ -293,13 +349,13 @@ img {
   margin: 85px 0 0 20px;
 }
 
-/* line 288, ../sass/screen.scss */
+/* line 335, ../sass/screen.scss */
 .ac-device a img {
   display: block;
   margin-top: 0;
 }
 
-/* line 293, ../sass/screen.scss */
+/* line 340, ../sass/screen.scss */
 .ac-device h3 {
   position: absolute;
   font-size: 1.75rem;
@@ -312,7 +368,7 @@ img {
   font-family: "Cabin", sans-serif;
 }
 
-/* line 305, ../sass/screen.scss */
+/* line 352, ../sass/screen.scss */
 .ac-grid {
   position: absolute;
   width: 100%;
@@ -324,7 +380,7 @@ img {
   pointer-events: none;
 }
 
-/* line 319, ../sass/screen.scss */
+/* line 366, ../sass/screen.scss */
 .ac-grid a {
   width: 220px;
   display: inline-block;
@@ -344,27 +400,27 @@ img {
   transition-delay: 0s;
 }
 
-/* line 338, ../sass/screen.scss */
+/* line 385, ../sass/screen.scss */
 .ac-grid a:first-child {
   -webkit-transform-origin: right center;
   -moz-transform-origin: right center;
   transform-origin: right center;
 }
 
-/* line 344, ../sass/screen.scss */
+/* line 391, ../sass/screen.scss */
 .ac-grid a:last-child {
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   transform-origin: left center;
 }
 
-/* line 350, ../sass/screen.scss */
+/* line 397, ../sass/screen.scss */
 .ac-grid a img {
   display: block;
   width: 100%;
 }
 
-/* line 355, ../sass/screen.scss */
+/* line 402, ../sass/screen.scss */
 .ac-grid a span {
   position: absolute;
   height: 100%;
@@ -386,7 +442,7 @@ img {
   transition: all 0.2s ease;
 }
 
-/* line 376, ../sass/screen.scss */
+/* line 423, ../sass/screen.scss */
 .ac-grid a:hover span {
   opacity: 1;
   -webkit-transform: translateY(0);
@@ -394,7 +450,7 @@ img {
   transform: translateY(0);
 }
 
-/* line 383, ../sass/screen.scss */
+/* line 430, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-device {
   -webkit-transform: translateZ(-350px);
   -moz-transform: translateZ(-350px);
@@ -402,18 +458,18 @@ img {
   opacity: .6;
 }
 
-/* line 390, ../sass/screen.scss */
+/* line 437, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid {
   pointer-events: auto;
 }
 
-/* line 394, ../sass/screen.scss */
+/* line 441, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* line 405, ../sass/screen.scss */
+/* line 452, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a:nth-child(2) {
   -webkit-transition-delay: 50ms;
   -moz-transition-delay: 50ms;
@@ -423,7 +479,7 @@ img {
   transform: translateZ(0px);
 }
 
-/* line 414, ../sass/screen.scss */
+/* line 461, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a:nth-child(3) {
   -webkit-transition-delay: 100ms;
   -moz-transition-delay: 100ms;
@@ -433,7 +489,7 @@ img {
   transform: translateZ(0px);
 }
 
-/* line 423, ../sass/screen.scss */
+/* line 470, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a:last-child {
   -webkit-transition-delay: 150ms;
   -moz-transition-delay: 150ms;
@@ -441,26 +497,26 @@ img {
 }
 
 @media screen and (max-width: 63.875em) {
-  /* line 433, ../sass/screen.scss */
+  /* line 480, ../sass/screen.scss */
   .ac-wrapper {
     font-size: 60%;
     width: 100%;
     padding: 0 20px;
   }
 
-  /* line 439, ../sass/screen.scss */
+  /* line 486, ../sass/screen.scss */
   .ac-device {
     margin: 0;
     width: 100%;
   }
 
-  /* line 444, ../sass/screen.scss */
+  /* line 491, ../sass/screen.scss */
   .ac-device h3 {
     width: 50%;
     left: 290px;
   }
 
-  /* line 449, ../sass/screen.scss */
+  /* line 496, ../sass/screen.scss */
   .ac-wrapper h2 {
     left: 308px;
     padding: 0;
@@ -469,7 +525,7 @@ img {
   }
 }
 @media screen and (max-width: 58em) {
-  /* line 458, ../sass/screen.scss */
+  /* line 505, ../sass/screen.scss */
   .ac-grid {
     width: 90%;
     left: 5%;
@@ -477,18 +533,18 @@ img {
     padding-top: 8em;
   }
 
-  /* line 465, ../sass/screen.scss */
+  /* line 512, ../sass/screen.scss */
   .ac-grid a {
     width: 22%;
   }
 }
 @media screen and (max-width: 35.6875em) {
-  /* line 472, ../sass/screen.scss */
+  /* line 519, ../sass/screen.scss */
   .ac-wrapper {
     padding: 0 20px 100px;
   }
 
-  /* line 476, ../sass/screen.scss */
+  /* line 523, ../sass/screen.scss */
   .ac-wrapper h2 {
     width: 100%;
     text-align: center;
@@ -498,13 +554,13 @@ img {
     position: relative;
   }
 
-  /* line 485, ../sass/screen.scss */
+  /* line 532, ../sass/screen.scss */
   .ac-device {
     margin: 0 auto;
     width: 288px;
   }
 
-  /* line 490, ../sass/screen.scss */
+  /* line 537, ../sass/screen.scss */
   .ac-device h3 {
     position: relative;
     margin: 0;
@@ -515,12 +571,12 @@ img {
     text-align: center;
   }
 
-  /* line 500, ../sass/screen.scss */
+  /* line 547, ../sass/screen.scss */
   .ac-grid a {
     width: 40%;
   }
 
-  /* line 504, ../sass/screen.scss */
+  /* line 551, ../sass/screen.scss */
   .ac-wrapper.ac-gridview .ac-grid a {
     -webkit-transform: translateZ(0px) !important;
     -moz-transform: translateZ(0px) !important;
@@ -528,7 +584,7 @@ img {
   }
 }
 /* general style for the form */
-/* line 513, ../sass/screen.scss */
+/* line 560, ../sass/screen.scss */
 .nl-form {
   margin-top: 5rem;
   width: 100%;
@@ -537,19 +593,19 @@ img {
   font-size: 4em;
   line-height: 1.5;
 }
-/* line 521, ../sass/screen.scss */
+/* line 568, ../sass/screen.scss */
 .nl-form ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 527, ../sass/screen.scss */
+/* line 574, ../sass/screen.scss */
 .nl-form input:focus {
   outline: none;
 }
 
 /* normalize the input elements, make them look like everything else */
-/* line 535, ../sass/screen.scss */
+/* line 582, ../sass/screen.scss */
 .nl-form input,
 .nl-form select,
 .nl-form button {
@@ -568,19 +624,19 @@ img {
 }
 
 /* custom field (drop-down, text element) styling  */
-/* line 551, ../sass/screen.scss */
+/* line 598, ../sass/screen.scss */
 .nl-field {
   display: inline-block;
   position: relative;
 }
 
-/* line 556, ../sass/screen.scss */
+/* line 603, ../sass/screen.scss */
 .nl-field.nl-field-open {
   z-index: 10000;
 }
 
 /* the toggle is the visible part in the form */
-/* line 563, ../sass/screen.scss */
+/* line 610, ../sass/screen.scss */
 .nl-field-toggle,
 .nl-form input,
 .nl-form select {
@@ -592,7 +648,7 @@ img {
 }
 
 /* drop-down list / text element */
-/* line 572, ../sass/screen.scss */
+/* line 619, ../sass/screen.scss */
 .nl-field ul {
   position: absolute;
   visibility: hidden;
@@ -609,7 +665,7 @@ img {
   transition: visibility 0s 0.3s, opacity 0.3s, transform 0.3s;
 }
 
-/* line 588, ../sass/screen.scss */
+/* line 635, ../sass/screen.scss */
 .nl-field.nl-field-open ul {
   visibility: visible;
   opacity: 1;
@@ -621,36 +677,36 @@ img {
   transition: visibility 0s 0s, opacity 0.3s, transform 0.3s;
 }
 
-/* line 599, ../sass/screen.scss */
+/* line 646, ../sass/screen.scss */
 .nl-field ul li {
   color: #fff;
   position: relative;
 }
 
-/* line 604, ../sass/screen.scss */
+/* line 651, ../sass/screen.scss */
 .nl-dd ul li {
   padding: 0 1.5em 0 0.5em;
   cursor: pointer;
   white-space: nowrap;
 }
 
-/* line 610, ../sass/screen.scss */
+/* line 657, ../sass/screen.scss */
 .nl-dd ul li.nl-dd-checked {
   color: #478982;
 }
 
-/* line 614, ../sass/screen.scss */
+/* line 661, ../sass/screen.scss */
 .no-touch .nl-dd ul li:hover {
   background: rgba(0, 0, 0, 0.05);
 }
 
-/* line 618, ../sass/screen.scss */
+/* line 665, ../sass/screen.scss */
 .no-touch .nl-dd ul li:hover:active {
   color: #478982;
 }
 
 /* icons for some elements */
-/* line 625, ../sass/screen.scss */
+/* line 672, ../sass/screen.scss */
 .nl-dd ul li.nl-dd-checked:before,
 .nl-submit:before,
 .nl-field-go:before {
@@ -663,7 +719,7 @@ img {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 635, ../sass/screen.scss */
+/* line 682, ../sass/screen.scss */
 .nl-dd ul li.nl-dd-checked:before {
   content: "\e000";
   position: absolute;
@@ -672,12 +728,12 @@ img {
   line-height: 3;
 }
 
-/* line 643, ../sass/screen.scss */
+/* line 690, ../sass/screen.scss */
 .nl-ti-text ul {
   min-width: 8em;
 }
 
-/* line 647, ../sass/screen.scss */
+/* line 694, ../sass/screen.scss */
 .nl-ti-text ul li.nl-ti-input input {
   width: 100%;
   padding: 0.2em 2em 0.2em 0.5em;
@@ -685,7 +741,7 @@ img {
   color: #fff;
 }
 
-/* line 654, ../sass/screen.scss */
+/* line 701, ../sass/screen.scss */
 .nl-form .nl-field-go {
   position: absolute;
   right: 0;
@@ -698,7 +754,7 @@ img {
   color: transparent;
 }
 
-/* line 666, ../sass/screen.scss */
+/* line 713, ../sass/screen.scss */
 .nl-field-go:before {
   content: "\e001";
   font-size: 75%;
@@ -709,41 +765,41 @@ img {
 }
 
 /* custom placeholder color */
-/* line 676, ../sass/screen.scss */
+/* line 723, ../sass/screen.scss */
 input::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 681, ../sass/screen.scss */
+/* line 728, ../sass/screen.scss */
 input:active::-webkit-input-placeholder,
 input:focus::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.2);
 }
 
-/* line 685, ../sass/screen.scss */
+/* line 732, ../sass/screen.scss */
 input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 690, ../sass/screen.scss */
+/* line 737, ../sass/screen.scss */
 input:active::-moz-placeholder,
 input:focus::-moz-placeholder {
   color: rgba(255, 255, 255, 0.2);
 }
 
-/* line 694, ../sass/screen.scss */
+/* line 741, ../sass/screen.scss */
 input:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 699, ../sass/screen.scss */
+/* line 746, ../sass/screen.scss */
 input:active::-ms-input-placeholder,
 input:focus::-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.2);
 }
 
 /* example field below text input */
-/* line 704, ../sass/screen.scss */
+/* line 751, ../sass/screen.scss */
 .nl-ti-text ul li.nl-ti-example {
   font-size: 40%;
   font-style: italic;
@@ -753,18 +809,18 @@ input:focus::-ms-input-placeholder {
   border-top: 1px dashed rgba(255, 255, 255, 0.7);
 }
 
-/* line 713, ../sass/screen.scss */
+/* line 760, ../sass/screen.scss */
 .nl-ti-text ul li.nl-ti-example em {
   color: white;
 }
 
 /* submit button */
-/* line 718, ../sass/screen.scss */
+/* line 765, ../sass/screen.scss */
 .nl-submit-wrap {
   margin-top: 0.4em;
 }
 
-/* line 722, ../sass/screen.scss */
+/* line 769, ../sass/screen.scss */
 .nl-form .nl-submit {
   line-height: 3;
   text-transform: uppercase;
@@ -778,7 +834,7 @@ input:focus::-ms-input-placeholder {
   letter-spacing: 3px;
 }
 
-/* line 735, ../sass/screen.scss */
+/* line 782, ../sass/screen.scss */
 .nl-submit:before {
   content: "\e001";
   color: #fff;
@@ -788,19 +844,19 @@ input:focus::-ms-input-placeholder {
   background: #69B1A9;
 }
 
-/* line 745, ../sass/screen.scss */
+/* line 792, ../sass/screen.scss */
 .no-touch .nl-form .nl-submit:hover,
 .no-touch .nl-form .nl-submit:active {
   background: #69B1A9;
 }
 
-/* line 749, ../sass/screen.scss */
+/* line 796, ../sass/screen.scss */
 .no-touch .nl-form .nl-submit:hover:before {
   background: #58a199;
 }
 
 /* overlay becomes visible when a field is opened */
-/* line 754, ../sass/screen.scss */
+/* line 801, ../sass/screen.scss */
 .nl-overlay {
   position: fixed;
   top: 0;
@@ -816,7 +872,7 @@ input:focus::-ms-input-placeholder {
   transition: visibility 0s 0.3s, opacity 0.3s;
 }
 
-/* line 769, ../sass/screen.scss */
+/* line 816, ../sass/screen.scss */
 .nl-field.nl-field-open ~ .nl-overlay {
   opacity: 1;
   visibility: visible;
@@ -826,13 +882,13 @@ input:focus::-ms-input-placeholder {
 }
 
 @media screen and (max-width: 45em) {
-  /* line 778, ../sass/screen.scss */
+  /* line 825, ../sass/screen.scss */
   .nl-form {
     font-size: 3em;
   }
 }
 @media screen and (max-width: 25em) {
-  /* line 784, ../sass/screen.scss */
+  /* line 831, ../sass/screen.scss */
   .nl-form {
     font-size: 2em;
   }
