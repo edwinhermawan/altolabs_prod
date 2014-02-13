@@ -78,7 +78,7 @@ $iphone: "only screen
         and (orientation : portrait)";
 
 $borderMargin: 2rem;
-$borderThickness: .5rem;
+$borderThickness: 1rem;
 
 #topFold{
   position:relative;
@@ -287,7 +287,7 @@ $menuBarColor: black;
 .lowerRight{
   position:absolute;
   top: 85%;
-  left: 89%;
+  left: 92%;
   .logo{
     font-family: $headerFont;
   }
@@ -296,6 +296,7 @@ $menuBarColor: black;
       width: 14rem; 
       border-bottom: .2rem solid $altoPink; 
       -webkit-transform: rotate(135deg); 
+      left: -89%;
   }
 }
 
