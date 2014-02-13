@@ -6,19 +6,37 @@
     <title>Alto Labs</title>
 
     <!-- Install Google Fonts: Cabin 400, 700, Fjalla 400 -->
-    <link href='http://fonts.googleapis.com/css?family=Cabin:400,700|Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cabin:400,700|Fjalla+One|Oswald:700|Droid+Serif:400,700italic|Cantarell:400,400italic,700italic,700|Roboto|Domine' rel='stylesheet' type='text/css'>
     
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/stylesheets/screen.css">
     
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <!-- For Menu Overlay -->
+    <script src="js/modernizr.custom.js"></script>
   </head>
 
   <body>
     <div id="topFold">
-      <!-- Menu -->
-      <div id='menu-toggle'></div>
+
+      <!-- Menu Icon-->
+      <div id='menu-toggle' class='trigger-overlay'></div>
+
+      <!-- Menu Overlay -->
+      <div class="overlay overlay-hugeinc">
+        <button type="button" class="overlay-close">Close</button>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Clients</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
       <!-- Above the Fold Text -->
       <p class="altoLabs">ALTO LABS</p>
       <p class="imgText">YEAH, WE CAN DO THAT.</p>
@@ -94,23 +112,26 @@
     </div>
 
     <!-- Contact Us -->
-    
-    <form id="nl-form" class="nl-form" method="post" name="contact_form" action="contact-form-handler.php">
-    Hi, my name is <input type="text" name="name" value="" placeholder="your name" data-subline="For example: <em>Hunter Hearst Helmsley</em> or <em>Cindy Crawford</em>"/> ( <input type="text" name="email" value="" placeholder="email address" data-subline="For example: <em>yo@mtvraps.com</em>"/> ).<br />Just wanted to
-      <select name="subject">
-          <option value="1" selected>talk about</option>
-          <option value="2">Branding</option>
-          <option value="3">Design</option>
-          <option value="4">App/Web Development</option>
-          <option value="2">Say Hello</option>
-      </select>.<br /> I was thinking
-      <textarea name="message" placeholder="Details here..."></textarea>
+    <div class="contactUsWrapper">
+      <form id="nl-form" class="nl-form" method="post" name="contact_form" action="contact-form-handler.php">
+      Hi, my name is <input type="text" name="name" value="" placeholder="your name" data-subline="For example: <em>Hunter Hearst Helmsley</em> or <em>Cindy Crawford</em>"/> ( <input type="text" name="email" value="" placeholder="email address" data-subline="For example: <em>yo@mtvraps.com</em>"/> ).<br />Just wanted to
+        <select name="subject">
+            <option value="1" selected>talk about</option>
+            <option value="2">Branding</option>
+            <option value="3">Design</option>
+            <option value="4">App/Web Development</option>
+            <option value="2">Say Hello</option>
+        </select>.<br /> I was thinking
+        <textarea name="message" placeholder="Details here..."></textarea>
 
-      <div class="nl-submit-wrap">
-          <button class="nl-submit" type="submit">Find a restaurant</button>
-      </div>
-      <div class="nl-overlay"></div>
-    </form>
+        <div class="nl-submit-wrap">
+            <button class="nl-submit" type="submit">Find a restaurant</button>
+        </div>
+        <div class="nl-overlay"></div>
+      </form>
+    </div>
+    <!-- Mobile Contact Us  -->
+    <div class="mobileContactUs"><a href="mailto:hi@altolabs.co">hi@altolabs.co</a></div>
 
     <!-- Turns the three-bar-menu into an 'x' -->
     <script>
@@ -119,6 +140,10 @@
       $(this).toggleClass('active');
     });
     </script>
+
+    <!-- Menu Overlay -->
+    <script src="js/classie.js"></script>
+    <script src="js/demo1.js"></script>
     
     <!-- JS for Our Work Section -->
     <script src="js/appshowcase.js"></script>
@@ -143,6 +168,9 @@
        if ($(window).width() <= '980') {
          $('.imageclass').attr('src','fox_mobile.jpg');
          console.log("i'm mobile");
+         // Change contact us to an a href emailto tag
+         $('#nl-form').hide();
+         $('.mobileContactUs').show();
        } else {
          $('.imageclass').attr('src','fox.jpg');
        }
