@@ -77,27 +77,20 @@ $iphone: "only screen
         and (max-device-width : 568px) 
         and (orientation : portrait)";
 
-$topBorderMargin: 1rem;
-$topBorderThickness: .5rem;
+$borderMargin: 2rem;
+$borderThickness: .5rem;
 
 #topFold{
-  width: 100%;
-  height: 62rem;
+  position:relative;
+  width: calc(100% - 2 * $borderMargin);
+  height: 52rem;
+  border: $borderThickness solid black;
+  margin: $borderMargin;
   @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 568px) 
 and (orientation : portrait) {
     height: 65rem;
-  }
-  &:before{
-      content: " ";
-      position: absolute;
-      z-index: -1;
-      top: $topBorderMargin;
-      left: $topBorderMargin;
-      right: $topBorderMargin;
-      bottom: $topBorderMargin;
-      border: $topBorderThickness solid black;
   }
 }
 
@@ -111,8 +104,8 @@ $menuBarColor: black;
   width: 30px;
   height: 30px;
   position: absolute;
-  margin-left: 94%;
-  margin-top: 3.5rem;
+  left: 95%;
+  top: 5%;
 
 }
 #menu-toggle i:before {
@@ -274,7 +267,7 @@ $menuBarColor: black;
 .foldText{
   width: 45%;
   margin-left: 5%;
-  margin-top: 12rem;
+  top: 20%;
   position: absolute;
   .letter{
     font-family: $letterFont;
@@ -291,34 +284,21 @@ $menuBarColor: black;
   }
 }
 
-.logo{
-  position: absolute;
-  margin-top: 52rem;
-  margin-left: 89%;
-  p{
+.lowerRight{
+  position:absolute;
+  top: 85%;
+  left: 89%;
+  .logo{
     font-family: $headerFont;
   }
+  .diagonal {
+      position:absolute;
+      width: 14rem; 
+      border-bottom: .2rem solid $altoPink; 
+      -webkit-transform: rotate(135deg); 
+  }
 }
-.diagonal {
-    width: 14rem; 
-    border-bottom: .2rem solid $altoPink; 
-    -webkit-transform: rotate(135deg); 
-    margin-top: 20rem;
-    margin-left: 180%;
 
-    @media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 568px) 
-and (orientation : portrait) {
-      width: 25rem;
-      border-bottom: 0.5rem solid $altoPink;
-      -webkit-transform: rotate(125deg);
-      transform: rotate(125deg); 
-      margin-top: 21rem;
-      margin-left: 37%;
-
-    }
-}
 
 // What we do section
 
