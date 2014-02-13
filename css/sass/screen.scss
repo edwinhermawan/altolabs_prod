@@ -49,6 +49,7 @@ Developer @AltoLabs Los Angeles
 $altoPink: #ec008c;
 $headerFont: 'Fjalla One', sans-serif;
 $subHeaderFont: 'Domine', serif;
+$letterFont: 'Droid Serif', serif;
 
 // Test Fonts
 // font-family: 'Cabin', sans-serif;
@@ -76,35 +77,49 @@ $iphone: "only screen
         and (max-device-width : 568px) 
         and (orientation : portrait)";
 
+$topBorderMargin: 1rem;
+$topBorderThickness: .5rem;
 
 #topFold{
   width: 100%;
-  height: 50rem;
-  overflow: hidden;
+  height: 62rem;
   @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 568px) 
 and (orientation : portrait) {
     height: 65rem;
-    color: lime;
+  }
+  &:before{
+      content: " ";
+      position: absolute;
+      z-index: -1;
+      top: $topBorderMargin;
+      left: $topBorderMargin;
+      right: $topBorderMargin;
+      bottom: $topBorderMargin;
+      border: $topBorderThickness solid black;
   }
 }
 
 // Menu
+
+$menuBarThickness: 15%;
+$menuBarColor: black;
+
 #menu-toggle {
   cursor: pointer;
   width: 30px;
   height: 30px;
   position: absolute;
-  margin-left: 95%;
-  margin-top: 2rem;
+  margin-left: 94%;
+  margin-top: 3.5rem;
 
 }
 #menu-toggle i:before {
   content: '';
   width: 100%;
-  height: 20%;
-  background: $altoPink;
+  height: $menuBarThickness;
+  background: $menuBarColor;
   position: absolute;
 }
 
@@ -114,11 +129,11 @@ and (orientation : portrait) {
 #menu-toggle i:after {
   content: '';
   width: 100%;
-  height: 20%;
-  background: $altoPink;
+  height: $menuBarThickness;
+  background: $menuBarColor;
   position: absolute;
   top: 30%;
-  box-shadow: 0 9px 0 0 $altoPink;
+  box-shadow: 0 9px 0 0 $menuBarColor;
 }
 #menu-toggle.active i:before {
   -webkit-transform:rotate(45deg) translate(6px,6px);
@@ -134,12 +149,6 @@ and (orientation : portrait) {
     -ms-transform:rotate(-45deg);
      -o-transform:rotate(-45deg);
         transform:rotate(-45deg);
-}
-
-img {
-    width: 100%;
-    height: auto;
-    margin-top: -8rem;
 }
 
 // Menu Overlay
@@ -260,39 +269,42 @@ img {
   }
 }
 
-// For text in the upper fold "ALTO LABS" and "YEAH, WE CAN DO THAT."
+// Letter
 
-@mixin headerText($fontSize, $marginTop, $marginLeft){
+.foldText{
+  width: 45%;
+  margin-left: 5%;
+  margin-top: 12rem;
   position: absolute;
-  font-family: $headerFont;
-  color: white;
-  font-size: $fontSize;
-  margin-top: $marginTop;
-  margin-left: $marginLeft;
-}
-
-.altoLabs{
-  @include headerText(6rem, 12rem, 28%);
-  @media #{$iphone}{
-    @include headerText(10rem, 10rem, 10%);
+  .letter{
+    font-family: $letterFont;
+    font-size: 1.5rem;
+    color: black;
+  }
+  strike{
+    color: $altoPink;
+  }
+  .tagLine{
+    font-family: $headerFont;
+    font-size: 3rem;
+    margin-top: 3rem;
   }
 }
 
-
-.imgText { 
-  @include headerText(4rem, 20rem, 52%);
-  @media #{$iphone} {
-    @include headerText(4.5rem, 18rem, 53%);
-  } 
+.logo{
+  position: absolute;
+  margin-top: 52rem;
+  margin-left: 89%;
+  p{
+    font-family: $headerFont;
+  }
 }
-
 .diagonal {
-    position: absolute;
-    width: 33rem; 
-    border-bottom: .3rem solid $altoPink; 
-    -webkit-transform: rotate(140deg); 
-    margin-top: 21rem;
-    margin-left: 37%;
+    width: 14rem; 
+    border-bottom: .2rem solid $altoPink; 
+    -webkit-transform: rotate(135deg); 
+    margin-top: 20rem;
+    margin-left: 180%;
 
     @media only screen 
 and (min-device-width : 320px) 
@@ -306,14 +318,6 @@ and (orientation : portrait) {
       margin-left: 37%;
 
     }
-}
-
-.imageclass {
-  @media #{$iphone}{
-    width: 100%;
-    height: auto;
-    margin-top: -12rem;
-  }
 }
 
 // What we do section

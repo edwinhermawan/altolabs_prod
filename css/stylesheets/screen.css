@@ -51,51 +51,60 @@ Developer @AltoLabs Los Angeles
 /******************************************
 /* BASE STYLES                   
 /*******************************************/
-/* line 80, ../sass/screen.scss */
+/* line 83, ../sass/screen.scss */
 #topFold {
   width: 100%;
-  height: 50rem;
-  overflow: hidden;
+  height: 62rem;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 80, ../sass/screen.scss */
+  /* line 83, ../sass/screen.scss */
   #topFold {
     height: 65rem;
-    color: lime;
   }
 }
+/* line 92, ../sass/screen.scss */
+#topFold:before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  border: 0.5rem solid black;
+}
 
-/* line 94, ../sass/screen.scss */
+/* line 109, ../sass/screen.scss */
 #menu-toggle {
   cursor: pointer;
   width: 30px;
   height: 30px;
   position: absolute;
-  margin-left: 95%;
-  margin-top: 2rem;
+  margin-left: 94%;
+  margin-top: 3.5rem;
 }
 
-/* line 103, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
 #menu-toggle i:before {
   content: '';
   width: 100%;
-  height: 20%;
-  background: #ec008c;
+  height: 15%;
+  background: black;
   position: absolute;
 }
 
-/* line 114, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
 #menu-toggle i:after {
   content: '';
   width: 100%;
-  height: 20%;
-  background: #ec008c;
+  height: 15%;
+  background: black;
   position: absolute;
   top: 30%;
-  box-shadow: 0 9px 0 0 #ec008c;
+  box-shadow: 0 9px 0 0 black;
 }
 
-/* line 123, ../sass/screen.scss */
+/* line 138, ../sass/screen.scss */
 #menu-toggle.active i:before {
   -webkit-transform: rotate(45deg) translate(6px, 6px);
   -moz-transform: rotate3d(1, 2, 3, 45deg);
@@ -104,7 +113,7 @@ Developer @AltoLabs Los Angeles
   transform: rotate3d(1, 2, 3, 45deg);
 }
 
-/* line 130, ../sass/screen.scss */
+/* line 145, ../sass/screen.scss */
 #menu-toggle.active i:after {
   box-shadow: 0 0;
   -webkit-transform: rotate(-45deg);
@@ -114,15 +123,8 @@ Developer @AltoLabs Los Angeles
   transform: rotate(-45deg);
 }
 
-/* line 139, ../sass/screen.scss */
-img {
-  width: 100%;
-  height: auto;
-  margin-top: -8rem;
-}
-
 /* Overlay style */
-/* line 148, ../sass/screen.scss */
+/* line 157, ../sass/screen.scss */
 .overlay {
   position: fixed;
   width: 100%;
@@ -133,7 +135,7 @@ img {
 }
 
 /* Overlay closing cross */
-/* line 158, ../sass/screen.scss */
+/* line 167, ../sass/screen.scss */
 .overlay .overlay-close {
   width: 80px;
   height: 80px;
@@ -150,7 +152,7 @@ img {
 }
 
 /* Menu style */
-/* line 174, ../sass/screen.scss */
+/* line 183, ../sass/screen.scss */
 .overlay nav {
   text-align: center;
   position: relative;
@@ -161,7 +163,7 @@ img {
   transform: translateY(-50%);
 }
 
-/* line 184, ../sass/screen.scss */
+/* line 193, ../sass/screen.scss */
 .overlay ul {
   list-style: none;
   padding: 0;
@@ -171,7 +173,7 @@ img {
   position: relative;
 }
 
-/* line 193, ../sass/screen.scss */
+/* line 202, ../sass/screen.scss */
 .overlay ul li {
   display: block;
   height: 20%;
@@ -179,7 +181,7 @@ img {
   min-height: 54px;
 }
 
-/* line 200, ../sass/screen.scss */
+/* line 209, ../sass/screen.scss */
 .overlay ul li a {
   font-weight: 300;
   display: block;
@@ -188,14 +190,14 @@ img {
   transition: color 0.2s;
 }
 
-/* line 209, ../sass/screen.scss */
+/* line 218, ../sass/screen.scss */
 .overlay ul li a:hover,
 .overlay ul li a:focus {
   color: #e3fcb1;
 }
 
 /* Effects */
-/* line 214, ../sass/screen.scss */
+/* line 223, ../sass/screen.scss */
 .overlay-hugeinc {
   opacity: 0;
   visibility: hidden;
@@ -203,7 +205,7 @@ img {
   transition: opacity 0.5s, visibility 0s 0.5s;
 }
 
-/* line 221, ../sass/screen.scss */
+/* line 230, ../sass/screen.scss */
 .overlay-hugeinc.open {
   opacity: 1;
   visibility: visible;
@@ -212,13 +214,13 @@ img {
   z-index: 4000;
 }
 
-/* line 229, ../sass/screen.scss */
+/* line 238, ../sass/screen.scss */
 .overlay-hugeinc nav {
   -webkit-perspective: 1200px;
   perspective: 1200px;
 }
 
-/* line 234, ../sass/screen.scss */
+/* line 243, ../sass/screen.scss */
 .overlay-hugeinc nav ul {
   opacity: 0.4;
   -webkit-transform: translateY(-25%) rotateX(35deg);
@@ -227,84 +229,76 @@ img {
   transition: transform 0.5s, opacity 0.5s;
 }
 
-/* line 242, ../sass/screen.scss */
+/* line 251, ../sass/screen.scss */
 .overlay-hugeinc.open nav ul {
   opacity: 1;
   -webkit-transform: rotateX(0deg);
   transform: rotateX(0deg);
 }
 
-/* line 248, ../sass/screen.scss */
+/* line 257, ../sass/screen.scss */
 .overlay-hugeinc.close nav ul {
   -webkit-transform: translateY(25%) rotateX(-35deg);
   transform: translateY(25%) rotateX(-35deg);
 }
 
 @media screen and (max-height: 30.5em) {
-  /* line 254, ../sass/screen.scss */
+  /* line 263, ../sass/screen.scss */
   .overlay nav {
     height: 70%;
     font-size: 34px;
   }
 
-  /* line 258, ../sass/screen.scss */
+  /* line 267, ../sass/screen.scss */
   .overlay ul li {
     min-height: 34px;
   }
 }
 /* line 274, ../sass/screen.scss */
-.altoLabs {
-  position: absolute;
-  font-family: "Fjalla One", sans-serif;
-  color: white;
-  font-size: 6rem;
+.foldText {
+  width: 45%;
+  margin-left: 5%;
   margin-top: 12rem;
-  margin-left: 28%;
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 274, ../sass/screen.scss */
-  .altoLabs {
-    position: absolute;
-    font-family: "Fjalla One", sans-serif;
-    color: white;
-    font-size: 10rem;
-    margin-top: 10rem;
-    margin-left: 10%;
-  }
-}
-
-/* line 282, ../sass/screen.scss */
-.imgText {
   position: absolute;
+}
+/* line 279, ../sass/screen.scss */
+.foldText .letter {
+  font-family: "Droid Serif", serif;
+  font-size: 1.5rem;
+  color: black;
+}
+/* line 284, ../sass/screen.scss */
+.foldText strike {
+  color: #ec008c;
+}
+/* line 287, ../sass/screen.scss */
+.foldText .tagLine {
   font-family: "Fjalla One", sans-serif;
-  color: white;
-  font-size: 4rem;
-  margin-top: 20rem;
-  margin-left: 52%;
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 282, ../sass/screen.scss */
-  .imgText {
-    position: absolute;
-    font-family: "Fjalla One", sans-serif;
-    color: white;
-    font-size: 4.5rem;
-    margin-top: 18rem;
-    margin-left: 53%;
-  }
+  font-size: 3rem;
+  margin-top: 3rem;
 }
 
-/* line 289, ../sass/screen.scss */
-.diagonal {
+/* line 294, ../sass/screen.scss */
+.logo {
   position: absolute;
-  width: 33rem;
-  border-bottom: 0.3rem solid #ec008c;
-  -webkit-transform: rotate(140deg);
-  margin-top: 21rem;
-  margin-left: 37%;
+  margin-top: 52rem;
+  margin-left: 89%;
+}
+/* line 298, ../sass/screen.scss */
+.logo p {
+  font-family: "Fjalla One", sans-serif;
+}
+
+/* line 302, ../sass/screen.scss */
+.diagonal {
+  width: 14rem;
+  border-bottom: 0.2rem solid #ec008c;
+  -webkit-transform: rotate(135deg);
+  margin-top: 20rem;
+  margin-left: 180%;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 289, ../sass/screen.scss */
+  /* line 302, ../sass/screen.scss */
   .diagonal {
     width: 25rem;
     border-bottom: 0.5rem solid #ec008c;
@@ -315,16 +309,7 @@ img {
   }
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 311, ../sass/screen.scss */
-  .imageclass {
-    width: 100%;
-    height: auto;
-    margin-top: -12rem;
-  }
-}
-
-/* line 321, ../sass/screen.scss */
+/* line 325, ../sass/screen.scss */
 #page-wrap, #page-wrap-1, #page-wrap-2 {
   width: 50%;
   margin-top: 5rem;
@@ -332,44 +317,44 @@ img {
   display: inline-block;
 }
 
-/* line 332, ../sass/screen.scss */
+/* line 336, ../sass/screen.scss */
 #page-wrap-1 {
   margin-left: 20%;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 332, ../sass/screen.scss */
+  /* line 336, ../sass/screen.scss */
   #page-wrap-1 {
     margin: 5rem 5% 5rem 5%;
     width: 90%;
   }
 }
 
-/* line 341, ../sass/screen.scss */
+/* line 345, ../sass/screen.scss */
 #page-wrap-2 {
   margin-left: 30%;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 341, ../sass/screen.scss */
+  /* line 345, ../sass/screen.scss */
   #page-wrap-2 {
     margin: 5rem 5% 5rem 5%;
     width: 90%;
   }
 }
 
-/* line 351, ../sass/screen.scss */
+/* line 355, ../sass/screen.scss */
 .whatWeDoText {
   font-family: "Fjalla One", sans-serif;
   font-size: 4rem;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 351, ../sass/screen.scss */
+  /* line 355, ../sass/screen.scss */
   .whatWeDoText {
     text-align: center;
     font-size: 6.5rem;
   }
 }
 
-/* line 363, ../sass/screen.scss */
+/* line 367, ../sass/screen.scss */
 #logo {
   position: absolute;
   margin-top: 0;
@@ -378,18 +363,18 @@ img {
   width: 20%;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 363, ../sass/screen.scss */
+  /* line 367, ../sass/screen.scss */
   #logo {
     width: 30%;
     margin-left: -15%;
   }
 }
 
-/* line 390, ../sass/screen.scss */
+/* line 394, ../sass/screen.scss */
 #l {
   float: left;
 }
-/* line 378, ../sass/screen.scss */
+/* line 382, ../sass/screen.scss */
 #l:before {
   float: right;
   content: "";
@@ -397,18 +382,18 @@ img {
   height: 12rem;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 378, ../sass/screen.scss */
+  /* line 382, ../sass/screen.scss */
   #l:before {
     width: 30%;
     height: 25rem;
   }
 }
 
-/* line 394, ../sass/screen.scss */
+/* line 398, ../sass/screen.scss */
 #r {
   float: right;
 }
-/* line 378, ../sass/screen.scss */
+/* line 382, ../sass/screen.scss */
 #r:before {
   float: left;
   content: "";
@@ -416,32 +401,32 @@ img {
   height: 12rem;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 378, ../sass/screen.scss */
+  /* line 382, ../sass/screen.scss */
   #r:before {
     width: 30%;
     height: 25rem;
   }
 }
 
-/* line 398, ../sass/screen.scss */
+/* line 402, ../sass/screen.scss */
 #l, #r {
   width: 49%;
 }
-/* line 401, ../sass/screen.scss */
+/* line 405, ../sass/screen.scss */
 #l p, #r p {
   font-family: "Domine", serif;
   font-size: 1.75rem;
   line-height: 3rem;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 401, ../sass/screen.scss */
+  /* line 405, ../sass/screen.scss */
   #l p, #r p {
     font-size: 4rem;
     line-height: 5.25rem;
   }
 }
 
-/* line 412, ../sass/screen.scss */
+/* line 416, ../sass/screen.scss */
 .separationLines {
   margin-top: 5rem;
   font-family: "Fjalla One", sans-serif;
@@ -451,14 +436,14 @@ img {
   background-size: 100% .4em;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 412, ../sass/screen.scss */
+  /* line 416, ../sass/screen.scss */
   .separationLines {
     font-size: 7.5rem;
     background-size: 100% .2em;
   }
 }
 
-/* line 428, ../sass/screen.scss */
+/* line 432, ../sass/screen.scss */
 .ac-wrapper {
   margin-top: 5rem;
   width: 100%;
@@ -471,7 +456,7 @@ img {
   perspective-origin: 50% 25%;
 }
 
-/* line 440, ../sass/screen.scss */
+/* line 444, ../sass/screen.scss */
 .ac-wrapper h2 {
   top: 20%;
   width: 50%;
@@ -484,7 +469,7 @@ img {
   font-family: "Fjalla One", sans-serif;
 }
 
-/* line 452, ../sass/screen.scss */
+/* line 456, ../sass/screen.scss */
 .ac-wrapper h2 span {
   display: block;
   font-size: 60%;
@@ -492,7 +477,7 @@ img {
   font-family: "Fjalla One", sans-serif;
 }
 
-/* line 459, ../sass/screen.scss */
+/* line 463, ../sass/screen.scss */
 .ac-device {
   background: url(../../images/iPhone.png) no-repeat;
   width: 288px;
@@ -507,7 +492,7 @@ img {
   transform-style: preserve-3d;
 }
 
-/* line 473, ../sass/screen.scss */
+/* line 477, ../sass/screen.scss */
 .ac-device a {
   height: 440px;
   width: 249px;
@@ -515,13 +500,13 @@ img {
   margin: 85px 0 0 20px;
 }
 
-/* line 480, ../sass/screen.scss */
+/* line 484, ../sass/screen.scss */
 .ac-device a img {
   display: block;
   margin-top: 0;
 }
 
-/* line 485, ../sass/screen.scss */
+/* line 489, ../sass/screen.scss */
 .ac-device h3 {
   position: absolute;
   font-size: 1.75rem;
@@ -533,7 +518,7 @@ img {
   font-family: "Domine", serif;
 }
 
-/* line 497, ../sass/screen.scss */
+/* line 501, ../sass/screen.scss */
 .ac-grid {
   position: absolute;
   width: 100%;
@@ -545,7 +530,7 @@ img {
   pointer-events: none;
 }
 
-/* line 508, ../sass/screen.scss */
+/* line 512, ../sass/screen.scss */
 .ac-grid a {
   width: 220px;
   display: inline-block;
@@ -565,27 +550,27 @@ img {
   transition-delay: 0s;
 }
 
-/* line 527, ../sass/screen.scss */
+/* line 531, ../sass/screen.scss */
 .ac-grid a:first-child {
   -webkit-transform-origin: right center;
   -moz-transform-origin: right center;
   transform-origin: right center;
 }
 
-/* line 533, ../sass/screen.scss */
+/* line 537, ../sass/screen.scss */
 .ac-grid a:last-child {
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   transform-origin: left center;
 }
 
-/* line 539, ../sass/screen.scss */
+/* line 543, ../sass/screen.scss */
 .ac-grid a img {
   display: block;
   width: 100%;
 }
 
-/* line 544, ../sass/screen.scss */
+/* line 548, ../sass/screen.scss */
 .ac-grid a span {
   position: absolute;
   height: 100%;
@@ -607,7 +592,7 @@ img {
   transition: all 0.2s ease;
 }
 
-/* line 565, ../sass/screen.scss */
+/* line 569, ../sass/screen.scss */
 .ac-grid a:hover span {
   opacity: 1;
   -webkit-transform: translateY(0);
@@ -615,7 +600,7 @@ img {
   transform: translateY(0);
 }
 
-/* line 572, ../sass/screen.scss */
+/* line 576, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-device {
   -webkit-transform: translateZ(-350px);
   -moz-transform: translateZ(-350px);
@@ -623,18 +608,18 @@ img {
   opacity: .6;
 }
 
-/* line 579, ../sass/screen.scss */
+/* line 583, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid {
   pointer-events: auto;
 }
 
-/* line 583, ../sass/screen.scss */
+/* line 587, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* line 589, ../sass/screen.scss */
+/* line 593, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a:nth-child(2) {
   -webkit-transition-delay: 50ms;
   -moz-transition-delay: 50ms;
@@ -644,7 +629,7 @@ img {
   transform: translateZ(0px);
 }
 
-/* line 598, ../sass/screen.scss */
+/* line 602, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a:nth-child(3) {
   -webkit-transition-delay: 100ms;
   -moz-transition-delay: 100ms;
@@ -654,7 +639,7 @@ img {
   transform: translateZ(0px);
 }
 
-/* line 607, ../sass/screen.scss */
+/* line 611, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a:last-child {
   -webkit-transition-delay: 150ms;
   -moz-transition-delay: 150ms;
@@ -662,12 +647,12 @@ img {
 }
 
 @media screen and (max-width: 63.875em) {
-  /* line 614, ../sass/screen.scss */
+  /* line 618, ../sass/screen.scss */
   .ac-wrapper {
     padding: 0 20px 100px;
   }
 
-  /* line 618, ../sass/screen.scss */
+  /* line 622, ../sass/screen.scss */
   .ac-wrapper h2 {
     width: 100%;
     text-align: center;
@@ -679,13 +664,13 @@ img {
     font-size: 6.5rem;
   }
 
-  /* line 629, ../sass/screen.scss */
+  /* line 633, ../sass/screen.scss */
   .ac-device {
     margin: 0 auto;
     width: 288px;
   }
 
-  /* line 634, ../sass/screen.scss */
+  /* line 638, ../sass/screen.scss */
   .ac-device h3 {
     position: relative;
     margin: 0;
@@ -698,7 +683,7 @@ img {
   }
 }
 @media screen and (max-width: 58em) {
-  /* line 647, ../sass/screen.scss */
+  /* line 651, ../sass/screen.scss */
   .ac-grid {
     width: 90%;
     left: 5%;
@@ -706,18 +691,18 @@ img {
     padding-top: 8em;
   }
 
-  /* line 654, ../sass/screen.scss */
+  /* line 658, ../sass/screen.scss */
   .ac-grid a {
     width: 22%;
   }
 }
 @media screen and (max-width: 35.6875em) {
-  /* line 660, ../sass/screen.scss */
+  /* line 664, ../sass/screen.scss */
   .ac-wrapper {
     padding: 0 20px 100px;
   }
 
-  /* line 664, ../sass/screen.scss */
+  /* line 668, ../sass/screen.scss */
   .ac-wrapper h2 {
     width: 100%;
     text-align: center;
@@ -727,13 +712,13 @@ img {
     position: relative;
   }
 
-  /* line 673, ../sass/screen.scss */
+  /* line 677, ../sass/screen.scss */
   .ac-device {
     margin: 0 auto;
     width: 288px;
   }
 
-  /* line 678, ../sass/screen.scss */
+  /* line 682, ../sass/screen.scss */
   .ac-device h3 {
     position: relative;
     margin: 0;
@@ -744,12 +729,12 @@ img {
     text-align: center;
   }
 
-  /* line 688, ../sass/screen.scss */
+  /* line 692, ../sass/screen.scss */
   .ac-grid a {
     width: 40%;
   }
 
-  /* line 692, ../sass/screen.scss */
+  /* line 696, ../sass/screen.scss */
   .ac-wrapper.ac-gridview .ac-grid a {
     -webkit-transform: translateZ(0px) !important;
     -moz-transform: translateZ(0px) !important;
@@ -757,7 +742,7 @@ img {
   }
 }
 /* general style for the form */
-/* line 701, ../sass/screen.scss */
+/* line 705, ../sass/screen.scss */
 .nl-form {
   margin-top: 5rem;
   width: 100%;
@@ -766,19 +751,19 @@ img {
   font-size: 4em;
   line-height: 1.5;
 }
-/* line 709, ../sass/screen.scss */
+/* line 713, ../sass/screen.scss */
 .nl-form ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 715, ../sass/screen.scss */
+/* line 719, ../sass/screen.scss */
 .nl-form input:focus {
   outline: none;
 }
 
 /* normalize the input elements, make them look like everything else */
-/* line 723, ../sass/screen.scss */
+/* line 727, ../sass/screen.scss */
 .nl-form input,
 .nl-form select,
 .nl-form button {
@@ -797,19 +782,19 @@ img {
 }
 
 /* custom field (drop-down, text element) styling  */
-/* line 739, ../sass/screen.scss */
+/* line 743, ../sass/screen.scss */
 .nl-field {
   display: inline-block;
   position: relative;
 }
 
-/* line 744, ../sass/screen.scss */
+/* line 748, ../sass/screen.scss */
 .nl-field.nl-field-open {
   z-index: 10000;
 }
 
 /* the toggle is the visible part in the form */
-/* line 751, ../sass/screen.scss */
+/* line 755, ../sass/screen.scss */
 .nl-field-toggle,
 .nl-form input,
 .nl-form select {
@@ -821,7 +806,7 @@ img {
 }
 
 /* drop-down list / text element */
-/* line 760, ../sass/screen.scss */
+/* line 764, ../sass/screen.scss */
 .nl-field ul {
   position: absolute;
   visibility: hidden;
@@ -838,7 +823,7 @@ img {
   transition: visibility 0s 0.3s, opacity 0.3s, transform 0.3s;
 }
 
-/* line 776, ../sass/screen.scss */
+/* line 780, ../sass/screen.scss */
 .nl-field.nl-field-open ul {
   visibility: visible;
   opacity: 1;
@@ -850,36 +835,36 @@ img {
   transition: visibility 0s 0s, opacity 0.3s, transform 0.3s;
 }
 
-/* line 787, ../sass/screen.scss */
+/* line 791, ../sass/screen.scss */
 .nl-field ul li {
   color: #fff;
   position: relative;
 }
 
-/* line 792, ../sass/screen.scss */
+/* line 796, ../sass/screen.scss */
 .nl-dd ul li {
   padding: 0 1.5em 0 0.5em;
   cursor: pointer;
   white-space: nowrap;
 }
 
-/* line 798, ../sass/screen.scss */
+/* line 802, ../sass/screen.scss */
 .nl-dd ul li.nl-dd-checked {
   color: #478982;
 }
 
-/* line 802, ../sass/screen.scss */
+/* line 806, ../sass/screen.scss */
 .no-touch .nl-dd ul li:hover {
   background: rgba(0, 0, 0, 0.05);
 }
 
-/* line 806, ../sass/screen.scss */
+/* line 810, ../sass/screen.scss */
 .no-touch .nl-dd ul li:hover:active {
   color: #478982;
 }
 
 /* icons for some elements */
-/* line 813, ../sass/screen.scss */
+/* line 817, ../sass/screen.scss */
 .nl-dd ul li.nl-dd-checked:before,
 .nl-submit:before,
 .nl-field-go:before {
@@ -892,7 +877,7 @@ img {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 823, ../sass/screen.scss */
+/* line 827, ../sass/screen.scss */
 .nl-dd ul li.nl-dd-checked:before {
   content: "\e000";
   position: absolute;
@@ -901,12 +886,12 @@ img {
   line-height: 3;
 }
 
-/* line 831, ../sass/screen.scss */
+/* line 835, ../sass/screen.scss */
 .nl-ti-text ul {
   min-width: 8em;
 }
 
-/* line 835, ../sass/screen.scss */
+/* line 839, ../sass/screen.scss */
 .nl-ti-text ul li.nl-ti-input input {
   width: 100%;
   padding: 0.2em 2em 0.2em 0.5em;
@@ -914,7 +899,7 @@ img {
   color: #fff;
 }
 
-/* line 842, ../sass/screen.scss */
+/* line 846, ../sass/screen.scss */
 .nl-form .nl-field-go {
   position: absolute;
   right: 0;
@@ -927,7 +912,7 @@ img {
   color: transparent;
 }
 
-/* line 854, ../sass/screen.scss */
+/* line 858, ../sass/screen.scss */
 .nl-field-go:before {
   content: "\e001";
   font-size: 75%;
@@ -938,41 +923,41 @@ img {
 }
 
 /* custom placeholder color */
-/* line 864, ../sass/screen.scss */
+/* line 868, ../sass/screen.scss */
 input::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 869, ../sass/screen.scss */
+/* line 873, ../sass/screen.scss */
 input:active::-webkit-input-placeholder,
 input:focus::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.2);
 }
 
-/* line 873, ../sass/screen.scss */
+/* line 877, ../sass/screen.scss */
 input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 878, ../sass/screen.scss */
+/* line 882, ../sass/screen.scss */
 input:active::-moz-placeholder,
 input:focus::-moz-placeholder {
   color: rgba(255, 255, 255, 0.2);
 }
 
-/* line 882, ../sass/screen.scss */
+/* line 886, ../sass/screen.scss */
 input:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 887, ../sass/screen.scss */
+/* line 891, ../sass/screen.scss */
 input:active::-ms-input-placeholder,
 input:focus::-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.2);
 }
 
 /* example field below text input */
-/* line 892, ../sass/screen.scss */
+/* line 896, ../sass/screen.scss */
 .nl-ti-text ul li.nl-ti-example {
   font-size: 40%;
   font-style: italic;
@@ -982,18 +967,18 @@ input:focus::-ms-input-placeholder {
   border-top: 1px dashed rgba(255, 255, 255, 0.7);
 }
 
-/* line 901, ../sass/screen.scss */
+/* line 905, ../sass/screen.scss */
 .nl-ti-text ul li.nl-ti-example em {
   color: white;
 }
 
 /* submit button */
-/* line 906, ../sass/screen.scss */
+/* line 910, ../sass/screen.scss */
 .nl-submit-wrap {
   margin-top: 0.4em;
 }
 
-/* line 910, ../sass/screen.scss */
+/* line 914, ../sass/screen.scss */
 .nl-form .nl-submit {
   line-height: 3;
   text-transform: uppercase;
@@ -1007,7 +992,7 @@ input:focus::-ms-input-placeholder {
   letter-spacing: 3px;
 }
 
-/* line 923, ../sass/screen.scss */
+/* line 927, ../sass/screen.scss */
 .nl-submit:before {
   content: "\e001";
   color: #fff;
@@ -1017,19 +1002,19 @@ input:focus::-ms-input-placeholder {
   background: #69B1A9;
 }
 
-/* line 933, ../sass/screen.scss */
+/* line 937, ../sass/screen.scss */
 .no-touch .nl-form .nl-submit:hover,
 .no-touch .nl-form .nl-submit:active {
   background: #69B1A9;
 }
 
-/* line 937, ../sass/screen.scss */
+/* line 941, ../sass/screen.scss */
 .no-touch .nl-form .nl-submit:hover:before {
   background: #58a199;
 }
 
 /* overlay becomes visible when a field is opened */
-/* line 942, ../sass/screen.scss */
+/* line 946, ../sass/screen.scss */
 .nl-overlay {
   position: fixed;
   top: 0;
@@ -1045,7 +1030,7 @@ input:focus::-ms-input-placeholder {
   transition: visibility 0s 0.3s, opacity 0.3s;
 }
 
-/* line 957, ../sass/screen.scss */
+/* line 961, ../sass/screen.scss */
 .nl-field.nl-field-open ~ .nl-overlay {
   opacity: 1;
   visibility: visible;
@@ -1055,18 +1040,18 @@ input:focus::-ms-input-placeholder {
 }
 
 @media screen and (max-width: 45em) {
-  /* line 966, ../sass/screen.scss */
+  /* line 970, ../sass/screen.scss */
   .nl-form {
     font-size: 3em;
   }
 }
 @media screen and (max-width: 25em) {
-  /* line 972, ../sass/screen.scss */
+  /* line 976, ../sass/screen.scss */
   .nl-form {
     font-size: 2em;
   }
 }
-/* line 978, ../sass/screen.scss */
+/* line 982, ../sass/screen.scss */
 .mobileContactUs {
   display: none;
   margin-top: 5rem;
