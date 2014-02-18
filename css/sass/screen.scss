@@ -93,6 +93,27 @@ and (orientation : portrait) {
     height: 65rem;
   }
 }
+// Animated Cross Menu
+.si-icons span {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin: 40px 30px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 1rem;
+  margin-left: 92%;
+}
+
+.si-icons-hover span {
+  width: 128px;
+  height: 128px;
+  margin: 50px 40px;
+}
+
+/* Fallback for browsers that don't support SVG - Generated with http://iconizr.com/ */
+.no-svg .si-icon-hamburger, .no-svg .si-icon-hamburger-cross { background-image: url('img/hamburger.png') }
 
 // Menu
 
@@ -106,6 +127,7 @@ $menuBarColor: black;
   position: absolute;
   left: 95%;
   top: 5%;
+  z-index: 40001;
 
 }
 #menu-toggle i:before {
@@ -153,7 +175,9 @@ $menuBarColor: black;
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(153,204,51,0.9);
+  background: $altoPink;
+  font-family: 'Domine', serif;
+  font-style: italic;
 }
 
 /* Overlay closing cross */
@@ -165,7 +189,7 @@ $menuBarColor: black;
   top: 20px;
   overflow: hidden;
   border: none;
-  background: url(../../img/cross.png) no-repeat center center;
+  background: url(/../img/cross.png) no-repeat center center;
   text-indent: 200%;
   color: transparent;
   outline: none;
@@ -221,7 +245,7 @@ $menuBarColor: black;
 }
 
 .overlay-hugeinc.open {
-  opacity: 1;
+  opacity: .75;
   visibility: visible;
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
@@ -300,6 +324,37 @@ $menuBarColor: black;
   }
 }
 
+
+// Diamonds
+
+$blue : white;
+$yellow : black;
+
+.diamond {
+  width: 480px;
+  height: 150px;
+  margin: 2em auto;
+
+  background: linear-gradient(17deg, white 66px, white 66px, white 69px, $yellow 69px, $yellow 70px, transparent 70px) right top,
+    linear-gradient(-17deg, white 66px, white 66px, white 69px, $yellow 69px, $yellow 70px, transparent 70px) top left,
+linear-gradient(-197deg, white 66px, white 66px, white 69px, $yellow 69px, $yellow 70px, transparent 70px) bottom right,
+    linear-gradient(197deg, $blue 66px, white 66px, white 69px, $yellow 69px, $yellow 70px, transparent 70px) bottom left;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 2;
+  outline: 1px solid red;
+  p {
+    position: relative;
+    text-align: center;
+    color: black;
+    margin: 0;
+    padding: 55px 0 0;
+    z-index: 5;
+    text-transform: uppercase;
+    font-size: 17px;
+  }
+}
 
 // What we do section
 

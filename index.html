@@ -15,10 +15,8 @@
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <!-- For Menu Overlay -->
     <script src="js/modernizr.custom.js"></script>
-
-    <!-- For Fullpage.js -->
-    <!-- <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" /> -->
-    <!-- <script type="text/javascript" src="jquery.fullPage.js"></script> -->
+    <!-- For Animated X -->
+    <script src="js/snap.svg-min.js"></script>
 
   </head>
 
@@ -26,11 +24,17 @@
     <div id="topFold">
 
       <!-- Menu Icon-->
-      <div id='menu-toggle' class='trigger-overlay'></div>
+      <section class="si-icons si-icons-default">
+        <span class="si-icon si-icon-hamburger-cross" data-icon-name="hamburgerCross">
+          
+        </span>
+      </section>
 
+  <!--     <div id='menu-toggle' class='trigger-overlay'></div>
+ -->
       <!-- Menu Overlay -->
       <div class="overlay overlay-hugeinc">
-        <button type="button" class="overlay-close">Close</button>
+        <button type="button" class="overlay-close"></button>
         <nav>
           <ul>
             <li><a href="#">Home</a></li>
@@ -66,7 +70,15 @@
     </div>
 
     <!-- What We Do -->
-    
+    <div class="diamond">
+      <p>A Proven Three-Fold Technique</p>
+    </div>
+    <div class="diamond">
+      <p>A Proven Three-Fold Technique</p>
+    </div>
+    <div class="diamond">
+      <p>A Proven Three-Fold Technique</p>
+    </div>
     <!-- Branding  -->
     <div id="page-wrap-1">
       <p class="whatWeDoText">BRANDING</p>
@@ -200,6 +212,39 @@
        
 
     });
+    </script>
+
+    <!-- Animated X -->
+    <script src="js/svgicons-config.js"></script>
+    <script src="js/svgicons.js"></script>
+    <script>
+      (function() {
+        // initialize all
+        
+        [].slice.call( document.querySelectorAll( '.si-icons-default > .si-icon' ) ).forEach( function( el ) {
+          var svgicon = new svgIcon( el, svgIconConfig );
+        } );
+
+        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-nav-left-arrow' ), svgIconConfig, { easing : mina.backin } );
+        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-hamburger' ), svgIconConfig, { easing : mina.backin } );
+        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-plus' ), svgIconConfig, { easing : mina.backin } );
+        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-volume' ), svgIconConfig, { easing : mina.backin } );
+        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-hourglass' ), svgIconConfig, { easing : mina.backin } );
+        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-equalizer' ), svgIconConfig, { easing : mina.backin } );
+        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-hamburger-cross' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
+        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-trash' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
+        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-clock' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
+        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-maximize' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
+        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-contract' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
+        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-glass-empty' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
+
+        new svgIcon( document.querySelector( '.si-icons-hover .si-icon-clock' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } );
+        new svgIcon( document.querySelector( '.si-icons-hover .si-icon-hamburger' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } );
+        new svgIcon( document.querySelector( '.si-icons-hover .si-icon-flag' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } );
+        new svgIcon( document.querySelector( '.si-icons-hover .si-icon-zoom' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } );
+        new svgIcon( document.querySelector( '.si-icons-hover .si-icon-maximize' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } );
+        new svgIcon( document.querySelector( '.si-icons-hover .si-icon-equalizer' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } );
+      })();
     </script>
 
     
