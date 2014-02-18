@@ -130,13 +130,7 @@ $menuBarColor: black;
   z-index: 40001;
 
 }
-#menu-toggle i:before {
-  content: '';
-  width: 100%;
-  height: $menuBarThickness;
-  background: $menuBarColor;
-  position: absolute;
-}
+
 
 #menu-toggle:not(:active) i:before {
     
