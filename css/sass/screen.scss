@@ -104,6 +104,8 @@ and (orientation : portrait) {
   background-position: center center;
   margin-top: 1rem;
   margin-left: 92%;
+  position: relative;
+  z-index: 400001;
 }
 
 .si-icons-hover span {
@@ -114,51 +116,6 @@ and (orientation : portrait) {
 
 /* Fallback for browsers that don't support SVG - Generated with http://iconizr.com/ */
 .no-svg .si-icon-hamburger, .no-svg .si-icon-hamburger-cross { background-image: url('img/hamburger.png') }
-
-// Menu
-
-$menuBarThickness: 15%;
-$menuBarColor: black;
-
-#menu-toggle {
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  left: 95%;
-  top: 5%;
-  z-index: 40001;
-
-}
-
-
-#menu-toggle:not(:active) i:before {
-    
-}
-#menu-toggle i:after {
-  content: '';
-  width: 100%;
-  height: $menuBarThickness;
-  background: $menuBarColor;
-  position: absolute;
-  top: 30%;
-  box-shadow: 0 9px 0 0 $menuBarColor;
-}
-#menu-toggle.active i:before {
-  -webkit-transform:rotate(45deg) translate(6px,6px);
-   -moz-transform:rotate3d(1,2,3,45deg);
-    -ms-transform:rotate3d(1,2,3,45deg);
-     -o-transform:rotate3d(1,2,3,45deg);
-        transform:rotate3d(1,2,3,45deg);;
-}
-#menu-toggle.active i:after {
-  box-shadow: 0 0;
-  -webkit-transform:rotate(-45deg);
-   -moz-transform:rotate(-45deg);
-    -ms-transform:rotate(-45deg);
-     -o-transform:rotate(-45deg);
-        transform:rotate(-45deg);
-}
 
 // Menu Overlay
 
@@ -179,11 +136,11 @@ $menuBarColor: black;
   width: 80px;
   height: 80px;
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 30px;
+  top: 30px;
   overflow: hidden;
   border: none;
-  background: url(/../img/cross.png) no-repeat center center;
+  background: no-repeat center center;
   text-indent: 200%;
   color: transparent;
   outline: none;
