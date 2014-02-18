@@ -7,20 +7,25 @@
 
     <!-- Install Google Fonts: Cabin 400, 700, Fjalla 400 -->
     <link href='http://fonts.googleapis.com/css?family=Cabin:400,700|Fjalla+One|Oswald:700|Droid+Serif:400,700italic|Cantarell:400,400italic,700italic,700|Roboto|Domine' rel='stylesheet' type='text/css'>
-    
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+
+    <!-- Main CSS file -->
     <link rel="stylesheet" href="css/stylesheets/screen.css">
     
+    <!-- Load JQuery and Bootstrap -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <!-- For Menu Overlay -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+    <!-- Menu Overlay -->
     <script src="js/modernizr.custom.js"></script>
-    <!-- For Animated X -->
+    <!-- Animated X -->
     <script src="js/snap.svg-min.js"></script>
 
   </head>
 
   <body>
+    
     <div id="topFold">
 
       <!-- Menu Icon-->
@@ -30,8 +35,6 @@
         </span>
       </section>
 
-  <!--     <div id='menu-toggle' class='trigger-overlay'></div>
- -->
       <!-- Menu Overlay -->
       <div class="overlay overlay-hugeinc">
         <button type="button" class="overlay-close"></button>
@@ -65,20 +68,10 @@
         <div class="diagonal"></div>
         <p class="logo">ALTO LABS</p>
       </div>
-      
-
     </div>
 
     <!-- What We Do -->
-    <div class="diamond">
-      <p>A Proven Three-Fold Technique</p>
-    </div>
-    <div class="diamond">
-      <p>A Proven Three-Fold Technique</p>
-    </div>
-    <div class="diamond">
-      <p>A Proven Three-Fold Technique</p>
-    </div>
+
     <!-- Branding  -->
     <div id="page-wrap-1">
       <p class="whatWeDoText">BRANDING</p>
@@ -141,6 +134,7 @@
 
     <div class="separationLines"> CONTACT US
     </div>
+    <!-- End Our Work -->
 
     <!-- Contact Us -->
     <div class="contactUsWrapper">
@@ -161,16 +155,12 @@
         <div class="nl-overlay"></div>
       </form>
     </div>
+    <!-- End Contact Us -->
+
     <!-- Mobile Contact Us  -->
     <div class="mobileContactUs"><a href="mailto:hi@altolabs.co">hi@altolabs.co</a></div>
-
-    <!-- Turns the three-bar-menu into an 'x' -->
-    <script>
-    $('#menu-toggle').prepend('<i></i>').on('click', function(event){
-      event.preventDefault();
-      $(this).toggleClass('active');
-    });
-    </script>
+    
+    <!-- Begin Javascript -->
 
     <!-- Menu Overlay -->
     <script src="js/classie.js"></script>
@@ -190,27 +180,20 @@
       var nlform = new NLForm( document.getElementById( 'nl-form' ) );
     </script>
 
-    <!-- Jquery to change image for mobile -->
+    <!-- Jquery to change html elements for mobile -->
     <script>
-
     $(document).ready(function() {
-
      function imageresize() {
        if ($(window).width() <= '980') {
-         $('.imageclass').attr('src','fox_mobile.jpg');
-         console.log("i'm mobile");
          // Change contact us to an a href emailto tag
          $('#nl-form').hide();
          $('.mobileContactUs').show();
        } else {
-         $('.imageclass').attr('src','fox.jpg');
+
        }
       }
 
-      imageresize();//Activates when document first loads    
-
-       
-
+      imageresize();   
     });
     </script>
 
@@ -220,30 +203,12 @@
     <script>
       (function() {
         // initialize all
-        
         [].slice.call( document.querySelectorAll( '.si-icons-default > .si-icon' ) ).forEach( function( el ) {
           var svgicon = new svgIcon( el, svgIconConfig );
         } );
-
-        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-nav-left-arrow' ), svgIconConfig, { easing : mina.backin } );
         new svgIcon( document.querySelector( '.si-icons-easing .si-icon-hamburger' ), svgIconConfig, { easing : mina.backin } );
-        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-plus' ), svgIconConfig, { easing : mina.backin } );
-        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-volume' ), svgIconConfig, { easing : mina.backin } );
-        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-hourglass' ), svgIconConfig, { easing : mina.backin } );
-        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-equalizer' ), svgIconConfig, { easing : mina.backin } );
         new svgIcon( document.querySelector( '.si-icons-easing .si-icon-hamburger-cross' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
-        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-trash' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
-        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-clock' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
-        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-maximize' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
-        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-contract' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
-        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-glass-empty' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
-
-        new svgIcon( document.querySelector( '.si-icons-hover .si-icon-clock' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } );
-        new svgIcon( document.querySelector( '.si-icons-hover .si-icon-hamburger' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } );
-        new svgIcon( document.querySelector( '.si-icons-hover .si-icon-flag' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } );
-        new svgIcon( document.querySelector( '.si-icons-hover .si-icon-zoom' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } );
-        new svgIcon( document.querySelector( '.si-icons-hover .si-icon-maximize' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } );
-        new svgIcon( document.querySelector( '.si-icons-hover .si-icon-equalizer' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } );
+        new svgIcon( document.querySelector( '.si-icons-hover .si-icon-hamburger' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } ); 
       })();
     </script>
 

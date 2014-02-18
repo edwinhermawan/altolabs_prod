@@ -275,38 +275,6 @@ and (orientation : portrait) {
   }
 }
 
-
-// Diamonds
-
-$blue : white;
-$yellow : black;
-
-.diamond {
-  width: 480px;
-  height: 150px;
-  margin: 2em auto;
-
-  background: linear-gradient(17deg, white 66px, white 66px, white 69px, $yellow 69px, $yellow 70px, transparent 70px) right top,
-    linear-gradient(-17deg, white 66px, white 66px, white 69px, $yellow 69px, $yellow 70px, transparent 70px) top left,
-linear-gradient(-197deg, white 66px, white 66px, white 69px, $yellow 69px, $yellow 70px, transparent 70px) bottom right,
-    linear-gradient(197deg, $blue 66px, white 66px, white 69px, $yellow 69px, $yellow 70px, transparent 70px) bottom left;
-  background-size: 50%;
-  background-repeat: no-repeat;
-  position: relative;
-  z-index: 2;
-  outline: 1px solid red;
-  p {
-    position: relative;
-    text-align: center;
-    color: black;
-    margin: 0;
-    padding: 55px 0 0;
-    z-index: 5;
-    text-transform: uppercase;
-    font-size: 17px;
-  }
-}
-
 // What we do section
 
 #page-wrap { 
