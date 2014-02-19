@@ -35,6 +35,13 @@
 		}
 	}
 
+	// function showScreen( $screen ) {
+	// 	$el.removeClass( 'ac-gridview' );
+	// }
+
 	triggerBttn.addEventListener( 'click', toggleOverlay );
 	closeBttn.addEventListener( 'click', toggleOverlay );
+	$('.overlay').click(function() {
+	  toggleOverlay();
+	});
 })();

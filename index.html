@@ -45,7 +45,7 @@
 
       <!-- Menu Icon-->
       <section class="si-icons si-icons-default">
-        <span class="si-icon si-icon-hamburger-cross" data-icon-name="hamburgerCross">
+        <span class="si-icon si-icon-hamburger-cross trigger-overlay" data-icon-name="hamburgerCross">
           
         </span>
       </section>
@@ -54,12 +54,10 @@
       <div class="overlay overlay-hugeinc">
         <button type="button" class="overlay-close"></button>
         <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Work</a></li>
-            <li><a href="#">Clients</a></li>
-            <li><a href="#">Contact</a></li>
+          <ul id="">
+            <li data-menuanchor="home"><a href="#home">Home</a></li>
+            <li data-menuanchor="work"><a href="#work">Work</a></li>
+            <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -70,7 +68,7 @@
         <p class="letter">Dear Visitor,</p>
         
         <strike>
-          <p class="letter"> We are a digital consulting agency specializing in code and design. We believe in...</p>
+          <p class="letter"> We are a digital creative agency specializing in code and design. We believe in...</p>
         </strike>
 
 
@@ -86,55 +84,33 @@
       </div>
     </div>
 
-    <!-- What We Do -->
-
-    <!-- Branding  -->
-    <div id="section1" class="section page-wrap-1">
-      <p class="whatWeDoText">BRANDING</p>
-      <img src="img/eye.png" id="logo">
-      
-      <div id="l">
-        <p>Blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah </p>
-      </div>
-      
-      <div id="r">
-        <p>Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah </p>
-      </div>
-    </div>
-
-    <!-- Design  -->
-    <div id="page-wrap-2" class="section">
-      <p class="whatWeDoText">DESIGN</p>
-      <img src="img/hands.png" id="logo">
-      
-      <div id="l">
-        <p>Blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah </p>
-      </div>
-      
-      <div id="r">
-        <p>Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah </p>
-      </div>
-    </div>
-
-    <!-- Code  -->
-    <div id="page-wrap-1" class="section">
-      <p class="whatWeDoText">CODE</p>
-      <img src="img/ruby.png" id="logo">
-      
-      <div id="l">
-        <p>Blah Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah </p>
-      </div>
-      
-      <div id="r">
-        <p>Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah Kah </p>
-      </div>
-    </div>
-    
-    <div class="separationLines"> OUR WORK
-    </div>
-    
     <!-- Our work  -->
-    <div id="ac-wrapper" class="ac-wrapper">
+    <div>
+      <div class="ourWork">  //margin: 0 auto, position: relative, display: inline-block
+        <!-- img of mountain -->
+        <!-- h1 of "Our Work" -->
+      </div>
+        
+      <div class="vettoIPhone"> //margin: 0 auto, position: relative, display: inline-block
+        <!-- img of iphone -->
+      </div>
+
+      <div class="vettoDescription">//margin: 0 auto, position: relative, display: inline-block
+        <div class="column1">float:left, margin-left: $columnMargin (same as margin right on column 3)
+          
+        </div>
+        <div class="column2">float:left
+          
+        </div>
+        <div class="column3">float:left, margin-right: $columnMargin
+          
+        </div>
+        
+      </div>
+    
+    </div>
+
+    <div id="ac-wrapper" class="section ac-wrapper">
       <h2>Weatherous <span>Concept &amp; UI Design</span></h2>
       <div class="ac-device">
         <a href="#"><img src="images/screen2.jpg"/></a>
@@ -147,13 +123,10 @@
         <a href="#"><img src="images/screen4.jpg"/><span>Photo booth single-origin coffee</span></a>
       </div>
     </div>  
-
-    <div class="separationLines"> CONTACT US
-    </div>
     <!-- End Our Work -->
 
     <!-- Contact Us -->
-    <div class="contactUsWrapper">
+    <div class="contactUsWrapper section">
       <form id="nl-form" class="nl-form" method="post" name="contact_form" action="contact-form-handler.php">
       Hi, my name is <input type="text" name="name" value="" placeholder="your name" data-subline="For example: <em>Hunter Hearst Helmsley</em> or <em>Cindy Crawford</em>"/> ( <input type="text" name="email" value="" placeholder="email address" data-subline="For example: <em>yo@mtvraps.com</em>"/> ).<br />Just wanted to
         <select name="subject">
@@ -170,11 +143,13 @@
         </div>
         <div class="nl-overlay"></div>
       </form>
+
+      <!-- Mobile Contact Us  -->
+      <div id="mobileContactUs"><a href="mailto:hi@altolabs.co">hi@altolabs.co</a></div>
     </div>
     <!-- End Contact Us -->
 
-    <!-- Mobile Contact Us  -->
-    <div class="mobileContactUs"><a href="mailto:hi@altolabs.co">hi@altolabs.co</a></div>
+    
     
     <!-- Begin Javascript -->
 
@@ -235,10 +210,10 @@
           verticalCentered: true,
           resize : true,
           slidesColor : [],
-          anchors:[],
+          anchors:['home','work','contact'],
           scrollingSpeed: 900,
           easing: 'easeInExpo',
-          menu: false,
+          menu: '#myMenu',
           navigation: false,
           navigationPosition: 'right',
           navigationTooltips: ['firstSlide', 'secondSlide'],

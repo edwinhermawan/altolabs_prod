@@ -49,7 +49,7 @@ Developer @AltoLabs Los Angeles
 $altoPink: #ec008c;
 $headerFont: 'Fjalla One', sans-serif;
 $subHeaderFont: 'Domine', serif;
-$letterFont: 'garamond-premier-pro', serif;
+$letterFont: 'garamond-premier-pro',serif;
 
 // Test Fonts
 // font-family: 'Cabin', sans-serif;
@@ -295,113 +295,6 @@ and (orientation : portrait) {
   img{
     width: 75%;
     height: auto;
-  }
-}
-
-// What we do section
-
-#page-wrap { 
-  width: 50%; 
-  margin-top: 5rem; 
-  position: relative;
-  display:inline-block;
-}
-
-@mixin stdLeftMargin {
-  margin-left: 20%; 
-}
-
-.page-wrap-1 {
-  @extend #page-wrap;
-  @include stdLeftMargin;
-  @media #{$iphone} {
-      margin: 5rem 5% 5rem 5%;
-      width: 90%
-  }
-}
-
-#page-wrap-2 {
-  @extend #page-wrap;
-  margin-left: 30%; 
-  @media #{$iphone} {
-      margin: 5rem 5% 5rem 5%;
-      width: 90%
-  }
-}
-
-// Branding, Design, Coding Header Text
-.whatWeDoText{
-  font-family: $headerFont;
-  font-size: 4rem;
-  @media #{$iphone} {
-    text-align: center;
-    font-size: 6.5rem;
-  }
-}
-
-$imageWidth: 20%;
-$iphoneImageWidth: 30%;
-
-#logo { 
-  position: absolute; 
-  margin-top: 0; 
-  left: 50%; 
-  margin-left: -$imageWidth/2;
-  width: $imageWidth;
-  @media #{$iphone} {
-    width: $iphoneImageWidth;
-    margin-left: -$iphoneImageWidth/2;
-  }
-}
-
-@mixin floats($regFloat, $beforeFloat){
-  float: $regFloat;
-
-  &:before { 
-    float: $beforeFloat;
-    content: ""; 
-    width: $imageWidth; 
-    height: 12rem;
-    @media #{$iphone} {
-      width: $iphoneImageWidth;
-      height: 25rem;
-    }  
-  } 
-}
-
-#l { 
-  @include floats(left, right);
-}
-
-#r { 
-  @include floats(right, left);
-}
-
-#l, #r { 
-  width: 49%; 
-
-  p{
-    font-family: $subHeaderFont;
-    font-size: 1.75rem;
-    line-height: 3rem;
-    @media #{$iphone} {
-      font-size: 4rem;
-      line-height: 5.25rem;
-    }
-  }
-}
-
-.separationLines{
-  margin-top: 5rem;
-  font-family: $headerFont;
-  text-align: center;
-  font-size: 4rem;
-  background-image: 
-  linear-gradient($altoPink, transparent .05em);
-  background-size: 100% .4em;
-  @media #{$iphone} {
-    font-size: 7.5rem;
-    background-size: 100% .2em;
   }
 }
 
@@ -957,7 +850,7 @@ input:focus::-ms-input-placeholder {
 }
 
 // Mobile Contact Us
-.mobileContactUs{
+#mobileContactUs{
   display: none;
   margin-top: 5rem;
   font-family: $headerFont;
