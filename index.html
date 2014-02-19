@@ -22,11 +22,26 @@
     <!-- Animated X -->
     <script src="js/snap.svg-min.js"></script>
 
+    <!-- One-page scrolling -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>    
+
+    <!-- This following line needed in the case of setting the plugin option `scrollOverflow` to `true` -->
+
+    <script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+    
+    <!-- Adobe Typekit Fonts -->
+    <script type="text/javascript" src="http://use.typekit.net/kbv7lia.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   </head>
 
   <body>
-    
-    <div id="topFold">
+
+    <div id="section0" class="section active topFold">
 
       <!-- Menu Icon-->
       <section class="si-icons si-icons-default">
@@ -55,25 +70,26 @@
         <p class="letter">Dear Visitor,</p>
         
         <strike>
-          <p class="letter"> We are a digital consulting agency specializing in hollistic design and development. All our designers to have beards. All of our developers are really really good at ping pong. We love kale.</p>
+          <p class="letter"> We are a digital consulting agency specializing in code and design. We believe in...</p>
         </strike>
 
 
-        <p class="tagLine">tl;dr YEAH, WE CAN DO THAT</p>
+        <p class="tagLine"><span class="tldr">tl;dr..</span> YEAH, WE CAN DO THAT</p>
       </div>
 
       <!-- Logo in Lower Right -->
       <div class="lowerRight">
         <!-- Diagonal -->
-        <div class="diagonal"></div>
-        <p class="logo">ALTO LABS</p>
+        <!-- <div class="diagonal"></div> -->
+        <!-- <p class="logo">ALTO LABS</p> -->
+        <img src="img/logo.png" alt="">
       </div>
     </div>
 
     <!-- What We Do -->
 
     <!-- Branding  -->
-    <div id="page-wrap-1">
+    <div id="section1" class="section page-wrap-1">
       <p class="whatWeDoText">BRANDING</p>
       <img src="img/eye.png" id="logo">
       
@@ -87,7 +103,7 @@
     </div>
 
     <!-- Design  -->
-    <div id="page-wrap-2">
+    <div id="page-wrap-2" class="section">
       <p class="whatWeDoText">DESIGN</p>
       <img src="img/hands.png" id="logo">
       
@@ -101,7 +117,7 @@
     </div>
 
     <!-- Code  -->
-    <div id="page-wrap-1">
+    <div id="page-wrap-1" class="section">
       <p class="whatWeDoText">CODE</p>
       <img src="img/ruby.png" id="logo">
       
@@ -212,6 +228,45 @@
       })();
     </script>
 
-    
+    <!-- One-Page Scrolling -->
+    <script>
+      $(document).ready(function() {
+        $.fn.fullpage({
+          verticalCentered: true,
+          resize : true,
+          slidesColor : [],
+          anchors:[],
+          scrollingSpeed: 900,
+          easing: 'easeInExpo',
+          menu: false,
+          navigation: false,
+          navigationPosition: 'right',
+          navigationTooltips: ['firstSlide', 'secondSlide'],
+          slidesNavigation: true,
+          slidesNavPosition: 'bottom',
+          loopBottom: false,
+          loopTop: false,
+          loopHorizontal: true,
+          autoScrolling: true,
+          scrollOverflow: false,
+          css3: true,
+          paddingTop: '0em',
+          paddingBottom: '0px',
+          fixedElements: '#element1, .element2',
+          normalScrollElements: '#element1, .element2',
+          keyboardScrolling: true,
+          touchSensitivity: 15,
+          continuousVertical: false,
+          animateAnchor: true,
+
+          //events
+          onLeave: function(index, direction){},
+          afterLoad: function(anchorLink, index){},
+          afterRender: function(){},
+          afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+          onSlideLeave: function(anchorLink, index, slideIndex, direction){}
+        });
+      });
+    </script>
   </body>
 </html>

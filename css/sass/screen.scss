@@ -49,7 +49,7 @@ Developer @AltoLabs Los Angeles
 $altoPink: #ec008c;
 $headerFont: 'Fjalla One', sans-serif;
 $subHeaderFont: 'Domine', serif;
-$letterFont: 'Droid Serif', serif;
+$letterFont: 'garamond-premier-pro', serif;
 
 // Test Fonts
 // font-family: 'Cabin', sans-serif;
@@ -78,14 +78,25 @@ $iphone: "only screen
         and (orientation : portrait)";
 
 $borderMargin: 2rem;
-$borderThickness: 1rem;
+$borderThickness: 1.2rem;
+$borderColor: black;
 
-#topFold{
+.topFold{
   position:relative;
   width: calc(100% - 2 * $borderMargin);
   height: 52rem;
-  border: $borderThickness solid black;
-  margin: $borderMargin;
+  // border: $borderThickness solid black;
+  // margin: $borderMargin;
+  &:before{
+      content: " ";
+      position: absolute;
+      z-index: -1;
+      top: $borderMargin;
+      left: $borderMargin;
+      right: $borderMargin;
+      bottom: $borderMargin;
+      border: $borderThickness solid $borderColor;
+  }
   @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 568px) 
@@ -241,30 +252,38 @@ and (orientation : portrait) {
 
 .foldText{
   width: 45%;
-  margin-left: 5%;
+  margin-left: 10%;
   top: 20%;
   position: absolute;
   .letter{
     font-family: $letterFont;
-    font-size: 1.5rem;
+    font-size: 3rem;
     color: black;
+    font-weight: 400;
+    font-style: italic;
   }
   strike{
     color: $altoPink;
   }
   .tagLine{
     font-family: $headerFont;
-    font-size: 3rem;
+    font-size: 4rem;
     margin-top: 3rem;
+    color: #000000;
+    .tldr{
+      font-size: 3rem;
+    }
   }
 }
 
 .lowerRight{
   position:absolute;
-  top: 85%;
-  left: 92%;
+  top: 64%;
+  left: 82%;
   .logo{
     font-family: $headerFont;
+    font-size: 1.5rem;
+
   }
   .diagonal {
       position:absolute;
@@ -272,6 +291,10 @@ and (orientation : portrait) {
       border-bottom: .2rem solid $altoPink; 
       -webkit-transform: rotate(135deg); 
       left: -89%;
+  }
+  img{
+    width: 75%;
+    height: auto;
   }
 }
 
@@ -288,7 +311,7 @@ and (orientation : portrait) {
   margin-left: 20%; 
 }
 
-#page-wrap-1 {
+.page-wrap-1 {
   @extend #page-wrap;
   @include stdLeftMargin;
   @media #{$iphone} {
