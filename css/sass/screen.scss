@@ -51,23 +51,6 @@ $headerFont: 'Fjalla One', sans-serif;
 $subHeaderFont: 'Domine', serif;
 $letterFont: 'garamond-premier-pro',serif;
 
-// Test Fonts
-// font-family: 'Cabin', sans-serif;
-// font-family: 'Domine', serif;
-
-// $headerFont: 'Oswald', sans-serif; Maybe try Droid Serif in ital?
-// $subHeaderFont: 'Droid Serif', serif;
-
-// $headerFont: 'Fjalla One', sans-serif;
-// $subHeaderFont: 'Cantarell', sans-serif;
-
-// $headerFont: 'Fjalla One', sans-serif;
-// $subHeaderFont: 'Roboto', sans-serif;
-
-// $headerFont: 'Fjalla One', sans-serif;
-// $subHeaderFont: 'Domine', serif;
-
-
 
 // Turn iphone media queries into simply @media #{iphone}{content_here}
 
@@ -81,12 +64,16 @@ $borderMargin: 2rem;
 $borderThickness: 1.2rem;
 $borderColor: black;
 
+#section0{
+  margin-bottom: 0px !important;
+}
 .topFold{
   position:relative;
   width: calc(100% - 2 * $borderMargin);
   height: 52rem;
   // border: $borderThickness solid black;
   // margin: $borderMargin;
+
   &:before{
       content: " ";
       position: absolute;
@@ -105,6 +92,16 @@ and (orientation : portrait) {
   }
 }
 // Animated Cross Menu
+
+.si-icons {
+  vertical-align: top !important;
+  position: relative;
+  // Top has to be a negative number because fullpage.js imposes a vertical-align middle onto the div
+  top: -40%;
+  right: 7%;
+  display: block;
+  z-index: 1000000000000;
+}
 .si-icons span {
   display: inline-block;
   width: 64px;
@@ -280,18 +277,6 @@ and (orientation : portrait) {
   position:absolute;
   top: 64%;
   left: 82%;
-  .logo{
-    font-family: $headerFont;
-    font-size: 1.5rem;
-
-  }
-  .diagonal {
-      position:absolute;
-      width: 14rem; 
-      border-bottom: .2rem solid $altoPink; 
-      -webkit-transform: rotate(135deg); 
-      left: -89%;
-  }
   img{
     width: 75%;
     height: auto;
@@ -300,43 +285,78 @@ and (orientation : portrait) {
 
 // Our Work
 
+#ac-wrapper{
+  margin-top: 1rem;
+}
 .ac-wrapper {
-  margin-top: 5rem;
-  width: 100%;
-  position: relative;
   -webkit-perspective: 1000px;
   -moz-perspective: 1000px;
   perspective: 1000px;
   -webkit-perspective-origin: 50% 25%;
   -moz-perspective-origin: 50% 25%;
   perspective-origin: 50% 25%;
+
+  .ourWork{
+    display: block;
+    width: 35%;
+    margin: 0 auto;
+    span{
+      // display: inline-block;
+      position: relative;
+      margin: 3rem auto;
+      width: 35%;
+      // Centers an element with relative positioning
+      -webkit-box-align:center;
+      -webkit-box-pack:center;
+      display: -webkit-box;
+      
+      // Lines on either side of Logo
+
+      $lineThickness: 2px;
+      $lineColor: $altoPink;
+
+      &:before, &:after{
+        content: "";
+        position: absolute;
+        height: $lineThickness;
+        background: $lineColor;
+        top: 0;
+        width: 86%;
+      }
+      
+      // Space between the logo and the lines
+      $blankSpace: 68%;
+
+      &:before{
+        right: $blankSpace;
+        margin-right: 15px;
+      }
+
+      &:after{
+        left: $blankSpace;
+        margin-left: 15px;
+      }
+      img{
+        width: 22%;
+        margin: -1rem auto;
+        display: block;
+      }
+    }
+    
+    h1{
+      margin-top: 3rem;
+      font-family: $headerFont;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+  }
 }
 
-.ac-wrapper h2 {
-  top: 20%;
-  width: 50%;
-  position: absolute;
-  font-weight: 300;
-  font-size: 4em;
-  text-align: right;
-  padding: 0 180px 0 50px;
-  pointer-events: none;
-  font-family: $headerFont
-}
-
-.ac-wrapper h2 span {
-  display: block;
-  font-size: 60%;
-  color: #c0c0c0;
-  font-family: $headerFont
-}
 
 .ac-device {
-  background: url(../../images/iPhone.png) no-repeat;
-  width: 288px;
-  height: 611px;
+  background: no-repeat;
+  width: 38%;
   margin: 0 auto;
-  position: relative;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -346,33 +366,22 @@ and (orientation : portrait) {
 }
 
 .ac-device a {
-  height: 440px;
-  width: 249px;
+  height: auto;
+  width: 100%;
   display: inline-block;
-  margin: 85px 0 0 20px;
+  // margin: 85px 0 0 20px;
 }
 
 .ac-device a img {
   display: block;
-  margin-top: 0;
-}
-
-.ac-device h3 {
-  position: absolute;
-  font-size: 1.75rem;
-  left: 100%;
-  width: 100%;
-  top: 60%;
-  margin-left: 30px;
-  font-weight: 300;
-  // color: #888;
-  font-family: $subHeaderFont
+  margin: 0 auto;
+  width: 100%
 }
 
 .ac-grid {
   position: absolute;
   width: 100%;
-  padding-top: 11em;
+  padding-top: 5em;
   z-index: 1000;
   top: 0;
   left: 0;
@@ -570,7 +579,188 @@ and (orientation : portrait) {
     transform: translateZ(0px) !important;
   }
 }
+
+// $columnWidth should not exceed 33.33%
+$spaceBetweenColumns: 10%;
+$thirdColumnWidth: 20%;
+$columnWidth: (90% - 2* $spaceBetweenColumns - $thirdColumnWidth) / 2;
+$spaceBetweenTitleAndRectangles: .75rem;
+$spaceBetweenRectanglesAndDescription: ($spaceBetweenTitleAndRectangles * .9);
+
+
+.threeColumn{
+  width: 75%;
+  margin: 0 auto;
+
+  .workTitle{
+    font-family: $headerFont;
+    font-size: 3rem;
+    margin-bottom: $spaceBetweenTitleAndRectangles;    
+  }
+
+  .vettoDescription{
+    .column1{
+      float: left;
+      width: $columnWidth;
+      font-family: $subHeaderFont;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    .column2{
+      float: left;
+      width: $columnWidth;
+      margin-left: $spaceBetweenColumns;
+      margin-right: $spaceBetweenColumns;
+      font-family: $subHeaderFont;
+      font-weight: 700;
+      .ourRoleContainer{
+        width: 100%;
+
+        $ourRoleWidth: 40%;
+        .ourRole{
+          float:left;
+          width: $ourRoleWidth;
+        }
+        .listRole{
+          margin-left: $ourRoleWidth;
+          font-style: italic;
+
+        }
+      }
+      
+    }
+    
+    $circleSize: 2.5em;
+    $circleColor: $altoPink;
+    .column3{
+      float: left;
+      width: $thirdColumnWidth;
+      .glasses{
+        float:left;
+        // padding-top: .5em;
+        line-height: $circleSize;
+        font-family: $headerFont;
+        letter-spacing: .5px;
+        width: 70%;
+        img{
+          width: 30%;
+          margin-right: 3%;
+        }
+      }
+      $arrowThickness: 2px;
+      $arrowColor: #fff;
+      $arrowSize: .6em;
+
+      .seeMoreArrow{
+        vertical-align: center;
+        a {
+          border-radius: 50%;
+
+          // Circle turns color on hover
+          &:hover .right{
+            background: lime;
+          }
+          
+          // Circle
+          .right {
+            display: inline-block;
+            width: $circleSize;
+            height: $circleSize;
+            border-radius: 50%;
+            background: $circleColor;
+            // Arrow inside circle
+            &:after {
+              content: '';
+              display: inline-block;
+              margin-top: 1em;
+              margin-left: .8em;
+              width: $arrowSize;
+              height: $arrowSize;
+              border-top: $arrowThickness solid $arrowColor;
+              border-right: $arrowThickness solid $arrowColor;
+              -moz-transform: rotate(45deg);
+              -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// $rectangleThickness shoudl be in px instead of rem or em because rem/em do not register at such a small value as .2rem
+
+$rectangleThickness: 4px;
+
+.emptyRectangle{
+  width: 100%;
+  height: $rectangleThickness;
+  border: 1px solid black;
+  margin-bottom: $spaceBetweenRectanglesAndDescription;
+}
+
 // Contact Us
+
+.contactUsWrapper{
+  .contactUsText{
+    width:30%;
+    margin: 0 auto;
+    h1{
+      font-family: $letterFont;
+      font-size: 7rem;
+      text-align: center;
+    }
+
+    .rectangle{
+      height: 1px;
+      width: 45%;
+      background: black;
+      margin: 0 auto;
+    }
+
+    p{
+      font-family: $letterFont;
+      font-size: 2rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+  
+  $contactButtonHeight: 6rem;
+
+  .contactButton{
+    width: 17%;
+    border-radius: 6px;
+    border: 2px solid rgba(236,0,140, .5);
+    box-shadow: 0px 0px 2rem $altoPink;
+    margin: 2rem auto;
+    height: $contactButtonHeight;
+    font-family: $headerFont;
+    font-size: 2rem;
+    text-align: center;
+    line-height: $contactButtonHeight;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    &:hover{
+      background: $altoPink;
+      text-decoration: none;
+      color: white;
+      a{
+        color: white;
+      }
+    }
+    a{
+      text-decoration: none;
+      color: $altoPink;
+      &:hover{
+        color: white;
+      }
+    }
+  }
+}
 
 /* general style for the form */
 .nl-form {
