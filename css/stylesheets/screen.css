@@ -74,13 +74,19 @@ Developer @AltoLabs Los Angeles
   border: 1.2rem solid black;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 77, ../sass/screen.scss */
+  .topFold:before {
+    border: 0.5rem solid black;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
   /* line 70, ../sass/screen.scss */
   .topFold {
     height: 65rem;
   }
 }
 
-/* line 96, ../sass/screen.scss */
+/* line 99, ../sass/screen.scss */
 .si-icons {
   vertical-align: top !important;
   position: relative;
@@ -89,8 +95,15 @@ Developer @AltoLabs Los Angeles
   display: block;
   z-index: 1000000000000;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 99, ../sass/screen.scss */
+  .si-icons {
+    top: -45%;
+    right: 20%;
+  }
+}
 
-/* line 105, ../sass/screen.scss */
+/* line 114, ../sass/screen.scss */
 .si-icons span {
   display: inline-block;
   width: 64px;
@@ -105,21 +118,26 @@ Developer @AltoLabs Los Angeles
   z-index: 400001;
 }
 
-/* line 119, ../sass/screen.scss */
+/* line 128, ../sass/screen.scss */
 .si-icons-hover span {
   width: 128px;
   height: 128px;
   margin: 50px 40px;
 }
 
+/* line 134, ../sass/screen.scss */
+svg {
+  width: 70%;
+}
+
 /* Fallback for browsers that don't support SVG - Generated with http://iconizr.com/ */
-/* line 126, ../sass/screen.scss */
+/* line 138, ../sass/screen.scss */
 .no-svg .si-icon-hamburger, .no-svg .si-icon-hamburger-cross {
   background-image: url("img/hamburger.png");
 }
 
 /* Overlay style */
-/* line 131, ../sass/screen.scss */
+/* line 143, ../sass/screen.scss */
 .overlay {
   position: fixed;
   width: 100%;
@@ -132,7 +150,7 @@ Developer @AltoLabs Los Angeles
 }
 
 /* Overlay closing cross */
-/* line 143, ../sass/screen.scss */
+/* line 155, ../sass/screen.scss */
 .overlay .overlay-close {
   width: 80px;
   height: 80px;
@@ -149,7 +167,7 @@ Developer @AltoLabs Los Angeles
 }
 
 /* Menu style */
-/* line 159, ../sass/screen.scss */
+/* line 171, ../sass/screen.scss */
 .overlay nav {
   text-align: center;
   position: relative;
@@ -160,7 +178,7 @@ Developer @AltoLabs Los Angeles
   transform: translateY(-50%);
 }
 
-/* line 169, ../sass/screen.scss */
+/* line 181, ../sass/screen.scss */
 .overlay ul {
   list-style: none;
   padding: 0;
@@ -170,7 +188,7 @@ Developer @AltoLabs Los Angeles
   position: relative;
 }
 
-/* line 178, ../sass/screen.scss */
+/* line 190, ../sass/screen.scss */
 .overlay ul li {
   display: block;
   height: 20%;
@@ -178,7 +196,7 @@ Developer @AltoLabs Los Angeles
   min-height: 54px;
 }
 
-/* line 185, ../sass/screen.scss */
+/* line 197, ../sass/screen.scss */
 .overlay ul li a {
   font-weight: 300;
   display: block;
@@ -187,14 +205,14 @@ Developer @AltoLabs Los Angeles
   transition: color 0.2s;
 }
 
-/* line 194, ../sass/screen.scss */
+/* line 206, ../sass/screen.scss */
 .overlay ul li a:hover,
 .overlay ul li a:focus {
   color: #e3fcb1;
 }
 
 /* Effects */
-/* line 199, ../sass/screen.scss */
+/* line 211, ../sass/screen.scss */
 .overlay-hugeinc {
   opacity: 0;
   visibility: hidden;
@@ -202,7 +220,7 @@ Developer @AltoLabs Los Angeles
   transition: opacity 0.5s, visibility 0s 0.5s;
 }
 
-/* line 206, ../sass/screen.scss */
+/* line 218, ../sass/screen.scss */
 .overlay-hugeinc.open {
   opacity: .75;
   visibility: visible;
@@ -211,13 +229,13 @@ Developer @AltoLabs Los Angeles
   z-index: 4000;
 }
 
-/* line 214, ../sass/screen.scss */
+/* line 226, ../sass/screen.scss */
 .overlay-hugeinc nav {
   -webkit-perspective: 1200px;
   perspective: 1200px;
 }
 
-/* line 219, ../sass/screen.scss */
+/* line 231, ../sass/screen.scss */
 .overlay-hugeinc nav ul {
   opacity: 0.4;
   -webkit-transform: translateY(-25%) rotateX(35deg);
@@ -226,39 +244,46 @@ Developer @AltoLabs Los Angeles
   transition: transform 0.5s, opacity 0.5s;
 }
 
-/* line 227, ../sass/screen.scss */
+/* line 239, ../sass/screen.scss */
 .overlay-hugeinc.open nav ul {
   opacity: 1;
   -webkit-transform: rotateX(0deg);
   transform: rotateX(0deg);
 }
 
-/* line 233, ../sass/screen.scss */
+/* line 245, ../sass/screen.scss */
 .overlay-hugeinc.close nav ul {
   -webkit-transform: translateY(25%) rotateX(-35deg);
   transform: translateY(25%) rotateX(-35deg);
 }
 
 @media screen and (max-height: 30.5em) {
-  /* line 239, ../sass/screen.scss */
+  /* line 251, ../sass/screen.scss */
   .overlay nav {
     height: 70%;
     font-size: 34px;
   }
 
-  /* line 243, ../sass/screen.scss */
+  /* line 255, ../sass/screen.scss */
   .overlay ul li {
     min-height: 34px;
   }
 }
-/* line 250, ../sass/screen.scss */
+/* line 262, ../sass/screen.scss */
 .foldText {
   width: 45%;
   margin-left: 10%;
   top: 20%;
   position: absolute;
 }
-/* line 255, ../sass/screen.scss */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 262, ../sass/screen.scss */
+  .foldText {
+    width: 70%;
+    margin-left: 15%;
+  }
+}
+/* line 271, ../sass/screen.scss */
 .foldText .letter {
   font-family: "garamond-premier-pro", serif;
   font-size: 3rem;
@@ -266,40 +291,77 @@ Developer @AltoLabs Los Angeles
   font-weight: 400;
   font-style: italic;
 }
-/* line 262, ../sass/screen.scss */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 271, ../sass/screen.scss */
+  .foldText .letter {
+    font-size: 2rem;
+  }
+}
+/* line 281, ../sass/screen.scss */
 .foldText strike {
   color: #ec008c;
 }
-/* line 265, ../sass/screen.scss */
+/* line 284, ../sass/screen.scss */
 .foldText .tagLine {
   font-family: "Fjalla One", sans-serif;
   font-size: 4rem;
   margin-top: 3rem;
   color: #000000;
 }
-/* line 270, ../sass/screen.scss */
+/* line 289, ../sass/screen.scss */
 .foldText .tagLine .tldr {
   font-size: 3rem;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 289, ../sass/screen.scss */
+  .foldText .tagLine .tldr {
+    font-size: 2.5rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 284, ../sass/screen.scss */
+  .foldText .tagLine {
+    font-size: 3rem;
+  }
+}
 
-/* line 276, ../sass/screen.scss */
+/* line 301, ../sass/screen.scss */
 .lowerRight {
   position: absolute;
   top: 64%;
   left: 82%;
 }
-/* line 280, ../sass/screen.scss */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 301, ../sass/screen.scss */
+  .lowerRight {
+    top: 74%;
+    left: 62%;
+  }
+}
+/* line 309, ../sass/screen.scss */
 .lowerRight img {
   width: 75%;
   height: auto;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 309, ../sass/screen.scss */
+  .lowerRight img {
+    width: 60%;
+  }
+}
 
-/* line 288, ../sass/screen.scss */
+/* line 320, ../sass/screen.scss */
 #ac-wrapper {
   margin-top: 1rem;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 320, ../sass/screen.scss */
+  #ac-wrapper {
+    margin-top: 0rem;
+  }
+}
 
-/* line 291, ../sass/screen.scss */
+/* line 326, ../sass/screen.scss */
 .ac-wrapper {
   -webkit-perspective: 1000px;
   -moz-perspective: 1000px;
@@ -308,13 +370,19 @@ Developer @AltoLabs Los Angeles
   -moz-perspective-origin: 50% 25%;
   perspective-origin: 50% 25%;
 }
-/* line 299, ../sass/screen.scss */
+/* line 334, ../sass/screen.scss */
 .ac-wrapper .ourWork {
   display: block;
   width: 35%;
   margin: 0 auto;
 }
-/* line 303, ../sass/screen.scss */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 334, ../sass/screen.scss */
+  .ac-wrapper .ourWork {
+    width: 100%;
+  }
+}
+/* line 341, ../sass/screen.scss */
 .ac-wrapper .ourWork span {
   position: relative;
   margin: 3rem auto;
@@ -323,7 +391,7 @@ Developer @AltoLabs Los Angeles
   -webkit-box-pack: center;
   display: -webkit-box;
 }
-/* line 318, ../sass/screen.scss */
+/* line 356, ../sass/screen.scss */
 .ac-wrapper .ourWork span:before, .ac-wrapper .ourWork span:after {
   content: "";
   position: absolute;
@@ -332,31 +400,44 @@ Developer @AltoLabs Los Angeles
   top: 0;
   width: 86%;
 }
-/* line 330, ../sass/screen.scss */
+/* line 368, ../sass/screen.scss */
 .ac-wrapper .ourWork span:before {
   right: 68%;
   margin-right: 15px;
 }
-/* line 335, ../sass/screen.scss */
+/* line 373, ../sass/screen.scss */
 .ac-wrapper .ourWork span:after {
   left: 68%;
   margin-left: 15px;
 }
-/* line 339, ../sass/screen.scss */
+/* line 377, ../sass/screen.scss */
 .ac-wrapper .ourWork span img {
   width: 22%;
   margin: -1rem auto;
   display: block;
 }
-/* line 346, ../sass/screen.scss */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 377, ../sass/screen.scss */
+  .ac-wrapper .ourWork span img {
+    width: 32%;
+  }
+}
+/* line 387, ../sass/screen.scss */
 .ac-wrapper .ourWork h1 {
   margin-top: 3rem;
   font-family: "Fjalla One", sans-serif;
   text-align: center;
   letter-spacing: 1px;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 387, ../sass/screen.scss */
+  .ac-wrapper .ourWork h1 {
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+}
 
-/* line 356, ../sass/screen.scss */
+/* line 401, ../sass/screen.scss */
 .ac-device {
   background: no-repeat;
   width: 38%;
@@ -368,22 +449,28 @@ Developer @AltoLabs Los Angeles
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 401, ../sass/screen.scss */
+  .ac-device {
+    margin: 3rem auto 1rem;
+  }
+}
 
-/* line 368, ../sass/screen.scss */
+/* line 416, ../sass/screen.scss */
 .ac-device a {
   height: auto;
   width: 100%;
   display: inline-block;
 }
 
-/* line 375, ../sass/screen.scss */
+/* line 423, ../sass/screen.scss */
 .ac-device a img {
   display: block;
   margin: 0 auto;
   width: 100%;
 }
 
-/* line 381, ../sass/screen.scss */
+/* line 429, ../sass/screen.scss */
 .ac-grid {
   position: absolute;
   width: 100%;
@@ -395,7 +482,7 @@ Developer @AltoLabs Los Angeles
   pointer-events: none;
 }
 
-/* line 392, ../sass/screen.scss */
+/* line 440, ../sass/screen.scss */
 .ac-grid a {
   width: 220px;
   display: inline-block;
@@ -415,27 +502,27 @@ Developer @AltoLabs Los Angeles
   transition-delay: 0s;
 }
 
-/* line 411, ../sass/screen.scss */
+/* line 459, ../sass/screen.scss */
 .ac-grid a:first-child {
   -webkit-transform-origin: right center;
   -moz-transform-origin: right center;
   transform-origin: right center;
 }
 
-/* line 417, ../sass/screen.scss */
+/* line 465, ../sass/screen.scss */
 .ac-grid a:last-child {
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   transform-origin: left center;
 }
 
-/* line 423, ../sass/screen.scss */
+/* line 471, ../sass/screen.scss */
 .ac-grid a img {
   display: block;
   width: 100%;
 }
 
-/* line 428, ../sass/screen.scss */
+/* line 476, ../sass/screen.scss */
 .ac-grid a span {
   position: absolute;
   height: 100%;
@@ -457,7 +544,7 @@ Developer @AltoLabs Los Angeles
   transition: all 0.2s ease;
 }
 
-/* line 449, ../sass/screen.scss */
+/* line 497, ../sass/screen.scss */
 .ac-grid a:hover span {
   opacity: 1;
   -webkit-transform: translateY(0);
@@ -465,7 +552,7 @@ Developer @AltoLabs Los Angeles
   transform: translateY(0);
 }
 
-/* line 456, ../sass/screen.scss */
+/* line 504, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-device {
   -webkit-transform: translateZ(-350px);
   -moz-transform: translateZ(-350px);
@@ -473,18 +560,18 @@ Developer @AltoLabs Los Angeles
   opacity: .6;
 }
 
-/* line 463, ../sass/screen.scss */
+/* line 511, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid {
   pointer-events: auto;
 }
 
-/* line 467, ../sass/screen.scss */
+/* line 515, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* line 473, ../sass/screen.scss */
+/* line 521, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a:nth-child(2) {
   -webkit-transition-delay: 50ms;
   -moz-transition-delay: 50ms;
@@ -494,7 +581,7 @@ Developer @AltoLabs Los Angeles
   transform: translateZ(0px);
 }
 
-/* line 482, ../sass/screen.scss */
+/* line 530, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a:nth-child(3) {
   -webkit-transition-delay: 100ms;
   -moz-transition-delay: 100ms;
@@ -504,7 +591,7 @@ Developer @AltoLabs Los Angeles
   transform: translateZ(0px);
 }
 
-/* line 491, ../sass/screen.scss */
+/* line 539, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a:last-child {
   -webkit-transition-delay: 150ms;
   -moz-transition-delay: 150ms;
@@ -512,12 +599,12 @@ Developer @AltoLabs Los Angeles
 }
 
 @media screen and (max-width: 63.875em) {
-  /* line 498, ../sass/screen.scss */
+  /* line 546, ../sass/screen.scss */
   .ac-wrapper {
     padding: 0 20px 100px;
   }
 
-  /* line 502, ../sass/screen.scss */
+  /* line 550, ../sass/screen.scss */
   .ac-wrapper h2 {
     width: 100%;
     text-align: center;
@@ -529,13 +616,13 @@ Developer @AltoLabs Los Angeles
     font-size: 6.5rem;
   }
 
-  /* line 513, ../sass/screen.scss */
+  /* line 561, ../sass/screen.scss */
   .ac-device {
     margin: 0 auto;
     width: 288px;
   }
 
-  /* line 518, ../sass/screen.scss */
+  /* line 566, ../sass/screen.scss */
   .ac-device h3 {
     position: relative;
     margin: 0;
@@ -548,7 +635,7 @@ Developer @AltoLabs Los Angeles
   }
 }
 @media screen and (max-width: 58em) {
-  /* line 531, ../sass/screen.scss */
+  /* line 579, ../sass/screen.scss */
   .ac-grid {
     width: 90%;
     left: 5%;
@@ -556,18 +643,23 @@ Developer @AltoLabs Los Angeles
     padding-top: 8em;
   }
 
-  /* line 538, ../sass/screen.scss */
+  /* line 586, ../sass/screen.scss */
   .ac-grid a {
     width: 22%;
   }
 }
 @media screen and (max-width: 35.6875em) {
-  /* line 544, ../sass/screen.scss */
+  /* line 592, ../sass/screen.scss */
+  .ac-grid {
+    padding-top: 0em;
+  }
+
+  /* line 596, ../sass/screen.scss */
   .ac-wrapper {
     padding: 0 20px 100px;
   }
 
-  /* line 548, ../sass/screen.scss */
+  /* line 600, ../sass/screen.scss */
   .ac-wrapper h2 {
     width: 100%;
     text-align: center;
@@ -577,13 +669,13 @@ Developer @AltoLabs Los Angeles
     position: relative;
   }
 
-  /* line 557, ../sass/screen.scss */
+  /* line 609, ../sass/screen.scss */
   .ac-device {
     margin: 0 auto;
     width: 288px;
   }
 
-  /* line 562, ../sass/screen.scss */
+  /* line 614, ../sass/screen.scss */
   .ac-device h3 {
     position: relative;
     margin: 0;
@@ -594,30 +686,30 @@ Developer @AltoLabs Los Angeles
     text-align: center;
   }
 
-  /* line 572, ../sass/screen.scss */
+  /* line 624, ../sass/screen.scss */
   .ac-grid a {
     width: 40%;
   }
 
-  /* line 576, ../sass/screen.scss */
+  /* line 628, ../sass/screen.scss */
   .ac-wrapper.ac-gridview .ac-grid a {
     -webkit-transform: translateZ(0px) !important;
     -moz-transform: translateZ(0px) !important;
     transform: translateZ(0px) !important;
   }
 }
-/* line 591, ../sass/screen.scss */
+/* line 643, ../sass/screen.scss */
 .threeColumn {
   width: 75%;
   margin: 0 auto;
 }
-/* line 595, ../sass/screen.scss */
+/* line 647, ../sass/screen.scss */
 .threeColumn .workTitle {
   font-family: "Fjalla One", sans-serif;
   font-size: 3rem;
   margin-bottom: 0.75rem;
 }
-/* line 602, ../sass/screen.scss */
+/* line 654, ../sass/screen.scss */
 .threeColumn .vettoDescription .column1 {
   float: left;
   width: 25%;
@@ -625,7 +717,13 @@ Developer @AltoLabs Los Angeles
   font-weight: 700;
   font-style: italic;
 }
-/* line 610, ../sass/screen.scss */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 654, ../sass/screen.scss */
+  .threeColumn .vettoDescription .column1 {
+    display: none;
+  }
+}
+/* line 665, ../sass/screen.scss */
 .threeColumn .vettoDescription .column2 {
   float: left;
   width: 25%;
@@ -634,26 +732,53 @@ Developer @AltoLabs Los Angeles
   font-family: "Domine", serif;
   font-weight: 700;
 }
-/* line 617, ../sass/screen.scss */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 665, ../sass/screen.scss */
+  .threeColumn .vettoDescription .column2 {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+/* line 676, ../sass/screen.scss */
 .threeColumn .vettoDescription .column2 .ourRoleContainer {
   width: 100%;
 }
-/* line 621, ../sass/screen.scss */
+/* line 680, ../sass/screen.scss */
 .threeColumn .vettoDescription .column2 .ourRoleContainer .ourRole {
   float: left;
   width: 40%;
 }
-/* line 625, ../sass/screen.scss */
+/* line 684, ../sass/screen.scss */
 .threeColumn .vettoDescription .column2 .ourRoleContainer .listRole {
   margin-left: 40%;
   font-style: italic;
 }
-/* line 636, ../sass/screen.scss */
+/* line 695, ../sass/screen.scss */
 .threeColumn .vettoDescription .column3 {
   float: left;
   width: 20%;
 }
-/* line 639, ../sass/screen.scss */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 695, ../sass/screen.scss */
+  .threeColumn .vettoDescription .column3 {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}
+/* line 702, ../sass/screen.scss */
+.threeColumn .vettoDescription .column3 img {
+  width: 30%;
+  margin-right: 3%;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 702, ../sass/screen.scss */
+  .threeColumn .vettoDescription .column3 img {
+    width: 20%;
+    margin-right: 5%;
+    float: left;
+  }
+}
+/* line 711, ../sass/screen.scss */
 .threeColumn .vettoDescription .column3 .glasses {
   float: left;
   line-height: 2.5em;
@@ -661,24 +786,31 @@ Developer @AltoLabs Los Angeles
   letter-spacing: .5px;
   width: 70%;
 }
-/* line 646, ../sass/screen.scss */
-.threeColumn .vettoDescription .column3 .glasses img {
-  width: 30%;
-  margin-right: 3%;
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 711, ../sass/screen.scss */
+  .threeColumn .vettoDescription .column3 .glasses {
+    line-height: 3.5rem;
+  }
 }
-/* line 655, ../sass/screen.scss */
+/* line 727, ../sass/screen.scss */
 .threeColumn .vettoDescription .column3 .seeMoreArrow {
   vertical-align: center;
 }
-/* line 657, ../sass/screen.scss */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 727, ../sass/screen.scss */
+  .threeColumn .vettoDescription .column3 .seeMoreArrow {
+    display: none;
+  }
+}
+/* line 732, ../sass/screen.scss */
 .threeColumn .vettoDescription .column3 .seeMoreArrow a {
   border-radius: 50%;
 }
-/* line 661, ../sass/screen.scss */
+/* line 736, ../sass/screen.scss */
 .threeColumn .vettoDescription .column3 .seeMoreArrow a:hover .right {
   background: lime;
 }
-/* line 666, ../sass/screen.scss */
+/* line 741, ../sass/screen.scss */
 .threeColumn .vettoDescription .column3 .seeMoreArrow a .right {
   display: inline-block;
   width: 2.5em;
@@ -686,7 +818,7 @@ Developer @AltoLabs Los Angeles
   border-radius: 50%;
   background: #ec008c;
 }
-/* line 673, ../sass/screen.scss */
+/* line 748, ../sass/screen.scss */
 .threeColumn .vettoDescription .column3 .seeMoreArrow a .right:after {
   content: '';
   display: inline-block;
@@ -701,7 +833,7 @@ Developer @AltoLabs Los Angeles
   transform: rotate(45deg);
 }
 
-/* line 697, ../sass/screen.scss */
+/* line 772, ../sass/screen.scss */
 .emptyRectangle {
   width: 100%;
   height: 4px;
@@ -709,32 +841,38 @@ Developer @AltoLabs Los Angeles
   margin-bottom: 0.675rem;
 }
 
-/* line 707, ../sass/screen.scss */
+/* line 782, ../sass/screen.scss */
 .contactUsWrapper .contactUsText {
   width: 30%;
   margin: 0 auto;
 }
-/* line 710, ../sass/screen.scss */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 782, ../sass/screen.scss */
+  .contactUsWrapper .contactUsText {
+    width: 100%;
+  }
+}
+/* line 788, ../sass/screen.scss */
 .contactUsWrapper .contactUsText h1 {
   font-family: "garamond-premier-pro", serif;
   font-size: 7rem;
   text-align: center;
 }
-/* line 716, ../sass/screen.scss */
+/* line 794, ../sass/screen.scss */
 .contactUsWrapper .contactUsText .rectangle {
   height: 1px;
   width: 45%;
   background: black;
   margin: 0 auto;
 }
-/* line 723, ../sass/screen.scss */
+/* line 801, ../sass/screen.scss */
 .contactUsWrapper .contactUsText p {
   font-family: "garamond-premier-pro", serif;
   font-size: 2rem;
   margin: 0 auto;
   text-align: center;
 }
-/* line 733, ../sass/screen.scss */
+/* line 811, ../sass/screen.scss */
 .contactUsWrapper .contactButton {
   width: 17%;
   border-radius: 6px;
@@ -750,28 +888,34 @@ Developer @AltoLabs Los Angeles
   text-decoration: none;
   letter-spacing: 1px;
 }
-/* line 747, ../sass/screen.scss */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 811, ../sass/screen.scss */
+  .contactUsWrapper .contactButton {
+    width: 80%;
+  }
+}
+/* line 828, ../sass/screen.scss */
 .contactUsWrapper .contactButton:hover {
   background: #ec008c;
   text-decoration: none;
   color: white;
 }
-/* line 751, ../sass/screen.scss */
+/* line 832, ../sass/screen.scss */
 .contactUsWrapper .contactButton:hover a {
   color: white;
 }
-/* line 755, ../sass/screen.scss */
+/* line 836, ../sass/screen.scss */
 .contactUsWrapper .contactButton a {
   text-decoration: none;
   color: #ec008c;
 }
-/* line 758, ../sass/screen.scss */
+/* line 839, ../sass/screen.scss */
 .contactUsWrapper .contactButton a:hover {
   color: white;
 }
 
 /* general style for the form */
-/* line 766, ../sass/screen.scss */
+/* line 847, ../sass/screen.scss */
 .nl-form {
   margin-top: 5rem;
   width: 100%;
@@ -780,19 +924,19 @@ Developer @AltoLabs Los Angeles
   font-size: 4em;
   line-height: 1.5;
 }
-/* line 774, ../sass/screen.scss */
+/* line 855, ../sass/screen.scss */
 .nl-form ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 780, ../sass/screen.scss */
+/* line 861, ../sass/screen.scss */
 .nl-form input:focus {
   outline: none;
 }
 
 /* normalize the input elements, make them look like everything else */
-/* line 788, ../sass/screen.scss */
+/* line 869, ../sass/screen.scss */
 .nl-form input,
 .nl-form select,
 .nl-form button {
@@ -811,19 +955,19 @@ Developer @AltoLabs Los Angeles
 }
 
 /* custom field (drop-down, text element) styling  */
-/* line 804, ../sass/screen.scss */
+/* line 885, ../sass/screen.scss */
 .nl-field {
   display: inline-block;
   position: relative;
 }
 
-/* line 809, ../sass/screen.scss */
+/* line 890, ../sass/screen.scss */
 .nl-field.nl-field-open {
   z-index: 10000;
 }
 
 /* the toggle is the visible part in the form */
-/* line 816, ../sass/screen.scss */
+/* line 897, ../sass/screen.scss */
 .nl-field-toggle,
 .nl-form input,
 .nl-form select {
@@ -835,7 +979,7 @@ Developer @AltoLabs Los Angeles
 }
 
 /* drop-down list / text element */
-/* line 825, ../sass/screen.scss */
+/* line 906, ../sass/screen.scss */
 .nl-field ul {
   position: absolute;
   visibility: hidden;
@@ -852,7 +996,7 @@ Developer @AltoLabs Los Angeles
   transition: visibility 0s 0.3s, opacity 0.3s, transform 0.3s;
 }
 
-/* line 841, ../sass/screen.scss */
+/* line 922, ../sass/screen.scss */
 .nl-field.nl-field-open ul {
   visibility: visible;
   opacity: 1;
@@ -864,36 +1008,36 @@ Developer @AltoLabs Los Angeles
   transition: visibility 0s 0s, opacity 0.3s, transform 0.3s;
 }
 
-/* line 852, ../sass/screen.scss */
+/* line 933, ../sass/screen.scss */
 .nl-field ul li {
   color: #fff;
   position: relative;
 }
 
-/* line 857, ../sass/screen.scss */
+/* line 938, ../sass/screen.scss */
 .nl-dd ul li {
   padding: 0 1.5em 0 0.5em;
   cursor: pointer;
   white-space: nowrap;
 }
 
-/* line 863, ../sass/screen.scss */
+/* line 944, ../sass/screen.scss */
 .nl-dd ul li.nl-dd-checked {
   color: #478982;
 }
 
-/* line 867, ../sass/screen.scss */
+/* line 948, ../sass/screen.scss */
 .no-touch .nl-dd ul li:hover {
   background: rgba(0, 0, 0, 0.05);
 }
 
-/* line 871, ../sass/screen.scss */
+/* line 952, ../sass/screen.scss */
 .no-touch .nl-dd ul li:hover:active {
   color: #478982;
 }
 
 /* icons for some elements */
-/* line 878, ../sass/screen.scss */
+/* line 959, ../sass/screen.scss */
 .nl-dd ul li.nl-dd-checked:before,
 .nl-submit:before,
 .nl-field-go:before {
@@ -906,7 +1050,7 @@ Developer @AltoLabs Los Angeles
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 888, ../sass/screen.scss */
+/* line 969, ../sass/screen.scss */
 .nl-dd ul li.nl-dd-checked:before {
   content: "\e000";
   position: absolute;
@@ -915,12 +1059,12 @@ Developer @AltoLabs Los Angeles
   line-height: 3;
 }
 
-/* line 896, ../sass/screen.scss */
+/* line 977, ../sass/screen.scss */
 .nl-ti-text ul {
   min-width: 8em;
 }
 
-/* line 900, ../sass/screen.scss */
+/* line 981, ../sass/screen.scss */
 .nl-ti-text ul li.nl-ti-input input {
   width: 100%;
   padding: 0.2em 2em 0.2em 0.5em;
@@ -928,7 +1072,7 @@ Developer @AltoLabs Los Angeles
   color: #fff;
 }
 
-/* line 907, ../sass/screen.scss */
+/* line 988, ../sass/screen.scss */
 .nl-form .nl-field-go {
   position: absolute;
   right: 0;
@@ -941,7 +1085,7 @@ Developer @AltoLabs Los Angeles
   color: transparent;
 }
 
-/* line 919, ../sass/screen.scss */
+/* line 1000, ../sass/screen.scss */
 .nl-field-go:before {
   content: "\e001";
   font-size: 75%;
@@ -952,41 +1096,41 @@ Developer @AltoLabs Los Angeles
 }
 
 /* custom placeholder color */
-/* line 929, ../sass/screen.scss */
+/* line 1010, ../sass/screen.scss */
 input::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 934, ../sass/screen.scss */
+/* line 1015, ../sass/screen.scss */
 input:active::-webkit-input-placeholder,
 input:focus::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.2);
 }
 
-/* line 938, ../sass/screen.scss */
+/* line 1019, ../sass/screen.scss */
 input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 943, ../sass/screen.scss */
+/* line 1024, ../sass/screen.scss */
 input:active::-moz-placeholder,
 input:focus::-moz-placeholder {
   color: rgba(255, 255, 255, 0.2);
 }
 
-/* line 947, ../sass/screen.scss */
+/* line 1028, ../sass/screen.scss */
 input:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 952, ../sass/screen.scss */
+/* line 1033, ../sass/screen.scss */
 input:active::-ms-input-placeholder,
 input:focus::-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.2);
 }
 
 /* example field below text input */
-/* line 957, ../sass/screen.scss */
+/* line 1038, ../sass/screen.scss */
 .nl-ti-text ul li.nl-ti-example {
   font-size: 40%;
   font-style: italic;
@@ -996,18 +1140,18 @@ input:focus::-ms-input-placeholder {
   border-top: 1px dashed rgba(255, 255, 255, 0.7);
 }
 
-/* line 966, ../sass/screen.scss */
+/* line 1047, ../sass/screen.scss */
 .nl-ti-text ul li.nl-ti-example em {
   color: white;
 }
 
 /* submit button */
-/* line 971, ../sass/screen.scss */
+/* line 1052, ../sass/screen.scss */
 .nl-submit-wrap {
   margin-top: 0.4em;
 }
 
-/* line 975, ../sass/screen.scss */
+/* line 1056, ../sass/screen.scss */
 .nl-form .nl-submit {
   line-height: 3;
   text-transform: uppercase;
@@ -1021,7 +1165,7 @@ input:focus::-ms-input-placeholder {
   letter-spacing: 3px;
 }
 
-/* line 988, ../sass/screen.scss */
+/* line 1069, ../sass/screen.scss */
 .nl-submit:before {
   content: "\e001";
   color: #fff;
@@ -1031,19 +1175,19 @@ input:focus::-ms-input-placeholder {
   background: #69B1A9;
 }
 
-/* line 998, ../sass/screen.scss */
+/* line 1079, ../sass/screen.scss */
 .no-touch .nl-form .nl-submit:hover,
 .no-touch .nl-form .nl-submit:active {
   background: #69B1A9;
 }
 
-/* line 1002, ../sass/screen.scss */
+/* line 1083, ../sass/screen.scss */
 .no-touch .nl-form .nl-submit:hover:before {
   background: #58a199;
 }
 
 /* overlay becomes visible when a field is opened */
-/* line 1007, ../sass/screen.scss */
+/* line 1088, ../sass/screen.scss */
 .nl-overlay {
   position: fixed;
   top: 0;
@@ -1059,7 +1203,7 @@ input:focus::-ms-input-placeholder {
   transition: visibility 0s 0.3s, opacity 0.3s;
 }
 
-/* line 1022, ../sass/screen.scss */
+/* line 1103, ../sass/screen.scss */
 .nl-field.nl-field-open ~ .nl-overlay {
   opacity: 1;
   visibility: visible;
@@ -1069,22 +1213,46 @@ input:focus::-ms-input-placeholder {
 }
 
 @media screen and (max-width: 45em) {
-  /* line 1031, ../sass/screen.scss */
+  /* line 1112, ../sass/screen.scss */
   .nl-form {
     font-size: 3em;
   }
 }
 @media screen and (max-width: 25em) {
-  /* line 1037, ../sass/screen.scss */
+  /* line 1118, ../sass/screen.scss */
   .nl-form {
     font-size: 2em;
   }
 }
-/* line 1043, ../sass/screen.scss */
+/* line 1124, ../sass/screen.scss */
 #mobileContactUs {
   display: none;
   margin-top: 5rem;
   font-family: "Fjalla One", sans-serif;
   font-size: 4rem;
   text-align: center;
+}
+
+/* for all screens */
+/* line 1133, ../sass/screen.scss */
+.info {
+  display: none;
+}
+
+@media all and (orientation: landscape) {
+  /* line 1136, ../sass/screen.scss */
+  .info {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #ec008c;
+    background-image: url("../../img/rotate.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 15% auto;
+    z-index: 10000000000000000000000;
+  }
 }

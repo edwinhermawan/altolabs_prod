@@ -17,8 +17,10 @@
     
     <!-- Load JQuery and Bootstrap -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <!-- Menu Overlay -->
     <script src="js/modernizr.custom.js"></script>
@@ -40,8 +42,9 @@
   </head>
 
   <body>
-    <div id="section0" class="section active topFold">
 
+    <div id="section0" class="section active topFold">
+      <div class="info"></div>
       <!-- Menu Icon-->
       
       <div class="si-icons si-icons-default">
@@ -82,6 +85,7 @@
 
     <!-- Our work  -->
     <div id="ac-wrapper" class="section ac-wrapper">
+      <div class="info"></div>
       <div class="ourWork">
         <span><img src="images/logoSolo.png" alt=""></span>
         <h1>OUR WORK</h1>
@@ -108,8 +112,9 @@
           </div>
           <div class="column3">
             <a href="#">
+              <img src="img/glasses.png" alt="">
               <div class="glasses">
-                <img src="img/glasses.png" alt=""> VIEW PROJECT 
+                VIEW PROJECT 
               </div>
               <div class="seeMoreArrow">
                 <a href="#">
@@ -133,7 +138,7 @@
     <!-- RO Our Work -->
 
     <div class="section ac-wrapper">
-        
+      <div class="info"></div>  
       <div class="vettoIPhone ac-device">
         <!-- img of iphone -->
         <a href="#"><img src="images/runorder.png"/></a>
@@ -155,8 +160,9 @@
           </div>
           <div class="column3">
             <a href="#">
+              <img src="img/glasses.png" alt=""> 
               <div class="glasses">
-                <img src="img/glasses.png" alt=""> VIEW PROJECT 
+                VIEW PROJECT 
               </div>
               <div class="seeMoreArrow">
                 <a href="#">
@@ -180,11 +186,12 @@
 
     <!-- Contact Us -->
     <div class="contactUsWrapper section">
+      <div class="info"></div>
       <div class="contactUsText">
         <h1>Let's Talk</h1>
         <div class="rectangle"></div>
 
-        <p>We'd Love to hear from you.</p>
+        <p>We'd love to hear from you.</p>
         <p>Let us know the details and a little about yourself.</p>
       </div>
       <div class="contactButton">
@@ -237,7 +244,7 @@
     <!-- Jquery to change html elements for mobile -->
     <script>
     $(document).ready(function() {
-     function imageresize() {
+      function imageresize() {
        if ($(window).width() <= '980') {
          // Change contact us to an a href emailto tag
          $('#nl-form').hide();
