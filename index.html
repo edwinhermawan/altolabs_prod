@@ -6,11 +6,7 @@
     <title>Alto Labs</title>
 
     <!-- Install Google Fonts-->
-    <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Domine: 400, 700' rel='stylesheet' type='text/css'>
-
-    <!-- Adobe Typekit Fonts -->
-    <script type="text/javascript" src="http://use.typekit.net/kbv7lia.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Domine: 400, 700|Playfair+Display:400italic' rel='stylesheet' type='text/css'>
 
     <!-- Main CSS file -->
     <link rel="stylesheet" href="css/stylesheets/screen.css">
@@ -20,7 +16,7 @@
 
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Menu Overlay -->
     <script src="js/modernizr.custom.js"></script>
@@ -44,33 +40,33 @@
   <body>
 
     <div id="section0" class="section active topFold">
-      <div class="info"></div>
       <!-- Menu Icon-->
       
-      <div class="si-icons si-icons-default">
+      <div id="menu" class="si-icons si-icons-default">
         <span class="si-icon si-icon-hamburger-cross trigger-overlay" data-icon-name="hamburgerCross">
           
         </span>
+        <!-- Menu Overlay -->
+        <div class="overlay overlay-hugeinc">
+          <button type="button" class="overlay-close"></button>
+          <nav>
+            <ul id="">
+              <li data-menuanchor="home"><a href="#home">Home</a></li>
+              <li data-menuanchor="work"><a href="#work">Work</a></li>
+              <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
-      <!-- Menu Overlay -->
-      <div class="overlay overlay-hugeinc">
-        <button type="button" class="overlay-close"></button>
-        <nav>
-          <ul id="">
-            <li data-menuanchor="home"><a href="#home">Home</a></li>
-            <li data-menuanchor="work"><a href="#work">Work</a></li>
-            <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+      
       
       <!-- Above the Fold Text -->
       <div class="foldText">
 
-        <p class="letter">Dear Visitor,</p>
+        <!-- <p class="letter">Dear Visitor,</p> -->
         
         <strike>
-          <p class="letter"> We are a digital creative agency specializing in code and design. We believe in...</p>
+          <p class="letter"> We are a digital creative agency specializing <br/> in code and design. We believe in...</p>
         </strike>
 
 
@@ -84,67 +80,116 @@
     </div>
 
     <!-- Our work  -->
-    <div id="ac-wrapper" class="section ac-wrapper">
-      <div class="info"></div>
+    <div class="section">
       <div class="ourWork">
         <span><img src="images/logoSolo.png" alt=""></span>
         <h1>OUR WORK</h1>
       </div>
+      <div id="ac-wrapper" class="ac-wrapper">
+        <div class="vettoIPhone ac-device">
+          <!-- img of iphone -->
+          <a href="#"><img src="images/vettoIphone.png"/></a>
+        </div>
         
-      <div class="vettoIPhone ac-device">
-        <!-- img of iphone -->
-        <a href="#"><img src="images/vettoIphone.png"/></a>
-      </div>
-      
-      <div class="threeColumn">
-        <div class="workTitle">VETTO</div>
-        <div class="vettoDescription">
-          <div class="column1">
-            <div class="emptyRectangle"></div>
-            <p>Investors Meet Startups.</p>
-          </div>
-          <div class="column2">
-            <div class="emptyRectangle"></div>
-            <div class="ourRoleContainer">
-              <div class="ourRole">OUR ROLE:</div>
-              <div class="listRole">Design, Branding, Concept, Development</div>
+        <div class="ac-device threeColumn">
+          <div class="workTitle">VETTO</div>
+          <div class="vettoDescription">
+            <div class="column1">
+              <div class="emptyRectangle"></div>
+              <p>Investors Meet Startups.</p>
             </div>
-          </div>
-          <div class="column3">
-            <a href="#">
-              <img src="img/glasses.png" alt="">
-              <div class="glasses">
-                VIEW PROJECT 
+            <div class="column2">
+              <div class="emptyRectangle"></div>
+              <div class="ourRoleContainer">
+                <div class="ourRole">OUR ROLE:</div>
+                <div class="listRole">Design, Branding, Concept, Development</div>
               </div>
-              <div class="seeMoreArrow">
-                <a href="#">
-                  <span class="right"></span>
-                </a>
-              </div>
-            </a>
+            </div>
+            <div class="column3">
+              <a href="#">
+                <img src="img/glasses.png" alt="">
+                <div class="glasses">
+                  VIEW PROJECT 
+                </div>
+                <div class="seeMoreArrow">
+                  <a href="#">
+                    <span class="right"></span>
+                  </a>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
         
-      </div>
-      
-      <div class="ac-grid">
-        <a href="#"><img src="images/screen2.jpg"/><span>Gentrify small batch umami retro vegan</span></a>
-        <a href="#"><img src="images/screen1.jpg"/><span>Chambray squid semiotics</span></a>
-        <a href="#"><img src="images/screen3.jpg"/><span>Fashion axe blue bottle</span></a>
-        <a href="#"><img src="images/screen4.jpg"/><span>Photo booth single-origin coffee</span></a>
+        <div class="ac-grid">
+          <a href="#"><img src="images/screen2.jpg"/><span>Gentrify small batch umami retro vegan</span></a>
+          <a href="#"><img src="images/screen1.jpg"/><span>Chambray squid semiotics</span></a>
+          <a href="#"><img src="images/screen3.jpg"/><span>Fashion axe blue bottle</span></a>
+          <a href="#"><img src="images/screen4.jpg"/><span>Photo booth single-origin coffee</span></a>
+        </div>
       </div>
     </div>
-
     <!-- RO Our Work -->
 
-    <div class="section ac-wrapper">
+<div class="section">
+      <div class="ourWork">
+        <span><img src="images/logoSolo.png" alt=""></span>
+        <h1>OUR WORK</h1>
+      </div>
+      <div id="ac-wrapper" class="ac-wrapper">
+        <div class="vettoIPhone ac-device">
+          <!-- img of iphone -->
+          <a href="#"><img src="images/vettoIphone.png"/></a>
+        </div>
+        
+        <div class="ac-device threeColumn">
+          <div class="workTitle">VETTO</div>
+          <div class="vettoDescription">
+            <div class="column1">
+              <div class="emptyRectangle"></div>
+              <p>Investors Meet Startups.</p>
+            </div>
+            <div class="column2">
+              <div class="emptyRectangle"></div>
+              <div class="ourRoleContainer">
+                <div class="ourRole">OUR ROLE:</div>
+                <div class="listRole">Design, Branding, Concept, Development</div>
+              </div>
+            </div>
+            <div class="column3">
+              <a href="#">
+                <img src="img/glasses.png" alt="">
+                <div class="glasses">
+                  VIEW PROJECT 
+                </div>
+                <div class="seeMoreArrow">
+                  <a href="#">
+                    <span class="right"></span>
+                  </a>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ac-grid">
+          <a href="#"><img src="images/screen2.jpg"/><span>Gentrify small batch umami retro vegan</span></a>
+          <a href="#"><img src="images/screen1.jpg"/><span>Chambray squid semiotics</span></a>
+          <a href="#"><img src="images/screen3.jpg"/><span>Fashion axe blue bottle</span></a>
+          <a href="#"><img src="images/screen4.jpg"/><span>Photo booth single-origin coffee</span></a>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="section ac-wrapper">
       <div class="info"></div>  
-      <div class="vettoIPhone ac-device">
-        <!-- img of iphone -->
-        <a href="#"><img src="images/runorder.png"/></a>
+      <div id="roImage" class="vettoIPhone ac-device">
+
+        <a href="#">
+          <img src="images/runorder.png"/>
+        </a>
       </div>
       
-      <div class="threeColumn">
+      <div class="ac-device threeColumn">
         <div class="workTitle">RUN ORDER</div>
         <div class="vettoDescription">
           <div class="column1">
@@ -158,6 +203,7 @@
               <div class="listRole">Design, Branding, Concept, Development</div>
             </div>
           </div>
+          <!-- <div id="roSeeMoreHide" class="column3"> -->
           <div class="column3">
             <a href="#">
               <img src="img/glasses.png" alt=""> 
@@ -176,12 +222,12 @@
       </div>
       
       <div class="ac-grid">
-        <a href="#"><img src="images/screen2.jpg"/><span>Gentrify small batch umami retro vegan</span></a>
-        <a href="#"><img src="images/screen1.jpg"/><span>Chambray squid semiotics</span></a>
-        <a href="#"><img src="images/screen3.jpg"/><span>Fashion axe blue bottle</span></a>
-        <a href="#"><img src="images/screen4.jpg"/><span>Photo booth single-origin coffee</span></a>
+        <a href="#"><img src="images/ro1.png"/></a>
+        <a href="#"><img src="images/ro2.png"/></a>
+        <a href="#"><img src="images/ro3.png"/></a>
+        <a href="#"><img src="images/ro4.png"/></a>
       </div>
-    </div>
+    </div> -->
     <!-- End Our Work -->
 
     <!-- Contact Us -->
@@ -259,7 +305,10 @@
       // Contact Us Button Shake
 
       $('.contactButton').jrumble({
-        speed: 150
+        x: 0,
+        y: 0,
+        rotation: 2,
+        speed: 300
       });
 
       $('.contactButton').hover(function(){
@@ -295,7 +344,7 @@
           anchors:['home','work', 'runorder', 'contact'],
           scrollingSpeed: 900,
           easing: 'easeInExpo',
-          menu: '',
+          menu: '#menu',
           navigation: false,
           navigationPosition: 'right',
           navigationTooltips: ['firstSlide', 'secondSlide'],
@@ -325,7 +374,7 @@
               var demoTimeout;
               clearTimeout(demoTimeout);
               $('.contactButton').trigger('startRumble');
-              demoTimeout = setTimeout(function(){$('.contactButton').trigger('stopRumble');}, 2000)
+              demoTimeout = setTimeout(function(){$('.contactButton').trigger('stopRumble');}, 1500)
               // $('.contactButton').trigger('startRumble');
             }
           },
@@ -334,6 +383,17 @@
           onSlideLeave: function(anchorLink, index, slideIndex, direction){}
         });
       });
+    </script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-48298520-1', 'altolabs.co');
+      ga('send', 'pageview');
+
     </script>
 
   </body>

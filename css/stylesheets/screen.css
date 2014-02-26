@@ -51,18 +51,30 @@ Developer @AltoLabs Los Angeles
 /******************************************
 /* BASE STYLES                   
 /*******************************************/
-/* line 67, ../sass/screen.scss */
+/* line 71, ../sass/screen.scss */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* line 75, ../sass/screen.scss */
 #section0 {
   margin-bottom: 0px !important;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  /* line 75, ../sass/screen.scss */
+  #section0 {
+    margin-top: 9%;
+  }
+}
 
-/* line 70, ../sass/screen.scss */
+/* line 86, ../sass/screen.scss */
 .topFold {
   position: relative;
   width: calc(100% - 2 * $borderMargin);
   height: 52rem;
+  background-image: url("img/hero.jpg");
 }
-/* line 77, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 .topFold:before {
   content: " ";
   position: absolute;
@@ -74,36 +86,53 @@ Developer @AltoLabs Los Angeles
   border: 1.2rem solid black;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 77, ../sass/screen.scss */
+  /* line 94, ../sass/screen.scss */
   .topFold:before {
     border: 0.5rem solid black;
   }
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  /* line 94, ../sass/screen.scss */
+  .topFold:before {
+    display: none;
+  }
+}
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 70, ../sass/screen.scss */
+  /* line 86, ../sass/screen.scss */
   .topFold {
     height: 65rem;
   }
 }
 
-/* line 99, ../sass/screen.scss */
+/* line 120, ../sass/screen.scss */
+#menu {
+  position: fixed;
+}
+
+/* line 124, ../sass/screen.scss */
 .si-icons {
   vertical-align: top !important;
   position: relative;
-  top: -40%;
+  top: 3%;
   right: 7%;
   display: block;
   z-index: 1000000000000;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 99, ../sass/screen.scss */
+  /* line 124, ../sass/screen.scss */
   .si-icons {
     top: -45%;
     right: 20%;
   }
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  /* line 124, ../sass/screen.scss */
+  .si-icons {
+    top: -45%;
+  }
+}
 
-/* line 114, ../sass/screen.scss */
+/* line 143, ../sass/screen.scss */
 .si-icons span {
   display: inline-block;
   width: 64px;
@@ -118,26 +147,26 @@ Developer @AltoLabs Los Angeles
   z-index: 400001;
 }
 
-/* line 128, ../sass/screen.scss */
+/* line 157, ../sass/screen.scss */
 .si-icons-hover span {
   width: 128px;
   height: 128px;
   margin: 50px 40px;
 }
 
-/* line 134, ../sass/screen.scss */
+/* line 163, ../sass/screen.scss */
 svg {
   width: 70%;
 }
 
 /* Fallback for browsers that don't support SVG - Generated with http://iconizr.com/ */
-/* line 138, ../sass/screen.scss */
+/* line 167, ../sass/screen.scss */
 .no-svg .si-icon-hamburger, .no-svg .si-icon-hamburger-cross {
   background-image: url("img/hamburger.png");
 }
 
 /* Overlay style */
-/* line 143, ../sass/screen.scss */
+/* line 172, ../sass/screen.scss */
 .overlay {
   position: fixed;
   width: 100%;
@@ -150,7 +179,7 @@ svg {
 }
 
 /* Overlay closing cross */
-/* line 155, ../sass/screen.scss */
+/* line 184, ../sass/screen.scss */
 .overlay .overlay-close {
   width: 80px;
   height: 80px;
@@ -167,7 +196,7 @@ svg {
 }
 
 /* Menu style */
-/* line 171, ../sass/screen.scss */
+/* line 200, ../sass/screen.scss */
 .overlay nav {
   text-align: center;
   position: relative;
@@ -178,7 +207,7 @@ svg {
   transform: translateY(-50%);
 }
 
-/* line 181, ../sass/screen.scss */
+/* line 210, ../sass/screen.scss */
 .overlay ul {
   list-style: none;
   padding: 0;
@@ -188,7 +217,7 @@ svg {
   position: relative;
 }
 
-/* line 190, ../sass/screen.scss */
+/* line 219, ../sass/screen.scss */
 .overlay ul li {
   display: block;
   height: 20%;
@@ -196,7 +225,7 @@ svg {
   min-height: 54px;
 }
 
-/* line 197, ../sass/screen.scss */
+/* line 226, ../sass/screen.scss */
 .overlay ul li a {
   font-weight: 300;
   display: block;
@@ -205,14 +234,14 @@ svg {
   transition: color 0.2s;
 }
 
-/* line 206, ../sass/screen.scss */
+/* line 235, ../sass/screen.scss */
 .overlay ul li a:hover,
 .overlay ul li a:focus {
   color: #e3fcb1;
 }
 
 /* Effects */
-/* line 211, ../sass/screen.scss */
+/* line 240, ../sass/screen.scss */
 .overlay-hugeinc {
   opacity: 0;
   visibility: hidden;
@@ -220,7 +249,7 @@ svg {
   transition: opacity 0.5s, visibility 0s 0.5s;
 }
 
-/* line 218, ../sass/screen.scss */
+/* line 247, ../sass/screen.scss */
 .overlay-hugeinc.open {
   opacity: .75;
   visibility: visible;
@@ -229,13 +258,13 @@ svg {
   z-index: 4000;
 }
 
-/* line 226, ../sass/screen.scss */
+/* line 255, ../sass/screen.scss */
 .overlay-hugeinc nav {
   -webkit-perspective: 1200px;
   perspective: 1200px;
 }
 
-/* line 231, ../sass/screen.scss */
+/* line 260, ../sass/screen.scss */
 .overlay-hugeinc nav ul {
   opacity: 0.4;
   -webkit-transform: translateY(-25%) rotateX(35deg);
@@ -244,124 +273,247 @@ svg {
   transition: transform 0.5s, opacity 0.5s;
 }
 
-/* line 239, ../sass/screen.scss */
+/* line 268, ../sass/screen.scss */
 .overlay-hugeinc.open nav ul {
   opacity: 1;
   -webkit-transform: rotateX(0deg);
   transform: rotateX(0deg);
 }
 
-/* line 245, ../sass/screen.scss */
+/* line 274, ../sass/screen.scss */
 .overlay-hugeinc.close nav ul {
   -webkit-transform: translateY(25%) rotateX(-35deg);
   transform: translateY(25%) rotateX(-35deg);
 }
 
 @media screen and (max-height: 30.5em) {
-  /* line 251, ../sass/screen.scss */
+  /* line 280, ../sass/screen.scss */
   .overlay nav {
     height: 70%;
     font-size: 34px;
   }
 
-  /* line 255, ../sass/screen.scss */
+  /* line 284, ../sass/screen.scss */
   .overlay ul li {
     min-height: 34px;
   }
 }
-/* line 262, ../sass/screen.scss */
+/* line 291, ../sass/screen.scss */
 .foldText {
-  width: 45%;
-  margin-left: 10%;
-  top: 20%;
+  width: 100%;
+  top: 35%;
+  text-align: center;
   position: absolute;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 262, ../sass/screen.scss */
+  /* line 291, ../sass/screen.scss */
   .foldText {
     width: 70%;
     margin-left: 15%;
+    top: 32%;
   }
 }
-/* line 271, ../sass/screen.scss */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  /* line 291, ../sass/screen.scss */
+  .foldText {
+    width: 80%;
+    margin-left: 5%;
+    top: 15%;
+  }
+}
+/* line 306, ../sass/screen.scss */
 .foldText .letter {
-  font-family: "garamond-premier-pro", serif;
+  font-family: "Playfair Display", serif;
   font-size: 3rem;
   color: black;
   font-weight: 400;
   font-style: italic;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 271, ../sass/screen.scss */
+  /* line 306, ../sass/screen.scss */
   .foldText .letter {
     font-size: 2rem;
   }
 }
-/* line 281, ../sass/screen.scss */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  /* line 306, ../sass/screen.scss */
+  .foldText .letter {
+    font-size: 2rem;
+  }
+}
+/* line 319, ../sass/screen.scss */
 .foldText strike {
   color: #ec008c;
 }
-/* line 284, ../sass/screen.scss */
+/* line 322, ../sass/screen.scss */
 .foldText .tagLine {
   font-family: "Fjalla One", sans-serif;
   font-size: 4rem;
   margin-top: 3rem;
   color: #000000;
 }
-/* line 289, ../sass/screen.scss */
+/* line 327, ../sass/screen.scss */
 .foldText .tagLine .tldr {
   font-size: 3rem;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 289, ../sass/screen.scss */
+  /* line 327, ../sass/screen.scss */
   .foldText .tagLine .tldr {
     font-size: 2.5rem;
   }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 284, ../sass/screen.scss */
+  /* line 322, ../sass/screen.scss */
   .foldText .tagLine {
     font-size: 3rem;
   }
 }
-
-/* line 301, ../sass/screen.scss */
-.lowerRight {
-  position: absolute;
-  top: 64%;
-  left: 82%;
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 301, ../sass/screen.scss */
-  .lowerRight {
-    top: 74%;
-    left: 62%;
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  /* line 322, ../sass/screen.scss */
+  .foldText .tagLine {
+    font-size: 3rem;
+    margin-top: 1.5rem;
   }
 }
-/* line 309, ../sass/screen.scss */
+
+/* line 343, ../sass/screen.scss */
+.lowerRight {
+  width: 9%;
+  position: absolute;
+  top: 11%;
+  left: 45.5%;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 343, ../sass/screen.scss */
+  .lowerRight {
+    width: 20%;
+    top: 20%;
+    left: 40%;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  /* line 343, ../sass/screen.scss */
+  .lowerRight {
+    top: 48%;
+  }
+}
+/* line 358, ../sass/screen.scss */
 .lowerRight img {
   width: 75%;
   height: auto;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 309, ../sass/screen.scss */
+  /* line 358, ../sass/screen.scss */
   .lowerRight img {
     width: 60%;
   }
 }
 
-/* line 320, ../sass/screen.scss */
-#ac-wrapper {
-  margin-top: 1rem;
+/* line 369, ../sass/screen.scss */
+.ourWork {
+  display: block;
+  width: 35%;
+  margin: 0 auto;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 320, ../sass/screen.scss */
+  /* line 369, ../sass/screen.scss */
+  .ourWork {
+    width: 100%;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  /* line 369, ../sass/screen.scss */
+  .ourWork {
+    display: none;
+  }
+}
+/* line 379, ../sass/screen.scss */
+.ourWork span {
+  position: relative;
+  margin: 3rem auto;
+  width: 35%;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+}
+/* line 394, ../sass/screen.scss */
+.ourWork span:before, .ourWork span:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background: #ec008c;
+  top: 0;
+  width: 86%;
+}
+/* line 406, ../sass/screen.scss */
+.ourWork span:before {
+  right: 68%;
+  margin-right: 15px;
+}
+/* line 411, ../sass/screen.scss */
+.ourWork span:after {
+  left: 68%;
+  margin-left: 15px;
+}
+/* line 415, ../sass/screen.scss */
+.ourWork span img {
+  width: 22%;
+  margin: -1rem auto;
+  display: block;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 415, ../sass/screen.scss */
+  .ourWork span img {
+    width: 32%;
+  }
+}
+/* line 425, ../sass/screen.scss */
+.ourWork h1 {
+  margin-top: 3rem;
+  font-family: "Fjalla One", sans-serif;
+  text-align: center;
+  letter-spacing: 1px;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 425, ../sass/screen.scss */
+  .ourWork h1 {
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+}
+
+/* line 437, ../sass/screen.scss */
+#roImage {
+  width: 44%;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 437, ../sass/screen.scss */
+  #roImage {
+    width: 85%;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  /* line 437, ../sass/screen.scss */
+  #roImage {
+    width: 50%;
+    margin-top: 3%;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* line 448, ../sass/screen.scss */
   #ac-wrapper {
     margin-top: 0rem;
   }
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  /* line 448, ../sass/screen.scss */
+  #ac-wrapper {
+    margin-top: -5%;
+  }
+}
 
-/* line 326, ../sass/screen.scss */
+/* line 458, ../sass/screen.scss */
 .ac-wrapper {
   -webkit-perspective: 1000px;
   -moz-perspective: 1000px;
@@ -370,74 +522,14 @@ svg {
   -moz-perspective-origin: 50% 25%;
   perspective-origin: 50% 25%;
 }
-/* line 334, ../sass/screen.scss */
-.ac-wrapper .ourWork {
-  display: block;
-  width: 35%;
-  margin: 0 auto;
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 334, ../sass/screen.scss */
-  .ac-wrapper .ourWork {
-    width: 100%;
-  }
-}
-/* line 341, ../sass/screen.scss */
-.ac-wrapper .ourWork span {
-  position: relative;
-  margin: 3rem auto;
-  width: 35%;
-  -webkit-box-align: center;
-  -webkit-box-pack: center;
-  display: -webkit-box;
-}
-/* line 356, ../sass/screen.scss */
-.ac-wrapper .ourWork span:before, .ac-wrapper .ourWork span:after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  background: #ec008c;
-  top: 0;
-  width: 86%;
-}
-/* line 368, ../sass/screen.scss */
-.ac-wrapper .ourWork span:before {
-  right: 68%;
-  margin-right: 15px;
-}
-/* line 373, ../sass/screen.scss */
-.ac-wrapper .ourWork span:after {
-  left: 68%;
-  margin-left: 15px;
-}
-/* line 377, ../sass/screen.scss */
-.ac-wrapper .ourWork span img {
-  width: 22%;
-  margin: -1rem auto;
-  display: block;
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 377, ../sass/screen.scss */
-  .ac-wrapper .ourWork span img {
-    width: 32%;
-  }
-}
-/* line 387, ../sass/screen.scss */
-.ac-wrapper .ourWork h1 {
-  margin-top: 3rem;
-  font-family: "Fjalla One", sans-serif;
-  text-align: center;
-  letter-spacing: 1px;
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 387, ../sass/screen.scss */
-  .ac-wrapper .ourWork h1 {
-    margin-top: 2rem;
-    font-size: 2rem;
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  /* line 458, ../sass/screen.scss */
+  .ac-wrapper {
+    margin-top: -5%;
   }
 }
 
-/* line 401, ../sass/screen.scss */
+/* line 471, ../sass/screen.scss */
 .ac-device {
   background: no-repeat;
   width: 38%;
@@ -450,39 +542,51 @@ svg {
   transform-style: preserve-3d;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 401, ../sass/screen.scss */
+  /* line 471, ../sass/screen.scss */
   .ac-device {
     margin: 3rem auto 1rem;
   }
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  /* line 471, ../sass/screen.scss */
+  .ac-device {
+    float: right;
+    width: 45%;
+    margin-right: 5%;
+  }
+}
 
-/* line 416, ../sass/screen.scss */
+/* line 493, ../sass/screen.scss */
 .ac-device a {
   height: auto;
   width: 100%;
-  display: inline-block;
 }
 
-/* line 423, ../sass/screen.scss */
+/* line 500, ../sass/screen.scss */
 .ac-device a img {
   display: block;
   margin: 0 auto;
   width: 100%;
 }
 
-/* line 429, ../sass/screen.scss */
+/* line 506, ../sass/screen.scss */
 .ac-grid {
   position: absolute;
   width: 100%;
-  padding-top: 5em;
   z-index: 1000;
   top: 0;
   left: 0;
   text-align: center;
   pointer-events: none;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  /* line 506, ../sass/screen.scss */
+  .ac-grid {
+    display: none;
+  }
+}
 
-/* line 440, ../sass/screen.scss */
+/* line 520, ../sass/screen.scss */
 .ac-grid a {
   width: 220px;
   display: inline-block;
@@ -500,29 +604,44 @@ svg {
   -webkit-transition-delay: 0s;
   -moz-transition-delay: 0s;
   transition-delay: 0s;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+/* line 540, ../sass/screen.scss */
+.ac-grid a:after {
+  display: block;
+  visibility: collapse;
+  content: " ";
+  clear: both;
+  font-size: 0px;
 }
 
-/* line 459, ../sass/screen.scss */
+/* line 549, ../sass/screen.scss */
 .ac-grid a:first-child {
   -webkit-transform-origin: right center;
   -moz-transform-origin: right center;
   transform-origin: right center;
 }
 
-/* line 465, ../sass/screen.scss */
+/* line 555, ../sass/screen.scss */
 .ac-grid a:last-child {
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   transform-origin: left center;
 }
 
-/* line 471, ../sass/screen.scss */
+/* line 561, ../sass/screen.scss */
 .ac-grid a img {
   display: block;
   width: 100%;
+  border: 1px solid #cdcdcd;
+  background-color: #fff;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  position: relative;
 }
 
-/* line 476, ../sass/screen.scss */
+/* line 575, ../sass/screen.scss */
 .ac-grid a span {
   position: absolute;
   height: 100%;
@@ -544,15 +663,7 @@ svg {
   transition: all 0.2s ease;
 }
 
-/* line 497, ../sass/screen.scss */
-.ac-grid a:hover span {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  transform: translateY(0);
-}
-
-/* line 504, ../sass/screen.scss */
+/* line 603, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-device {
   -webkit-transform: translateZ(-350px);
   -moz-transform: translateZ(-350px);
@@ -560,18 +671,18 @@ svg {
   opacity: .6;
 }
 
-/* line 511, ../sass/screen.scss */
+/* line 610, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid {
   pointer-events: auto;
 }
 
-/* line 515, ../sass/screen.scss */
+/* line 614, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* line 521, ../sass/screen.scss */
+/* line 620, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a:nth-child(2) {
   -webkit-transition-delay: 50ms;
   -moz-transition-delay: 50ms;
@@ -581,7 +692,7 @@ svg {
   transform: translateZ(0px);
 }
 
-/* line 530, ../sass/screen.scss */
+/* line 629, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a:nth-child(3) {
   -webkit-transition-delay: 100ms;
   -moz-transition-delay: 100ms;
@@ -591,7 +702,7 @@ svg {
   transform: translateZ(0px);
 }
 
-/* line 539, ../sass/screen.scss */
+/* line 638, ../sass/screen.scss */
 .ac-wrapper.ac-gridview .ac-grid a:last-child {
   -webkit-transition-delay: 150ms;
   -moz-transition-delay: 150ms;
@@ -599,12 +710,12 @@ svg {
 }
 
 @media screen and (max-width: 63.875em) {
-  /* line 546, ../sass/screen.scss */
+  /* line 645, ../sass/screen.scss */
   .ac-wrapper {
     padding: 0 20px 100px;
   }
 
-  /* line 550, ../sass/screen.scss */
+  /* line 649, ../sass/screen.scss */
   .ac-wrapper h2 {
     width: 100%;
     text-align: center;
@@ -616,13 +727,13 @@ svg {
     font-size: 6.5rem;
   }
 
-  /* line 561, ../sass/screen.scss */
+  /* line 660, ../sass/screen.scss */
   .ac-device {
     margin: 0 auto;
     width: 288px;
   }
 
-  /* line 566, ../sass/screen.scss */
+  /* line 665, ../sass/screen.scss */
   .ac-device h3 {
     position: relative;
     margin: 0;
@@ -635,7 +746,7 @@ svg {
   }
 }
 @media screen and (max-width: 58em) {
-  /* line 579, ../sass/screen.scss */
+  /* line 678, ../sass/screen.scss */
   .ac-grid {
     width: 90%;
     left: 5%;
@@ -643,23 +754,23 @@ svg {
     padding-top: 8em;
   }
 
-  /* line 586, ../sass/screen.scss */
+  /* line 685, ../sass/screen.scss */
   .ac-grid a {
     width: 22%;
   }
 }
 @media screen and (max-width: 35.6875em) {
-  /* line 592, ../sass/screen.scss */
+  /* line 691, ../sass/screen.scss */
   .ac-grid {
     padding-top: 0em;
   }
 
-  /* line 596, ../sass/screen.scss */
+  /* line 695, ../sass/screen.scss */
   .ac-wrapper {
     padding: 0 20px 100px;
   }
 
-  /* line 600, ../sass/screen.scss */
+  /* line 699, ../sass/screen.scss */
   .ac-wrapper h2 {
     width: 100%;
     text-align: center;
@@ -669,13 +780,13 @@ svg {
     position: relative;
   }
 
-  /* line 609, ../sass/screen.scss */
+  /* line 708, ../sass/screen.scss */
   .ac-device {
     margin: 0 auto;
     width: 288px;
   }
 
-  /* line 614, ../sass/screen.scss */
+  /* line 713, ../sass/screen.scss */
   .ac-device h3 {
     position: relative;
     margin: 0;
@@ -686,131 +797,178 @@ svg {
     text-align: center;
   }
 
-  /* line 624, ../sass/screen.scss */
+  /* line 723, ../sass/screen.scss */
   .ac-grid a {
     width: 40%;
   }
 
-  /* line 628, ../sass/screen.scss */
+  /* line 727, ../sass/screen.scss */
   .ac-wrapper.ac-gridview .ac-grid a {
     -webkit-transform: translateZ(0px) !important;
     -moz-transform: translateZ(0px) !important;
     transform: translateZ(0px) !important;
   }
 }
-/* line 643, ../sass/screen.scss */
+/* line 742, ../sass/screen.scss */
 .threeColumn {
   width: 75%;
   margin: 0 auto;
 }
-/* line 647, ../sass/screen.scss */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  /* line 742, ../sass/screen.scss */
+  .threeColumn {
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    margin-top: 10%;
+  }
+}
+/* line 752, ../sass/screen.scss */
 .threeColumn .workTitle {
   font-family: "Fjalla One", sans-serif;
   font-size: 3rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
 }
-/* line 654, ../sass/screen.scss */
-.threeColumn .vettoDescription .column1 {
-  float: left;
-  width: 25%;
+/* line 759, ../sass/screen.scss */
+.threeColumn .vettoDescription {
+  font-size: 1.3rem;
   font-family: "Domine", serif;
   font-weight: 700;
+}
+/* line 764, ../sass/screen.scss */
+.threeColumn .vettoDescription .column1 {
+  float: left;
+  width: 32%;
   font-style: italic;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 654, ../sass/screen.scss */
+  /* line 764, ../sass/screen.scss */
   .threeColumn .vettoDescription .column1 {
     display: none;
   }
 }
-/* line 665, ../sass/screen.scss */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  /* line 764, ../sass/screen.scss */
+  .threeColumn .vettoDescription .column1 {
+    display: none;
+  }
+}
+/* line 776, ../sass/screen.scss */
 .threeColumn .vettoDescription .column2 {
   float: left;
-  width: 25%;
-  margin-left: 10%;
-  margin-right: 10%;
-  font-family: "Domine", serif;
-  font-weight: 700;
+  width: 32%;
+  margin-left: 8%;
+  margin-right: 8%;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 665, ../sass/screen.scss */
+  /* line 776, ../sass/screen.scss */
   .threeColumn .vettoDescription .column2 {
     width: 100%;
     margin-left: 0;
+    font-size: 1.25rem;
   }
 }
-/* line 676, ../sass/screen.scss */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  /* line 776, ../sass/screen.scss */
+  .threeColumn .vettoDescription .column2 {
+    width: 100%;
+    margin-left: 0;
+    font-size: 1.25rem;
+  }
+}
+/* line 794, ../sass/screen.scss */
 .threeColumn .vettoDescription .column2 .ourRoleContainer {
   width: 100%;
 }
-/* line 680, ../sass/screen.scss */
+/* line 798, ../sass/screen.scss */
 .threeColumn .vettoDescription .column2 .ourRoleContainer .ourRole {
   float: left;
-  width: 40%;
+  width: 33%;
 }
-/* line 684, ../sass/screen.scss */
+/* line 802, ../sass/screen.scss */
 .threeColumn .vettoDescription .column2 .ourRoleContainer .listRole {
-  margin-left: 40%;
+  margin-left: 35%;
   font-style: italic;
 }
-/* line 695, ../sass/screen.scss */
+/* line 811, ../sass/screen.scss */
 .threeColumn .vettoDescription .column3 {
   float: left;
   width: 20%;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 695, ../sass/screen.scss */
+  /* line 811, ../sass/screen.scss */
   .threeColumn .vettoDescription .column3 {
     margin-top: 1rem;
     width: 100%;
   }
 }
-/* line 702, ../sass/screen.scss */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  /* line 811, ../sass/screen.scss */
+  .threeColumn .vettoDescription .column3 {
+    display: none;
+  }
+}
+/* line 821, ../sass/screen.scss */
+.threeColumn .vettoDescription .column3 a {
+  color: black;
+}
+/* line 824, ../sass/screen.scss */
 .threeColumn .vettoDescription .column3 img {
-  width: 30%;
-  margin-right: 3%;
+  float: left;
+  width: 25%;
+  margin-right: 4%;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 702, ../sass/screen.scss */
+  /* line 824, ../sass/screen.scss */
   .threeColumn .vettoDescription .column3 img {
     width: 20%;
     margin-right: 5%;
     float: left;
   }
 }
-/* line 711, ../sass/screen.scss */
+/* line 834, ../sass/screen.scss */
 .threeColumn .vettoDescription .column3 .glasses {
   float: left;
   line-height: 2.5em;
   font-family: "Fjalla One", sans-serif;
-  letter-spacing: .5px;
-  width: 70%;
+  letter-spacing: .1px;
+  font-size: 1.5rem;
+  width: 45%;
+  margin-right: 5%;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 711, ../sass/screen.scss */
+  /* line 834, ../sass/screen.scss */
   .threeColumn .vettoDescription .column3 .glasses {
     line-height: 3.5rem;
+    font-size: 1.25rem;
   }
 }
-/* line 727, ../sass/screen.scss */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  /* line 834, ../sass/screen.scss */
+  .threeColumn .vettoDescription .column3 .glasses {
+    font-size: 1.25rem;
+  }
+}
+/* line 854, ../sass/screen.scss */
 .threeColumn .vettoDescription .column3 .seeMoreArrow {
   vertical-align: center;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 727, ../sass/screen.scss */
+  /* line 854, ../sass/screen.scss */
   .threeColumn .vettoDescription .column3 .seeMoreArrow {
     display: none;
   }
 }
-/* line 732, ../sass/screen.scss */
+/* line 859, ../sass/screen.scss */
 .threeColumn .vettoDescription .column3 .seeMoreArrow a {
   border-radius: 50%;
 }
-/* line 736, ../sass/screen.scss */
+/* line 863, ../sass/screen.scss */
 .threeColumn .vettoDescription .column3 .seeMoreArrow a:hover .right {
-  background: lime;
+  background: #dc0565;
 }
-/* line 741, ../sass/screen.scss */
+/* line 868, ../sass/screen.scss */
 .threeColumn .vettoDescription .column3 .seeMoreArrow a .right {
   display: inline-block;
   width: 2.5em;
@@ -818,7 +976,7 @@ svg {
   border-radius: 50%;
   background: #ec008c;
 }
-/* line 748, ../sass/screen.scss */
+/* line 875, ../sass/screen.scss */
 .threeColumn .vettoDescription .column3 .seeMoreArrow a .right:after {
   content: '';
   display: inline-block;
@@ -833,46 +991,51 @@ svg {
   transform: rotate(45deg);
 }
 
-/* line 772, ../sass/screen.scss */
-.emptyRectangle {
-  width: 100%;
-  height: 4px;
-  border: 1px solid black;
-  margin-bottom: 0.675rem;
+/* line 896, ../sass/screen.scss */
+#roSeeMoreHide {
+  visibility: hidden;
 }
 
-/* line 782, ../sass/screen.scss */
+/* line 904, ../sass/screen.scss */
+.emptyRectangle {
+  width: 92%;
+  height: 4px;
+  border: 1px solid black;
+  margin-bottom: 0.9rem;
+}
+
+/* line 914, ../sass/screen.scss */
 .contactUsWrapper .contactUsText {
   width: 30%;
   margin: 0 auto;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 782, ../sass/screen.scss */
+  /* line 914, ../sass/screen.scss */
   .contactUsWrapper .contactUsText {
     width: 100%;
   }
 }
-/* line 788, ../sass/screen.scss */
+/* line 920, ../sass/screen.scss */
 .contactUsWrapper .contactUsText h1 {
-  font-family: "garamond-premier-pro", serif;
+  font-family: "Playfair Display", serif;
   font-size: 7rem;
   text-align: center;
 }
-/* line 794, ../sass/screen.scss */
+/* line 926, ../sass/screen.scss */
 .contactUsWrapper .contactUsText .rectangle {
   height: 1px;
   width: 45%;
   background: black;
   margin: 0 auto;
 }
-/* line 801, ../sass/screen.scss */
+/* line 933, ../sass/screen.scss */
 .contactUsWrapper .contactUsText p {
-  font-family: "garamond-premier-pro", serif;
+  font-family: "Playfair Display", serif;
   font-size: 2rem;
   margin: 0 auto;
   text-align: center;
 }
-/* line 811, ../sass/screen.scss */
+/* line 943, ../sass/screen.scss */
 .contactUsWrapper .contactButton {
   width: 17%;
   border-radius: 6px;
@@ -889,33 +1052,33 @@ svg {
   letter-spacing: 1px;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  /* line 811, ../sass/screen.scss */
+  /* line 943, ../sass/screen.scss */
   .contactUsWrapper .contactButton {
     width: 80%;
   }
 }
-/* line 828, ../sass/screen.scss */
+/* line 960, ../sass/screen.scss */
 .contactUsWrapper .contactButton:hover {
   background: #ec008c;
   text-decoration: none;
   color: white;
 }
-/* line 832, ../sass/screen.scss */
+/* line 964, ../sass/screen.scss */
 .contactUsWrapper .contactButton:hover a {
   color: white;
 }
-/* line 836, ../sass/screen.scss */
+/* line 968, ../sass/screen.scss */
 .contactUsWrapper .contactButton a {
   text-decoration: none;
   color: #ec008c;
 }
-/* line 839, ../sass/screen.scss */
+/* line 971, ../sass/screen.scss */
 .contactUsWrapper .contactButton a:hover {
   color: white;
 }
 
 /* general style for the form */
-/* line 847, ../sass/screen.scss */
+/* line 979, ../sass/screen.scss */
 .nl-form {
   margin-top: 5rem;
   width: 100%;
@@ -924,19 +1087,19 @@ svg {
   font-size: 4em;
   line-height: 1.5;
 }
-/* line 855, ../sass/screen.scss */
+/* line 987, ../sass/screen.scss */
 .nl-form ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 861, ../sass/screen.scss */
+/* line 993, ../sass/screen.scss */
 .nl-form input:focus {
   outline: none;
 }
 
 /* normalize the input elements, make them look like everything else */
-/* line 869, ../sass/screen.scss */
+/* line 1001, ../sass/screen.scss */
 .nl-form input,
 .nl-form select,
 .nl-form button {
@@ -955,19 +1118,19 @@ svg {
 }
 
 /* custom field (drop-down, text element) styling  */
-/* line 885, ../sass/screen.scss */
+/* line 1017, ../sass/screen.scss */
 .nl-field {
   display: inline-block;
   position: relative;
 }
 
-/* line 890, ../sass/screen.scss */
+/* line 1022, ../sass/screen.scss */
 .nl-field.nl-field-open {
   z-index: 10000;
 }
 
 /* the toggle is the visible part in the form */
-/* line 897, ../sass/screen.scss */
+/* line 1029, ../sass/screen.scss */
 .nl-field-toggle,
 .nl-form input,
 .nl-form select {
@@ -979,7 +1142,7 @@ svg {
 }
 
 /* drop-down list / text element */
-/* line 906, ../sass/screen.scss */
+/* line 1038, ../sass/screen.scss */
 .nl-field ul {
   position: absolute;
   visibility: hidden;
@@ -996,7 +1159,7 @@ svg {
   transition: visibility 0s 0.3s, opacity 0.3s, transform 0.3s;
 }
 
-/* line 922, ../sass/screen.scss */
+/* line 1054, ../sass/screen.scss */
 .nl-field.nl-field-open ul {
   visibility: visible;
   opacity: 1;
@@ -1008,36 +1171,36 @@ svg {
   transition: visibility 0s 0s, opacity 0.3s, transform 0.3s;
 }
 
-/* line 933, ../sass/screen.scss */
+/* line 1065, ../sass/screen.scss */
 .nl-field ul li {
   color: #fff;
   position: relative;
 }
 
-/* line 938, ../sass/screen.scss */
+/* line 1070, ../sass/screen.scss */
 .nl-dd ul li {
   padding: 0 1.5em 0 0.5em;
   cursor: pointer;
   white-space: nowrap;
 }
 
-/* line 944, ../sass/screen.scss */
+/* line 1076, ../sass/screen.scss */
 .nl-dd ul li.nl-dd-checked {
   color: #478982;
 }
 
-/* line 948, ../sass/screen.scss */
+/* line 1080, ../sass/screen.scss */
 .no-touch .nl-dd ul li:hover {
   background: rgba(0, 0, 0, 0.05);
 }
 
-/* line 952, ../sass/screen.scss */
+/* line 1084, ../sass/screen.scss */
 .no-touch .nl-dd ul li:hover:active {
   color: #478982;
 }
 
 /* icons for some elements */
-/* line 959, ../sass/screen.scss */
+/* line 1091, ../sass/screen.scss */
 .nl-dd ul li.nl-dd-checked:before,
 .nl-submit:before,
 .nl-field-go:before {
@@ -1050,7 +1213,7 @@ svg {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 969, ../sass/screen.scss */
+/* line 1101, ../sass/screen.scss */
 .nl-dd ul li.nl-dd-checked:before {
   content: "\e000";
   position: absolute;
@@ -1059,12 +1222,12 @@ svg {
   line-height: 3;
 }
 
-/* line 977, ../sass/screen.scss */
+/* line 1109, ../sass/screen.scss */
 .nl-ti-text ul {
   min-width: 8em;
 }
 
-/* line 981, ../sass/screen.scss */
+/* line 1113, ../sass/screen.scss */
 .nl-ti-text ul li.nl-ti-input input {
   width: 100%;
   padding: 0.2em 2em 0.2em 0.5em;
@@ -1072,7 +1235,7 @@ svg {
   color: #fff;
 }
 
-/* line 988, ../sass/screen.scss */
+/* line 1120, ../sass/screen.scss */
 .nl-form .nl-field-go {
   position: absolute;
   right: 0;
@@ -1085,7 +1248,7 @@ svg {
   color: transparent;
 }
 
-/* line 1000, ../sass/screen.scss */
+/* line 1132, ../sass/screen.scss */
 .nl-field-go:before {
   content: "\e001";
   font-size: 75%;
@@ -1096,41 +1259,41 @@ svg {
 }
 
 /* custom placeholder color */
-/* line 1010, ../sass/screen.scss */
+/* line 1142, ../sass/screen.scss */
 input::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 1015, ../sass/screen.scss */
+/* line 1147, ../sass/screen.scss */
 input:active::-webkit-input-placeholder,
 input:focus::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.2);
 }
 
-/* line 1019, ../sass/screen.scss */
+/* line 1151, ../sass/screen.scss */
 input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 1024, ../sass/screen.scss */
+/* line 1156, ../sass/screen.scss */
 input:active::-moz-placeholder,
 input:focus::-moz-placeholder {
   color: rgba(255, 255, 255, 0.2);
 }
 
-/* line 1028, ../sass/screen.scss */
+/* line 1160, ../sass/screen.scss */
 input:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 1033, ../sass/screen.scss */
+/* line 1165, ../sass/screen.scss */
 input:active::-ms-input-placeholder,
 input:focus::-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.2);
 }
 
 /* example field below text input */
-/* line 1038, ../sass/screen.scss */
+/* line 1170, ../sass/screen.scss */
 .nl-ti-text ul li.nl-ti-example {
   font-size: 40%;
   font-style: italic;
@@ -1140,18 +1303,18 @@ input:focus::-ms-input-placeholder {
   border-top: 1px dashed rgba(255, 255, 255, 0.7);
 }
 
-/* line 1047, ../sass/screen.scss */
+/* line 1179, ../sass/screen.scss */
 .nl-ti-text ul li.nl-ti-example em {
   color: white;
 }
 
 /* submit button */
-/* line 1052, ../sass/screen.scss */
+/* line 1184, ../sass/screen.scss */
 .nl-submit-wrap {
   margin-top: 0.4em;
 }
 
-/* line 1056, ../sass/screen.scss */
+/* line 1188, ../sass/screen.scss */
 .nl-form .nl-submit {
   line-height: 3;
   text-transform: uppercase;
@@ -1165,7 +1328,7 @@ input:focus::-ms-input-placeholder {
   letter-spacing: 3px;
 }
 
-/* line 1069, ../sass/screen.scss */
+/* line 1201, ../sass/screen.scss */
 .nl-submit:before {
   content: "\e001";
   color: #fff;
@@ -1175,19 +1338,19 @@ input:focus::-ms-input-placeholder {
   background: #69B1A9;
 }
 
-/* line 1079, ../sass/screen.scss */
+/* line 1211, ../sass/screen.scss */
 .no-touch .nl-form .nl-submit:hover,
 .no-touch .nl-form .nl-submit:active {
   background: #69B1A9;
 }
 
-/* line 1083, ../sass/screen.scss */
+/* line 1215, ../sass/screen.scss */
 .no-touch .nl-form .nl-submit:hover:before {
   background: #58a199;
 }
 
 /* overlay becomes visible when a field is opened */
-/* line 1088, ../sass/screen.scss */
+/* line 1220, ../sass/screen.scss */
 .nl-overlay {
   position: fixed;
   top: 0;
@@ -1203,7 +1366,7 @@ input:focus::-ms-input-placeholder {
   transition: visibility 0s 0.3s, opacity 0.3s;
 }
 
-/* line 1103, ../sass/screen.scss */
+/* line 1235, ../sass/screen.scss */
 .nl-field.nl-field-open ~ .nl-overlay {
   opacity: 1;
   visibility: visible;
@@ -1213,18 +1376,18 @@ input:focus::-ms-input-placeholder {
 }
 
 @media screen and (max-width: 45em) {
-  /* line 1112, ../sass/screen.scss */
+  /* line 1244, ../sass/screen.scss */
   .nl-form {
     font-size: 3em;
   }
 }
 @media screen and (max-width: 25em) {
-  /* line 1118, ../sass/screen.scss */
+  /* line 1250, ../sass/screen.scss */
   .nl-form {
     font-size: 2em;
   }
 }
-/* line 1124, ../sass/screen.scss */
+/* line 1256, ../sass/screen.scss */
 #mobileContactUs {
   display: none;
   margin-top: 5rem;
@@ -1233,26 +1396,13 @@ input:focus::-ms-input-placeholder {
   text-align: center;
 }
 
-/* for all screens */
-/* line 1133, ../sass/screen.scss */
-.info {
-  display: none;
+/* line 1264, ../sass/screen.scss */
+nav {
+  position: fixed;
 }
 
-@media all and (orientation: landscape) {
-  /* line 1136, ../sass/screen.scss */
-  .info {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: #ec008c;
-    background-image: url("../../img/rotate.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 15% auto;
-    z-index: 10000000000000000000000;
-  }
+/* for all screens */
+/* line 1269, ../sass/screen.scss */
+.info {
+  display: none;
 }

@@ -41,7 +41,7 @@
 
 	triggerBttn.addEventListener( 'click', toggleOverlay );
 	closeBttn.addEventListener( 'click', toggleOverlay );
-	// $('.overlay').click(function() {
-	//   toggleOverlay();
-	// });
+	$('li').click(function() {
+	  toggleOverlay();
+	});
 })();
