@@ -43,5 +43,7 @@
 	closeBttn.addEventListener( 'click', toggleOverlay );
 	$('li').click(function() {
 	  toggleOverlay();
+	  $('.overlay-close').click();
+	  $('.si-icon').click();
 	});
 })();

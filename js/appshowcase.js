@@ -1,6 +1,7 @@
 var AppShowcase = (function() {
 	
-	var $el = $( '#ac-wrapper' ),
+	// var $el = $( '#ac-wrapper' ),
+	var $el = $( '.ac-wrapper' ),
 		// device element
 		$device = $el.find( '.ac-device' ),
 		// the device image wrapper

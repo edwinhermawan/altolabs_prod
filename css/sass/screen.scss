@@ -182,18 +182,18 @@ svg{
 
 /* Overlay closing cross */
 .overlay .overlay-close {
-  width: 80px;
+  width: 100%;
   height: 80px;
   position: absolute;
-  right: 30px;
-  top: 30px;
+  // right: 7%;
+  top: 6%;
   overflow: hidden;
   border: none;
   background: no-repeat center center;
   text-indent: 200%;
   color: transparent;
   outline: none;
-  z-index: 100;
+  z-index: 1000000000000000000000;
 }
 
 /* Menu style */
@@ -214,6 +214,8 @@ svg{
   display: inline-block;
   height: 100%;
   position: relative;
+  width:100%;
+  top: -10%;
 }
 
 .overlay ul li {
@@ -221,6 +223,7 @@ svg{
   height: 20%;
   height: calc(100% / 5);
   min-height: 54px;
+
 }
 
 .overlay ul li a {
@@ -365,6 +368,10 @@ svg{
 }
 
 // Our Work
+
+#roFiller{
+  visibility:hidden;
+}
 
 .ourWork{
   display: block;
@@ -517,7 +524,13 @@ svg{
   }
 }
 
+#ro1, #ro2, #ro3{
+  width: 30%;
+}
+
 .ac-grid a {
+  // Align all images center. Added by EH 2/25
+  vertical-align: middle;
   width: 220px;
   display: inline-block;
   position: relative;
@@ -604,7 +617,7 @@ svg{
   -webkit-transform: translateZ(-350px);
   -moz-transform: translateZ(-350px);
   transform: translateZ(-350px);
-  opacity: .6;
+  opacity: .1;
 }
 
 .ac-wrapper.ac-gridview .ac-grid {
@@ -911,28 +924,19 @@ $rectangleThickness: 4px;
 // Contact Us
 
 .contactUsWrapper{
+  background: rgb( 242,242,242 );
+  .ourWork{
+    padding-top: 2rem;
+  };
   .contactUsText{
     width:30%;
-    margin: 0 auto;
+    margin: 4rem auto;
     @media #{$iphone}{
       width: 100%;
     }
-    h1{
-      font-family: $letterFont;
-      font-size: 7rem;
-      text-align: center;
-    }
-
-    .rectangle{
-      height: 1px;
-      width: 45%;
-      background: black;
-      margin: 0 auto;
-    }
-
     p{
-      font-family: $letterFont;
-      font-size: 2rem;
+      font-family: 'Cabin', sans-serif;
+      font-size: 1.75rem;
       margin: 0 auto;
       text-align: center;
     }
@@ -943,8 +947,9 @@ $rectangleThickness: 4px;
   .contactButton{
     width: 17%;
     border-radius: 6px;
-    border: 2px solid rgba(236,0,140, .5);
-    box-shadow: 0px 0px 2rem $altoPink;
+    background: $altoPink;
+    // border: 2px solid rgba(236,0,140, .5);
+    // box-shadow: 0px 0px 2rem $altoPink;
     margin: 2rem auto;
     height: $contactButtonHeight;
     font-family: $headerFont;
@@ -958,18 +963,19 @@ $rectangleThickness: 4px;
       width: 80%;
     }
     &:hover{
-      background: $altoPink;
+      background: rgb( 242,242,242);
+      border: 2px solid $altoPink;
       text-decoration: none;
-      color: white;
+      color: $altoPink;
       a{
-        color: white;
+        color: $altoPink;
       }
     }
     a{
       text-decoration: none;
-      color: $altoPink;
+      color: white;
       &:hover{
-        color: white;
+        color: $altoPink;
       }
     }
   }
