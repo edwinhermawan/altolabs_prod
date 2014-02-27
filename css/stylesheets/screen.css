@@ -121,7 +121,6 @@ html {
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
   /* line 124, ../sass/screen.scss */
   .si-icons {
-    top: -45%;
     right: 20%;
   }
 }
