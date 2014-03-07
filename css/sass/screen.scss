@@ -131,7 +131,7 @@ and (orientation : portrait) {
   z-index: 1000000000000;
 
   @media #{$iphone} {
-    // top: -45%;
+    top: -45%;
     right: 20%;
   }
 
