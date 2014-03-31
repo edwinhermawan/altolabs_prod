@@ -1,352 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AltoLabs Testing Lab</title>
 
-    <title>Alto Labs</title>
+    <!-- Main Stylesheets -->
+    <link href="css/scss/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="css/scss/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+        <link href="css/scss/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
 
-    <!-- Install Google Fonts-->
-    <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Domine: 400, 700|Playfair+Display:400italic|Cabin' rel='stylesheet' type='text/css'>
-
-    <!-- Main CSS file -->
-    <link rel="stylesheet" href="css/stylesheets/screen.css">
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
     
-    <!-- Load JQuery and Bootstrap -->
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- Jquery -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Google Maps Library -->
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 
-    <!-- Menu Overlay -->
-    <script src="js/modernizr.custom.js"></script>
-
-    <!-- Animated X -->
-    <script src="js/snap.svg-min.js"></script>
-
-    <!-- One-page scrolling -->
-    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
-
-    <!-- This following line needed in the case of setting the plugin option `scrollOverflow` to `true` -->
-
-    <script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
-
-    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
-    
-    <!-- Contact Us Button Shake -->
-    <script type="text/javascript" src="js/jquery.jrumble.1.3.js"></script>
+    <!-- Stripe Checkout -->
+    <script src="https://checkout.stripe.com/checkout.js"></script>
   </head>
 
-  <body>
+<body>
 
-    <div id="section0" class="section active topFold">
-      <!-- Menu Icon-->
-      <div id="menu" class="si-icons si-icons-default">
-        <span class="si-icon si-icon-hamburger-cross trigger-overlay" data-icon-name="hamburgerCross">  
-        </span>
-        
-        <!-- Menu Overlay -->
-        <div class="overlay overlay-hugeinc">
-          <button type="button" class="overlay-close"></button>
-          <nav>
-            <ul id="">
-              <li data-menuanchor="home"><a href="#home">Home</a></li>
-              <li data-menuanchor="work"><a href="#work">Work</a></li>
-              <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
+<p class="address"></p>
+<p class="city"></p>
+<p class="zipCode"></p>
+
+<!-- Firing Modal -->
+<a href="#" class="button" data-reveal-id="myModal" data-reveal>Click Me For A Modal</a>
+
+<!-- Modal Window -->
+<div id="myModal" class="reveal-modal tiny" data-reveal>
+  <div class="background row">
+    <a class="close-reveal-modal">&#160;</a>
+    <div class="image">
+      <img class="logo" src="https://stripe.com/img/checkout/marketing/watsi.png" alt="">
+    </div>
+    <div class="textContainer text-center small-centered medium-10 columns">
+      <p>blah blah blah</p>
       
-      
-      <!-- Above the Fold Text -->
-      <div class="foldText">
-
-        <!-- <p class="letter">Dear Visitor,</p> -->
-        
-        <strike>
-          <p class="letter"> We are a digital creative agency specializing <br/> in code and design. We believe in...</p>
-        </strike>
-
-
-        <p class="tagLine"><span class="tldr">tl;dr...</span> YEAH, WE CAN DO THAT</p>
-      </div>
-
-      <!-- Logo in Lower Right -->
-      <div class="lowerRight">
-        <img src="img/logo.png" alt="">
-      </div>
     </div>
+  </div>
 
-    <!-- Our work  -->
-    <div class="section">
-      <div class="ourWork">
-        <span><img src="images/logoSolo.png" alt=""></span>
-        <h1>OUR WORK</h1>
-      </div>
-      <div id="ac-wrapper" class="ac-wrapper">
-        <div class="vettoIPhone ac-device">
-          <!-- img of iphone -->
-          <a href="#"><img src="images/vettoIphone.png"/></a>
-        </div>
-        
-        <div class="ac-device threeColumn">
-          <div class="workTitle">VETTO</div>
-          <div class="vettoDescription">
-            <div class="column1">
-              <div class="emptyRectangle"></div>
-              <p>Investors Meet Startups.</p>
-            </div>
-            <div class="column2">
-              <div class="emptyRectangle"></div>
-              <div class="ourRoleContainer">
-                <div class="ourRole">OUR ROLE:</div>
-                <div class="listRole">Design, Branding, Concept, Development</div>
-              </div>
-            </div>
-            <div class="column3">
-              <a href="#">
-                <img src="img/glasses.png" alt="">
-                <div class="glasses">
-                  VIEW PROJECT 
-                </div>
-                <div class="seeMoreArrow">
-                  <a href="#">
-                    <span class="right"></span>
-                  </a>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="ac-grid">
-          <a href="#"><img src="images/screen2.jpg"/><span>Gentrify small batch umami retro vegan</span></a>
-          <a href="#"><img src="images/screen1.jpg"/><span>Chambray squid semiotics</span></a>
-          <a href="#"><img src="images/screen3.jpg"/><span>Fashion axe blue bottle</span></a>
-          <a href="#"><img src="images/screen4.jpg"/><span>Photo booth single-origin coffee</span></a>
-        </div>
-        
-      </div>
-    </div>
+  <h2>Awesome. I have it.</h2>
+  <p class="lead">Your couch.  It is mine.</p>
+  <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
+  
+</div>
 
-    <!-- RO Our Work -->
-    <div class="section">
-      <div id="roFiller" class="ourWork">
-        <span><img src="images/logoSolo.png" alt=""></span>
-        <h1>OUR WORK</h1>
-      </div>
-      <div id="ac-wrapper" class="ac-wrapper">
-        <div class="vettoIPhone ac-device">
-          <!-- img of iphone -->
-          <a href="#"><img src="images/runorder.png"/></a>
-        </div>
-        
-        <div class="ac-device threeColumn">
-          <div class="workTitle">RUN ORDER</div>
-          <div class="vettoDescription">
-            <div class="column1">
-              <div class="emptyRectangle"></div>
-              <p>Helping restaurants find and order from new distributors.</p>
-            </div>
-            <div class="column2">
-              <div class="emptyRectangle"></div>
-              <div class="ourRoleContainer">
-                <div class="ourRole">OUR ROLE:</div>
-                <div class="listRole">Design, Branding, Concept, Development</div>
-              </div>
-            </div>
-            <div class="column3">
-              <a href="#">
-                <img src="img/glasses.png" alt="">
-                <div class="glasses">
-                  VIEW PROJECT 
-                </div>
-                <div class="seeMoreArrow">
-                  <a href="#">
-                    <span class="right"></span>
-                  </a>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div id="roImages" class="ac-grid">
-          <a id="ro1" href="#"><img src="images/ro1.png"/><span>Gentrify small batch umami retro vegan</span></a>
-          <a id="ro2" href="#"><img src="images/ro4.png"/><span>Chambray squid semiotics</span></a>
-          <a id="ro3" href="#"><img src="images/ro3.png"/><span>Fashion axe blue bottle</span></a>
-        </div>
-      </div>
-    </div>
-    
-    <!-- End Our Work -->
+<!-- Load Main JS File -->
+<script src="js/main.js"></script>
 
-    <!-- Contact Us -->
-    <div class="contactUsWrapper section">
-      <div class="ourWork">
-        <span><img src="images/logoSolo.png" alt=""></span>
-        <h1>GET IN TOUCH</h1>
-      </div>
-        
-      <div class="info"></div>
-      <div class="contactUsText">
-        <p>Drop us a line and tell us about your project.</p>
-      </div>
-      <div class="contactButton">
-        <a href="mailto:hi@altolabs.co">hi@altolabs.co</a>
-      </div>
-      <!-- <form id="nl-form" class="nl-form" method="post" name="contact_form" action="contact-form-handler.php">
-      Hi, my name is <input type="text" name="name" value="" placeholder="your name" data-subline="For example: <em>Hunter Hearst Helmsley</em> or <em>Cindy Crawford</em>"/> ( <input type="text" name="email" value="" placeholder="email address" data-subline="For example: <em>yo@mtvraps.com</em>"/> ).<br />Just wanted to
-        <select name="subject">
-            <option value="1" selected>talk about</option>
-            <option value="2">Branding</option>
-            <option value="3">Design</option>
-            <option value="4">App/Web Development</option>
-            <option value="2">Say Hello</option>
-        </select>.<br /> I was thinking
-        <textarea name="message" placeholder="Details here..."></textarea>
+<!-- Foundation JS Files -->
+<script src="js/foundation/foundation.js"></script>
+<script src="js/foundation/foundation.reveal.js"></script>
+<script type="text/javascript"> 
+    $(document).foundation();
+</script>
 
-        <div class="nl-submit-wrap">
-            <button class="nl-submit" type="submit">Find a restaurant</button>
-        </div>
-        <div class="nl-overlay"></div>
-      </form> -->
+</body>
 
-      <!-- Mobile Contact Us  -->
-      <div id="mobileContactUs"><a href="mailto:hi@altolabs.co">hi@altolabs.co</a></div>
-    </div>
-    <!-- End Contact Us -->
-
-    
-    
-    <!-- Begin Javascript -->
-
-    <!-- Menu Overlay -->
-    <script src="js/classie.js"></script>
-    <script src="js/demo1.js"></script>
-    
-    <!-- JS for Our Work Section -->
-    <script src="js/appshowcase.js"></script>
-    <script>
-      $(function() {
-        AppShowcase.init();
-      });
-    </script>
-    
-    <!-- JS for Contact Us Natural Language Form -->
-    <script src="js/nlform.js"></script>
-    <script>
-      var nlform = new NLForm( document.getElementById( 'nl-form' ) );
-    </script>
-
-    <!-- Jquery to change html elements for mobile -->
-    <script>
-    $(document).ready(function() {
-      function imageresize() {
-       if ($(window).width() <= '980') {
-         // Change contact us to an a href emailto tag
-         $('#nl-form').hide();
-         $('.mobileContactUs').show();
-       } else {
-
-       }
-      }
-
-      imageresize();   
-
-      // Contact Us Button Shake
-
-      $('.contactButton').jrumble({
-        x: 0,
-        y: 0,
-        rotation: 2,
-        speed: 300
-      });
-
-      $('.contactButton').hover(function(){
-        $(this).trigger('stopRumble');
-      }, function(){
-        $(this).trigger('stopRumble');
-      });
-    });
-    </script>
-
-    <!-- Animated X -->
-    <script src="js/svgicons-config.js"></script>
-    <script src="js/svgicons.js"></script>
-    <script>
-      (function() {
-        // initialize all
-        [].slice.call( document.querySelectorAll( '.si-icons-default > .si-icon' ) ).forEach( function( el ) {
-          var svgicon = new svgIcon( el, svgIconConfig );
-        } );
-        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-hamburger' ), svgIconConfig, { easing : mina.backin } );
-        new svgIcon( document.querySelector( '.si-icons-easing .si-icon-hamburger-cross' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
-        new svgIcon( document.querySelector( '.si-icons-hover .si-icon-hamburger' ), svgIconConfig, { easing : mina.backin, evtoggle : 'mouseover', size : { w : 128, h : 128 } } ); 
-      })();
-    </script>
-
-    <!-- One-Page Scrolling -->
-    <script>
-      $(document).ready(function() {
-        $.fn.fullpage({
-          verticalCentered: true,
-          resize : true,
-          slidesColor : [],
-          anchors:['home','work', 'runorder', 'contact'],
-          scrollingSpeed: 900,
-          easing: 'easeInExpo',
-          menu: '#menu',
-          navigation: false,
-          navigationPosition: 'right',
-          navigationTooltips: ['firstSlide', 'secondSlide'],
-          slidesNavigation: true,
-          slidesNavPosition: 'bottom',
-          loopBottom: false,
-          loopTop: false,
-          loopHorizontal: true,
-          autoScrolling: true,
-          scrollOverflow: false,
-          css3: true,
-          paddingTop: '0em',
-          paddingBottom: '0px',
-          fixedElements: '#element1, .element2',
-          normalScrollElements: '#element1, .element2',
-          keyboardScrolling: true,
-          touchSensitivity: 15,
-          continuousVertical: false,
-          animateAnchor: true,
-
-          //events
-          onLeave: function(index, direction){},
-          afterLoad: function(anchorLink, index){
-            
-
-            if(index == 4){
-              var demoTimeout;
-              clearTimeout(demoTimeout);
-              $('.contactButton').trigger('startRumble');
-              demoTimeout = setTimeout(function(){$('.contactButton').trigger('stopRumble');}, 1500)
-              // $('.contactButton').trigger('startRumble');
-            }
-          },
-          afterRender: function(){},
-          afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
-          onSlideLeave: function(anchorLink, index, slideIndex, direction){}
-        });
-      });
-    </script>
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-48298520-1', 'altolabs.co');
-      ga('send', 'pageview');
-
-    </script>
-
-  </body>
 </html>
