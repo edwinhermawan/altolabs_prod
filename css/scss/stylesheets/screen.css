@@ -66,9 +66,35 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 3, ../sass/screen.scss */
 #myModal {
   border-radius: 6px;
+  background: #f5f5f7;
 }
 
-/* line 7, ../sass/screen.scss */
+/* line 8, ../sass/screen.scss */
+#cardNumberContainer, #expDateContainer, #cvcContainer {
+  padding-left: 0px;
+  padding-right: 0px;
+  float: left;
+}
+
+/* line 15, ../sass/screen.scss */
+#cardNumber {
+  border-right: none;
+}
+
+/* line 19, ../sass/screen.scss */
+#expDate {
+  display: none;
+  border-left: none;
+  border-right: none;
+}
+
+/* line 25, ../sass/screen.scss */
+#cvc {
+  display: none;
+  border-left: none;
+}
+
+/* line 31, ../sass/screen.scss */
 .background {
   display: block;
   position: relative;
@@ -76,7 +102,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   left: 0;
   border-radius: 7px 7px 0 0;
   margin: 1px 1px 0 1px;
-  height: 108px;
   background: #f0f0f2;
   background-image: linear-gradient(#f5f5f7, #e9e9ea);
   border-top: 1px solid #fff;
@@ -84,7 +109,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   box-shadow: 0 1px 0 #fff;
   cursor: default;
 }
-/* line 21, ../sass/screen.scss */
+/* line 44, ../sass/screen.scss */
 .background .close-reveal-modal {
   background: url("../../../img/close.png") no-repeat;
   background-size: 100%;
@@ -93,7 +118,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   top: 7px;
   left: 8px;
 }
-/* line 29, ../sass/screen.scss */
+/* line 52, ../sass/screen.scss */
 .background .image {
   width: 76px;
   height: 75px;
@@ -102,7 +127,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   margin-left: -38px;
   top: -30px;
 }
-/* line 36, ../sass/screen.scss */
+/* line 59, ../sass/screen.scss */
 .background .image img {
   background: #fff;
   width: 64px;
@@ -115,7 +140,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -o-border-radius: 32px;
   margin: 4px 6px 0;
 }
-/* line 49, ../sass/screen.scss */
+/* line 72, ../sass/screen.scss */
 .background .image:after {
   content: '';
   position: absolute;
@@ -126,9 +151,148 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   background: url("../../../img/icon-border.png") no-repeat;
   background-size: 100% 100%;
 }
-/* line 60, ../sass/screen.scss */
+/* line 83, ../sass/screen.scss */
 .background .textContainer {
-  position: absolute;
-  top: 43px;
+  position: relative;
+  margin-top: 43px;
   overflow: hidden;
+}
+/* line 88, ../sass/screen.scss */
+.background .itemQuantity {
+  padding-left: 11px;
+}
+/* line 91, ../sass/screen.scss */
+.background label {
+  display: block;
+  padding-left: 15px;
+}
+/* line 94, ../sass/screen.scss */
+.background label input[type="tel"] {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 3px;
+  float: left;
+  margin-right: 3px;
+  margin-bottom: 0px;
+  padding: 0px;
+  text-align: center;
+}
+/* line 105, ../sass/screen.scss */
+.background label .fa-check-square-o {
+  color: #7FBEA0;
+}
+
+/* line 112, ../sass/screen.scss */
+.paymentMethod {
+  height: 2.5rem;
+  line-height: 2.5rem;
+  font-size: .85em;
+  border-bottom: 1px solid #cacacb;
+}
+/* line 118, ../sass/screen.scss */
+.paymentMethod .payCreditCard {
+  background: #cacacb;
+  color: white;
+  border-bottom: 1px solid #cacacb;
+}
+/* line 122, ../sass/screen.scss */
+.paymentMethod .payCreditCard span {
+  font-style: italic;
+}
+/* line 126, ../sass/screen.scss */
+.paymentMethod .payPayPal {
+  background: white;
+  color: #014179;
+  border-bottom: 1px solid #cacacb;
+}
+/* line 130, ../sass/screen.scss */
+.paymentMethod .payPayPal img {
+  width: 40%;
+  vertical-align: top;
+  margin-top: .45rem;
+}
+@media only screen and (max-width: 40em) {
+  /* line 130, ../sass/screen.scss */
+  .paymentMethod .payPayPal img {
+    width: 50%;
+    margin-top: .6rem;
+  }
+}
+
+/* line 141, ../sass/screen.scss */
+.arrow-down {
+  margin-left: 25%;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #cacacb;
+}
+
+/* line 154, ../sass/screen.scss */
+.shippingAddress .deleteWhiteSpace {
+  height: 37px;
+  padding: 0;
+}
+/* line 158, ../sass/screen.scss */
+.shippingAddress .title {
+  margin-top: 1rem;
+}
+/* line 165, ../sass/screen.scss */
+.shippingAddress .inputFields .row .columns input {
+  border-bottom: none;
+  box-shadow: none;
+  border-radius: 0px;
+}
+/* line 170, ../sass/screen.scss */
+.shippingAddress .inputFields .row .columns .postfix {
+  border-bottom: none;
+  border-radius: none;
+  line-height: 3em;
+}
+/* line 174, ../sass/screen.scss */
+.shippingAddress .inputFields .row .columns .postfix .fa-crosshairs {
+  font-size: 1.5em;
+  color: #46afee;
+}
+/* line 182, ../sass/screen.scss */
+.shippingAddress .inputFields .columns input {
+  border-bottom: none;
+  box-shadow: none;
+  border-radius: 0px;
+}
+/* line 187, ../sass/screen.scss */
+.shippingAddress .inputFields .columns .zipCode {
+  border-right: none;
+}
+@media only screen and (max-width: 40em) {
+  /* line 187, ../sass/screen.scss */
+  .shippingAddress .inputFields .columns .zipCode {
+    border-right: 1px solid #cccccc;
+  }
+}
+
+/* line 198, ../sass/screen.scss */
+#aptNumber {
+  border-bottom: 1px solid #cacacb;
+  box-shadow: none;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+}
+
+/* line 209, ../sass/screen.scss */
+#customButton {
+  background: #45b1e8;
+  background-image: linear-gradient(#45b1e8, #3097de);
+  text-shadow: 0 -1px 0 rgba(46, 86, 153, 0.3);
+  -webkit-box-shadow: 0 1px 0 rgba(46, 86, 153, 0.15), 0 0 4px rgba(86, 149, 219, 0), inset 0 2px 0 rgba(41, 102, 20, 0);
+  box-shadow: 0 1px 0 rgba(46, 86, 153, 0.15), 0 0 4px rgba(86, 149, 219, 0), inset 0 2px 0 rgba(41, 102, 20, 0);
+  font-size: inherit;
+  position: relative;
+  top: inherit;
+  right: inherit;
+  color: white;
+  font-weight: 400;
 }

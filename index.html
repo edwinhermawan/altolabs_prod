@@ -11,10 +11,14 @@
     <!--[if IE]>
         <link href="css/scss/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <![endif]-->
-
+    
+    <!-- Foundation -->
     <link rel="stylesheet" href="css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
-    
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="css/font-awesome.css" />
+
     <!-- Jquery -->
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
@@ -24,15 +28,23 @@
     <!-- Stripe Checkout -->
     <script src="https://checkout.stripe.com/checkout.js"></script>
   </head>
-
 <body>
 
-<p class="address"></p>
-<p class="city"></p>
-<p class="zipCode"></p>
 
 <!-- Firing Modal -->
 <a href="#" class="button" data-reveal-id="myModal" data-reveal>Click Me For A Modal</a>
+
+<div class="row">
+  <div class="small-3 columns" id="cardNumberContainer">
+    <input type="tel" id="cardNumber" maxlength="16" placeholder="1234 5678 9012 3456">
+  </div>
+  <div class="small-2 columns" id="expDateContainer">
+    <input type="tel" id="expDate" maxlength="4"placeholder="MM/YY">
+  </div>
+  <div class="small-2 columns" id="cvcContainer">
+    <input type="tel" id="cvc" maxlength="3"placeholder="CVC"></div>
+</div>
+
 
 <!-- Modal Window -->
 <div id="myModal" class="reveal-modal tiny" data-reveal>
@@ -41,16 +53,74 @@
     <div class="image">
       <img class="logo" src="https://stripe.com/img/checkout/marketing/watsi.png" alt="">
     </div>
-    <div class="textContainer text-center small-centered medium-10 columns">
-      <p>blah blah blah</p>
-      
+    <div class="textContainer small-centered medium-10 columns">
+      <!-- Placeholder for items -->
+      <form>
+        <label class="itemQuantity">
+          <img src="img/product.png" alt="">
+          <input type="tel" />
+          <strong>Boombot REX Electric Blue ($119.99)</strong>
+
+        </label>
+      <!-- Checkboxes -->
+
+        <!-- Wall Charger +$10.00 -->
+        <label class="addOn"><i class="fa fa-square-o"></i> Wall Charger (+$10.00)</label>
+
+        <!-- Extended 2 year Warranty +$20.00 -->
+        <label class="addOn"><i class="fa fa-square-o"></i> Extended 2 year Warranty (+$20.00)</label>
+
+        <!-- Gift Wrapping +10.00 -->
+        <label class="addOn"><i class="fa fa-square-o"></i> Gift Wrapping (+10.00)</label>
+      </form>
     </div>
   </div>
-
-  <h2>Awesome. I have it.</h2>
-  <p class="lead">Your couch.  It is mine.</p>
-  <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
   
+  <div class="paymentMethod row text-center">
+    <div class="payCreditCard small-6 columns">
+      Pay by <span>Credit Card</span>
+    </div>
+    <div class="payPayPal small-6 columns text-center">
+      Pay by <img src="img/paypal.png" alt="">
+    </div>
+  </div>
+  <div class="arrow-down"></div>
+  <div class="shippingAddress text-center">
+    <div class="title">
+      <p>Shipping Address:</p>
+    </div>
+    <!-- Input Fields -->
+    <div class="inputFields text-center medium-10 columns small-centered">
+      <!-- Address -->
+      <div class="row collapse">
+        <div class="small-10 columns deleteWhiteSpace">
+          <input class="addressInput address" type="text" placeholder="Your Addresss">
+        </div>
+        <div class="small-2 columns">
+          <span class="postfix geoLocator"><i class="fa fa-crosshairs"></i></span>
+        </div>
+      </div>
+      
+      <!-- Zip Code -->
+      <div class="medium-4 columns deleteWhiteSpace">
+        <input type="tel" class="zipCode" placeholder="Zip">
+      </div>
+      <!-- City -->
+      <div class="medium-8 columns deleteWhiteSpace">
+        <input type="text" class="city" placeholder="City">
+      </div>
+      <!-- APT Label -->
+      <div class="row collapse">
+        <div class="small-2 columns">
+          <span class="prefix ">APT #</span>
+        </div>
+        <div class="small-10 columns">
+          <input type="tel" class="empty" id="aptNumber" placeholder="&#xF040;">
+        </div>
+      </div>
+      <a href="#" class="button radius text-center small-centered medium-8 columns close-reveal-modal" id="customButton">Pay with Card</a>
+    </div>
+  </div>
 </div>
 
 <!-- Load Main JS File -->
@@ -63,6 +133,27 @@
     $(document).foundation();
 </script>
 
+<!-- Stripe Placeholder -->
+<script>
+  var handler = StripeCheckout.configure({
+    key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+    image: '/square-image.png',
+    token: function(token, args) {
+      // Use the token to create the charge with a server-side script.
+      // You can access the token ID with `token.id`
+    }
+  });
+
+  document.getElementById('customButton').addEventListener('click', function(e) {
+    // Open Checkout with further options
+    handler.open({
+      name: 'Demo Site',
+      description: '2 widgets ($20.00)',
+      amount: 2000
+    });
+    e.preventDefault();
+  });
+</script>
 </body>
 
 </html>
