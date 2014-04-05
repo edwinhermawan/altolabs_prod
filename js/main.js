@@ -57,7 +57,8 @@ $("#cardNumber").on('keypress', function(){
 	var vallength = $(this).val().length;
 
 	if (vallength == 15){
-      $('#expDate').css('display','block').trigger("focus");
+      // $('#expDate').css('display','block').trigger("focus");
+      $('#expDate').css('display','block').focus().select();
       console.log("Reached 16")
   }
 })
@@ -78,7 +79,8 @@ $('#cvc').keyup(function(e){
 
 	if(e.keyCode == 8 && vallength == 0){
 		$(this).css('display', 'none');
-		$("#expDate").trigger("focus")
+		// $("#expDate").trigger("focus").select();
+		$("#expDate").focus().select();
 	}
 })
 
@@ -88,7 +90,8 @@ $('#expDate').keyup(function(e){
 
 	if(e.keyCode == 8 && vallength == 0){
 		$(this).css('display', 'none');
-		$("#cardNumber").trigger("focus")
+		// $("#cardNumber").trigger("focus").select();
+		$("#cardNumber").focus().select();
 	}
 })
 
@@ -102,5 +105,14 @@ $('#aptNumber').on('keyup', function() {
     }
 });
 
+// Clear input fields when you click 'x'
+function tog(v){return v?'addClass':'removeClass';} 
+$(document).on('input', '.clearable', function(){
+    $(this)[tog(this.value)]('x');
+}).on('mousemove', '.x', function( e ){
+    $(this)[tog(this.offsetWidth-18 < e.clientX-this.getBoundingClientRect().left)]('onX');   
+}).on('click', '.onX', function(){
+    $(this).removeClass('x onX').val('');
+});
 
 

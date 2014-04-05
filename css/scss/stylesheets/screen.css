@@ -63,38 +63,50 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 3, ../sass/screen.scss */
+@font-face {
+  font-family: 'twCenMT';
+  src: url("../../../fonts/twCenMT.ttf");
+}
+
+@font-face {
+  font-family: 'twCenMTBold';
+  src: url("../../../fonts/twCenMTBold.ttf");
+}
+
+/* line 11, ../sass/screen.scss */
 #myModal {
   border-radius: 6px;
   background: #f5f5f7;
+  top: 50px;
+  font-family: 'twCenMT';
 }
 
-/* line 8, ../sass/screen.scss */
+/* line 18, ../sass/screen.scss */
 #cardNumberContainer, #expDateContainer, #cvcContainer {
   padding-left: 0px;
   padding-right: 0px;
   float: left;
 }
 
-/* line 15, ../sass/screen.scss */
+/* line 25, ../sass/screen.scss */
 #cardNumber {
   border-right: none;
 }
 
-/* line 19, ../sass/screen.scss */
+/* line 29, ../sass/screen.scss */
 #expDate {
   display: none;
   border-left: none;
   border-right: none;
 }
 
-/* line 25, ../sass/screen.scss */
+/* line 35, ../sass/screen.scss */
 #cvc {
   display: none;
   border-left: none;
 }
 
-/* line 31, ../sass/screen.scss */
+/* line 41, ../sass/screen.scss */
 .background {
   display: block;
   position: relative;
@@ -109,7 +121,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   box-shadow: 0 1px 0 #fff;
   cursor: default;
 }
-/* line 44, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 .background .close-reveal-modal {
   background: url("../../../img/close.png") no-repeat;
   background-size: 100%;
@@ -118,7 +130,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   top: 7px;
   left: 8px;
 }
-/* line 52, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 .background .image {
   width: 76px;
   height: 75px;
@@ -127,7 +139,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   margin-left: -38px;
   top: -30px;
 }
-/* line 59, ../sass/screen.scss */
+/* line 69, ../sass/screen.scss */
 .background .image img {
   background: #fff;
   width: 64px;
@@ -140,7 +152,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -o-border-radius: 32px;
   margin: 4px 6px 0;
 }
-/* line 72, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 .background .image:after {
   content: '';
   position: absolute;
@@ -151,75 +163,92 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   background: url("../../../img/icon-border.png") no-repeat;
   background-size: 100% 100%;
 }
-/* line 83, ../sass/screen.scss */
+/* line 93, ../sass/screen.scss */
 .background .textContainer {
   position: relative;
   margin-top: 43px;
   overflow: hidden;
 }
-/* line 88, ../sass/screen.scss */
+/* line 98, ../sass/screen.scss */
 .background .itemQuantity {
-  padding-left: 11px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-family: 'twCenMTBold';
+  font-size: 1.15em;
 }
-/* line 91, ../sass/screen.scss */
+/* line 103, ../sass/screen.scss */
+.background .itemQuantity img {
+  padding: 0px;
+  border-radius: 3px;
+}
+/* line 108, ../sass/screen.scss */
 .background label {
   display: block;
   padding-left: 15px;
 }
-/* line 94, ../sass/screen.scss */
-.background label input[type="tel"] {
+/* line 111, ../sass/screen.scss */
+.background label .quantityAndDescription {
+  margin-top: 0px;
+  padding-left: 0.5rem;
+}
+/* line 115, ../sass/screen.scss */
+.background label .quantityAndDescription input[type="tel"] {
   width: 1rem;
   height: 1rem;
-  margin-top: 3px;
   float: left;
-  margin-right: 3px;
+  margin-right: 0.5rem;
   margin-bottom: 0px;
   padding: 0px;
   text-align: center;
 }
-/* line 105, ../sass/screen.scss */
+/* line 125, ../sass/screen.scss */
+.background label .quantityAndDescription .description {
+  margin-left: 1.5rem;
+  line-height: 1.3rem;
+}
+/* line 131, ../sass/screen.scss */
 .background label .fa-check-square-o {
   color: #7FBEA0;
 }
 
-/* line 112, ../sass/screen.scss */
+/* line 138, ../sass/screen.scss */
 .paymentMethod {
   height: 2.5rem;
   line-height: 2.5rem;
   font-size: .85em;
   border-bottom: 1px solid #cacacb;
 }
-/* line 118, ../sass/screen.scss */
+/* line 144, ../sass/screen.scss */
 .paymentMethod .payCreditCard {
   background: #cacacb;
   color: white;
   border-bottom: 1px solid #cacacb;
 }
-/* line 122, ../sass/screen.scss */
+/* line 148, ../sass/screen.scss */
 .paymentMethod .payCreditCard span {
   font-style: italic;
 }
-/* line 126, ../sass/screen.scss */
+/* line 152, ../sass/screen.scss */
 .paymentMethod .payPayPal {
   background: white;
   color: #014179;
   border-bottom: 1px solid #cacacb;
 }
-/* line 130, ../sass/screen.scss */
+/* line 156, ../sass/screen.scss */
 .paymentMethod .payPayPal img {
   width: 40%;
   vertical-align: top;
   margin-top: .45rem;
 }
 @media only screen and (max-width: 40em) {
-  /* line 130, ../sass/screen.scss */
+  /* line 156, ../sass/screen.scss */
   .paymentMethod .payPayPal img {
     width: 50%;
     margin-top: .6rem;
   }
 }
 
-/* line 141, ../sass/screen.scss */
+/* line 167, ../sass/screen.scss */
 .arrow-down {
   margin-left: 25%;
   width: 0;
@@ -229,50 +258,99 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   border-top: 8px solid #cacacb;
 }
 
-/* line 154, ../sass/screen.scss */
+/* line 180, ../sass/screen.scss */
 .shippingAddress .deleteWhiteSpace {
   height: 37px;
   padding: 0;
 }
-/* line 158, ../sass/screen.scss */
+/* line 184, ../sass/screen.scss */
 .shippingAddress .title {
   margin-top: 1rem;
 }
-/* line 165, ../sass/screen.scss */
+/* line 186, ../sass/screen.scss */
+.shippingAddress .title .titleText {
+  margin-bottom: .5rem;
+}
+/* line 194, ../sass/screen.scss */
 .shippingAddress .inputFields .row .columns input {
   border-bottom: none;
   box-shadow: none;
   border-radius: 0px;
 }
-/* line 170, ../sass/screen.scss */
+/* line 199, ../sass/screen.scss */
 .shippingAddress .inputFields .row .columns .postfix {
   border-bottom: none;
   border-radius: none;
   line-height: 3em;
 }
-/* line 174, ../sass/screen.scss */
+/* line 203, ../sass/screen.scss */
 .shippingAddress .inputFields .row .columns .postfix .fa-crosshairs {
   font-size: 1.5em;
   color: #46afee;
 }
-/* line 182, ../sass/screen.scss */
+/* line 211, ../sass/screen.scss */
 .shippingAddress .inputFields .columns input {
   border-bottom: none;
   box-shadow: none;
   border-radius: 0px;
 }
-/* line 187, ../sass/screen.scss */
+/* line 216, ../sass/screen.scss */
 .shippingAddress .inputFields .columns .zipCode {
   border-right: none;
 }
 @media only screen and (max-width: 40em) {
-  /* line 187, ../sass/screen.scss */
+  /* line 216, ../sass/screen.scss */
   .shippingAddress .inputFields .columns .zipCode {
     border-right: 1px solid #cccccc;
   }
 }
 
-/* line 198, ../sass/screen.scss */
+/* line 227, ../sass/screen.scss */
+::-webkit-input-placeholder {
+  font-size: 1.1em;
+}
+
+/* line 232, ../sass/screen.scss */
+:-moz-placeholder {
+  /* Firefox 18- */
+  font-size: 1.1em;
+}
+
+/* line 237, ../sass/screen.scss */
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 1.1em;
+}
+
+/* line 242, ../sass/screen.scss */
+:-ms-input-placeholder {
+  font-size: 1.1em;
+}
+
+/* line 248, ../sass/screen.scss */
+.clearable {
+  background: url(http://i.imgur.com/z7ZSYjt.png) no-repeat right -10px center;
+  border: 1px solid #999;
+  padding: 3px 18px 3px 4px;
+  /* USE the same right padding in jQ! */
+  border-radius: 3px;
+  transition: background 0.4s;
+  /*Remove this line if issues in Chrome (02.2014)*/
+}
+
+/* (jQ addClass:) if input has value: */
+/* line 256, ../sass/screen.scss */
+.clearable.x {
+  background-position: right 5px center;
+}
+
+/* (jQ addClass:) if mouse is over the 'x' input area*/
+/* line 260, ../sass/screen.scss */
+.clearable.onX {
+  cursor: pointer;
+}
+
+/* line 265, ../sass/screen.scss */
 #aptNumber {
   border-bottom: 1px solid #cacacb;
   box-shadow: none;
@@ -282,8 +360,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   text-decoration: inherit;
 }
 
-/* line 209, ../sass/screen.scss */
+/* line 277, ../sass/screen.scss */
 #customButton {
+  margin-top: 1rem;
   background: #45b1e8;
   background-image: linear-gradient(#45b1e8, #3097de);
   text-shadow: 0 -1px 0 rgba(46, 86, 153, 0.3);

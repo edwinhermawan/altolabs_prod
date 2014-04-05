@@ -12,7 +12,7 @@
         <link href="css/scss/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <![endif]-->
     
-    <!-- Foundation -->
+    <!-- Foundation Stylesheets-->
     <link rel="stylesheet" href="css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
 
@@ -34,15 +34,16 @@
 <!-- Firing Modal -->
 <a href="#" class="button" data-reveal-id="myModal" data-reveal>Click Me For A Modal</a>
 
+<p>EH New!</p>
 <div class="row">
   <div class="small-3 columns" id="cardNumberContainer">
-    <input type="tel" id="cardNumber" maxlength="16" placeholder="1234 5678 9012 3456">
+    <input type="tel" id="cardNumber" maxlength="16" placeholder="1234 5678 9012 3456" data-prefetch>
   </div>
   <div class="small-2 columns" id="expDateContainer">
-    <input type="tel" id="expDate" maxlength="4"placeholder="MM/YY">
+    <input type="tel" id="expDate" maxlength="4"placeholder="MM/YY" data-prefetch>
   </div>
   <div class="small-2 columns" id="cvcContainer">
-    <input type="tel" id="cvc" maxlength="3"placeholder="CVC"></div>
+    <input type="tel" id="cvc" maxlength="3"placeholder="CVC" data-prefetch></div>
 </div>
 
 
@@ -51,19 +52,21 @@
   <div class="background row">
     <a class="close-reveal-modal">&#160;</a>
     <div class="image">
-      <img class="logo" src="https://stripe.com/img/checkout/marketing/watsi.png" alt="">
+      <img class="logo" src="img/logo.png" alt="">
     </div>
     <div class="textContainer small-centered medium-10 columns">
+
       <!-- Placeholder for items -->
       <form>
-        <label class="itemQuantity">
-          <img src="img/product.png" alt="">
-          <input type="tel" />
-          <strong>Boombot REX Electric Blue ($119.99)</strong>
-
+        <label class="itemQuantity small-12 columns">
+          <img src="img/product.png" alt="" class="small-3 columns">
+          <div class="quantityAndDescription small-9 columns">
+            <input type="tel" />
+            <div class="description">Boombot REX Electric Blue ($119.99)</div>
+          </div>
         </label>
+        
       <!-- Checkboxes -->
-
         <!-- Wall Charger +$10.00 -->
         <label class="addOn"><i class="fa fa-square-o"></i> Wall Charger (+$10.00)</label>
 
@@ -86,15 +89,15 @@
   </div>
   <div class="arrow-down"></div>
   <div class="shippingAddress text-center">
-    <div class="title">
-      <p>Shipping Address:</p>
+    <div class="title hide-for-small-only">
+      <p class="titleText">SHIPPING ADDRESS</p>
     </div>
     <!-- Input Fields -->
     <div class="inputFields text-center medium-10 columns small-centered">
       <!-- Address -->
       <div class="row collapse">
         <div class="small-10 columns deleteWhiteSpace">
-          <input class="addressInput address" type="text" placeholder="Your Addresss">
+          <input class="addressInput address clearable" type="text" placeholder="Your Address">
         </div>
         <div class="small-2 columns">
           <span class="postfix geoLocator"><i class="fa fa-crosshairs"></i></span>
@@ -103,11 +106,11 @@
       
       <!-- Zip Code -->
       <div class="medium-4 columns deleteWhiteSpace">
-        <input type="tel" class="zipCode" placeholder="Zip">
+        <input type="tel" class="zipCode clearable" placeholder="Zip">
       </div>
       <!-- City -->
       <div class="medium-8 columns deleteWhiteSpace">
-        <input type="text" class="city" placeholder="City">
+        <input type="text" class="city clearable" placeholder="City">
       </div>
       <!-- APT Label -->
       <div class="row collapse">
@@ -115,8 +118,12 @@
           <span class="prefix ">APT #</span>
         </div>
         <div class="small-10 columns">
-          <input type="tel" class="empty" id="aptNumber" placeholder="&#xF040;">
+          <input type="tel" class="empty clearable" id="aptNumber" placeholder="&#xF040;">
         </div>
+      </div>
+
+      <div class="warrantyWrapper small-7 columns small-centered">
+        <img src="img/warranty.png" alt="">
       </div>
       <a href="#" class="button radius text-center small-centered medium-8 columns close-reveal-modal" id="customButton">Pay with Card</a>
     </div>

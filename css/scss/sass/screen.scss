@@ -1,8 +1,18 @@
 @import "compass/reset";
+@font-face {
+  font-family: 'twCenMT';
+  src: url('../../../fonts/twCenMT.ttf'); 
+}
+@font-face {
+  font-family: 'twCenMTBold';
+  src: url('../../../fonts/twCenMTBold.ttf'); 
+}
 
 #myModal{
 	border-radius: 6px;
-	background: #f5f5f7
+	background: #f5f5f7;
+	top: 50px;
+	font-family: 'twCenMT';
 }
 
 #cardNumberContainer, #expDateContainer, #cvcContainer{
@@ -86,21 +96,37 @@
 		overflow: hidden;
 	}
 	.itemQuantity{
-		padding-left: 11px;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		font-family: 'twCenMTBold';
+		font-size: 1.15em;
+		img{
+			padding: 0px;
+			border-radius: 3px;
+		}
 	}
 	label {
     display: block;
     padding-left: 15px;
-		input[type="tel"]{
-			width: 1rem;
-			height: 1rem;
-			margin-top: 3px;
-			float: left;
-			margin-right: 3px;
-			margin-bottom: 0px;
-			padding: 0px;
-			text-align: center;
-		}
+    .quantityAndDescription{
+    	margin-top: 0px;
+    	$spacingBetweenElements: .5rem;
+    	padding-left: $spacingBetweenElements;
+    	input[type="tel"]{
+				width: 1rem;
+				height: 1rem;
+				// margin-top: 3px;
+				float: left;
+				margin-right: $spacingBetweenElements;
+				margin-bottom: 0px;
+				padding: 0px;
+				text-align: center;
+			}
+			.description{
+				margin-left: 1.5rem;
+				line-height: 1.3rem;
+			}
+    }
 		// Checked off Checkbox
 		.fa-check-square-o{
     	color:#7FBEA0;
@@ -157,6 +183,9 @@ $darkGrey: #CACACB;
 	}
 	.title{
 		margin-top: 1rem;
+		.titleText{
+			margin-bottom: .5rem;
+		}
 	}
 	// Get rid of double borders from the input fields
 	.inputFields{
@@ -194,6 +223,44 @@ $darkGrey: #CACACB;
 	}
 }
 
+// Make placeholder font-size bigger
+::-webkit-input-placeholder {
+   // color: red;
+   font-size:1.1em;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   // color: red;
+   font-size:1.1em;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   // color: red;  
+   font-size:1.1em;
+}
+
+:-ms-input-placeholder {  
+   // color: red; 
+   font-size:1.1em; 
+}
+
+// Make input fields clearable
+.clearable{
+  background:url(http://i.imgur.com/z7ZSYjt.png) no-repeat right -10px center;
+  border:1px solid #999;
+  padding:3px 18px 3px 4px; /* USE the same right padding in jQ! */
+  border-radius:3px;
+  transition: background 0.4s; /*Remove this line if issues in Chrome (02.2014)*/
+}
+/* (jQ addClass:) if input has value: */
+.clearable.x{
+  background-position: right 5px center;
+}
+/* (jQ addClass:) if mouse is over the 'x' input area*/
+.clearable.onX{
+  cursor:pointer;
+}
+
 // Make sure that Apt # input field has a bottom border
 #aptNumber{
 	border-bottom: 1px solid $darkGrey;
@@ -206,7 +273,10 @@ $darkGrey: #CACACB;
   text-decoration: inherit;
 }
 
+
 #customButton{
+	margin-top: 1rem;
+
 	background: #45b1e8;
 	background-image: linear-gradient(#45b1e8,#3097de);
 	text-shadow: 0 -1px 0 rgba(46,86,153,0.3);
