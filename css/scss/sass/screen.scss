@@ -13,12 +13,26 @@
 	background: #f5f5f7;
 	top: 50px;
 	font-family: 'twCenMT';
+	@media only screen and (max-width: 40em){
+		border-radius: 0px;
+		top: 0px;
+	}
 }
 
 #cardNumberContainer, #expDateContainer, #cvcContainer{
 	padding-left: 0px;
 	padding-right: 0px;
 	float: left;
+
+}
+
+#cardNumberContainer{
+	overflow: hidden;
+	width: 40%;
+	background: lime;
+	input{
+		width: 110%;
+	}
 
 }
 
@@ -58,18 +72,31 @@
 		height:23px;
 		top: 7px;
 		left: 8px;
+		z-index: 10;
 	}
 	.image{
+		$logoContainerHeight: 75px;
 		width: 76px;
-		height: 75px;
+		height: $logoContainerHeight;
 		position: absolute;
 		left: 50%;
 		margin-left: -38px;
 		top: -30px;
+		@media only screen and (max-width: 40em){
+			$logoContainerHeight: 65px;
+			width: 100%;
+			height: $logoContainerHeight;
+			position: relative;
+			margin-left: 0px;
+			top: 0px;
+			left: 0%;
+			background: white;
+		}
 		img{
+			$logoHeight: 64px;
 			background: #fff;
 			width: 64px;
-			height: 64px;
+			height: $logoHeight;
 			display: block;
 			border-radius: 32px;
 				-webkit-border-radius: 32px;
@@ -78,6 +105,10 @@
 				-o-border-radius: 32px;
 			// border: 3px solid #fff;
 			margin: 4px 6px 0;
+			@media only screen and (max-width: 40em){
+				margin: 0 auto;
+				padding-top: ($logoContainerHeight - $logoHeight)*.5;
+			}
 		}
 		&:after{
 			content: '';
@@ -88,42 +119,74 @@
 			bottom: 0;
 			background: url("../../../img/icon-border.png") no-repeat;
 			background-size: 100% 100%;
+			@media only screen and (max-width: 40em){
+				background: none;
+			}
 		}
 	}
 	.textContainer{
 		position: relative;
 		margin-top: 43px;
 		overflow: hidden;
+		@media only screen and (max-width: 40em){
+			margin-top: 0px;
+		}
 	}
 	.itemQuantity{
 		margin-top: 1rem;
 		margin-bottom: 1rem;
 		font-family: 'twCenMTBold';
 		font-size: 1.15em;
+		@media only screen and (max-width: 40em){
+			padding-left: 0px;
+			padding-right: 0px;
+			// margin-bottom: 0rem;
+		}
 		img{
 			padding: 0px;
 			border-radius: 3px;
 		}
 	}
+	.addOn{
+		@media only screen and (max-width: 40em){
+			margin-top: .2rem;
+			font-size: 1em;
+		}
+		.fa{
+			@media only screen and (max-width: 40em){
+				font-size: 1.2em;
+			}
+		}
+	}
 	label {
     display: block;
     padding-left: 15px;
+    @media only screen and (max-width: 40em){
+    	padding-left: 0px;
+    }
     .quantityAndDescription{
     	margin-top: 0px;
     	$spacingBetweenElements: .5rem;
     	padding-left: $spacingBetweenElements;
+
+    	$quantityInputSize: 1rem;
     	input[type="tel"]{
-				width: 1rem;
-				height: 1rem;
+				width: $quantityInputSize;
+				height: $quantityInputSize;
 				// margin-top: 3px;
 				float: left;
 				margin-right: $spacingBetweenElements;
 				margin-bottom: 0px;
 				padding: 0px;
 				text-align: center;
+				@media only screen and (max-width: 40em){
+					$quantityInputSize: 1.75rem;
+					width: $quantityInputSize;
+					height: $quantityInputSize;
+				}
 			}
 			.description{
-				margin-left: 1.5rem;
+				margin-left: ($quantityInputSize + $spacingBetweenElements) ;
 				line-height: 1.3rem;
 			}
     }
@@ -141,6 +204,9 @@ $darkGrey: #CACACB;
 	line-height: $paymentMethodHeight;
 	font-size: .85em;
 	border-bottom: 1px solid $darkGrey;
+	@media only screen and (max-width: 40em){
+		font-size: 1em;
+	}
 	.payCreditCard{
 		background: $darkGrey;
 		color: white;
@@ -155,11 +221,9 @@ $darkGrey: #CACACB;
 		border-bottom: 1px solid $darkGrey;
 		img{
 			width: 40%;
-			vertical-align: top;
-			margin-top: .45rem;
+			vertical-align: text-top;
 			@media only screen and (max-width: 40em){
-				width: 50%;
-				margin-top: .6rem;
+				width: 60%;
 			}
 		}
 	}
@@ -195,15 +259,22 @@ $darkGrey: #CACACB;
 					border-bottom: none;
 					box-shadow: none;
 					border-radius:0px;
+					font-size: 1em;
 				}
+				
 				.postfix{
 					border-bottom: none;
-					border-radius:none;
 					line-height: 3em;
 					.fa-crosshairs{
 						font-size: 1.5em;
 						color: #46afee;
 					}
+				}
+				.prefix{
+					border-bottom-left-radius: 3px;
+				}
+				#aptNumber{
+					border-bottom-right-radius: 3px;
 				}
 			}
 		}
@@ -212,6 +283,11 @@ $darkGrey: #CACACB;
 				border-bottom: none;
 				box-shadow: none;
 				border-radius:0px;
+				font-size: 1em;
+			}
+			.shippingName{
+				border-top-left-radius: 3px;
+				border-top-right-radius: 3px;
 			}
 			.zipCode{
 				border-right: none;
@@ -224,25 +300,21 @@ $darkGrey: #CACACB;
 }
 
 // Make placeholder font-size bigger
-::-webkit-input-placeholder {
-   // color: red;
-   font-size:1.1em;
-}
+// ::-webkit-input-placeholder {
+//    color: lime;
+// }
 
-:-moz-placeholder { /* Firefox 18- */
-   // color: red;
-   font-size:1.1em;  
-}
+// :-moz-placeholder { /* Firefox 18- */
+//    color: red;  
+// }
 
-::-moz-placeholder {  /* Firefox 19+ */
-   // color: red;  
-   font-size:1.1em;
-}
+// ::-moz-placeholder {  /* Firefox 19+ */
+//    color: red;  
+// }
 
-:-ms-input-placeholder {  
-   // color: red; 
-   font-size:1.1em; 
-}
+// :-ms-input-placeholder {  
+//    color: red;  
+// }
 
 // Make input fields clearable
 .clearable{
@@ -252,6 +324,7 @@ $darkGrey: #CACACB;
   border-radius:3px;
   transition: background 0.4s; /*Remove this line if issues in Chrome (02.2014)*/
 }
+
 /* (jQ addClass:) if input has value: */
 .clearable.x{
   background-position: right 5px center;

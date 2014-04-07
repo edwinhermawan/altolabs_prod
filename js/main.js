@@ -95,6 +95,38 @@ $('#expDate').keyup(function(e){
 	}
 })
 
+// New Card Input 
+function getCardNumber (){
+  $('.dmitrysCardNumber').text($(this).val());
+  // Clear out card number and put in clean expiration date
+  $(this).animate({'marginLeft': '-=25%'}, 200, 'swing', function(){
+  	$(this).val('');
+  	$(this).mask("99/99", {placeholder:" ", completed: getExpDate
+		});
+  	$(this).css('margin-left','0px');
+  });
+  $(this).siblings('label').text("Expiration Date");
+  $(this).attr('placeholder', 'MM/YY');
+}
+
+function getExpDate (){
+  $('.dmitrysExpDate').text($(this).val());
+  // Clear out expDate and put in clean cvc
+  $(this).val('');
+  $(this).mask("999", {placeholder:" "});
+  $(this).siblings('label').text("CVC");
+  $(this).attr('placeholder', 'CVC');
+  $(this).off('keyup');
+  $(this).on('keyup', getCvc);
+}
+
+function getCvc (){
+  $('.dmitrysCvc').text($(this).val());
+}
+
+$("#newCardNumber").mask("9999 9999 9999 9999", {placeholder:" ", completed: getCardNumber
+});
+
 // JS for aptNumber font-icon placeholder
 $('#aptNumber').on('keyup', function() {
     var input = $(this);
@@ -115,4 +147,12 @@ $(document).on('input', '.clearable', function(){
     $(this).removeClass('x onX').val('');
 });
 
+// Data interchange for mobile
+// isMobile checks if the device is a mobile device
+var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+
+if (isMobile){
+	// alert ("I'm New mobile");
+	// $('.textInterchange').html("SHIT")
+}
 
