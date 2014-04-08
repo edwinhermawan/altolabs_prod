@@ -96,7 +96,13 @@ $('#expDate').keyup(function(e){
 })
 
 // New Card Input 
+// Formats the credit card input in with spaces every 4 digits an fires off the getCardNumber function
+$("#newCardNumber").mask("9999 9999 9999 9999", {placeholder:" ", completed: getCardNumber
+});
+
+// Puts user inputed card number into "Card Number" field and has slide effect
 function getCardNumber (){
+	$('#showCardNumber').css('display', 'inline-block');
   $('.dmitrysCardNumber').text($(this).val());
   // Clear out card number and put in clean expiration date
   $(this).animate({'marginLeft': '-=25%'}, 200, 'swing', function(){
@@ -109,23 +115,23 @@ function getCardNumber (){
   $(this).attr('placeholder', 'MM/YY');
 }
 
+// Puts user inputed expiration date into "Expiration Date" field and has slide effect
 function getExpDate (){
   $('.dmitrysExpDate').text($(this).val());
+  $(this).animate({'marginLeft': '-=25%'}, 200, 'swing', function(){
+  	$(this).val('');
+	  $(this).mask("999", {placeholder:" ", completed: getCvc});
+	  $(this).css('margin-left','0px');
+	});
   // Clear out expDate and put in clean cvc
-  $(this).val('');
-  $(this).mask("999", {placeholder:" "});
   $(this).siblings('label').text("CVC");
   $(this).attr('placeholder', 'CVC');
-  $(this).off('keyup');
-  $(this).on('keyup', getCvc);
 }
 
 function getCvc (){
   $('.dmitrysCvc').text($(this).val());
 }
 
-$("#newCardNumber").mask("9999 9999 9999 9999", {placeholder:" ", completed: getCardNumber
-});
 
 // JS for aptNumber font-icon placeholder
 $('#aptNumber').on('keyup', function() {
@@ -147,12 +153,12 @@ $(document).on('input', '.clearable', function(){
     $(this).removeClass('x onX').val('');
 });
 
-// Data interchange for mobile
 // isMobile checks if the device is a mobile device
 var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
 
 if (isMobile){
-	// alert ("I'm New mobile");
-	// $('.textInterchange').html("SHIT")
+
+	// Change the size of the modal window if user agent if mobile
+	$('#myModal').removeClass('tiny').addClass('medium');
 }
 
