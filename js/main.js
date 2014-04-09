@@ -132,7 +132,6 @@ function getCvc (){
   $('.dmitrysCvc').text($(this).val());
 }
 
-
 // JS for aptNumber font-icon placeholder
 $('#aptNumber').on('keyup', function() {
     var input = $(this);
@@ -142,6 +141,7 @@ $('#aptNumber').on('keyup', function() {
         input.removeClass('empty');
     }
 });
+
 
 // Clear input fields when you click 'x'
 function tog(v){return v?'addClass':'removeClass';} 

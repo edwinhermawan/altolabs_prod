@@ -73,30 +73,40 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: url("../../../fonts/twCenMTBold.ttf");
 }
 
-/* line 11, ../sass/screen.scss */
+/* line 13, ../sass/screen.scss */
 #myModal {
-  border-radius: 6px;
-  background: #f5f5f7;
   top: 50px;
   font-family: 'twCenMT';
   height: auto;
 }
 @media only screen and (max-width: 40em) {
-  /* line 11, ../sass/screen.scss */
+  /* line 13, ../sass/screen.scss */
   #myModal {
     border-radius: 0px;
     top: 0px;
   }
 }
 
-/* line 23, ../sass/screen.scss */
+/* line 24, ../sass/screen.scss */
+#modalDialog {
+  width: 40%;
+}
+
+/* line 28, ../sass/screen.scss */
+#modalBodyOverride {
+  border-radius: 6px;
+  padding: 0px 15px 15px;
+  background: #f5f5f7;
+}
+
+/* line 34, ../sass/screen.scss */
 #cardNumberContainer, #expDateContainer, #cvcContainer {
   padding-left: 0px;
   padding-right: 0px;
   float: left;
 }
 
-/* line 29, ../sass/screen.scss */
+/* line 40, ../sass/screen.scss */
 #cardNumberContainer {
   overflow: hidden;
   width: 50%;
@@ -105,43 +115,43 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   margin-bottom: 1rem;
   display: inline-block;
 }
-/* line 33, ../sass/screen.scss */
+/* line 44, ../sass/screen.scss */
 #cardNumberContainer input {
   width: 125%;
 }
 @media only small {
-  /* line 29, ../sass/screen.scss */
+  /* line 40, ../sass/screen.scss */
   #cardNumberContainer {
     width: 100%;
   }
 }
 
-/* line 44, ../sass/screen.scss */
+/* line 55, ../sass/screen.scss */
 #showCardNumber {
   float: left;
   clear: both;
   display: none;
 }
 
-/* line 50, ../sass/screen.scss */
+/* line 61, ../sass/screen.scss */
 #cardNumber {
   border-right: none;
 }
 
-/* line 54, ../sass/screen.scss */
+/* line 65, ../sass/screen.scss */
 #expDate {
   display: none;
   border-left: none;
   border-right: none;
 }
 
-/* line 60, ../sass/screen.scss */
+/* line 71, ../sass/screen.scss */
 #cvc {
   display: none;
   border-left: none;
 }
 
-/* line 66, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 .background {
   display: block;
   position: relative;
@@ -149,16 +159,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   left: 0;
   border-radius: 7px 7px 0 0;
   margin: 1px 1px 0 1px;
-  background: #f0f0f2;
-  background-image: linear-gradient(#f5f5f7, #e9e9ea);
   border-top: 1px solid #fff;
   border-bottom: 1px solid #d3d3d4;
   box-shadow: 0 1px 0 #fff;
   cursor: default;
 }
-/* line 79, ../sass/screen.scss */
-.background .close-reveal-modal {
-  background: url("../../../img/close.png") no-repeat;
+/* line 90, ../sass/screen.scss */
+.background .close {
+  position: absolute;
   background-size: 100%;
   width: 22px;
   height: 23px;
@@ -166,7 +174,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   left: 8px;
   z-index: 10;
 }
-/* line 88, ../sass/screen.scss */
+/* line 100, ../sass/screen.scss */
 .background .image {
   width: 76px;
   height: 75px;
@@ -176,7 +184,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   top: -30px;
 }
 @media only screen and (max-width: 40em) {
-  /* line 88, ../sass/screen.scss */
+  /* line 100, ../sass/screen.scss */
   .background .image {
     width: 100%;
     height: 65px;
@@ -187,7 +195,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     background: white;
   }
 }
-/* line 106, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
 .background .image img {
   background: #fff;
   width: 64px;
@@ -201,13 +209,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   margin: 4px 6px 0;
 }
 @media only screen and (max-width: 40em) {
-  /* line 106, ../sass/screen.scss */
+  /* line 118, ../sass/screen.scss */
   .background .image img {
     margin: 0 auto;
     padding-top: 0.5px;
   }
 }
-/* line 124, ../sass/screen.scss */
+/* line 136, ../sass/screen.scss */
 .background .image:after {
   content: '';
   position: absolute;
@@ -219,75 +227,62 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   background-size: 100% 100%;
 }
 @media only screen and (max-width: 40em) {
-  /* line 124, ../sass/screen.scss */
+  /* line 136, ../sass/screen.scss */
   .background .image:after {
     background: none;
   }
 }
-/* line 138, ../sass/screen.scss */
+/* line 150, ../sass/screen.scss */
 .background .textContainer {
   position: relative;
   margin-top: 43px;
   overflow: hidden;
 }
 @media only screen and (max-width: 40em) {
-  /* line 138, ../sass/screen.scss */
+  /* line 150, ../sass/screen.scss */
   .background .textContainer {
     margin-top: 0px;
   }
 }
-/* line 146, ../sass/screen.scss */
-.background .itemQuantity {
+/* line 158, ../sass/screen.scss */
+.background .textContainer form label {
+  display: block;
+  padding-left: 15px;
+}
+@media only screen and (max-width: 40em) {
+  /* line 158, ../sass/screen.scss */
+  .background .textContainer form label {
+    padding-left: 0px;
+  }
+}
+/* line 165, ../sass/screen.scss */
+.background .textContainer form .itemQuantity {
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-family: 'twCenMTBold';
   font-size: 1.15em;
 }
 @media only screen and (max-width: 40em) {
-  /* line 146, ../sass/screen.scss */
-  .background .itemQuantity {
+  /* line 165, ../sass/screen.scss */
+  .background .textContainer form .itemQuantity {
     padding-left: 0px;
     padding-right: 0px;
   }
 }
-/* line 156, ../sass/screen.scss */
-.background .itemQuantity img {
+/* line 175, ../sass/screen.scss */
+.background .textContainer form .itemQuantity img {
   padding: 0px;
   border-radius: 3px;
 }
-@media only screen and (max-width: 40em) {
-  /* line 161, ../sass/screen.scss */
-  .background .addOn {
-    margin-top: .2rem;
-    font-size: 1em;
-  }
-}
-@media only screen and (max-width: 40em) {
-  /* line 166, ../sass/screen.scss */
-  .background .addOn .fa {
-    font-size: 1.2em;
-  }
-}
-/* line 172, ../sass/screen.scss */
-.background label {
-  display: block;
-  padding-left: 15px;
-}
-@media only screen and (max-width: 40em) {
-  /* line 172, ../sass/screen.scss */
-  .background label {
-    padding-left: 0px;
-  }
-}
-/* line 178, ../sass/screen.scss */
-.background label .quantityAndDescription {
+/* line 179, ../sass/screen.scss */
+.background .textContainer form .itemQuantity .quantityAndDescription {
   margin-top: 0px;
   padding-left: 0.5rem;
 }
-/* line 184, ../sass/screen.scss */
-.background label .quantityAndDescription input[type="tel"] {
-  width: 1rem;
-  height: 1rem;
+/* line 185, ../sass/screen.scss */
+.background .textContainer form .itemQuantity .quantityAndDescription input[type="tel"] {
+  width: 2rem;
+  height: 2rem;
   float: left;
   margin-right: 0.5rem;
   margin-bottom: 0px;
@@ -295,70 +290,70 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   text-align: center;
 }
 @media only screen and (max-width: 64em) {
-  /* line 184, ../sass/screen.scss */
-  .background label .quantityAndDescription input[type="tel"] {
+  /* line 185, ../sass/screen.scss */
+  .background .textContainer form .itemQuantity .quantityAndDescription input[type="tel"] {
     width: 1.75rem;
     height: 1.75rem;
   }
 }
-/* line 198, ../sass/screen.scss */
-.background label .quantityAndDescription .description {
+/* line 199, ../sass/screen.scss */
+.background .textContainer form .itemQuantity .quantityAndDescription .description {
   margin-left: 2.25rem;
   line-height: 1.3rem;
 }
-/* line 204, ../sass/screen.scss */
-.background label .fa-check-square-o {
+@media only screen and (max-width: 40em) {
+  /* line 205, ../sass/screen.scss */
+  .background .textContainer form .addOn {
+    margin-top: .2rem;
+    font-size: 1em;
+  }
+}
+@media only screen and (max-width: 40em) {
+  /* line 210, ../sass/screen.scss */
+  .background .textContainer form .addOn .fa {
+    font-size: 1.2em;
+  }
+}
+/* line 216, ../sass/screen.scss */
+.background .textContainer form .addOn .fa-check-square-o {
   color: #7FBEA0;
 }
 
-/* line 211, ../sass/screen.scss */
+/* line 225, ../sass/screen.scss */
 .paymentMethod {
-  height: 2.5rem;
-  line-height: 2.5rem;
-  font-size: .85em;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  font-size: 1.1em;
   border-bottom: 1px solid #cacacb;
 }
 @media only screen and (max-width: 40em) {
-  /* line 211, ../sass/screen.scss */
+  /* line 225, ../sass/screen.scss */
   .paymentMethod {
     font-size: 1em;
   }
 }
-/* line 220, ../sass/screen.scss */
+/* line 234, ../sass/screen.scss */
 .paymentMethod .payCreditCard {
   background: #cacacb;
   color: white;
   border-bottom: 1px solid #cacacb;
 }
-/* line 224, ../sass/screen.scss */
+/* line 238, ../sass/screen.scss */
 .paymentMethod .payCreditCard span {
   font-style: italic;
 }
-/* line 228, ../sass/screen.scss */
+/* line 242, ../sass/screen.scss */
 .paymentMethod .payPayPal {
   background: white;
   color: #014179;
   border-bottom: 1px solid #cacacb;
 }
-/* line 232, ../sass/screen.scss */
+/* line 246, ../sass/screen.scss */
 .paymentMethod .payPayPal img {
   width: 40%;
-  vertical-align: text-top;
-}
-@media only screen and (max-width: 40em) {
-  /* line 232, ../sass/screen.scss */
-  .paymentMethod .payPayPal img {
-    width: 60%;
-  }
-}
-@media only screen and (orientation: landscape) {
-  /* line 232, ../sass/screen.scss */
-  .paymentMethod .payPayPal img {
-    width: 35%;
-  }
 }
 
-/* line 244, ../sass/screen.scss */
+/* line 258, ../sass/screen.scss */
 .arrow-down {
   margin-left: 25%;
   width: 0;
@@ -368,113 +363,89 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   border-top: 8px solid #cacacb;
 }
 
-/* line 257, ../sass/screen.scss */
-.shippingAddress .deleteWhiteSpace {
-  height: 37px;
-  padding: 0;
-}
-@media only screen and (max-width: 40em) {
-  /* line 257, ../sass/screen.scss */
-  .shippingAddress .deleteWhiteSpace {
-    height: 3rem;
-  }
-}
-/* line 264, ../sass/screen.scss */
+/* line 271, ../sass/screen.scss */
 .shippingAddress .title {
   margin-top: 1rem;
 }
-/* line 266, ../sass/screen.scss */
+/* line 273, ../sass/screen.scss */
 .shippingAddress .title .titleText {
   margin-bottom: .5rem;
 }
-/* line 274, ../sass/screen.scss */
-.shippingAddress .inputFields .row .columns input {
+/* line 280, ../sass/screen.scss */
+.shippingAddress .inputFields input {
+  border-color: #cacacb;
   border-bottom: none;
   box-shadow: none;
   border-radius: 0px;
   font-size: 1em;
 }
 @media only screen and (max-width: 40em) {
-  /* line 274, ../sass/screen.scss */
-  .shippingAddress .inputFields .row .columns input {
+  /* line 280, ../sass/screen.scss */
+  .shippingAddress .inputFields input {
     height: 3rem;
   }
 }
-/* line 284, ../sass/screen.scss */
-.shippingAddress .inputFields .row .columns .postfix {
+/* line 290, ../sass/screen.scss */
+.shippingAddress .inputFields .deleteWhiteSpace {
+  height: 37px;
+}
+/* line 293, ../sass/screen.scss */
+.shippingAddress .inputFields .shippingName {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+/* line 297, ../sass/screen.scss */
+.shippingAddress .inputFields .postfix {
+  border-top: 1px solid #cacacb;
+  border-right: 1px solid #cacacb;
   border-bottom: none;
   line-height: 3em;
+  height: 37px;
 }
 @media only screen and (max-width: 40em) {
-  /* line 284, ../sass/screen.scss */
-  .shippingAddress .inputFields .row .columns .postfix {
+  /* line 297, ../sass/screen.scss */
+  .shippingAddress .inputFields .postfix {
     height: 3rem;
     line-height: 3.5rem;
   }
 }
-/* line 291, ../sass/screen.scss */
-.shippingAddress .inputFields .row .columns .postfix .fa-crosshairs {
+/* line 307, ../sass/screen.scss */
+.shippingAddress .inputFields .postfix .fa-crosshairs {
   font-size: 1.5em;
   color: #46afee;
 }
-/* line 297, ../sass/screen.scss */
-.shippingAddress .inputFields .row .columns .prefix {
+/* line 312, ../sass/screen.scss */
+.shippingAddress .inputFields .prefix {
+  border-top: 1px solid #cacacb;
+  border-left: 1px solid #cacacb;
+  border-bottom: 1px solid #cacacb;
   border-bottom-left-radius: 3px;
+  line-height: 3.5rem;
 }
 @media only screen and (max-width: 40em) {
-  /* line 297, ../sass/screen.scss */
-  .shippingAddress .inputFields .row .columns .prefix {
-    height: 3rem;
-    line-height: 3rem;
-  }
-}
-/* line 304, ../sass/screen.scss */
-.shippingAddress .inputFields .row .columns #aptNumber {
-  border-bottom-right-radius: 3px;
-}
-/* line 310, ../sass/screen.scss */
-.shippingAddress .inputFields .columns input {
-  border-bottom: none;
-  box-shadow: none;
-  border-radius: 0px;
-  font-size: 1em;
-}
-@media only screen and (max-width: 40em) {
-  /* line 310, ../sass/screen.scss */
-  .shippingAddress .inputFields .columns input {
+  /* line 312, ../sass/screen.scss */
+  .shippingAddress .inputFields .prefix {
     height: 3rem;
   }
 }
-/* line 319, ../sass/screen.scss */
-.shippingAddress .inputFields .columns .shippingName {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-}
-@media only screen and (max-width: 40em) {
-  /* line 319, ../sass/screen.scss */
-  .shippingAddress .inputFields .columns .shippingName {
-    height: 3rem;
-  }
-}
-/* line 326, ../sass/screen.scss */
-.shippingAddress .inputFields .columns .zipCode {
+/* line 322, ../sass/screen.scss */
+.shippingAddress .inputFields .zipCode {
   border-right: none;
+  float: left;
 }
 @media only screen and (max-width: 40em) {
-  /* line 326, ../sass/screen.scss */
-  .shippingAddress .inputFields .columns .zipCode {
+  /* line 322, ../sass/screen.scss */
+  .shippingAddress .inputFields .zipCode {
     border-right: 1px solid #cccccc;
     height: 3rem;
   }
 }
-@media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  /* line 333, ../sass/screen.scss */
-  .shippingAddress .inputFields .columns .city {
-    width: 100.5%;
-  }
+/* line 330, ../sass/screen.scss */
+.shippingAddress .inputFields .city {
+  float: left;
 }
 
-/* line 344, ../sass/screen.scss */
+/* line 342, ../sass/screen.scss */
 .clearable {
   background: url(http://i.imgur.com/z7ZSYjt.png) no-repeat right -10px center;
   border: 1px solid #999;
@@ -486,20 +457,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* (jQ addClass:) if input has value: */
-/* line 353, ../sass/screen.scss */
+/* line 351, ../sass/screen.scss */
 .clearable.x {
   background-position: right 5px center;
 }
 
 /* (jQ addClass:) if mouse is over the 'x' input area*/
-/* line 357, ../sass/screen.scss */
+/* line 355, ../sass/screen.scss */
 .clearable.onX {
   cursor: pointer;
 }
 
-/* line 362, ../sass/screen.scss */
+/* line 360, ../sass/screen.scss */
 #aptNumber {
   border-bottom: 1px solid #cacacb;
+  border-bottom-right-radius: 3px;
   box-shadow: none;
   font-family: FontAwesome;
   font-style: normal;
@@ -507,15 +479,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   text-decoration: inherit;
 }
 
+/* line 373, ../sass/screen.scss */
+.warrantyWrapper {
+  margin-top: 1rem;
+}
 @media only screen and (orientation: landscape) {
-  /* line 374, ../sass/screen.scss */
+  /* line 375, ../sass/screen.scss */
   .warrantyWrapper img {
     width: 80%;
   }
 }
 
-/* line 380, ../sass/screen.scss */
+/* line 381, ../sass/screen.scss */
 #customButton {
+  border-radius: 3px;
   margin-top: 1rem;
   margin-bottom: 1rem;
   background: #45b1e8;

@@ -8,9 +8,10 @@
   src: url('../../../fonts/twCenMTBold.ttf'); 
 }
 
+
+
 #myModal{
-	border-radius: 6px;
-	background: #f5f5f7;
+
 	top: 50px;
 	font-family: 'twCenMT';
 	height: auto;
@@ -18,6 +19,16 @@
 		border-radius: 0px;
 		top: 0px;
 	}
+}
+
+#modalDialog{
+	width: 40%;
+}
+
+#modalBodyOverride{
+	border-radius: 6px;
+	padding: 0px 15px 15px;
+	background: #f5f5f7;
 }
 
 #cardNumberContainer, #expDateContainer, #cvcContainer{
@@ -70,14 +81,15 @@
 	left: 0;
 	border-radius: 7px 7px 0 0;
 	margin: 1px 1px 0 1px;
-	background: #f0f0f2;
-	background-image: linear-gradient(#f5f5f7, #e9e9ea);
+	// background: #f0f0f2;
+	// background-image: linear-gradient(#f5f5f7, #e9e9ea);
 	border-top: 1px solid #fff;
 	border-bottom: 1px solid #d3d3d4;
 	box-shadow: 0 1px 0 #fff;
 	cursor: default;
-	.close-reveal-modal{
-		background: url("../../../img/close.png") no-repeat;
+	.close{
+		position: absolute;
+		// background: url("../../../img/close.png") no-repeat;
 		background-size: 100%;
 		width: 22px;
 		height:23px;
@@ -142,77 +154,79 @@
 		@media only screen and (max-width: 40em){
 			margin-top: 0px;
 		}
-	}
-	.itemQuantity{
-		margin-top: 1rem;
-		margin-bottom: 1rem;
-		font-family: 'twCenMTBold';
-		font-size: 1.15em;
-		@media only screen and (max-width: 40em){
-			padding-left: 0px;
-			padding-right: 0px;
-			// margin-bottom: 0rem;
-		}
-		img{
-			padding: 0px;
-			border-radius: 3px;
-		}
-	}
-	.addOn{
-		@media only screen and (max-width: 40em){
-			margin-top: .2rem;
-			font-size: 1em;
-		}
-		.fa{
-			@media only screen and (max-width: 40em){
-				font-size: 1.2em;
+		form{
+			label {
+		    display: block;
+		    padding-left: 15px;
+		    @media only screen and (max-width: 40em){
+		    	padding-left: 0px;
+		    }
 			}
-		}
-	}
-	label {
-    display: block;
-    padding-left: 15px;
-    @media only screen and (max-width: 40em){
-    	padding-left: 0px;
-    }
-    .quantityAndDescription{
-    	margin-top: 0px;
-    	$spacingBetweenElements: .5rem;
-    	padding-left: $spacingBetweenElements;
-
-    	$quantityInputSize: 1rem;
-    	input[type="tel"]{
-				width: $quantityInputSize;
-				height: $quantityInputSize;
-				float: left;
-				margin-right: $spacingBetweenElements;
-				margin-bottom: 0px;
-				padding: 0px;
-				text-align: center;
-				@media only screen and (max-width: 64em){
-					$quantityInputSize: 1.75rem;
-					width: $quantityInputSize;
-					height: $quantityInputSize;
+			.itemQuantity{
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+				font-family: 'twCenMTBold';
+				font-size: 1.15em;
+				@media only screen and (max-width: 40em){
+					padding-left: 0px;
+					padding-right: 0px;
+					// margin-bottom: 0rem;
 				}
+				img{
+					padding: 0px;
+					border-radius: 3px;
+				}
+				.quantityAndDescription{
+		    	margin-top: 0px;
+		    	$spacingBetweenElements: .5rem;
+		    	padding-left: $spacingBetweenElements;
+
+		    	$quantityInputSize: 2rem;
+		    	input[type="tel"]{
+						width: $quantityInputSize;
+						height: $quantityInputSize;
+						float: left;
+						margin-right: $spacingBetweenElements;
+						margin-bottom: 0px;
+						padding: 0px;
+						text-align: center;
+						@media only screen and (max-width: 64em){
+							$quantityInputSize: 1.75rem;
+							width: $quantityInputSize;
+							height: $quantityInputSize;
+						}
+					}
+					.description{
+						margin-left: ($quantityInputSize + $spacingBetweenElements) ;
+						line-height: 1.3rem;
+					}
+		    }
 			}
-			.description{
-				margin-left: ($quantityInputSize + $spacingBetweenElements) ;
-				line-height: 1.3rem;
+			.addOn{
+				@media only screen and (max-width: 40em){
+					margin-top: .2rem;
+					font-size: 1em;
+				}
+				.fa{
+					@media only screen and (max-width: 40em){
+						font-size: 1.2em;
+					}
+				}
+				// Checked off Checkbox
+				.fa-check-square-o{
+		    	color:#7FBEA0;
+		    }
 			}
-    }
-		// Checked off Checkbox
-		.fa-check-square-o{
-    	color:#7FBEA0;
-    }
+		}
 	}
 }
 
 $darkGrey: #CACACB;
 .paymentMethod{
-	$paymentMethodHeight: 2.5rem;
+	$paymentMethodHeight: 3.5rem;
 	height: $paymentMethodHeight;
 	line-height: $paymentMethodHeight;
-	font-size: .85em;
+	font-size: 1.1em;
 	border-bottom: 1px solid $darkGrey;
 	@media only screen and (max-width: 40em){
 		font-size: 1em;
@@ -231,13 +245,13 @@ $darkGrey: #CACACB;
 		border-bottom: 1px solid $darkGrey;
 		img{
 			width: 40%;
-			vertical-align: text-top;
-			@media only screen and (max-width: 40em){
-				width: 60%;
-			}
-			@media only screen and (orientation:landscape) {
-				width: 35%;
-			}
+			// vertical-align: text-top;
+			// @media only screen and (max-width: 40em){
+			// 	width: 60%;
+			// }
+			// @media only screen and (orientation:landscape) {
+			// 	width: 35%;
+			// }
 		}
 	}
 }
@@ -254,13 +268,6 @@ $darkGrey: #CACACB;
 
 .shippingAddress{
 	// Make sure that all the input fields are the same height
-	.deleteWhiteSpace{
-		height:37px;
-		padding: 0;
-		@media only screen and (max-width: 40em){
-			height: 3rem;
-		}
-	}
 	.title{
 		margin-top: 1rem;
 		.titleText{
@@ -269,74 +276,65 @@ $darkGrey: #CACACB;
 	}
 	// Get rid of double borders from the input fields
 	.inputFields{
-		.row{
-			.columns{
-				input{
-					border-bottom: none;
-					box-shadow: none;
-					border-radius:0px;
-					font-size: 1em;
-					@media only screen and (max-width: 40em){
-						height: 3rem;
-					}
-				}
-				
-				.postfix{
-					border-bottom: none;
-					line-height: 3em;
-					@media only screen and (max-width: 40em){
-						height: 3rem;
-						line-height: 3.5rem;
-					}
-					.fa-crosshairs{
-						font-size: 1.5em;
-						color: #46afee;
 
-					}
-				}
-				.prefix{
-					border-bottom-left-radius: 3px;
-					@media only screen and (max-width: 40em){
-						height: 3rem;
-						line-height: 3rem;
-					}
-				}
-				#aptNumber{
-					border-bottom-right-radius: 3px;
-				}
+		input{
+			border-color: $darkGrey;
+			border-bottom: none;
+			box-shadow: none;
+			border-radius:0px;
+			font-size: 1em;
+			@media only screen and (max-width: 40em){
+				height: 3rem;
 			}
 		}
-		.columns{
-			input{
-				border-bottom: none;
-				box-shadow: none;
-				border-radius:0px;
-				font-size: 1em;
-				@media only screen and (max-width: 40em){ 
-					height: 3rem;
-				}
+		.deleteWhiteSpace{
+			height:37px;
+		}
+		.shippingName{
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+		}
+		.postfix{
+			border-top: 1px solid $darkGrey;
+			border-right: 1px solid $darkGrey;
+			border-bottom: none;
+			line-height: 3em;
+			height: 37px;
+			@media only screen and (max-width: 40em){
+				height: 3rem;
+				line-height: 3.5rem;
 			}
-			.shippingName{
-				border-top-left-radius: 3px;
-				border-top-right-radius: 3px;
+			.fa-crosshairs{
+				font-size: 1.5em;
+				color: #46afee;
+			}
+		}
+		.prefix{
+			border-top: 1px solid $darkGrey;
+			border-left: 1px solid $darkGrey;
+			border-bottom: 1px solid $darkGrey;
+			border-bottom-left-radius: 3px;
+			line-height: 3.5rem;
 				@media only screen and (max-width: 40em){
 					height: 3rem;
 				}
 			}
-			.zipCode{
-				border-right: none;
-				@media only screen and (max-width: 40em){
-					border-right: 1px solid #cccccc;
-					height: 3rem;
-				}
-			}
-			.city{
-				@media only screen and (min-width: 40.063em) and (max-width: 64em) { 
-					// To account for a small bug in Safari with rounding
-					width: 100.5%;
-				}
+		.zipCode{
+			border-right: none;
+			float: left;
+			@media only screen and (max-width: 40em){
+				border-right: 1px solid #cccccc;
+				height: 3rem;
 			}
 		}
+		.city{
+			float: left;
+			// @media only screen and (min-width: 40.063em) and (max-width: 64em) { 
+			// 	// To account for a small bug in Safari with rounding
+			// 	width: 100.5%;
+			// }
+		}
+
 	}
 }
 
@@ -361,7 +359,9 @@ $darkGrey: #CACACB;
 // Make sure that Apt # input field has a bottom border
 #aptNumber{
 	border-bottom: 1px solid $darkGrey;
+	border-bottom-right-radius: 3px;
 	box-shadow: none;
+	
 
 	// Style for aptNumber font-icon placeholder
 	font-family: FontAwesome;
@@ -371,6 +371,7 @@ $darkGrey: #CACACB;
 }
 
 .warrantyWrapper{
+	margin-top: 1rem;
 	img{
 		@media only screen and (orientation:landscape) {
 			width: 80%;
@@ -378,6 +379,7 @@ $darkGrey: #CACACB;
 	}
 }
 #customButton{
+	border-radius: 3px;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 
