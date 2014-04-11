@@ -9,32 +9,38 @@
 }
 
 
+.hidden{
+	display: none;
+}
 
 #myModal{
-
-	top: 50px;
+	top: 0px;
 	font-family: 'twCenMT';
 	height: auto;
-	@media only screen and (max-width: 40em){
+	@media (max-width: 40em){
 		border-radius: 0px;
 		top: 0px;
 	}
 }
 
+$screen-md-min: 992px;
+
 #modalDialog{
-	width: 40%;
+	@media (min-width: $screen-md-min) {
+		width: 40%;
+	}
+	@media (max-width: 40em) {
+		margin: 0px;
+	}
 }
 
 #modalBodyOverride{
 	border-radius: 6px;
 	padding: 0px 15px 15px;
 	background: #f5f5f7;
-}
-
-#cardNumberContainer, #expDateContainer, #cvcContainer{
-	padding-left: 0px;
-	padding-right: 0px;
-	float: left;
+	@media (max-width: 40em) {
+		border-radius: 0px;
+	}
 }
 
 #cardNumberContainer{
@@ -55,7 +61,7 @@
 #showCardNumber{
 	float: left;
 	clear: both;
-	display: none;
+	// display: none;
 }
 
 #cardNumber{
@@ -96,6 +102,10 @@
 		top: 7px;
 		left: 8px;
 		z-index: 10;
+		@media (max-width: 40em){
+			position: relative;
+			left:-1rem;
+		}
 	}
 	.image{
 		$logoContainerHeight: 75px;
@@ -105,7 +115,7 @@
 		left: 50%;
 		margin-left: -38px;
 		top: -30px;
-		@media only screen and (max-width: 40em){
+		@media (max-width: 40em){
 			$logoContainerHeight: 65px;
 			width: 100%;
 			height: $logoContainerHeight;
@@ -128,7 +138,7 @@
 				-o-border-radius: 32px;
 			// border: 3px solid #fff;
 			margin: 4px 6px 0;
-			@media only screen and (max-width: 40em){
+			@media (max-width: 40em){
 				margin: 0 auto;
 				padding-top: ($logoContainerHeight - $logoHeight)*.5;
 			}
@@ -142,7 +152,7 @@
 			bottom: 0;
 			background: url("../../../img/icon-border.png") no-repeat;
 			background-size: 100% 100%;
-			@media only screen and (max-width: 40em){
+			@media (max-width: 40em){
 				background: none;
 			}
 		}
@@ -151,14 +161,14 @@
 		position: relative;
 		margin-top: 43px;
 		overflow: hidden;
-		@media only screen and (max-width: 40em){
+		@media (max-width: 40em){
 			margin-top: 0px;
 		}
 		form{
 			label {
 		    display: block;
 		    padding-left: 15px;
-		    @media only screen and (max-width: 40em){
+		    @media (max-width: 40em){
 		    	padding-left: 0px;
 		    }
 			}
@@ -167,10 +177,13 @@
 				margin-bottom: 1rem;
 				font-family: 'twCenMTBold';
 				font-size: 1.15em;
-				@media only screen and (max-width: 40em){
+				@media (max-width: 40em){
 					padding-left: 0px;
 					padding-right: 0px;
 					// margin-bottom: 0rem;
+				}
+				@media (min-width: 40em) and (max-width: $screen-sm-max){
+					font-size: 1.5em;
 				}
 				img{
 					padding: 0px;
@@ -190,7 +203,7 @@
 						margin-bottom: 0px;
 						padding: 0px;
 						text-align: center;
-						@media only screen and (max-width: 64em){
+						@media (max-width: 64em){
 							$quantityInputSize: 1.75rem;
 							width: $quantityInputSize;
 							height: $quantityInputSize;
@@ -203,13 +216,14 @@
 		    }
 			}
 			.addOn{
-				@media only screen and (max-width: 40em){
+				@media (max-width: 40em){
 					margin-top: .2rem;
 					font-size: 1em;
 				}
 				.fa{
-					@media only screen and (max-width: 40em){
+					@media (max-width: 40em){
 						font-size: 1.2em;
+						line-height: .5em;
 					}
 				}
 				// Checked off Checkbox
@@ -226,10 +240,10 @@ $darkGrey: #CACACB;
 	$paymentMethodHeight: 3.5rem;
 	height: $paymentMethodHeight;
 	line-height: $paymentMethodHeight;
-	font-size: 1.1em;
+	font-size: 1em;
 	border-bottom: 1px solid $darkGrey;
-	@media only screen and (max-width: 40em){
-		font-size: 1em;
+	@media (max-width: 40em){
+		font-size: .9em;
 	}
 	.payCreditCard{
 		background: $darkGrey;
@@ -246,12 +260,12 @@ $darkGrey: #CACACB;
 		img{
 			width: 40%;
 			// vertical-align: text-top;
-			// @media only screen and (max-width: 40em){
-			// 	width: 60%;
-			// }
-			// @media only screen and (orientation:landscape) {
-			// 	width: 35%;
-			// }
+			@media (max-width: 40em){
+				width: 60%;
+			}
+			@media (max-width: 40em) and (orientation:landscape) {
+				width: 35%;
+			}
 		}
 	}
 }
@@ -266,6 +280,7 @@ $darkGrey: #CACACB;
 	border-top: $arrowSize solid $arrowColor;
 }
 
+$screen-sm-max: 768px;
 .shippingAddress{
 	// Make sure that all the input fields are the same height
 	.title{
@@ -276,6 +291,10 @@ $darkGrey: #CACACB;
 	}
 	// Get rid of double borders from the input fields
 	.inputFields{
+		@media (max-width: $screen-sm-max){
+			padding-left: 2.5rem;
+			padding-right: 2.5rem;
+		}
 
 		input{
 			border-color: $darkGrey;
@@ -283,7 +302,7 @@ $darkGrey: #CACACB;
 			box-shadow: none;
 			border-radius:0px;
 			font-size: 1em;
-			@media only screen and (max-width: 40em){
+			@media (max-width: 40em){
 				height: 3rem;
 			}
 		}
@@ -293,6 +312,11 @@ $darkGrey: #CACACB;
 		.shippingName{
 			border-top-left-radius: 3px;
 			border-top-right-radius: 3px;
+
+			// Adjust input size to account for a rounding error in Safari
+			@media (max-width: $screen-sm-max){
+				width: 99.9%;
+			}
 		}
 		.postfix{
 			border-top: 1px solid $darkGrey;
@@ -300,9 +324,8 @@ $darkGrey: #CACACB;
 			border-bottom: none;
 			line-height: 3em;
 			height: 37px;
-			@media only screen and (max-width: 40em){
-				height: 3rem;
-				line-height: 3.5rem;
+			@media (max-width: 40em){
+				line-height: 4.25rem;
 			}
 			.fa-crosshairs{
 				font-size: 1.5em;
@@ -315,24 +338,16 @@ $darkGrey: #CACACB;
 			border-bottom: 1px solid $darkGrey;
 			border-bottom-left-radius: 3px;
 			line-height: 3.5rem;
-				@media only screen and (max-width: 40em){
-					height: 3rem;
+				@media (max-width: 40em){
+					height: 37px;
 				}
 			}
 		.zipCode{
 			border-right: none;
 			float: left;
-			@media only screen and (max-width: 40em){
-				border-right: 1px solid #cccccc;
-				height: 3rem;
-			}
 		}
 		.city{
 			float: left;
-			// @media only screen and (min-width: 40.063em) and (max-width: 64em) { 
-			// 	// To account for a small bug in Safari with rounding
-			// 	width: 100.5%;
-			// }
 		}
 
 	}
@@ -361,6 +376,7 @@ $darkGrey: #CACACB;
 	border-bottom: 1px solid $darkGrey;
 	border-bottom-right-radius: 3px;
 	box-shadow: none;
+	height: 37px;
 	
 
 	// Style for aptNumber font-icon placeholder
@@ -373,7 +389,8 @@ $darkGrey: #CACACB;
 .warrantyWrapper{
 	margin-top: 1rem;
 	img{
-		@media only screen and (orientation:landscape) {
+		width: 100%;
+		@media (max-width: 40em) and (orientation:landscape) {
 			width: 80%;
 		}
 	}
@@ -395,6 +412,12 @@ $darkGrey: #CACACB;
 	right: inherit;
 	color: white;
 	font-weight: 400;
+	@media (max-width: 40em){
+		font-size: 1.2em;
+	}
+	@media (min-width: 40em) and (max-width: $screen-sm-max){
+		font-size: 1.5em;
+	}
 }
 
 

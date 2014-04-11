@@ -45,64 +45,67 @@ $('.geoLocator').on("click", function(){
 // Checkbox Click
 $(".addOn").click(function(){
     if($(this).find('i').hasClass('fa-square-o')){
-        $(this).find('i').removeClass('fa-square-o').addClass('fa-check-square-o');}
+      $(this).find('i').removeClass('fa-square-o').addClass('fa-check-square-o');
+    }
     else {
-        $(this).find('i').removeClass('fa-check-square-o').addClass('fa-square-o');}
+      $(this).find('i').removeClass('fa-check-square-o').addClass('fa-square-o');
+    }
 });
 
 // Credit Card Slide Left
 
-// Once you enter 16 characters, it should slide left and show ExpDate
-$("#cardNumber").on('keypress', function(){
-	var vallength = $(this).val().length;
+// // Once you enter 16 characters, it should slide left and show ExpDate
+// $("#cardNumber").on('keypress', function(){
+// 	var vallength = $(this).val().length;
 
-	if (vallength == 15){
-      // $('#expDate').css('display','block').trigger("focus");
-      $('#expDate').css('display','block').focus().select();
-      console.log("Reached 16")
-  }
-})
+// 	if (vallength == 15){
+//       // $('#expDate').css('display','block').trigger("focus");
+//       $('#expDate').css('display','block').focus().select();
+//       console.log("Reached 16")
+//   }
+// })
 
-// Once you enter 4 characters, it shoudl slide right and show CVC
-$("#expDate").on('keypress', function(){
-	var vallength = $(this).val().length;
+// // Once you enter 4 characters, it shoudl slide right and show CVC
+// $("#expDate").on('keypress', function(){
+// 	var vallength = $(this).val().length;
 
-	if (vallength == 3){
-      $('#cvc').css('display','block').trigger("focus");
-      console.log("Reached cvc")
-  }
-})
+// 	if (vallength == 3){
+//       $('#cvc').css('display','block').trigger("focus");
+//       console.log("Reached cvc")
+//   }
+// })
 
-// If you backspace to length=0 in CVC then it should hide CVC and go back to expDate
-$('#cvc').keyup(function(e){
-	var vallength = $(this).val().length;
+// // If you backspace to length=0 in CVC then it should hide CVC and go back to expDate
+// $('#cvc').keyup(function(e){
+// 	var vallength = $(this).val().length;
 
-	if(e.keyCode == 8 && vallength == 0){
-		$(this).css('display', 'none');
-		// $("#expDate").trigger("focus").select();
-		$("#expDate").focus().select();
-	}
-})
+// 	if(e.keyCode == 8 && vallength == 0){
+// 		$(this).css('display', 'none');
+// 		// $("#expDate").trigger("focus").select();
+// 		$("#expDate").focus().select();
+// 	}
+// })
 
-// If you backspace to length=0 in expDate then it should hide expDate and go back to cardNumber
-$('#expDate').keyup(function(e){
-	var vallength = $(this).val().length;
+// // If you backspace to length=0 in expDate then it should hide expDate and go back to cardNumber
+// $('#expDate').keyup(function(e){
+// 	var vallength = $(this).val().length;
 
-	if(e.keyCode == 8 && vallength == 0){
-		$(this).css('display', 'none');
-		// $("#cardNumber").trigger("focus").select();
-		$("#cardNumber").focus().select();
-	}
-})
+// 	if(e.keyCode == 8 && vallength == 0){
+// 		$(this).css('display', 'none');
+// 		// $("#cardNumber").trigger("focus").select();
+// 		$("#cardNumber").focus().select();
+// 	}
+// })
 
-// New Card Input 
+// Credit Card Input Begins
+
 // Formats the credit card input in with spaces every 4 digits an fires off the getCardNumber function
 $("#newCardNumber").mask("9999 9999 9999 9999", {placeholder:" ", completed: getCardNumber
 });
 
 // Puts user inputed card number into "Card Number" field and has slide effect
 function getCardNumber (){
-	$('#showCardNumber').css('display', 'inline-block');
+	$('.dmitrysCardNumberContainer').removeClass('hidden');
   $('.dmitrysCardNumber').text($(this).val());
   // Clear out card number and put in clean expiration date
   $(this).animate({'marginLeft': '-=25%'}, 200, 'swing', function(){
@@ -117,6 +120,7 @@ function getCardNumber (){
 
 // Puts user inputed expiration date into "Expiration Date" field and has slide effect
 function getExpDate (){
+  $('.dmitrysExpDateContainer').removeClass('hidden');
   $('.dmitrysExpDate').text($(this).val());
   $(this).animate({'marginLeft': '-=25%'}, 200, 'swing', function(){
   	$(this).val('');
@@ -129,8 +133,20 @@ function getExpDate (){
 }
 
 function getCvc (){
+  $('.dmitrysCvcContainer').removeClass('hidden');
   $('.dmitrysCvc').text($(this).val());
 }
+
+// Edit Card Number, ExpDate, and CVC
+var replaceWith = $('<input name="temp" type="text" />');
+
+$('.dmitrysCardNumber').inlineEdit(replaceWith, "9999 9999 9999 9999");
+$('.dmitrysExpDate').inlineEdit(replaceWith, "99/99");
+$('.dmitrysCvc').inlineEdit(replaceWith, "999");
+
+$('.fa-pencil').on('click', function(){
+  $(this).siblings("div").click()
+});
 
 // JS for aptNumber font-icon placeholder
 $('#aptNumber').on('keyup', function() {
@@ -141,7 +157,6 @@ $('#aptNumber').on('keyup', function() {
         input.removeClass('empty');
     }
 });
-
 
 // Clear input fields when you click 'x'
 function tog(v){return v?'addClass':'removeClass';} 
@@ -157,8 +172,7 @@ $(document).on('input', '.clearable', function(){
 var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
 
 if (isMobile){
-
 	// Change the size of the modal window if user agent if mobile
-	$('#myModal').removeClass('tiny').addClass('medium');
+	// $('#myModal').removeClass('tiny').addClass('medium');
 }
 
