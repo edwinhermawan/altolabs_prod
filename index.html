@@ -33,6 +33,10 @@
     <script src="js/vendor/jquery.browser.min.js"></script>
     <script src="js/vendor/jquery-ui-autocomplete.js"></script>
     <script src="js/vendor/jquery.select-to-autocomplete.min.js"></script>
+
+    <!-- Bootstrap Form Validator -->
+    <link rel="stylesheet" href="css/bootstrapValidator.css"/>
+    <script type="text/javascript" src="js/vendor/bootstrapValidator.js"></script>
   </head>
 <body>
 
@@ -46,51 +50,18 @@
 <!-- Test if loaded to production -->
 <p>NEW asdf!</p>
 
+<form>
+    <div class="form-group">
+        <label>Username</label>
+        <input type="text" class="form-control" name="username" />
+    </div>
+    <div class="form-group">
+        <label>Email address</label>
+        <input type="text" class="form-control" name="email" />
+    </div>
+</form>
+
 <!-- End text if loaded to production -->
-
-<!-- <div class="row">
-  <div class="small-3 columns" id="cardNumberContainer">
-    <input type="tel" id="cardNumber" maxlength="16" placeholder="1234 5678 9012 3456" data-prefetch>
-  </div>
-  <div class="small-2 columns" id="expDateContainer">
-    <input type="tel" id="expDate" maxlength="4"placeholder="MM/YY" data-prefetch>
-  </div>
-  <div class="small-2 columns" id="cvcContainer">
-    <input type="tel" id="cvc" maxlength="3"placeholder="CVC" data-prefetch></div>
-</div> -->
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-6" id="cardNumberContainer">
-      <label>Card Number</label>
-      <input type="tel" id="newCardNumber" maxlength="16" placeholder="1234 5678 9012 3456" data-prefetch>
-      <span class="card-type"></span>
-    </div>
-    
-    <div class="col-md-6 columns" id="showCardNumber">
-      <div class="dmitrysCardNumberContainer hidden">
-        Card Number:
-        <input type="hidden" name="hiddenField" />
-        <div class="dmitrysCardNumber"></div>
-        <i class="fa fa-pencil"></i> 
-        <br/>
-      </div>
-      <div class="dmitrysExpDateContainer hidden">
-        Expiration Date:
-        <input type="hidden" name="hiddenField" />
-        <div class="dmitrysExpDate"></div>
-        <i class="fa fa-pencil"></i> 
-        <br/>
-      </div>
-      <div class="dmitrysCvcContainer hidden">
-        CVC:
-        <input type="hidden" name="hiddenField" />
-        <div class="dmitrysCvc"></div>
-        <i class="fa fa-pencil"></i> 
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -420,7 +391,43 @@
                 <div class="warrantyWrapper col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-10 col-md-offset-1">
                   <img src="img/warranty.png" alt="">
                 </div>
-                <input class="submit btn btn-primary btn-lg text-center col-xs-10 col-xs-offset-1" id="customButton" type="submit" value="Pay With Card" />
+                <button class=" btn btn-primary btn-lg text-center col-xs-10 col-xs-offset-1" id="customButton">Pay With Card</button>
+                <!-- <input class="submit btn btn-primary btn-lg text-center col-xs-10 col-xs-offset-1" id="customButton" type="submit" value="Pay With Card" /> -->
+              </div>
+            </div>
+          </form>
+          <form id="creditCardForm">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12" id="cardNumberContainer">
+                  <label>Card Number</label>
+                  <input type="tel" class="deleteWhiteSpace" id="newCardNumber" maxlength="16" placeholder="1234 5678 9012 3456">
+                  <span class="card-type"></span>
+
+                </div>
+                
+                <div class="col-md-12 columns" id="showCardNumber">
+                  <div class="dmitrysCardNumberContainer hidden">
+                    Card Number:
+                    <input type="hidden" name="hiddenField" />
+                    <div class="dmitrysCardNumber"></div>
+                    <i class="fa fa-pencil"></i> 
+                    <br/>
+                  </div>
+                  <div class="dmitrysExpDateContainer hidden">
+                    Expiration Date:
+                    <input type="hidden" name="hiddenField" />
+                    <div class="dmitrysExpDate"></div>
+                    <i class="fa fa-pencil"></i> 
+                    <br/>
+                  </div>
+                  <div class="dmitrysCvcContainer hidden">
+                    CVC:
+                    <input type="hidden" name="hiddenField" />
+                    <div class="dmitrysCvc"></div>
+                    <i class="fa fa-pencil"></i> 
+                  </div>
+                </div>
               </div>
             </div>
           </form>
@@ -438,13 +445,6 @@
 
 <!-- Load Stripe Payment Validation Plugin -->
 <script src="js/vendor/jquery.payment.js"></script>
-
-<!-- Jquery Checkout Form Validator -->
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>
-
-
-
-
 
 </body>
 

@@ -56,51 +56,6 @@ $(function() {
       }
   });
 
-  // Credit Card Slide Left
-
-  // // Once you enter 16 characters, it should slide left and show ExpDate
-  // $("#cardNumber").on('keypress', function(){
-  // 	var vallength = $(this).val().length;
-
-  // 	if (vallength == 15){
-  //       // $('#expDate').css('display','block').trigger("focus");
-  //       $('#expDate').css('display','block').focus().select();
-  //       console.log("Reached 16")
-  //   }
-  // })
-
-  // // Once you enter 4 characters, it shoudl slide right and show CVC
-  // $("#expDate").on('keypress', function(){
-  // 	var vallength = $(this).val().length;
-
-  // 	if (vallength == 3){
-  //       $('#cvc').css('display','block').trigger("focus");
-  //       console.log("Reached cvc")
-  //   }
-  // })
-
-  // // If you backspace to length=0 in CVC then it should hide CVC and go back to expDate
-  // $('#cvc').keyup(function(e){
-  // 	var vallength = $(this).val().length;
-
-  // 	if(e.keyCode == 8 && vallength == 0){
-  // 		$(this).css('display', 'none');
-  // 		// $("#expDate").trigger("focus").select();
-  // 		$("#expDate").focus().select();
-  // 	}
-  // })
-
-  // // If you backspace to length=0 in expDate then it should hide expDate and go back to cardNumber
-  // $('#expDate').keyup(function(e){
-  // 	var vallength = $(this).val().length;
-
-  // 	if(e.keyCode == 8 && vallength == 0){
-  // 		$(this).css('display', 'none');
-  // 		// $("#cardNumber").trigger("focus").select();
-  // 		$("#cardNumber").focus().select();
-  // 	}
-  // })
-
   // Country Selector
   (function ($) {
       $(function () {
@@ -115,9 +70,12 @@ $(function() {
   // Shipping form validation
   
 
-
-
-
+  // Hide Shipping information and show credit card inputs
+  $('#customButton').on('click', function(){
+    $('#shippingForm').hide();
+    $('#creditCardForm').show();
+  })
+  
   // Credit Card Input Begins
 
   // Formats the credit card input in with spaces every 4 digits an fires off the getCardNumber function
