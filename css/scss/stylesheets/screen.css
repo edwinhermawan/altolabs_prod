@@ -725,7 +725,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   }
 }
 
-/* line 559, ../sass/screen.scss */
+/* line 560, ../sass/screen.scss */
+.invalidInput {
+  background: red;
+}
+
+/* line 564, ../sass/screen.scss */
 #customButton {
   border-radius: 3px;
   margin-top: 1rem;
@@ -744,13 +749,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-size: 1.75rem;
 }
 @media (max-width: 40em) {
-  /* line 559, ../sass/screen.scss */
+  /* line 564, ../sass/screen.scss */
   #customButton {
     font-size: 1.2em;
   }
 }
 @media (min-width: 40em) and (max-width: 768px) {
-  /* line 559, ../sass/screen.scss */
+  /* line 564, ../sass/screen.scss */
   #customButton {
     font-size: 1.75em;
     margin-top: 2.5rem;
