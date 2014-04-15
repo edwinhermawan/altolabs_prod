@@ -81,6 +81,7 @@ $("#commentForm").validate();
     <div class="col-md-6" id="cardNumberContainer">
       <label>Card Number</label>
       <input type="tel" id="newCardNumber" maxlength="16" placeholder="1234 5678 9012 3456" data-prefetch>
+      <span class="card-type"></span>
     </div>
     
     <div class="col-md-6 columns" id="showCardNumber">
@@ -451,7 +452,6 @@ $("#commentForm").validate();
 <script src="js/main.js"></script>
 
 <!-- Load Stripe Payment Validation Plugin -->
-<script src="js/vendor/jquery.payment.js"></script>
 <script src="js/vendor/jquery.payment.js"></script>
 
 <!-- Jquery Checkout Form Validator -->
