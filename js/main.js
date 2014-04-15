@@ -113,14 +113,9 @@ $(function() {
   })(jQuery);
 
   // Shipping form validation
-  $("#shippingForm").validate({
-    errorPlacement: function(error, element) {
-      // error.appendTo( element.parent("td").next("td") );
-    },
-    errorClass: "invalidInput", 
-    submitHandler: function(form) {
-          alert( "Valid: " + form.valid() );  }
-  });
+  
+
+
 
 
   // Credit Card Input Begins
