@@ -8,6 +8,9 @@
   src: url('../../../fonts/twCenMTBold.ttf'); 
 }
 
+$screen-md-min: 992px;
+$screen-sm-max: 768px;
+$darkGrey: #CACACB;
 
 .hidden{
 	display: none;
@@ -23,14 +26,19 @@
 	}
 }
 
-$screen-md-min: 992px;
-
 #modalDialog{
 	@media (min-width: $screen-md-min) {
-		width: 40%;
+		width: 30%;
 	}
 	@media (max-width: 40em) {
 		margin: 0px;
+	}
+
+	@media only screen 
+	and (min-device-width : 768px) 
+	and (max-device-width : 1024px) 
+	and (orientation : landscape) { 
+		width: 40%;
 	}
 }
 
@@ -87,6 +95,7 @@ $screen-md-min: 992px;
 	left: 0;
 	border-radius: 7px 7px 0 0;
 	margin: 1px 1px 0 1px;
+	padding-bottom: 1rem;
 	// background: #f0f0f2;
 	// background-image: linear-gradient(#f5f5f7, #e9e9ea);
 	border-top: 1px solid #fff;
@@ -180,7 +189,8 @@ $screen-md-min: 992px;
 				@media (max-width: 40em){
 					padding-left: 0px;
 					padding-right: 0px;
-					// margin-bottom: 0rem;
+					margin-bottom: 0px;
+					font-size: 1.6rem;
 				}
 				@media (min-width: 40em) and (max-width: $screen-sm-max){
 					font-size: 1.5em;
@@ -192,8 +202,11 @@ $screen-md-min: 992px;
 				.quantityAndDescription{
 		    	margin-top: 0px;
 		    	$spacingBetweenElements: .5rem;
+		    	@media (min-width: 40em) and (max-width: $screen-sm-max){
+						$spacingBetweenElements: 1.25rem;
+					}
 		    	padding-left: $spacingBetweenElements;
-
+					
 		    	$quantityInputSize: 2rem;
 		    	input[type="tel"]{
 						width: $quantityInputSize;
@@ -203,22 +216,48 @@ $screen-md-min: 992px;
 						margin-bottom: 0px;
 						padding: 0px;
 						text-align: center;
-						@media (max-width: 64em){
-							$quantityInputSize: 1.75rem;
+						@media (max-width: 40em){
+							$quantityInputSize: 3rem;
 							width: $quantityInputSize;
 							height: $quantityInputSize;
+							border-radius: 3px;
+						}
+						@media (min-width: 40em) and (max-width: 64em){
+							$quantityInputSize: 2.5rem;
+							width: $quantityInputSize;
+							height: $quantityInputSize;
+							border-radius: 3px;
 						}
 					}
 					.description{
 						margin-left: ($quantityInputSize + $spacingBetweenElements) ;
 						line-height: 1.3rem;
+						@media (max-width: 40em){
+							$quantityInputSize: 3rem;
+							margin-left: ($quantityInputSize + $spacingBetweenElements);
+							line-height: 1.25em;
+							// font-size: 1.7rem;
+						}
+						@media (min-width: 40em) and (max-width: 64em){
+							line-height: 2.5rem;
+						}
 					}
 		    }
 			}
+			
+			.wallCharger{
+				@media(max-width: 40em){
+					display: inline-block;
+				}
+			}
 			.addOn{
 				@media (max-width: 40em){
-					margin-top: .2rem;
-					font-size: 1em;
+					margin-top: 1.2rem;
+					font-size: 1.3rem;
+					margin-bottom: 0px;
+				}
+				@media (min-width: 40em) and (max-width: $screen-sm-max){
+					font-size: 1.2em;
 				}
 				.fa{
 					@media (max-width: 40em){
@@ -235,15 +274,25 @@ $screen-md-min: 992px;
 	}
 }
 
-$darkGrey: #CACACB;
+
 .paymentMethod{
+
 	$paymentMethodHeight: 3.5rem;
 	height: $paymentMethodHeight;
 	line-height: $paymentMethodHeight;
 	font-size: 1em;
 	border-bottom: 1px solid $darkGrey;
 	@media (max-width: 40em){
-		font-size: .9em;
+		font-size: 1.25rem;
+		$paymentMethodHeight: 4.5rem;
+		height: $paymentMethodHeight;
+		line-height: $paymentMethodHeight;
+	}
+	@media (min-width: 40em) and (max-width: $screen-sm-max){
+		$paymentMethodHeight: 4.5rem;
+		height: $paymentMethodHeight;
+		line-height: $paymentMethodHeight;
+		font-size: 1.5em;
 	}
 	.payCreditCard{
 		background: $darkGrey;
@@ -280,52 +329,85 @@ $darkGrey: #CACACB;
 	border-top: $arrowSize solid $arrowColor;
 }
 
-$screen-sm-max: 768px;
+
 .shippingAddress{
 	// Make sure that all the input fields are the same height
 	.title{
 		margin-top: 1rem;
 		.titleText{
+			font-size: 1.5em;
 			margin-bottom: .5rem;
 		}
 	}
 	// Get rid of double borders from the input fields
 	.inputFields{
-		@media (max-width: $screen-sm-max){
+
+		@media (max-width: 40em){
 			padding-left: 2.5rem;
 			padding-right: 2.5rem;
+			margin-top: 1rem;
 		}
+		@media (min-width: 40em) and (max-width: $screen-sm-max){
+			padding-left: 4.5rem;
+			padding-right: 4.5rem;
+		}
+		
 
 		input{
 			border-color: $darkGrey;
 			border-bottom: none;
 			box-shadow: none;
 			border-radius:0px;
-			font-size: 1em;
+			font-size: 1.5rem;
 			@media (max-width: 40em){
 				height: 3rem;
+				font-size: 1.5rem;
+			}
+			@media (min-width: 40em) and (max-width: $screen-sm-max){
+				font-size: 1.5em;
 			}
 		}
 		.deleteWhiteSpace{
-			height:37px;
+			height:3.5rem;
+			// // @media (min-width: 40em) and (max-width: $screen-sm-max){
+			@media (max-width: $screen-sm-max){
+				height: 4.5rem;
+			}
 		}
 		.shippingName{
 			border-top-left-radius: 3px;
 			border-top-right-radius: 3px;
-
-			// Adjust input size to account for a rounding error in Safari
+			
+			// Account for rounding error in safari when calculating size of input
 			@media (max-width: $screen-sm-max){
 				width: 99.9%;
 			}
+
+			@media only screen 
+			and (min-device-width : 768px) 
+			and (max-device-width : 1024px) 
+			and (orientation : landscape) { 
+				width: 99.9%;
+			}
+
+			@media only screen 
+			and (min-device-width : 320px) 
+			and (max-device-width : 568px) 
+			and (orientation : landscape) { 
+				width: 100%;
+			}
+
 		}
 		.postfix{
 			border-top: 1px solid $darkGrey;
 			border-right: 1px solid $darkGrey;
 			border-bottom: none;
 			line-height: 3em;
-			height: 37px;
 			@media (max-width: 40em){
-				line-height: 4.25rem;
+				line-height: 5rem;
+			}
+			@media (min-width: 40em) and (max-width: $screen-sm-max){
+				line-height: 5.5rem;
 			}
 			.fa-crosshairs{
 				font-size: 1.5em;
@@ -336,20 +418,66 @@ $screen-sm-max: 768px;
 			border-top: 1px solid $darkGrey;
 			border-left: 1px solid $darkGrey;
 			border-bottom: 1px solid $darkGrey;
-			border-bottom-left-radius: 3px;
 			line-height: 3.5rem;
-				@media (max-width: 40em){
-					height: 37px;
-				}
+			@media (max-width: 40em){
+				line-height: 4.5rem;
 			}
+			@media (min-width: 40em) and (max-width: $screen-sm-max){
+				font-size: 1.5em;
+				line-height: 4.5rem;
+			}
+		}
 		.zipCode{
 			border-right: none;
 			float: left;
 		}
 		.city{
 			float: left;
+
+			@media only screen 
+			and (min-device-width : 768px) 
+			and (max-device-width : 1024px) 
+			and (orientation : landscape) { 
+				width: 66.5%;
+			}
 		}
 
+		.countryLabel{
+			border-top: none;
+			border-bottom: 1px solid $darkGrey;
+			border-left: 1px solid $darkGrey;
+			border-bottom-left-radius: 3px;
+			border-bottom-right-radius: 0px;
+			border-right: none;
+			border-top-left-radius: 0px;
+			line-height: 3rem;
+			@media (max-width: 40em){
+				line-height: 3.75rem;
+			}
+			@media (min-width: 40em) and (max-width: $screen-sm-max){
+				font-size: 1.5em;
+				line-height: 3.75rem;
+			}
+			@media only screen 
+			and (min-device-width : 768px) 
+			and (max-device-width : 1024px) 
+			and (orientation : landscape) { 
+				line-height: 3rem;
+			}
+		}
+
+		.country{
+			border-top: none;
+			border-bottom: 1px solid $darkGrey;
+			border-bottom-right-radius: 3px;
+			// Account for a rounding error in Safari in calculating width of input
+		  @media only screen 
+			and (min-device-width : 320px) 
+			and (max-device-width : 568px) 
+			and (orientation : landscape) { 
+				width: 75.1%;
+			}
+		}
 	}
 }
 
@@ -374,9 +502,7 @@ $screen-sm-max: 768px;
 // Make sure that Apt # input field has a bottom border
 #aptNumber{
 	border-bottom: 1px solid $darkGrey;
-	border-bottom-right-radius: 3px;
 	box-shadow: none;
-	height: 37px;
 	
 
 	// Style for aptNumber font-icon placeholder
@@ -384,10 +510,45 @@ $screen-sm-max: 768px;
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
+	
+	// Account for a rounding error in Safari in calculating width of input
+  @media only screen 
+	and (min-device-width : 320px) 
+	and (max-device-width : 568px) 
+	and (orientation : landscape) { 
+		width: 75.1%;
+	}
 }
 
+// Country Autocomplete
+.ui-autocomplete {
+  padding: 0;
+  list-style: none;
+  background-color: #fff;
+  width: 218px;
+  border: 1px solid #B0BECA;
+  max-height: 350px;
+  overflow-y: scroll;
+}
+.ui-autocomplete .ui-menu-item a {
+  border-top: 1px solid #B0BECA;
+  display: block;
+  padding: 4px 6px;
+  color: #353D44;
+  cursor: pointer;
+}
+.ui-autocomplete .ui-menu-item:first-child a {
+  border-top: none;
+}
+.ui-autocomplete .ui-menu-item a.ui-state-hover {
+  background-color: #D5E5F4;
+  color: #161A1C;
+}
 .warrantyWrapper{
 	margin-top: 1rem;
+	@media (min-width: 40em) and (max-width: $screen-sm-max){
+		margin-top: 2.5rem;
+	}
 	img{
 		width: 100%;
 		@media (max-width: 40em) and (orientation:landscape) {
@@ -412,11 +573,14 @@ $screen-sm-max: 768px;
 	right: inherit;
 	color: white;
 	font-weight: 400;
+	font-size: 1.75rem;
 	@media (max-width: 40em){
 		font-size: 1.2em;
 	}
 	@media (min-width: 40em) and (max-width: $screen-sm-max){
-		font-size: 1.5em;
+		font-size: 1.75em;
+		margin-top: 2.5rem;
+		margin-bottom: 2.5rem;
 	}
 }
 

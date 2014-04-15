@@ -28,7 +28,10 @@ var geoSuccessHandler = function (position) {
 				// Give me Zip Code. I.e. 10002
 				var zipCode = addressComponents[7].long_name;
 				$(".zipCode").val(zipCode);
-				console.log("Dmitry updated on server!")
+
+        // Give me the Country. I.e. United States
+        var country = addressComponents[6].long_name;
+        $(".country").val(country);
 	    } else {
 		      alert("Geocoder failed due to: " + status);
 	    }
@@ -97,39 +100,56 @@ $(".addOn").click(function(){
 // 	}
 // })
 
+// Country Selector
+(function($){
+  $(function(){
+    $('select').selectToAutocomplete();
+    $('form').submit(function(){
+      alert( $(this).serialize() );
+      return false;
+    });
+  });
+})(jQuery);
+
 // Credit Card Input Begins
 
 // Formats the credit card input in with spaces every 4 digits an fires off the getCardNumber function
 $("#newCardNumber").mask("9999 9999 9999 9999", {placeholder:" ", completed: getCardNumber
 });
 
-// Puts user inputed card number into "Card Number" field and has slide effect
+// Puts user inputed card number into "Card Number" field below, adds slide effect, and clears out the field
 function getCardNumber (){
+  // Show card number below the input field
 	$('.dmitrysCardNumberContainer').removeClass('hidden');
+  // Puts card number from input field into '.dmitrysCardNumber' div
   $('.dmitrysCardNumber').text($(this).val());
   // Clear out card number and put in clean expiration date
   $(this).animate({'marginLeft': '-=25%'}, 200, 'swing', function(){
   	$(this).val('');
+    $(this).css('margin-left','0px');
+    // Replace input field with new placeholder and fires off getExpDate function
+    $(this).siblings('label').text("Expiration Date");
   	$(this).mask("99/99", {placeholder:" ", completed: getExpDate
 		});
-  	$(this).css('margin-left','0px');
+   $(this).attr('placeholder', 'MM/YY');
   });
-  $(this).siblings('label').text("Expiration Date");
-  $(this).attr('placeholder', 'MM/YY');
 }
 
 // Puts user inputed expiration date into "Expiration Date" field and has slide effect
 function getExpDate (){
+  // Show Expiration Date field and expiration date below the input field
   $('.dmitrysExpDateContainer').removeClass('hidden');
+  // Puts Expiratoin Date from input field into '.dmitrysExpDate' div
   $('.dmitrysExpDate').text($(this).val());
+  // Clear out exp date and put in clean cvc field
   $(this).animate({'marginLeft': '-=25%'}, 200, 'swing', function(){
   	$(this).val('');
-	  $(this).mask("999", {placeholder:" ", completed: getCvc});
-	  $(this).css('margin-left','0px');
+    $(this).css('margin-left','0px');	  
+    // Clear out expDate and put in clean cvc
+    $(this).siblings('label').text("CVC");
+    $(this).mask("999", {placeholder:" ", completed: getCvc});
+    $(this).attr('placeholder', 'CVC');
 	});
-  // Clear out expDate and put in clean cvc
-  $(this).siblings('label').text("CVC");
-  $(this).attr('placeholder', 'CVC');
 }
 
 function getCvc (){
@@ -137,16 +157,19 @@ function getCvc (){
   $('.dmitrysCvc').text($(this).val());
 }
 
-// Edit Card Number, ExpDate, and CVC
+// User can edit Card Number, ExpDate, and CVC numbers inline after they input them
 var replaceWith = $('<input name="temp" type="text" />');
 
 $('.dmitrysCardNumber').inlineEdit(replaceWith, "9999 9999 9999 9999");
 $('.dmitrysExpDate').inlineEdit(replaceWith, "99/99");
 $('.dmitrysCvc').inlineEdit(replaceWith, "999");
 
+// Allow user to edit inline when they click pencil icon as well as when they click on the input field
 $('.fa-pencil').on('click', function(){
   $(this).siblings("div").click()
 });
+
+// Credit Card Validation
 
 // JS for aptNumber font-icon placeholder
 $('#aptNumber').on('keyup', function() {
