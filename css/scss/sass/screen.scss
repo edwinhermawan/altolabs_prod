@@ -52,6 +52,36 @@ $darkGrey: #CACACB;
 	}
 }
 
+#cardNumberContainer{
+	overflow: hidden;
+	// padding-right: 0px;
+	input{
+		width: 100%;
+	}
+	display: inline-block;
+}
+
+#showCardNumber{
+	float: left;
+	clear: both;
+}
+
+#cardNumber{
+	border-right: none;
+}
+
+#expDate{
+	display: none;
+	border-left: none;
+	border-right: none;
+}
+
+#cvc{
+	display: none;
+	// float: left;
+	border-left: none;
+}
+
 .background{
 	display: block;
 	position: relative;
@@ -546,6 +576,34 @@ $darkGrey: #CACACB;
 	}
 }
 
+#creditCardForm{
+	display: none;
+	input{
+		width: 150%;
+		border: 1px solid $darkGrey;
+		// border-color: $darkGrey;
+		// border-bottom: none;
+		box-shadow: none;
+		// border-radius:0px;
+		border-radius:3px;
+		font-size: 1.5rem;
+		padding-left: 15px;
+		padding-right: 15px;
+		@media (max-width: 40em){
+			height: 3rem;
+			font-size: 1.5rem;
+		}
+		@media (min-width: 40em) and (max-width: $screen-sm-max){
+			font-size: 1.5em;
+		}
+	}
+	.deleteWhiteSpace{
+		height:3.5rem;
+		@media (max-width: $screen-sm-max){
+			height: 4.5rem;
+		}
+	}
+}
 
 
 
