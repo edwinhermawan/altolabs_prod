@@ -68,7 +68,7 @@ $(function() {
   })(jQuery);
 
   // Shipping form validation
-  
+   $('#shippingForm').bootstrapValidator();
 
   // Hide Shipping information and show credit card inputs
   $('#customButton').on('click', function(e){
