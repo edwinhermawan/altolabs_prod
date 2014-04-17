@@ -48,7 +48,7 @@
 </button>
 
 <!-- Test if loaded to production -->
-<p>NEW asdf!</p>
+<p>NEW Edwin!</p>
 
 <form>
     <div class="form-group">
@@ -401,30 +401,36 @@
               <div class="row">
                 <div class="col-md-12" id="cardNumberContainer">
                   <label>Card Number</label>
-                  <input type="tel" class="deleteWhiteSpace" id="newCardNumber" maxlength="16" placeholder="1234 5678 9012 3456">
-                  <span class="card-type"></span>
+                  <div class="testTest">
+                    <span class="card-type col-xs-2"></span>
+                    <input type="tel" class="col-xs-10 deleteWhiteSpace" id="newCardNumber" maxlength="16" placeholder="1234 5678 9012 3456">
+                    
+                  </div>
 
                 </div>
                 
                 <div class="col-md-12 columns" id="showCardNumber">
-                  <div class="dmitrysCardNumberContainer hidden">
-                    Card Number:
+                  <div class="dmitrysCardNumberContainer hidden ">
+                    <p>Card Number:</p>
                     <input type="hidden" name="hiddenField" />
-                    <div class="dmitrysCardNumber"></div>
+                    <span class="col-xs-2" id="dmitrysCardNumberIcon"></span>
+                    <div class="dmitrysCardNumber col-xs-6"></div>
                     <i class="fa fa-pencil"></i> 
                     <br/>
                   </div>
                   <div class="dmitrysExpDateContainer hidden">
-                    Expiration Date:
+                    <p>Expiration Date:</p>
                     <input type="hidden" name="hiddenField" />
-                    <div class="dmitrysExpDate"></div>
+                    <span class="dmitrysExpDateIcon col-xs-2"></span>
+                    <div class="dmitrysExpDate col-xs-6">asdf</div>
                     <i class="fa fa-pencil"></i> 
                     <br/>
                   </div>
                   <div class="dmitrysCvcContainer hidden">
-                    CVC:
+                    <p>CVC:</p>
                     <input type="hidden" name="hiddenField" />
-                    <div class="dmitrysCvc"></div>
+                    <span class="dmitrysCvcIcon col-xs-2"></span>
+                    <div class="dmitrysCvc col-xs-6"></div>
                     <i class="fa fa-pencil"></i> 
                   </div>
                 </div>
