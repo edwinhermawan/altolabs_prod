@@ -124,21 +124,28 @@ $(function() {
   // Puts user inputed expiration date into "Expiration Date" field and has slide effect
   function getExpDate() {
       // Show Expiration Date field and expiration date below the input field
-      $('.dmitrysExpDateContainer').removeClass('hidden');
-      // Puts Expiratoin Date from input field into '.dmitrysExpDate' div
-      $('.dmitrysExpDate').text($(this).val());
-      // $(this).css('width', '150%');
-      $(this).siblings('span').css('background', 'url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDMwOC43IDYwIDQwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMzA4LjcgNjAgNDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGZpbGw9IiNDRENEQ0QiIGQ9Ik02MCwzNDMuN2MwLDIuOC0yLjIsNS01LDVINWMtMi44LDAtNS0yLjItNS01di0zMGMwLTIuOCwyLjItNSw1LTVoNTBjMi44LDAsNSwyLjIsNSw1VjM0My43eiIvPg0KCTwvZz4NCgk8cmVjdCB4PSIxLjgiIHk9IjMxNSIgZmlsbD0iIzQyNDE0MyIgd2lkdGg9IjU4LjIiIGhlaWdodD0iOCIvPg0KCTxyZWN0IHg9IjcuOCIgeT0iMzI3IiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMzYiIGhlaWdodD0iOCIvPg0KCTxyZWN0IHg9IjEwLjgiIHk9IjMzMCIgZmlsbD0iIzQyNDE0MyIgd2lkdGg9IjI5IiBoZWlnaHQ9IjIiLz4NCgk8Zz4NCgkJPGc+DQoJCQk8cGF0aCBmaWxsPSIjREZERUREIiBkPSJNNTUsMzA5LjdjMi4yLDAsNCwxLjgsNCw0djMwYzAsMi4yLTEuOCw0LTQsNEg1Yy0yLjIsMC00LTEuOC00LTR2LTMwYzAtMi4yLDEuOC00LDQtNEg1NSBNNTUsMzA4LjdINQ0KCQkJCWMtMi44LDAtNSwyLjItNSw1djMwYzAsMi44LDIuMiw1LDUsNWg1MGMyLjgsMCw1LTIuMiw1LTV2LTMwQzYwLDMxMSw1Ny44LDMwOC43LDU1LDMwOC43TDU1LDMwOC43eiIvPg0KCQk8L2c+DQoJPC9nPg0KCTxyZWN0IHg9IjQ2LjgiIHk9IjMyNyIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPg0KCTxyZWN0IHg9IjQ3LjgiIHk9IjMzMCIgZmlsbD0iIzQyNDE0MyIgd2lkdGg9IjYiIGhlaWdodD0iMiIvPg0KCTxjaXJjbGUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRTk1NjRCIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgY3g9IjUwLjIiIGN5PSIzMzAuOSIgcj0iNy44Ii8+DQo8L2c+DQo8L3N2Zz4NCg==)');
-      // Clear out exp date and put in clean cvc field
-      $(this).animate({'marginLeft': '-=25%'}, 200, 'swing', function () {
-          $(this).val('');
-          $(this).css('margin-left', '0px');
-          $(this).css('width', '83.33%');
-          // Clear out expDate and put in clean cvc
-          $(this).siblings('label').text("CVC");
-          $(this).mask("999", {placeholder: " ", completed: getCvc});
-          $(this).attr('placeholder', 'CVC');
-      });
+      var cardExpObj = $.payment.cardExpiryVal($(this).val());
+      var valid = $.payment.validateCardExpiry(cardExpObj.month, cardExpObj.year);
+      if (valid) {
+          $('.dmitrysExpDateContainer').removeClass('hidden');
+          // Puts Expiratoin Date from input field into '.dmitrysExpDate' div
+          $('.dmitrysExpDate').text($(this).val());
+          // $(this).css('width', '150%');
+          $(this).siblings('span').css('background', 'url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDMwOC43IDYwIDQwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMzA4LjcgNjAgNDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGZpbGw9IiNDRENEQ0QiIGQ9Ik02MCwzNDMuN2MwLDIuOC0yLjIsNS01LDVINWMtMi44LDAtNS0yLjItNS01di0zMGMwLTIuOCwyLjItNSw1LTVoNTBjMi44LDAsNSwyLjIsNSw1VjM0My43eiIvPg0KCTwvZz4NCgk8cmVjdCB4PSIxLjgiIHk9IjMxNSIgZmlsbD0iIzQyNDE0MyIgd2lkdGg9IjU4LjIiIGhlaWdodD0iOCIvPg0KCTxyZWN0IHg9IjcuOCIgeT0iMzI3IiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMzYiIGhlaWdodD0iOCIvPg0KCTxyZWN0IHg9IjEwLjgiIHk9IjMzMCIgZmlsbD0iIzQyNDE0MyIgd2lkdGg9IjI5IiBoZWlnaHQ9IjIiLz4NCgk8Zz4NCgkJPGc+DQoJCQk8cGF0aCBmaWxsPSIjREZERUREIiBkPSJNNTUsMzA5LjdjMi4yLDAsNCwxLjgsNCw0djMwYzAsMi4yLTEuOCw0LTQsNEg1Yy0yLjIsMC00LTEuOC00LTR2LTMwYzAtMi4yLDEuOC00LDQtNEg1NSBNNTUsMzA4LjdINQ0KCQkJCWMtMi44LDAtNSwyLjItNSw1djMwYzAsMi44LDIuMiw1LDUsNWg1MGMyLjgsMCw1LTIuMiw1LTV2LTMwQzYwLDMxMSw1Ny44LDMwOC43LDU1LDMwOC43TDU1LDMwOC43eiIvPg0KCQk8L2c+DQoJPC9nPg0KCTxyZWN0IHg9IjQ2LjgiIHk9IjMyNyIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPg0KCTxyZWN0IHg9IjQ3LjgiIHk9IjMzMCIgZmlsbD0iIzQyNDE0MyIgd2lkdGg9IjYiIGhlaWdodD0iMiIvPg0KCTxjaXJjbGUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRTk1NjRCIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgY3g9IjUwLjIiIGN5PSIzMzAuOSIgcj0iNy44Ii8+DQo8L2c+DQo8L3N2Zz4NCg==)');
+          // Clear out exp date and put in clean cvc field
+          $(this).animate({'marginLeft': '-=25%'}, 200, 'swing', function () {
+              $(this).val('');
+              $(this).css('margin-left', '0px');
+              $(this).css('width', '83.33%');
+              // Clear out expDate and put in clean cvc
+              $(this).siblings('label').text("CVC");
+              $(this).mask("999", {placeholder: " ", completed: getCvc});
+              $(this).attr('placeholder', 'CVC');
+          });
+      } else {
+           // todo replace with actual warning like you want it to be. tooltip or what
+           alert('Your exp date is not valid!');
+      }
   }
 
   function getCvc() {
