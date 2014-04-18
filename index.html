@@ -396,41 +396,43 @@
               </div>
             </div>
           </form>
-          <form id="creditCardForm">
+          <form id="creditCardForm" class="creditCardForm">
             <div class="container-fluid">
               <div class="row">
-                <div class="col-md-12" id="cardNumberContainer">
-                  <label>Card Number</label>
-                  <div class="testTest">
-                    <span class="card-type col-xs-2"></span>
-                    <input type="tel" class="col-xs-10 deleteWhiteSpace" id="newCardNumber" maxlength="16" placeholder="1234 5678 9012 3456">
-                    
+                <div class="col-md-12 col-xs-12" id="cardNumberContainer">
+                  <label class="col-xs-12">Card Number</label>
+                  <span class="card-type col-xs-2"></span>
+                  <div class="col-xs-10">
+                    <input type="tel" class="col-xs-10 deleteWhiteSpace form-control" id="newCardNumber" maxlength="16" placeholder="1234 5678 9012 3456">
                   </div>
 
                 </div>
                 
-                <div class="col-md-12 columns" id="showCardNumber">
+                <div class="col-md-12 columns hidden-xs" id="showCardNumber">
                   <div class="dmitrysCardNumberContainer hidden ">
-                    <p>Card Number:</p>
                     <input type="hidden" name="hiddenField" />
                     <span class="col-xs-2" id="dmitrysCardNumberIcon"></span>
                     <div class="dmitrysCardNumber col-xs-6"></div>
                     <i class="fa fa-pencil"></i> 
                     <br/>
                   </div>
-                  <div class="dmitrysExpDateContainer hidden">
-                    <p>Expiration Date:</p>
+                  <div class="dmitrysExpDateContainer hidden hidden-xs">
                     <input type="hidden" name="hiddenField" />
-                    <span class="dmitrysExpDateIcon col-xs-2"></span>
+                    <span class="col-xs-2" id="dmitrysExpDateIcon">Exp. Date</span>
                     <div class="dmitrysExpDate col-xs-6">asdf</div>
                     <i class="fa fa-pencil"></i> 
                     <br/>
                   </div>
-                  <div class="dmitrysCvcContainer hidden">
-                    <p>CVC:</p>
+                  <div class="dmitrysCvcContainer hidden hidden-xs">
                     <input type="hidden" name="hiddenField" />
                     <span class="dmitrysCvcIcon col-xs-2"></span>
                     <div class="dmitrysCvc col-xs-6"></div>
+                    <i class="fa fa-pencil"></i> 
+                  </div>
+                  <div class="dmitrysBillingZipCodeContainer hidden hidden-xs">
+                    <input type="hidden" name="hiddenField" />
+                    <span class="col-xs-2">Billing Zip Code</span>
+                    <div class="dmitrysBillingZipCode col-xs-6"></div>
                     <i class="fa fa-pencil"></i> 
                   </div>
                 </div>
