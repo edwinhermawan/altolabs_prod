@@ -345,6 +345,7 @@ $darkGrey: #CACACB;
 			padding-right: 4.5rem;
 		}
 		input{
+			background-color: white;
 			border-color: $darkGrey;
 			border-bottom: none;
 			box-shadow: none;
@@ -654,7 +655,7 @@ $darkGrey: #CACACB;
 	// -webkit-transform-style: preserve-3d;
 	padding-left: 0px;
 	padding-right:0px;
-	margin-right: .375rem;
+	margin-right: .6rem;
 }
 
 .dmitrysCvcIcon{
@@ -938,6 +939,16 @@ $darkGrey: #CACACB;
   40%, 80% {
     transform: translateX(10px); } }
 
+.confirmShippingAddress{
+	display: none;
+	margin-top: 1rem;
+	.confirmShippingAddressTitle{
+		font-family: 'twCenMTBold';
+	}
+	.confirmShippingName, .confirmAddress, .confirmZipCode{
+		padding: 0px;
+	}
+}
 
 
 

@@ -45,6 +45,40 @@ $(function() {
       $(this).find('i').toggleClass('fa-spin');
   });
 
+  // Test Bootstrap Validator
+  $("#validatorTest").bootstrapValidator({
+      message: 'This value is not valid',
+      submitButtons: 'button[type="submit"]',
+      fields: {
+          username: {
+              message: 'The username is not valid',
+              validators: {
+                  notEmpty: {
+                      message: 'The username is required and cannot be empty'
+                  },
+                  stringLength: {
+                      min: 6,
+                      max: 30,
+                      message: 'The username must be more than 6 and less than 30 characters long'
+                  },
+                  regexp: {
+                      regexp: /^[a-zA-Z0-9_]+$/,
+                      message: 'The username can only consist of alphabetical, number and underscore'
+                  }
+              }
+          },
+          email: {
+              validators: {
+                  notEmpty: {
+                      message: 'The email is required and cannot be empty'
+                  },
+                  emailAddress: {
+                      message: 'The input is not a valid email address'
+                  }
+              }
+          }
+      }
+  });
 
   // Checkbox Click
   $(".addOn").click(function () {
@@ -66,15 +100,38 @@ $(function() {
           // });
       });
   })(jQuery);
+  
+  // Initialize Shipping Form Validator
+  $('#shippingForm').bootstrapValidator({
+    message: '',
+  });
+  
 
-  // Shipping form validation
-   $('#shippingForm').bootstrapValidator();
 
   // Hide Shipping information and show credit card inputs
   $('#customButton').on('click', function(e){
     e.preventDefault();
-    $('#shippingForm').hide();
-    $('#creditCardForm').show();
+    // Shipping form validation
+    $("#shippingForm").data('bootstrapValidator').validate();
+    if ($("#shippingForm").data('bootstrapValidator').isValid()){
+      $('#shippingForm').hide();
+      // Show Credit Card Form
+      $('#creditCardForm').show();
+      // Show Shipping Information
+      $('.confirmShippingAddress').show();
+
+      $('.confirmShippingAddress').find('address').html(unescape(
+        $('.shippingName').val() + "<br>" +
+        $('.address').val() + " " + $('#aptNumber').val() + "<br>" +
+        $('.zipCode').val()   
+        ))
+      // Drop in Shipping Name
+      $('.confirmShippingName').text($('.shippingName').val())
+      // Drop in Shipping Address
+      $('.confirmAddress').text($('.address').val() + " " + $('#aptNumber').val())
+      // Drop in Shipping Zip Code
+      $('.confirmZipCode').text($('.zipCode').val())
+    }
   })
   
   // Credit Card Input Begins
@@ -186,6 +243,10 @@ function getZipCode() {
   $('.dmitrysCardNumber').inlineEdit(replaceWith, "9999 9999 9999 9999");
   $('.dmitrysExpDate').inlineEdit(replaceWith, "99/99");
   $('.dmitrysCvc').inlineEdit(replaceWith, "999");
+
+  $('.confirmShippingName').inlineEdit(replaceWith, "null");
+  $('.confirmAddress').inlineEdit(replaceWith, "null");
+  $('.confirmZipCode').inlineEdit(replaceWith, "null");
 
   // Allow user to edit inline when they click pencil icon as well as when they click on the input field
   $('.fa-pencil').on('click', function () {
