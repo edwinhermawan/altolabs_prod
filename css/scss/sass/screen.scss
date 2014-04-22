@@ -472,6 +472,20 @@ $darkGrey: #CACACB;
 	}
 }
 
+.error-class{
+	// background-color: lime !important;
+	border: 1px solid #a94442 !important;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483 !important;
+	        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483 !important;
+  &:focus{
+	  border-color: #843534 !important;
+	  // border-color: lime !important;
+	  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483 !important;
+	          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483 !important;
+	  outline: 0 none;
+  }
+}
+
 // Make input fields clearable
 .clearable{
   background:url(http://i.imgur.com/z7ZSYjt.png) no-repeat right -10px center;

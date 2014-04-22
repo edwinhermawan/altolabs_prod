@@ -6,37 +6,22 @@ $.fn.inlineEdit = function(replaceWith, masked) {
 
     elem.hide();
     replaceWith.val(elem.text());
-    
-    if (masked=="null"){
-      elem.after(replaceWith);
-      replaceWith.focus();
 
-      replaceWith.blur(function() {
-
-        if ($(this).val() != "") {
-            elem.data("val", $(this).val());
-            elem.text($(this).val());
-        }
-
-        $(this).remove();
-        elem.show();
-      });
-    } else {
-      replaceWith.mask(masked, {placeholder:" "});
-      elem.after(replaceWith);
-      replaceWith.focus();
-
-      replaceWith.blur(function() {
-
-        if ($(this).val() != "") {
-            elem.data("val", $(this).val());
-            elem.text($(this).val());
-        }
-
-        $(this).remove();
-        elem.show();
-      });
+    if (masked!=="null"){
+      replaceWith.inputmask(masked, {placeholder:" "});
     }
-    
+    elem.after(replaceWith);
+    replaceWith.focus();
+
+    replaceWith.blur(function() {
+
+      if ($(this).val() != "") {
+          elem.data("val", $(this).val());
+          elem.text($(this).val());
+      }
+
+      $(this).remove();
+      elem.show();
+    });
   });
 };
