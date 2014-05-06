@@ -27,7 +27,7 @@
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 
     <!-- Masked Input -->
-    <script src="js/vendor/jquery.inputmask.js"></script>
+    <script src="js/vendor/jquery.inputmask.bundle.min.js"></script>
 
     <!-- Country Autocomplete -->
     <script src="js/vendor/jquery.browser.min.js"></script>
@@ -77,6 +77,15 @@
 
               <!-- Gift Wrapping +10.00 -->
               <label class="addOn"><i class="fa fa-square-o"></i> Gift Wrapping (+10.00)</label>
+
+              <!-- Two Day Shipping +9.50 -->
+              <label class="addOn"><i class="fa fa-square-o"></i> 2-Day Shipping (+9.50)</label>
+              
+              <!-- Tax -->
+              <label class="addOn"> Tax: $9.90 </label>
+
+              <!-- Total -->
+              <label class="addOn total"> Total: $129.89 </label>
             </form>
           </div>
         </div>
@@ -92,6 +101,12 @@
         <div class="arrow-down"></div>
           <form id="shippingForm">
             <div class="shippingAddress text-center row">
+              <!-- Name -->
+              <div class="inputFields text-center col-md-10 col-md-offset-1 row">
+                <div class="form-group">
+                  <input type="text" class="deleteWhiteSpace col-xs-12 yourEmail clearable form-control"   placeholder="Your Email" required/>
+                </div>
+              </div>
               <div class="title hidden-xs">
                 <p class="titleText">SHIPPING ADDRESS</p>
               </div>
@@ -107,15 +122,15 @@
 
                 <span class="col-xs-2 postfix geoLocator deleteWhiteSpace"><i class="fa fa-crosshairs"></i></span>
                 
+                <!-- APT Label -->
+                <span class="deleteWhiteSpace col-xs-3 prefix">APT #</span>
+                <input type="tel" class="deleteWhiteSpace col-xs-9 empty clearable" id="aptNumber" placeholder="&#xF040;">
+
                 <!-- Zip Code -->
                 <input type="tel"  data-bv-notempty data-bv-stringlength="true" class="deleteWhiteSpace col-xs-4 zipCode clearable" placeholder="Zip" minlength="5" maxlength="5"required/>
 
                 <!-- City -->
                 <input type="text" class="deleteWhiteSpace col-xs-8 city clearable" placeholder="City">
-
-                <!-- APT Label -->
-                <span class="deleteWhiteSpace col-xs-3 prefix">APT #</span>
-                <input type="tel" class="deleteWhiteSpace col-xs-9 empty clearable" id="aptNumber" placeholder="&#xF040;">
 
                 <!-- Country Label -->
                 <span class="deleteWhiteSpace col-xs-3 clearable countryLabel"> Country </span>
@@ -384,33 +399,39 @@
           </form>
           <form id="creditCardForm" class="creditCardForm">
             <div class="container-fluid">
+              <div class="inputFields text-center col-md-12 row">
+                <div class="form-group">
+                  <input type="text" class="deleteWhiteSpace col-xs-12 cardHolderName clearable form-control"   placeholder="Card Holder's Name" required/>
+                </div>
+              </div>
               <div class="row">
                 <div class="col-md-12 col-xs-12" id="cardNumberContainer">
                   <label class="col-xs-12">Card Number</label>
                   <span class="card-type col-xs-2"></span>
                   <div class="col-xs-10">
-                    <input type="tel" class="col-xs-10 deleteWhiteSpace form-control" id="newCardNumber" placeholder="1234 5678 9012 3456">
+                    <input type="tel" class="col-xs-10 deleteWhiteSpace form-control noPadding" id="newCardNumber" placeholder="1234 5678 9012 3456">
                   </div>
 
                 </div>
                 
-                <div class="col-md-12 columns hidden-xs" id="showCardNumber">
+                <div class="col-md-12 col-sm-12 columns hidden-xs" id="showCardNumber">
                   <div class="dmitrysCardNumberContainer hidden ">
-                    <input type="hidden" name="hiddenField" />
+                    <!-- To do remove id on input and name appropriately -->
+
                     <span class="col-xs-2" id="dmitrysCardNumberIcon"></span>
                     <div class="dmitrysCardNumber col-xs-6"></div>
                     <i class="fa fa-pencil"></i> 
                     <br/>
                   </div>
                   <div class="dmitrysExpDateContainer hidden hidden-xs">
-                    <input type="hidden" name="hiddenField" />
+
                     <span class="col-xs-2" id="dmitrysExpDateIcon">Exp. Date</span>
                     <div class="dmitrysExpDate col-xs-6">asdf</div>
                     <i class="fa fa-pencil"></i> 
                     <br/>
                   </div>
                   <div class="dmitrysCvcContainer hidden hidden-xs">
-                    <input type="hidden" name="hiddenField" />
+
                     <span class="dmitrysCvcIcon col-xs-2"></span>
                     <div class="dmitrysCvc col-xs-6"></div>
                     <i class="fa fa-pencil"></i> 
@@ -426,6 +447,9 @@
               </div>
             </div>
           </form>
+
+
+
           <div class="confirmShippingAddress col-xs-12">
             <p class="confirmShippingAddressTitle">Shipping to:</p>
             <div class="confirmShippingNameContainer clearfix">

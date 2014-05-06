@@ -16,6 +16,9 @@ $darkGrey: #CACACB;
 	display: none;
 }
 
+.noPadding{
+	padding: 0px;
+}
 
 #myModal{
 	top: 0px;
@@ -53,11 +56,17 @@ $darkGrey: #CACACB;
 }
 
 #cardNumberContainer{
+	margin-top: 1rem;
 	overflow: hidden;
 	display: inline-block;
 	label{
 		padding: 0px;
 	}
+}
+
+#newCardNumber{
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 #showCardNumber{
@@ -263,6 +272,16 @@ $darkGrey: #CACACB;
 		    	color:#7FBEA0;
 		    }
 			}
+			.total{
+				font-family: 'twCenMTBold';
+				font-size: 1.15em;
+				@media (max-width: 40em){
+					font-size: 1.6rem;
+				}
+				@media (min-width: 40em) and (max-width: $screen-sm-max){
+					font-size: 1.5em;
+				}
+			}
 		}
 	}
 }
@@ -365,6 +384,14 @@ $darkGrey: #CACACB;
 				height: 4.5rem;
 			}
 		}
+
+		.yourEmail{
+			border-radius: 3px;
+			border: 1px solid $darkGrey;
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+		}
+
 		.shippingName{
 			border-top-left-radius: 3px;
 			border-top-right-radius: 3px;
@@ -408,7 +435,7 @@ $darkGrey: #CACACB;
 		.prefix{
 			border-top: 1px solid $darkGrey;
 			border-left: 1px solid $darkGrey;
-			border-bottom: 1px solid $darkGrey;
+			// border-bottom: 1px solid $darkGrey;
 			line-height: 3.5rem;
 			@media (max-width: 40em){
 				line-height: 4.5rem;
@@ -437,8 +464,10 @@ $darkGrey: #CACACB;
 			border-top: none;
 			border-bottom: 1px solid $darkGrey;
 			border-left: 1px solid $darkGrey;
+			border-top: 1px solid $darkGrey;
 			border-bottom-left-radius: 3px;
 			border-bottom-right-radius: 0px;
+			border-top-right-radius: 0px;
 			border-right: none;
 			border-top-left-radius: 0px;
 			line-height: 3rem;
@@ -458,7 +487,7 @@ $darkGrey: #CACACB;
 		}
 
 		.country{
-			border-top: none;
+			border-top: 1px solid $darkGrey;
 			border-bottom: 1px solid $darkGrey;
 			border-bottom-right-radius: 3px;
 			// Account for a rounding error in Safari in calculating width of input
@@ -506,7 +535,7 @@ $darkGrey: #CACACB;
 
 // Make sure that Apt # input field has a bottom border
 #aptNumber{
-	border-bottom: 1px solid $darkGrey;
+	// border-bottom: 1px solid $darkGrey;
 	box-shadow: none;
 	
 
@@ -638,7 +667,7 @@ $darkGrey: #CACACB;
 	}
 }
 
-.dmitrysCardNumberContainer, .dmitrysExpDateContainer, .dmitrysCvcContainer, .dmitrysBillingZipCodeContainer{
+.cardHolderName, .dmitrysCardNumberContainer, .dmitrysExpDateContainer, .dmitrysCvcContainer, .dmitrysBillingZipCodeContainer{
 	margin-top: 1rem;
 }
 
@@ -650,7 +679,7 @@ $darkGrey: #CACACB;
 	height: 22px;
 	position: relative;
 	top: 50%;
-	margin: -4px 7px -6px 0;
+	margin: 0px 7px -6px 0;
 	z-index: 2;
 	-webkit-transform-style: preserve-3d;
 }
