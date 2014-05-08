@@ -12,12 +12,67 @@ $screen-md-min: 992px;
 $screen-sm-max: 768px;
 $darkGrey: #CACACB;
 
+// Boombotix logo
+$logoContainerHeight: 75px;
+$logoMarginTop: -3rem;
+
+// fonts
+@mixin boldText{
+	font-family: 'twCenMTBold';
+	font-size: 1.5rem;
+	@media (max-width: 40em){
+		font-size: 1.6rem;
+	}
+	@media (min-width: 40em) and (max-width: $screen-sm-max){
+		font-size: 2rem;
+	}
+};
+
+@mixin regularText{
+	font-size: 1.5rem;
+	@media (max-width: 40em){
+		font-size: 1.5rem;
+	}
+	@media (min-width: 40em) and (max-width: $screen-sm-max){
+		font-size: 1.5em;
+	}
+};
+
+@mixin payByBoxes($background, $textColor){
+	background: $background;
+	color: $textColor;
+	border-bottom: 1px solid $darkGrey;
+};
+
+@mixin formFieldSize{
+	height:3.5rem;
+	@media (max-width: $screen-sm-max){
+		height: 4.5rem;
+	}
+};
+
+@mixin formFieldStyling{
+	input{
+		background-color: white;
+		border-color: $darkGrey;
+		border-bottom: none;
+		box-shadow: none;
+		border-radius:0px;
+		float: left;
+		@include regularText;
+		@include formFieldSize;
+	}
+	.deleteWhiteSpace{
+		@include formFieldSize;
+	}
+};
+
 .hidden{
 	display: none;
 }
 
 .noPadding{
-	padding: 0px;
+	padding: 0px !important;
 }
 
 #myModal{
@@ -64,11 +119,6 @@ $darkGrey: #CACACB;
 	}
 }
 
-#newCardNumber{
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
 #showCardNumber{
 	float: left;
 	clear: both;
@@ -86,32 +136,17 @@ $darkGrey: #CACACB;
 
 #cvc{
 	display: none;
-	// float: left;
 	border-left: none;
 }
 
 .background{
-	display: block;
-	position: relative;
-	top: 0;
-	left: 0;
 	border-radius: 7px 7px 0 0;
-	margin: 1px 1px 0 1px;
 	padding-bottom: 1rem;
-	// background: #f0f0f2;
-	// background-image: linear-gradient(#f5f5f7, #e9e9ea);
-	border-top: 1px solid #fff;
-	border-bottom: 1px solid #d3d3d4;
-	box-shadow: 0 1px 0 #fff;
-	cursor: default;
 	.close{
 		position: absolute;
-		// background: url("../../../img/close.png") no-repeat;
 		background-size: 100%;
-		width: 22px;
-		height:23px;
-		top: 7px;
-		left: 8px;
+		top: 1rem;
+		left: 1rem;
 		z-index: 10;
 		@media (max-width: 40em){
 			position: relative;
@@ -119,40 +154,19 @@ $darkGrey: #CACACB;
 		}
 	}
 	.image{
-		$logoContainerHeight: 75px;
-		width: 76px;
-		height: $logoContainerHeight;
 		position: absolute;
+		height: $logoContainerHeight;
 		left: 50%;
 		margin-left: -38px;
-		top: -30px;
-		@media (max-width: 40em){
-			$logoContainerHeight: 65px;
-			width: 100%;
-			height: $logoContainerHeight;
-			position: relative;
-			margin-left: 0px;
-			top: 0px;
-			left: 0%;
-			background: white;
-		}
+		top: $logoMarginTop;
 		img{
-			$logoHeight: 64px;
 			background: #fff;
-			width: 64px;
-			height: $logoHeight;
-			display: block;
 			border-radius: 32px;
 				-webkit-border-radius: 32px;
 				-moz-border-radius: 32px;
 				-ms-border-radius: 32px;
 				-o-border-radius: 32px;
-			// border: 3px solid #fff;
 			margin: 4px 6px 0;
-			@media (max-width: 40em){
-				margin: 0 auto;
-				padding-top: ($logoContainerHeight - $logoHeight)*.5;
-			}
 		}
 		&:after{
 			content: '';
@@ -163,164 +177,119 @@ $darkGrey: #CACACB;
 			bottom: 0;
 			background: url("../../../img/icon-border.png") no-repeat;
 			background-size: 100% 100%;
-			@media (max-width: 40em){
-				background: none;
-			}
 		}
 	}
-	.textContainer{
-		position: relative;
-		margin-top: 43px;
-		overflow: hidden;
-		@media (max-width: 40em){
-			margin-top: 0px;
-		}
-		form{
-			label {
+}
+.textContainer{
+	margin-top: -$logoMarginTop + 1rem;
+	@media (max-width: 40em){
+		margin-top: 0px;
+	}
+	form{
+		label {
 		    display: block;
 		    padding-left: 15px;
 		    @media (max-width: 40em){
 		    	padding-left: 0px;
 		    }
+		}
+		.itemQuantity{
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+			@include boldText;
+			@media (max-width: 40em){
+				padding-left: 0px;
+				padding-right: 0px;
 			}
-			.itemQuantity{
-				margin-top: 1rem;
-				margin-bottom: 1rem;
-				font-family: 'twCenMTBold';
-				font-size: 1.15em;
-				@media (max-width: 40em){
-					padding-left: 0px;
-					padding-right: 0px;
+			img{
+				padding: 0px;
+				border-radius: 3px;
+			}
+			.quantityAndDescription{
+	    	margin-top: 0px;
+	    	$spacingBetweenElements: .5rem;
+	    	@media (min-width: 40em) and (max-width: $screen-sm-max){
+				$spacingBetweenElements: 1.25rem;
+			}
+	    	padding-left: $spacingBetweenElements;
+				
+	    	$quantityInputSize: 2rem;
+	    	input[type="tel"]{
+					width: $quantityInputSize;
+					height: $quantityInputSize;
+					float: left;
+					margin-right: $spacingBetweenElements;
 					margin-bottom: 0px;
-					font-size: 1.6rem;
-				}
-				@media (min-width: 40em) and (max-width: $screen-sm-max){
-					font-size: 1.5em;
-				}
-				img{
 					padding: 0px;
-					border-radius: 3px;
-				}
-				.quantityAndDescription{
-		    	margin-top: 0px;
-		    	$spacingBetweenElements: .5rem;
-		    	@media (min-width: 40em) and (max-width: $screen-sm-max){
-						$spacingBetweenElements: 1.25rem;
-					}
-		    	padding-left: $spacingBetweenElements;
-					
-		    	$quantityInputSize: 2rem;
-		    	input[type="tel"]{
+					text-align: center;
+					@media (max-width: 40em){
+						$quantityInputSize: 3rem;
 						width: $quantityInputSize;
 						height: $quantityInputSize;
-						float: left;
-						margin-right: $spacingBetweenElements;
-						margin-bottom: 0px;
-						padding: 0px;
-						text-align: center;
-						@media (max-width: 40em){
-							$quantityInputSize: 3rem;
-							width: $quantityInputSize;
-							height: $quantityInputSize;
-							border-radius: 3px;
-						}
-						@media (min-width: 40em) and (max-width: 64em){
-							$quantityInputSize: 2.5rem;
-							width: $quantityInputSize;
-							height: $quantityInputSize;
-							border-radius: 3px;
-						}
+						border-radius: 3px;
 					}
-					.description{
-						margin-left: ($quantityInputSize + $spacingBetweenElements) ;
-						line-height: 1.3rem;
-						@media (max-width: 40em){
-							$quantityInputSize: 3rem;
-							margin-left: ($quantityInputSize + $spacingBetweenElements);
-							line-height: 1.25em;
-							// font-size: 1.7rem;
-						}
-						@media (min-width: 40em) and (max-width: 64em){
-							line-height: 2.5rem;
-						}
+					@media (min-width: 40em) and (max-width: 64em){
+						$quantityInputSize: 2.5rem;
+						width: $quantityInputSize;
+						height: $quantityInputSize;
+						border-radius: 3px;
 					}
-		    }
-			}
-			
-			.wallCharger{
-				@media(max-width: 40em){
-					display: inline-block;
 				}
-			}
-			.addOn{
-				@media (max-width: 40em){
-					margin-top: 1.2rem;
-					font-size: 1.3rem;
-					margin-bottom: 0px;
-				}
-				@media (min-width: 40em) and (max-width: $screen-sm-max){
-					font-size: 1.2em;
-				}
-				.fa{
+				.description{
+					margin-left: ($quantityInputSize + $spacingBetweenElements);
 					@media (max-width: 40em){
-						font-size: 1.2em;
-						line-height: .5em;
+						$quantityInputSize: 3rem;
+						margin-left: ($quantityInputSize + $spacingBetweenElements);
+
 					}
 				}
-				// Checked off Checkbox
-				.fa-check-square-o{
+		    }
+		}
+		
+		.addOn{
+			@include regularText;
+			@media (max-width: 40em){
+				margin-top: 1.2rem;
+				margin-bottom: 0px;
+			};
+			.fa{
+				@media (max-width: 40em){
+					font-size: 1.2em;
+					line-height: .5em;
+				}
+			}
+			// Checked off Checkbox
+			.fa-check-square-o{
 		    	color:#7FBEA0;
 		    }
-			}
-			.total{
-				font-family: 'twCenMTBold';
-				font-size: 1.15em;
-				@media (max-width: 40em){
-					font-size: 1.6rem;
-				}
-				@media (min-width: 40em) and (max-width: $screen-sm-max){
-					font-size: 1.5em;
-				}
-			}
+		}
+		.total{
+			@include boldText;
 		}
 	}
 }
 
-
 .paymentMethod{
-
 	$paymentMethodHeight: 3.5rem;
+	@include regularText;
 	height: $paymentMethodHeight;
 	line-height: $paymentMethodHeight;
-	font-size: 1em;
-	border-bottom: 1px solid $darkGrey;
-	@media (max-width: 40em){
-		font-size: 1.25rem;
+	border-top: 1px solid $darkGrey;
+	@media (max-width: $screen-sm-max){
 		$paymentMethodHeight: 4.5rem;
 		height: $paymentMethodHeight;
 		line-height: $paymentMethodHeight;
-	}
-	@media (min-width: 40em) and (max-width: $screen-sm-max){
-		$paymentMethodHeight: 4.5rem;
-		height: $paymentMethodHeight;
-		line-height: $paymentMethodHeight;
-		font-size: 1.5em;
 	}
 	.payCreditCard{
-		background: $darkGrey;
-		color: white;
-		border-bottom: 1px solid $darkGrey;
+		@include payByBoxes($background: $darkGrey, $textColor: white);
 		span{
 			font-style: italic;
 		}
 	}
 	.payPayPal{
-		background: white;
-		color: #014179;
-		border-bottom: 1px solid $darkGrey;
+		@include payByBoxes($background: white, $textColor: #014179);
 		img{
 			width: 40%;
-			// vertical-align: text-top;
 			@media (max-width: 40em){
 				width: 60%;
 			}
@@ -330,6 +299,7 @@ $darkGrey: #CACACB;
 		}
 	}
 }
+
 .arrow-down {
 	$arrowSize: 8px;
 	$arrowColor: $darkGrey;
@@ -343,7 +313,6 @@ $darkGrey: #CACACB;
 
 
 .shippingAddress{
-	// Make sure that all the input fields are the same height
 	.title{
 		margin-top: 1rem;
 		.titleText{
@@ -351,9 +320,8 @@ $darkGrey: #CACACB;
 			margin-bottom: .5rem;
 		}
 	}
-	// Get rid of double borders from the input fields
-	.inputFields{
 
+	.inputFields{
 		@media (max-width: 40em){
 			padding-left: 2.5rem;
 			padding-right: 2.5rem;
@@ -363,31 +331,19 @@ $darkGrey: #CACACB;
 			padding-left: 4.5rem;
 			padding-right: 4.5rem;
 		}
-		input{
-			background-color: white;
-			border-color: $darkGrey;
-			border-bottom: none;
-			box-shadow: none;
-			border-radius:0px;
-			font-size: 1.5rem;
-			@media (max-width: 40em){
-				height: 3rem;
-				font-size: 1.5rem;
-			}
-			@media (min-width: 40em) and (max-width: $screen-sm-max){
-				font-size: 1.5em;
-			}
-		}
-		.deleteWhiteSpace{
-			height:3.5rem;
-			@media (max-width: $screen-sm-max){
-				height: 4.5rem;
-			}
+
+		@include formFieldStyling;
+		
+		@mixin borders($top: 1px solid $darkGrey, $right: 1px solid $darkGrey, $bottom: 1px solid $darkGrey, $left: 1px solid $darkGrey){
+			border-top: $top;
+			border-right: $right;
+			border-bottom: $bottom;
+			border-left: $left;
 		}
 
 		.yourEmail{
 			border-radius: 3px;
-			border: 1px solid $darkGrey;
+			@include borders;
 			margin-top: 1rem;
 			margin-bottom: 1rem;
 		}
@@ -417,9 +373,7 @@ $darkGrey: #CACACB;
 
 		}
 		.postfix{
-			border-top: 1px solid $darkGrey;
-			border-right: 1px solid $darkGrey;
-			border-bottom: none;
+			@include borders($bottom:none, $left: none);
 			line-height: 3em;
 			@media (max-width: 40em){
 				line-height: 5rem;
@@ -433,9 +387,7 @@ $darkGrey: #CACACB;
 			}
 		}
 		.prefix{
-			border-top: 1px solid $darkGrey;
-			border-left: 1px solid $darkGrey;
-			// border-bottom: 1px solid $darkGrey;
+			@include borders($right: none, $bottom: none);
 			line-height: 3.5rem;
 			@media (max-width: 40em){
 				line-height: 4.5rem;
@@ -445,13 +397,22 @@ $darkGrey: #CACACB;
 				line-height: 4.5rem;
 			}
 		}
+		.aptNumber{
+			// Style for aptNumber font-icon placeholder
+			font-family: FontAwesome;
+			
+			// Account for a rounding error in Safari in calculating width of input
+		    @media only screen 
+			and (min-device-width : 320px) 
+			and (max-device-width : 568px) 
+			and (orientation : landscape) { 
+				width: 75.1%;
+			}
+		}
 		.zipCode{
-			border-right: none;
-			float: left;
+			@include borders($right: none, $bottom: none);
 		}
 		.city{
-			float: left;
-
 			@media only screen 
 			and (min-device-width : 768px) 
 			and (max-device-width : 1024px) 
@@ -459,23 +420,17 @@ $darkGrey: #CACACB;
 				width: 66.5%;
 			}
 		}
-
 		.countryLabel{
-			border-top: none;
-			border-bottom: 1px solid $darkGrey;
-			border-left: 1px solid $darkGrey;
-			border-top: 1px solid $darkGrey;
-			border-bottom-left-radius: 3px;
-			border-bottom-right-radius: 0px;
+			@include borders($right: none);
 			border-top-right-radius: 0px;
-			border-right: none;
 			border-top-left-radius: 0px;
+			border-bottom-right-radius: 0px;
 			line-height: 3rem;
 			@media (max-width: 40em){
 				line-height: 3.75rem;
 			}
 			@media (min-width: 40em) and (max-width: $screen-sm-max){
-				font-size: 1.5em;
+				// font-size: 1.5em;
 				line-height: 3.75rem;
 			}
 			@media only screen 
@@ -485,13 +440,11 @@ $darkGrey: #CACACB;
 				line-height: 3rem;
 			}
 		}
-
 		.country{
-			border-top: 1px solid $darkGrey;
-			border-bottom: 1px solid $darkGrey;
+			@include borders;
 			border-bottom-right-radius: 3px;
 			// Account for a rounding error in Safari in calculating width of input
-		  @media only screen 
+			@media only screen 
 			and (min-device-width : 320px) 
 			and (max-device-width : 568px) 
 			and (orientation : landscape) { 
@@ -502,7 +455,6 @@ $darkGrey: #CACACB;
 }
 
 .error-class{
-	// background-color: lime !important;
 	border: 1px solid #a94442 !important;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483 !important;
 	        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483 !important;
@@ -531,27 +483,6 @@ $darkGrey: #CACACB;
 /* (jQ addClass:) if mouse is over the 'x' input area*/
 .clearable.onX{
   cursor:pointer;
-}
-
-// Make sure that Apt # input field has a bottom border
-#aptNumber{
-	// border-bottom: 1px solid $darkGrey;
-	box-shadow: none;
-	
-
-	// Style for aptNumber font-icon placeholder
-	font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit;
-	
-	// Account for a rounding error in Safari in calculating width of input
-  @media only screen 
-	and (min-device-width : 320px) 
-	and (max-device-width : 568px) 
-	and (orientation : landscape) { 
-		width: 75.1%;
-	}
 }
 
 // Country Autocomplete
@@ -639,32 +570,7 @@ $darkGrey: #CACACB;
 			padding-right: 0px;
 		}
 	}
-	input{
-		// width: 100%;
-		border: 1px solid $darkGrey;
-		// border-color: $darkGrey;
-		// border-bottom: none;
-		box-shadow: none;
-		// border-radius:0px;
-		border-radius:3px;
-		font-size: 1.5rem;
-		padding-left: 15px;
-		padding-right: 15px;
-		@media (max-width: 40em){
-			height: 3rem;
-			font-size: 1.5rem;
-		}
-		@media (min-width: 40em) and (max-width: $screen-sm-max){
-			font-size: 1.5em;
-		}
-
-	}
-	.deleteWhiteSpace{
-		height:3.5rem;
-		@media (max-width: $screen-sm-max){
-			height: 4.5rem;
-		}
-	}
+	@include formFieldStyling;
 }
 
 .cardHolderName, .dmitrysCardNumberContainer, .dmitrysExpDateContainer, .dmitrysCvcContainer, .dmitrysBillingZipCodeContainer{
@@ -685,17 +591,6 @@ $darkGrey: #CACACB;
 }
 
 #dmitrysExpDateIcon{
-	// background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIxIDAgNjAgNDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMSAwIDYwIDQwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBmaWxsPSIjQzREQUIwIiBkPSJNNjEsMzVjMCwyLjgtMi4yLDUtNSw1SDZjLTIuOCwwLTUtMi4yLTUtNVY1YzAtMi44LDIuMi01LDUtNWg1MGMyLjgsMCw1LDIuMiw1LDVWMzV6Ii8+DQoJPC9nPg0KCTxyZWN0IHg9IjIiIHk9IjYuMyIgZmlsbD0iIzQyNDE0MyIgd2lkdGg9IjU5IiBoZWlnaHQ9IjgiLz4NCgk8Zz4NCgkJPGc+DQoJCQk8cGF0aCBmaWxsPSIjN0Q5NzY5IiBkPSJNNTYsMWMyLjIsMCw0LDEuOCw0LDR2MzBjMCwyLjItMS44LDQtNCw0SDZjLTIuMiwwLTQtMS44LTQtNFY1YzAtMi4yLDEuOC00LDQtNEg1NiBNNTYsMEg2DQoJCQkJQzMuMiwwLDEsMi4yLDEsNXYzMGMwLDIuOCwyLjIsNSw1LDVoNTBjMi44LDAsNS0yLjIsNS01VjVDNjEsMi4yLDU4LjcsMCw1NiwwTDU2LDB6Ii8+DQoJCTwvZz4NCgk8L2c+DQo8L2c+DQo8L3N2Zz4NCg==) ;
-	// background-size: 100% auto;
-	// background-repeat: no-repeat;
-	// display: inline-block;
-	// height: 22px;
-	// position: relative;
-	// top: 50%;
-	// margin: -4px 7px -6px 0;
-	// width: 32px;
-	// z-index: 2;
-	// -webkit-transform-style: preserve-3d;
 	padding-left: 0px;
 	padding-right:0px;
 	margin-right: .6rem;

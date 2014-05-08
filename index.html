@@ -43,10 +43,6 @@
   Launch demo modal
 </button>
 
-<!-- Test if loaded to production -->
-<p>NEW Edwin!</p>
-<!-- End text if loaded to production -->
-
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" id="modalDialog">
@@ -70,7 +66,7 @@
               </label>
             <!-- Checkboxes -->
               <!-- Wall Charger +$10.00 -->
-              <label class="addOn wallCharger"><i class="fa fa-square-o"></i> Wall Charger (+$10.00)</label>
+              <label class="addOn"><i class="fa fa-square-o"></i> Wall Charger (+$10.00)</label>
 
               <!-- Extended 2 year Warranty +$20.00 -->
               <label class="addOn"><i class="fa fa-square-o"></i> Extended 2 year Warranty (+$20.00)</label>
@@ -104,7 +100,7 @@
               <!-- Name -->
               <div class="inputFields text-center col-md-10 col-md-offset-1 row">
                 <div class="form-group">
-                  <input type="text" class="deleteWhiteSpace col-xs-12 yourEmail clearable form-control"   placeholder="Your Email" required/>
+                  <input type="text" class="col-xs-12 yourEmail clearable form-control"   placeholder="Your Email" required/>
                 </div>
               </div>
               <div class="title hidden-xs">
@@ -114,29 +110,29 @@
               <div class="inputFields text-center col-md-10 col-md-offset-1 row">
                 <!-- Name -->
                 <div class="form-group">
-                  <input type="text" class="deleteWhiteSpace col-xs-12 shippingName clearable form-control"   placeholder="Your Name" required/>
+                  <input type="text" class="col-xs-12 shippingName clearable form-control"   placeholder="Your Name" required/>
                 </div>
 
                 <!-- Address -->
-                <input class="deleteWhiteSpace col-xs-10 addressInput address clearable" type="text" placeholder="Your Address" required/>
+                <input class="col-xs-10 addressInput address clearable" type="text" placeholder="Your Address" required/>
 
                 <span class="col-xs-2 postfix geoLocator deleteWhiteSpace"><i class="fa fa-crosshairs"></i></span>
                 
                 <!-- APT Label -->
                 <span class="deleteWhiteSpace col-xs-3 prefix">APT #</span>
-                <input type="tel" class="deleteWhiteSpace col-xs-9 empty clearable" id="aptNumber" placeholder="&#xF040;">
+                <input type="tel" class="col-xs-9 empty clearable aptNumber" id="" placeholder="&#xF040;">
 
                 <!-- Zip Code -->
-                <input type="tel"  data-bv-notempty data-bv-stringlength="true" class="deleteWhiteSpace col-xs-4 zipCode clearable" placeholder="Zip" minlength="5" maxlength="5"required/>
+                <input type="tel"  data-bv-notempty data-bv-stringlength="true" class="col-xs-4 zipCode clearable" placeholder="Zip" minlength="5" maxlength="5"required/>
 
                 <!-- City -->
-                <input type="text" class="deleteWhiteSpace col-xs-8 city clearable" placeholder="City">
+                <input type="text" class="col-xs-8 city clearable" placeholder="City">
 
                 <!-- Country Label -->
-                <span class="deleteWhiteSpace col-xs-3 clearable countryLabel"> Country </span>
+                <span class="col-xs-3 clearable deleteWhiteSpace countryLabel"> Country </span>
                         
                 <!-- Country Input -->
-                <select  data-bv-notempty name="Country" id="country-selector" autofocus="autofocus" autocorrect="off" autocomplete="off"class="deleteWhiteSpace col-xs-9 clearable country" placeholder="Your Country" required/>
+                <select  data-bv-notempty name="Country" id="country-selector" autofocus="autofocus" autocorrect="off" autocomplete="off"class="col-xs-9 clearable country" placeholder="Your Country" required/>
                   <option value="United States"  selected="selected">United States</option>
                   <option value="Afghanistan" data-alternative-spellings="AF افغانستان">Afghanistan</option>
                   <option value="Åland Islands" data-alternative-spellings="AX Aaland Aland" data-relevancy-booster="0.5">Åland Islands</option>
