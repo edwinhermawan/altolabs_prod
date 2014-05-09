@@ -109,7 +109,7 @@ $(document).ready(function() {
     if ($('#shippingForm').h5Validate('allValid', { })==true){
       $('#shippingForm').hide();
       // Show Credit Card Form
-      $('#creditCardForm').show();
+      $('.creditCardForm').show();
       // Show Shipping Information
       $('.confirmShippingAddress').show();
 

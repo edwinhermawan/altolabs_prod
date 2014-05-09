@@ -393,55 +393,54 @@
               </div>
             </div>
           </form>
-          <form id="creditCardForm" class="creditCardForm">
-            <div class="container-fluid">
-              <div class="inputFields text-center col-md-12 row">
-                <div class="form-group">
-                  <input type="text" class="deleteWhiteSpace col-xs-12 cardHolderName clearable form-control"   placeholder="Card Holder's Name" required/>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12 col-xs-12" id="cardNumberContainer">
-                  <label class="col-xs-12">Card Number</label>
-                  <span class="card-type col-xs-2"></span>
-                  <div class="col-xs-10">
-                    <input type="tel" class="col-xs-10 deleteWhiteSpace form-control noPadding" id="newCardNumber" placeholder="1234 5678 9012 3456">
-                  </div>
-
-                </div>
-                
-                <div class="col-md-12 col-sm-12 columns hidden-xs" id="showCardNumber">
-                  <div class="dmitrysCardNumberContainer hidden ">
-                    <!-- To do remove id on input and name appropriately -->
-
-                    <span class="col-xs-2" id="dmitrysCardNumberIcon"></span>
-                    <div class="dmitrysCardNumber col-xs-6"></div>
-                    <i class="fa fa-pencil"></i> 
-                    <br/>
-                  </div>
-                  <div class="dmitrysExpDateContainer hidden hidden-xs">
-
-                    <span class="col-xs-2" id="dmitrysExpDateIcon">Exp. Date</span>
-                    <div class="dmitrysExpDate col-xs-6">asdf</div>
-                    <i class="fa fa-pencil"></i> 
-                    <br/>
-                  </div>
-                  <div class="dmitrysCvcContainer hidden hidden-xs">
-
-                    <span class="dmitrysCvcIcon col-xs-2"></span>
-                    <div class="dmitrysCvc col-xs-6"></div>
-                    <i class="fa fa-pencil"></i> 
-                  </div>
-                  <div class="dmitrysBillingZipCodeContainer hidden hidden-xs">
-                    <input type="hidden" name="hiddenField" />
-                    <span class="col-xs-2">Billing Zip Code</span>
-                    <div class="dmitrysBillingZipCode col-xs-6"></div>
-                    <i class="fa fa-pencil"></i> 
-                  </div>
-                </div>
-     
+          <form class="creditCardForm container-fluid">
+            <div class="inputFields text-center col-md-12 row">
+              <div class="form-group">
+                <input type="text" class="deleteWhiteSpace col-xs-12 cardHolderName clearable form-control"   placeholder="Card Holder's Name" required/>
               </div>
             </div>
+            <div class="row">
+              <div class="col-md-12 col-xs-12" id="cardNumberContainer">
+                <label class="col-xs-12">Card Number</label>
+                <span class="card-type col-xs-2"></span>
+                <div class="col-xs-10">
+                  <input type="tel" class="col-xs-10 deleteWhiteSpace form-control" id="newCardNumber" placeholder="1234 5678 9012 3456">
+                </div>
+
+              </div>
+              
+              <div class="col-md-12 col-sm-12 columns hidden-xs" id="showCardNumber">
+                <div class="dmitrysCardNumberContainer hidden ">
+                  <!-- To do remove id on input and name appropriately -->
+
+                  <span class="col-xs-2" id="dmitrysCardNumberIcon"></span>
+                  <div class="dmitrysCardNumber col-xs-6"></div>
+                  <i class="fa fa-pencil"></i> 
+                  <br/>
+                </div>
+                <div class="dmitrysExpDateContainer hidden hidden-xs">
+
+                  <span class="col-xs-2" id="dmitrysExpDateIcon">Exp. Date</span>
+                  <div class="dmitrysExpDate col-xs-6">asdf</div>
+                  <i class="fa fa-pencil"></i> 
+                  <br/>
+                </div>
+                <div class="dmitrysCvcContainer hidden hidden-xs">
+
+                  <span class="dmitrysCvcIcon col-xs-2"></span>
+                  <div class="dmitrysCvc col-xs-6"></div>
+                  <i class="fa fa-pencil"></i> 
+                </div>
+                <div class="dmitrysBillingZipCodeContainer hidden hidden-xs">
+                  <input type="hidden" name="hiddenField" />
+                  <span class="col-xs-2">Billing Zip Code</span>
+                  <div class="dmitrysBillingZipCode col-xs-6"></div>
+                  <i class="fa fa-pencil"></i> 
+                </div>
+              </div>
+   
+            </div>
+
           </form>
 
 
@@ -450,17 +449,17 @@
             <p class="confirmShippingAddressTitle">Shipping to:</p>
             <div class="confirmShippingNameContainer clearfix">
               <input type="hidden" name="hiddenField" />
-              <div class="confirmShippingName col-xs-6"></div>
+              <div class="confirmShippingName noPadding col-xs-6"></div>
               <!-- <i class="fa fa-pencil"></i>  -->
             </div> 
             <div class="confirmAddressContainer clearfix">
               <input type="hidden" name="hiddenField" />
-              <div class="confirmAddress col-xs-6"></div>
+              <div class="confirmAddress noPadding col-xs-6"></div>
               <!-- <i class="fa fa-pencil"></i> -->
             </div> 
             <div class="confirmZipCodeContainer clearfix">
               <input type="hidden" name="hiddenField" />
-              <div class="confirmZipCode col-xs-6"></div>
+              <div class="confirmZipCode noPadding col-xs-6"></div>
               <!-- <i class="fa fa-pencil"></i> -->
             </div>
 
