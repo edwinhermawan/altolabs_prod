@@ -181,12 +181,12 @@ $(document).ready(function() {
           $('.dmitrysCardNumber').text(this.value);
           // Clear out card number and put in clean expiration date
           // $(this).css('width', '100%');
-          $(this).parent('div').removeClass('has-error shake');
+          $(this).parent('div').removeClass('error-class shake');
           if (!$(this).hasClass('testId')){
             $(this).animate({'marginLeft': '-=25%'}, 200, 'swing', function () {
               $(this).val('');
               $(this).css('margin-left', '0px');
-              $(this).css('width', '83.33%');
+              $(this).css('width', '100%');
               // Replace input field with new placeholder and fires off getExpDate function
               $(this).closest('div').siblings('label').text("Expiration Date");
               $(this).inputmask("99/99", {placeholder: " ", "oncomplete": getExpDate
@@ -196,7 +196,7 @@ $(document).ready(function() {
           }
           
       } else {
-          $(this).parent('div').addClass('has-error shake');
+          $(this).parent('div').addClass('error-class shake');
 
       }
   }
@@ -213,7 +213,7 @@ $(document).ready(function() {
           // $(this).css('width', '150%');
           $(this).siblings('span').css('background', 'url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDMwOC43IDYwIDQwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMzA4LjcgNjAgNDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGZpbGw9IiNDRENEQ0QiIGQ9Ik02MCwzNDMuN2MwLDIuOC0yLjIsNS01LDVINWMtMi44LDAtNS0yLjItNS01di0zMGMwLTIuOCwyLjItNSw1LTVoNTBjMi44LDAsNSwyLjIsNSw1VjM0My43eiIvPg0KCTwvZz4NCgk8cmVjdCB4PSIxLjgiIHk9IjMxNSIgZmlsbD0iIzQyNDE0MyIgd2lkdGg9IjU4LjIiIGhlaWdodD0iOCIvPg0KCTxyZWN0IHg9IjcuOCIgeT0iMzI3IiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMzYiIGhlaWdodD0iOCIvPg0KCTxyZWN0IHg9IjEwLjgiIHk9IjMzMCIgZmlsbD0iIzQyNDE0MyIgd2lkdGg9IjI5IiBoZWlnaHQ9IjIiLz4NCgk8Zz4NCgkJPGc+DQoJCQk8cGF0aCBmaWxsPSIjREZERUREIiBkPSJNNTUsMzA5LjdjMi4yLDAsNCwxLjgsNCw0djMwYzAsMi4yLTEuOCw0LTQsNEg1Yy0yLjIsMC00LTEuOC00LTR2LTMwYzAtMi4yLDEuOC00LDQtNEg1NSBNNTUsMzA4LjdINQ0KCQkJCWMtMi44LDAtNSwyLjItNSw1djMwYzAsMi44LDIuMiw1LDUsNWg1MGMyLjgsMCw1LTIuMiw1LTV2LTMwQzYwLDMxMSw1Ny44LDMwOC43LDU1LDMwOC43TDU1LDMwOC43eiIvPg0KCQk8L2c+DQoJPC9nPg0KCTxyZWN0IHg9IjQ2LjgiIHk9IjMyNyIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPg0KCTxyZWN0IHg9IjQ3LjgiIHk9IjMzMCIgZmlsbD0iIzQyNDE0MyIgd2lkdGg9IjYiIGhlaWdodD0iMiIvPg0KCTxjaXJjbGUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRTk1NjRCIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgY3g9IjUwLjIiIGN5PSIzMzAuOSIgcj0iNy44Ii8+DQo8L2c+DQo8L3N2Zz4NCg==)');
           // Clear out exp date and put in clean cvc field
-          $(this).parent('div').removeClass('has-error shake');
+          $(this).parent('div').removeClass('error-class shake');
           $(this).animate({'marginLeft': '-=25%'}, 200, 'swing', function () {
               $(this).val('');
               $(this).css('margin-left', '0px');
@@ -225,7 +225,7 @@ $(document).ready(function() {
               $(this).attr('placeholder', 'CVC');
           });
       } else {
-          $(this).parent('div').addClass('has-error shake');
+          $(this).parent('div').addClass('error-class shake');
       }
   }
 
@@ -254,11 +254,9 @@ function getZipCode() {
           $(this).css('margin-left', '0px');
           $('.dmitrysBillingZipCodeContainer').removeClass('hidden');
           $('.dmitrysBillingZipCode').text($(this).val()); 
-          $('#cardNumberContainer').html('<button class=" btn btn-primary btn-lg text-center col-xs-10 col-xs-offset-1" id="customButton">Pay With Card</button>');
+          $('#cardNumberContainer').html('<button class=" btn btn-primary btn-lg text-center col-md-11 col-xs-12" id="customButton">Pay With Card</button>');
         });
-      // } else {
-      //     $(this).parent('div').addClass('has-error shake');
-      // }
+
   }
 
   // User can edit Card Number, ExpDate, and CVC numbers inline after they input them
@@ -267,6 +265,7 @@ function getZipCode() {
   $('.dmitrysCardNumber').inlineEdit(replaceWith);
   $('.dmitrysExpDate').inlineEdit(replaceWith, "99/99");
   $('.dmitrysCvc').inlineEdit(replaceWith, "999");
+  $('.dmitrysBillingZipCode').inlineEdit(replaceWith);
 
   $('.confirmShippingName').inlineEdit(replaceWith, "null");
   $('.confirmAddress').inlineEdit(replaceWith, "null");

@@ -128,10 +128,7 @@ $logoMarginTop: -3rem;
 		margin: 0px;
 	}
 
-	@media only screen 
-	and (min-device-width : 768px) 
-	and (max-device-width : 1024px) 
-	and (orientation : landscape) { 
+	@media #{tabletLandscape}{ 
 		width: 40%;
 	}
 }
@@ -461,7 +458,7 @@ $logoMarginTop: -3rem;
 	}
 }
 
-.error-class{
+input.error-class{
 	border: 1px solid #a94442 !important;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483 !important;
 	        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483 !important;
@@ -473,6 +470,23 @@ $logoMarginTop: -3rem;
 	  outline: 0 none;
   }
 }
+
+.error-class{
+	input{
+		border: 1px solid #a94442 !important;
+	  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483 !important;
+		        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483 !important;
+	  &:focus{
+		  border-color: #843534 !important;
+		  // border-color: lime !important;
+		  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483 !important;
+		          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483 !important;
+		  outline: 0 none;
+	  }
+	}
+	
+}
+
 
 // Make input fields clearable
 .clearable{
@@ -579,9 +593,16 @@ $logoMarginTop: -3rem;
 		@include borders;
 	} 
 }
-
-.cardHolderName, .dmitrysCardNumberContainer, .dmitrysExpDateContainer, .dmitrysCvcContainer, .dmitrysBillingZipCodeContainer{
+.cardHolderName{
 	margin-top: 1rem;
+}
+.dmitrysCardNumberContainer, .dmitrysExpDateContainer, .dmitrysCvcContainer, .dmitrysBillingZipCodeContainer{
+	margin-top: 1rem;
+	width: 100%;
+	display: inline-block;
+	input{
+		width: 50%;
+	}
 }
 
 
