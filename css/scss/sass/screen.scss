@@ -8,18 +8,23 @@
   src: url('../../../fonts/twCenMTBold.ttf'); 
 }
 
+// Media Queries
+
+// Note that $screen-sm-max is adjusted because iPad max resolution is 1024px in landscape. This also changes $screen-md-min away from normal Bootstrap values. 
+// Breakpoints
 $screen-xs-max: 767px;
 $screen-sm-min: 768px;
-$screen-sm-max: 991px;
-$screen-md-min: 992px;
+$screen-sm-max: 1024px;
+$screen-md-min: 1025px;
 $borderColor: #CACACB;
 
-$mobile: (min-width: $screen-xs-max);
-$mobilePortrait: (min-width: $screen-xs-max) and (orientation: portrait);
-$mobileLandscape: (min-width: $screen-xs-max) and (orientation: landscape);
-$tablet: (min-width: $screen-sm-min) and (max-width: $screen-sm-max);
-$tabletPortrait: (min-width: $screen-sm-min) and (max-width: $screen-sm-max) and (orientation: portrait);
-$tabletLandscape: (min-width: $screen-sm-min) and (max-width: $screen-sm-max) and (orientation: landscape);
+// Media Query Variables
+$mobile: "only screen and (max-width: 767px)";
+$mobilePortrait: "only screen and (max-width: 767px) and (orientation: portrait)";
+$mobileLandscape: "only screen and (max-width: 767px) and (orientation: landscape)";
+$tablet: "only screen and (min-width: 768px) and (max-width: 1024px)";
+$tabletPortrait: "only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait)";
+$tabletLandscape: "only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape)";
 
 // Boombotix logo
 $logoContainerHeight: 75px;
@@ -29,20 +34,20 @@ $logoMarginTop: -3rem;
 @mixin boldText{
 	font-family: 'twCenMTBold';
 	font-size: 1.5rem;
-	@media (max-width: 40em){
+	@media #{$mobile}{
 		font-size: 1.6rem;
 	}
-	@media (min-width: 40em) and (max-width: $screen-sm-max){
+	@media #{$tablet}{
 		font-size: 2rem;
 	}
 };
 
 @mixin regularText{
 	font-size: 1.5rem;
-	@media (max-width: 40em){
+	@media #{$mobile}{
 		font-size: 1.5rem;
 	}
-	@media (min-width: 40em) and (max-width: $screen-sm-max){
+	@media #{$tablet}{
 		font-size: 1.5em;
 	}
 };
@@ -109,12 +114,9 @@ $logoMarginTop: -3rem;
 	top: 0px;
 	font-family: 'twCenMT';
 	height: auto;
-	@media (max-width: 40em){
+	@media #{$mobile}{
 		border-radius: 0px;
 		top: 0px;	
-	}
-	@media (max-width: $screen-xs-max) {
-		background: lime;
 	}
 }
 
@@ -122,7 +124,7 @@ $logoMarginTop: -3rem;
 	@media (min-width: $screen-md-min) {
 		width: 30%;
 	}
-	@media (max-width: 40em) {
+	@media #{$mobile}{
 		margin: 0px;
 	}
 
@@ -138,7 +140,7 @@ $logoMarginTop: -3rem;
 	border-radius: 6px;
 	padding: 0px 15px 15px;
 	background: #f5f5f7;
-	@media (max-width: 40em) {
+	@media #{$mobile}{
 		border-radius: 0px;
 	}
 }
@@ -181,7 +183,7 @@ $logoMarginTop: -3rem;
 		top: 1rem;
 		left: 1rem;
 		z-index: 10;
-		@media (max-width: 40em){
+		@media #{$mobile}{
 			position: relative;
 			left:-1rem;
 		}
@@ -215,14 +217,14 @@ $logoMarginTop: -3rem;
 }
 .textContainer{
 	margin-top: -$logoMarginTop + 1rem;
-	@media (max-width: 40em){
+	@media #{$mobile}{
 		margin-top: 0px;
 	}
 	form{
 		label {
 		    display: block;
 		    padding-left: 15px;
-		    @media (max-width: 40em){
+		    @media #{$mobile}{
 		    	padding-left: 0px;
 		    }
 		}
@@ -230,7 +232,7 @@ $logoMarginTop: -3rem;
 			margin-top: 1rem;
 			margin-bottom: 1rem;
 			@include boldText;
-			@media (max-width: 40em){
+			@media #{$mobile}{
 				padding-left: 0px;
 				padding-right: 0px;
 			}
@@ -241,7 +243,7 @@ $logoMarginTop: -3rem;
 			.quantityAndDescription{
 	    	margin-top: 0px;
 	    	$spacingBetweenElements: .5rem;
-	    	@media (min-width: 40em) and (max-width: $screen-sm-max){
+	    	@media #{$tablet}{
 				$spacingBetweenElements: 1.25rem;
 			}
 	    	padding-left: $spacingBetweenElements;
@@ -255,13 +257,13 @@ $logoMarginTop: -3rem;
 					margin-bottom: 0px;
 					padding: 0px;
 					text-align: center;
-					@media (max-width: 40em){
+					@media #{$mobile}{
 						$quantityInputSize: 3rem;
 						width: $quantityInputSize;
 						height: $quantityInputSize;
 						border-radius: 3px;
 					}
-					@media (min-width: 40em) and (max-width: 64em){
+					@media #{$tablet}{
 						$quantityInputSize: 2.5rem;
 						width: $quantityInputSize;
 						height: $quantityInputSize;
@@ -270,7 +272,7 @@ $logoMarginTop: -3rem;
 				}
 				.description{
 					margin-left: ($quantityInputSize + $spacingBetweenElements);
-					@media (max-width: 40em){
+					@media #{$mobile}{
 						$quantityInputSize: 3rem;
 						margin-left: ($quantityInputSize + $spacingBetweenElements);
 
@@ -281,12 +283,12 @@ $logoMarginTop: -3rem;
 		
 		.addOn{
 			@include regularText;
-			@media (max-width: 40em){
+			@media #{$mobile}{
 				margin-top: 1.2rem;
 				margin-bottom: 0px;
 			};
 			.fa{
-				@media (max-width: 40em){
+				@media #{$mobile}{
 					font-size: 1.2em;
 					line-height: .5em;
 				}
@@ -323,7 +325,7 @@ $logoMarginTop: -3rem;
 		@include payByBoxes($background: white, $textColor: #014179);
 		img{
 			width: 40%;
-			@media (max-width: 40em){
+			@media #{$mobile}{
 				width: 60%;
 			}
 			@media (max-width: 40em) and (orientation:landscape) {
@@ -355,12 +357,12 @@ $logoMarginTop: -3rem;
 	}
 
 	.inputFields{
-		@media (max-width: 40em){
+		@media #{$mobile}{
 			padding-left: 2.5rem;
 			padding-right: 2.5rem;
 			margin-top: 1rem;
 		}
-		@media (min-width: 40em) and (max-width: $screen-sm-max){
+		@media #{$tablet}{
 			padding-left: 4.5rem;
 			padding-right: 4.5rem;
 		}
@@ -382,29 +384,20 @@ $logoMarginTop: -3rem;
 			@media (max-width: $screen-sm-max){
 				width: 99.9%;
 			}
-
-			@media only screen 
-			and (min-device-width : 768px) 
-			and (max-device-width : 1024px) 
-			and (orientation : landscape) { 
-				width: 99.9%;
-			}
-
-			@media only screen 
-			and (min-device-width : 320px) 
-			and (max-device-width : 568px) 
-			and (orientation : landscape) { 
+			@media #{$mobileLandscape}{ 
 				width: 100%;
 			}
-
+			@media #{$tabletLandscape}{
+				width: 99.9%;
+			}
 		}
 		.postfix{
 			@include borders($bottom:none, $left: none);
 			line-height: 3em;
-			@media (max-width: 40em){
+			@media #{$mobile}{
 				line-height: 5rem;
 			}
-			@media (min-width: 40em) and (max-width: $screen-sm-max){
+			@media #{$tablet}{
 				line-height: 5.5rem;
 			}
 			.fa-crosshairs{
@@ -415,10 +408,10 @@ $logoMarginTop: -3rem;
 		.prefix{
 			@include borders($right: none, $bottom: none);
 			line-height: 3.5rem;
-			@media (max-width: 40em){
+			@media #{$mobile}{
 				line-height: 4.5rem;
 			}
-			@media (min-width: 40em) and (max-width: $screen-sm-max){
+			@media #{$tablet}{
 				font-size: 1.5em;
 				line-height: 4.5rem;
 			}
@@ -428,10 +421,7 @@ $logoMarginTop: -3rem;
 			font-family: FontAwesome;
 			
 			// Account for a rounding error in Safari in calculating width of input
-		    @media only screen 
-			and (min-device-width : 320px) 
-			and (max-device-width : 568px) 
-			and (orientation : landscape) { 
+		    @media #{$mobileLandscape}{ 
 				width: 75.1%;
 			}
 		}
@@ -439,10 +429,7 @@ $logoMarginTop: -3rem;
 			@include borders($right: none, $bottom: none);
 		}
 		.city{
-			@media only screen 
-			and (min-device-width : 768px) 
-			and (max-device-width : 1024px) 
-			and (orientation : landscape) { 
+			@media #{$tabletLandscape}{
 				width: 66.5%;
 			}
 		}
@@ -452,17 +439,14 @@ $logoMarginTop: -3rem;
 			border-top-left-radius: 0px;
 			border-bottom-right-radius: 0px;
 			line-height: 3rem;
-			@media (max-width: 40em){
+			@media #{$mobile}{
 				line-height: 3.75rem;
 			}
-			@media (min-width: 40em) and (max-width: $screen-sm-max){
+			@media #{$tablet}{
 				// font-size: 1.5em;
 				line-height: 3.75rem;
 			}
-			@media only screen 
-			and (min-device-width : 768px) 
-			and (max-device-width : 1024px) 
-			and (orientation : landscape) { 
+			@media #{$tabletLandscape}{
 				line-height: 3rem;
 			}
 		}
@@ -470,10 +454,7 @@ $logoMarginTop: -3rem;
 			@include borders;
 			border-bottom-right-radius: 3px;
 			// Account for a rounding error in Safari in calculating width of input
-			@media only screen 
-			and (min-device-width : 320px) 
-			and (max-device-width : 568px) 
-			and (orientation : landscape) { 
+			@media #{$mobileLandscape}{ 
 				width: 75.1%;
 			}
 		}
@@ -537,12 +518,12 @@ $logoMarginTop: -3rem;
 }
 .warrantyWrapper{
 	margin-top: 1rem;
-	@media (min-width: 40em) and (max-width: $screen-sm-max){
+	@media #{$tablet}{
 		margin-top: 2.5rem;
 	}
 	img{
 		width: 100%;
-		@media (max-width: 40em) and (orientation:landscape) {
+		@media #{$mobileLandscape} {
 			width: 80%;
 		}
 	}
@@ -566,10 +547,10 @@ $logoMarginTop: -3rem;
 	color: white;
 	font-weight: 400;
 	font-size: 1.75rem;
-	@media (max-width: 40em){
+	@media #{$mobile}{
 		font-size: 1.2em;
 	}
-	@media (min-width: 40em) and (max-width: $screen-sm-max){
+	@media #{$tablet}{
 		font-size: 1.75em;
 		margin-top: 2.5rem;
 		margin-bottom: 2.5rem;
@@ -582,7 +563,7 @@ $logoMarginTop: -3rem;
 		background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIxIDAgNjAgNDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMSAwIDYwIDQwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBmaWxsPSIjQzREQUIwIiBkPSJNNjEsMzVjMCwyLjgtMi4yLDUtNSw1SDZjLTIuOCwwLTUtMi4yLTUtNVY1YzAtMi44LDIuMi01LDUtNWg1MGMyLjgsMCw1LDIuMiw1LDVWMzV6Ii8+DQoJPC9nPg0KCTxyZWN0IHg9IjIiIHk9IjYuMyIgZmlsbD0iIzQyNDE0MyIgd2lkdGg9IjU5IiBoZWlnaHQ9IjgiLz4NCgk8Zz4NCgkJPGc+DQoJCQk8cGF0aCBmaWxsPSIjN0Q5NzY5IiBkPSJNNTYsMWMyLjIsMCw0LDEuOCw0LDR2MzBjMCwyLjItMS44LDQtNCw0SDZjLTIuMiwwLTQtMS44LTQtNFY1YzAtMi4yLDEuOC00LDQtNEg1NiBNNTYsMEg2DQoJCQkJQzMuMiwwLDEsMi4yLDEsNXYzMGMwLDIuOCwyLjIsNSw1LDVoNTBjMi44LDAsNS0yLjIsNS01VjVDNjEsMi4yLDU4LjcsMCw1NiwwTDU2LDB6Ii8+DQoJCTwvZz4NCgk8L2c+DQo8L2c+DQo8L3N2Zz4NCg==) ;
 		@include creditCardStyle ($background: 100% auto, $margin: 7px 7px -6px 0);
 		width: 32px;
-		@media (max-width: 40em){
+		@media #{$mobile}{
 			margin: 11px 7px -6px 0;
 			padding-left: 0px;
 			padding-right: 0px;
